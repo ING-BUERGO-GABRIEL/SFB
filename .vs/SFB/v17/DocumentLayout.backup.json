@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\src\\components\\thewelcome.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\src\\components\\thewelcome.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\src\\app.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\src\\app.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.server\\sfb.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|solutionrelative:sfb.server\\sfb.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|solutionrelative:sfb.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\src\\views\\dashboard\\components\\uniquevisitor.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\src\\views\\dashboard\\components\\uniquevisitor.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\src\\views\\dashboard\\defaultdashboard.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\src\\views\\dashboard\\defaultdashboard.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\src\\router\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\src\\router\\index.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.vue\\sfb.vue.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{174244A7-9C57-147E-7E37-C1629C2DA5E8}|SFB.Vue\\sfb.vue.esproj|solutionrelative:sfb.vue\\sfb.vue.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|c:\\users\\ing-gabriel-buergo\\source\\repos\\sfb\\sfb.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37E33B9B-CC19-4DE4-9EBC-1AFFF889539D}|SFB.Server\\SFB.Server.csproj|solutionrelative:sfb.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,19 +34,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TheWelcome.vue",
-              "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\sfb.vue\\src\\components\\TheWelcome.vue",
-              "RelativeDocumentMoniker": "sfb.vue\\src\\components\\TheWelcome.vue",
-              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\sfb.vue\\src\\components\\TheWelcome.vue",
-              "RelativeToolTip": "sfb.vue\\src\\components\\TheWelcome.vue",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UniqueVisitor.vue",
+              "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\views\\dashboard\\components\\UniqueVisitor.vue",
+              "RelativeDocumentMoniker": "SFB.Vue\\src\\views\\dashboard\\components\\UniqueVisitor.vue",
+              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\views\\dashboard\\components\\UniqueVisitor.vue",
+              "RelativeToolTip": "SFB.Vue\\src\\views\\dashboard\\components\\UniqueVisitor.vue",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
-              "WhenOpened": "2025-04-29T16:12:12.654Z",
+              "WhenOpened": "2025-04-29T18:04:25.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DefaultDashboard.vue",
+              "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\views\\dashboard\\DefaultDashboard.vue",
+              "RelativeDocumentMoniker": "SFB.Vue\\src\\views\\dashboard\\DefaultDashboard.vue",
+              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\views\\dashboard\\DefaultDashboard.vue",
+              "RelativeToolTip": "SFB.Vue\\src\\views\\dashboard\\DefaultDashboard.vue",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
+              "WhenOpened": "2025-04-29T18:03:57.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.ts",
+              "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\router\\index.ts",
+              "RelativeDocumentMoniker": "SFB.Vue\\src\\router\\index.ts",
+              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\src\\router\\index.ts",
+              "RelativeToolTip": "SFB.Vue\\src\\router\\index.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-04-29T17:57:52.713Z",
               "EditorCaption": ""
             },
             {
@@ -53,40 +83,27 @@
               "RelativeDocumentMoniker": "SFB.Vue\\sfb.vue.esproj",
               "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue\\sfb.vue.esproj",
               "RelativeToolTip": "SFB.Vue\\sfb.vue.esproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-29T16:11:29.049Z",
+              "WhenOpened": "2025-04-29T17:57:15.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.vue",
-              "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\sfb.vue\\src\\App.vue",
-              "RelativeDocumentMoniker": "sfb.vue\\src\\App.vue",
-              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\sfb.vue\\src\\App.vue",
-              "RelativeToolTip": "sfb.vue\\src\\App.vue",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
-              "WhenOpened": "2025-04-29T16:04:36.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SFB.Server",
+              "DocumentIndex": 0,
+              "Title": "SFB.Server.csproj",
               "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\SFB.Server.csproj",
               "RelativeDocumentMoniker": "SFB.Server\\SFB.Server.csproj",
-              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\SFB.Server.csproj",
-              "RelativeToolTip": "SFB.Server\\SFB.Server.csproj",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\SFB.Server.csproj*",
+              "RelativeToolTip": "SFB.Server\\SFB.Server.csproj*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-29T15:57:16.416Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\Program.cs",
               "RelativeDocumentMoniker": "SFB.Server\\Program.cs",
@@ -94,8 +111,7 @@
               "RelativeToolTip": "SFB.Server\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T13:58:34.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T13:58:34.776Z"
             }
           ]
         }

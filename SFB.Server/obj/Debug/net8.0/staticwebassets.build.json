@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "glgQ068ZFp8qmfVAZj12vOipL3m1UXihHiDKQp7+8eo=",
+  "Hash": "7r2kWQWRT4TtOaUyKsHaFCQP9YqUIaxh++ZI0cgxds4=",
   "Source": "SFB.Server",
   "BasePath": "_content/SFB.Server",
   "Mode": "Default",
@@ -17,12 +17,12 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\_redirects",
       "SourceId": "SFB.Server",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
       "BasePath": "_content/SFB.Server",
-      "RelativePath": "assets/index-CrXw9O2d#[.{fingerprint}]?.css",
+      "RelativePath": "_redirects#[.{fingerprint}]?",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,19 +31,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "opqohi0nja",
-      "Integrity": "xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=",
+      "Fingerprint": "ajnqgpxxtv",
+      "Integrity": "pl1nEIY2zt0lHEDB/mKorxS1oPQgZZgQ7GoKn2AbJ5Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-CrXw9O2d.css"
+      "OriginalItemSpec": "wwwroot\\_redirects"
     },
     {
-      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Ufd5lQT9.js",
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\_plugin-vue_export-helper-DlAUqK2U.js",
       "SourceId": "SFB.Server",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
       "BasePath": "_content/SFB.Server",
-      "RelativePath": "assets/index-Ufd5lQT9#[.{fingerprint}]?.js",
+      "RelativePath": "assets/_plugin-vue_export-helper-DlAUqK2U#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -52,19 +52,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "1nut6tzvms",
-      "Integrity": "XYoSSHR/4MAg8GuoVMw10eHUgCBND4jq/cvi7do+N80=",
+      "Fingerprint": "19vc5bet57",
+      "Integrity": "y4Ww8mPb4k6FczgwHAYnB2WS6fHxpWYpKfhtLBJkRKo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\index-Ufd5lQT9.js"
+      "OriginalItemSpec": "wwwroot\\assets\\_plugin-vue_export-helper-DlAUqK2U.js"
     },
     {
-      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AntDesignIcons-CBjX_HBn.js",
       "SourceId": "SFB.Server",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
       "BasePath": "_content/SFB.Server",
-      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "RelativePath": "assets/AntDesignIcons-CBjX_HBn#[.{fingerprint}]?.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -73,11 +73,1124 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "r8e75ffup4",
-      "Integrity": "23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=",
+      "Fingerprint": "ulv74f7m1u",
+      "Integrity": "PlQYqqsony//xqGZE4vfkK0ymWOEoK77rbA4Iu22uz4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\assets\\AntDesignIcons-CBjX_HBn.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ps90rer66h",
+      "Integrity": "Z6uA5Vzp8NimNG1kq8xraOu/iHT1QWsiM1CvxN7cJzU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sls4ym78ey",
+      "Integrity": "MKyJHB33GKThIbd5Ov+P8qjmAjmjOOg/Eq9lbBb1qqw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin-BxteO0Ld.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/AuthLogin-BxteO0Ld#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1ui6w3hx2s",
+      "Integrity": "J/+euaCL8jjmTGILOuzeZA/ewErCrbXA1yV+ws6jVyU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\AuthLogin-BxteO0Ld.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\avatar-1-ClrX7t5f.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/avatar-1-ClrX7t5f#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g0dcjkf9yh",
+      "Integrity": "4L9c1Id2+gJhsYAb0JAPKz6vDqCwU5JTkc3QiokTNdE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\avatar-1-ClrX7t5f.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\BlankLayout-Dkk7IrKH.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/BlankLayout-Dkk7IrKH#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yrdjt2uhwn",
+      "Integrity": "go5DxdmD+6PlyH2+S25lq/JJxNEKfJ6SbMt9xYEUOis=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\BlankLayout-Dkk7IrKH.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ColorPage-DQHsMCT0.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/ColorPage-DQHsMCT0#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9323efegb8",
+      "Integrity": "q4g1VW6/IjCXrhQeYsJz2PKuC+4FhgoHtktXGFz4Hog=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\ColorPage-DQHsMCT0.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-B6dka7z8.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/DashboardLayout-B6dka7z8#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jic9a3qmao",
+      "Integrity": "ZQLuN6up/ZqEq0ixkYwma88TKItxdVFTSweb7vO/HJk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\DashboardLayout-B6dka7z8.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-Ci5BoWzI.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/DashboardLayout-Ci5BoWzI#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "95muvgjnl8",
+      "Integrity": "Y4Va0LYlGMeCWB5jxza9z2gmfTIOY8o/SqmyoO7iOqY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\DashboardLayout-Ci5BoWzI.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-CPK_bOxm.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/DefaultDashboard-CPK_bOxm#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hfb6mkj5sw",
+      "Integrity": "o2rhe5qbEayZAWT8VOuMJiKt1YUATc+/6XLrPgqlaAY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\DefaultDashboard-CPK_bOxm.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-DqhBppdG.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/DefaultDashboard-DqhBppdG#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4olcu69dsq",
+      "Integrity": "tH7e/vm1588QXjfJIuj1eFg1HaAyTd4HsvBYju3r/6U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\DefaultDashboard-DqhBppdG.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404-AdsfEbqB.png",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/Error404-AdsfEbqB#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a20mh29ksk",
+      "Integrity": "0jLpnUIb7BhOXzo6CEzwpyHDXUzVD0XUZ41eOg7dsE0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\Error404-AdsfEbqB.png"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-BI9GeKY-.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/Error404Page-BI9GeKY-#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s21r3qxodu",
+      "Integrity": "zCYPznidVV+aCoOvQVUKKVoj5JQDFIC6aq0E7T04PKs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\Error404Page-BI9GeKY-.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-DA42tMhp.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/Error404Page-DA42tMhp#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vk15q721in",
+      "Integrity": "wTJNXrJwPuKLVS+b/bUnlZX0pVxHEDTVI5mFH2xDj7I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\Error404Page-DA42tMhp.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-C6lUpHTD.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/index-C6lUpHTD#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7jpu1xmojx",
+      "Integrity": "Pf54WnKeQXaLHbkh1OI7hxrSEiqzEVP2Fi1vxzoqcUg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-C6lUpHTD.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-D8Pif44C.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/index-D8Pif44C#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4rgsdcsixb",
+      "Integrity": "MJ9770ZJi5PHARVOdTLibo++PoJF62zmzzsgxpjY+3Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-D8Pif44C.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-Cg_U_kqM.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LoaderWrapper-Cg_U_kqM#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xnzgzqqloy",
+      "Integrity": "c1wL71LW+sXf6UJkO/+PKbXoZ4BokcTRRd5H/wjpjAA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LoaderWrapper-Cg_U_kqM.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-DrhNC4jr.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LoaderWrapper-DrhNC4jr#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y551x0puh4",
+      "Integrity": "ml7MhqjES5nWYZEG6J1UDkxPFhWyz1SOCNLpGrIqKVU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LoaderWrapper-DrhNC4jr.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-BStAXhvl.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LoginPage-BStAXhvl#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2oyahguhm1",
+      "Integrity": "/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LoginPage-BStAXhvl.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-DtZgvSTE.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LoginPage-DtZgvSTE#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ibbcm66ltw",
+      "Integrity": "ThI/BXPz1SkBdQfhpbyBPJq8v+6C41RiD1TNUI2mbWk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LoginPage-DtZgvSTE.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-HllmzAN9.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LoginPage-HllmzAN9#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2oyahguhm1",
+      "Integrity": "/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LoginPage-HllmzAN9.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7ja44s0yci",
+      "Integrity": "rf2T/YnsZgKk9zs4+N3wlSIYmGKeYE8kqaS1D7PmCNI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-400-normal-8Rpg0ruU#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ea4uytc87j",
+      "Integrity": "NidLV4e08Dsn5lrpcdbICKloOMzWDJ2rruFUiJtruoI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-400-normal-BJe8n-hT#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6buyii16za",
+      "Integrity": "8je1ccM8ReE/gs7Q23GKmQEdLigFxfFotxJyVfgGB44=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-500-normal-Kkjf6c6R#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "78ur22z5o2",
+      "Integrity": "OTQdPrFLtpeCaYuAb3V8ddTPr5Cm9qilsSAsXhfcKoI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-500-normal-NlrCPXnF#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jyh75z3wya",
+      "Integrity": "VehmoAyqGXvJ+vpSyQf03+iOUbuz9YXHd5MdA+uWHpY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-600-normal-BjQ8ENXZ#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "neu8g9d2il",
+      "Integrity": "EZCJs8mK5TXI/GTXIPdnPb5wtmWGg3mBHm6zDjz7siA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-600-normal-Fru-LXNs#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pgecbj1y47",
+      "Integrity": "x4QvlzRt8bO0cOnXGs3pDxMt2FhQjsWuZgZAHl0JOPc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-AugGdtWM.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-700-normal-AugGdtWM#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "647d6oaj73",
+      "Integrity": "uhRFkKD4+SXBMlm2dVh6GXIF0Ur2S3/h/+M9EZXO9RU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-700-normal-AugGdtWM.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-700-normal-BqJmxWdE#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uigemovn38",
+      "Integrity": "2s50FhNpaCf2Hb7i2YToaF8UooRhNng/OtHIlQkUvx0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-400-normal-mk90oQqJ#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "holndpv1z0",
+      "Integrity": "gS78yPd4QGNpIHa+HRQxh2dkaEfeiXSonRgHRZYUGlQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-400-normal-ylhOdEnv#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ar5lsyp3mk",
+      "Integrity": "mjtQTGF2ru2FzWf6j06R+bgEulDdP2wZUTe5OyBDtPI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-500-normal-CmwLalnN#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u9sv3i6lq9",
+      "Integrity": "HlQJ317ru7+mbhPUbGz18ukRZ72Y0q520KPFqPLvSyI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-500-normal-DC-z7ASZ#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bbsb38qq6o",
+      "Integrity": "F4eqRa37hwoIbOwRIVBR468R8+bz3Y4Xs9e/yBw1Iac=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-600-normal-C1bpx0IC#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dvelp6s157",
+      "Integrity": "dzArLk8GCC6gPfeF3d3OXsaNfFkxh7iVD6lMKb4334w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-600-normal-DchWdWJ_#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mwclty7y79",
+      "Integrity": "lil5hGoskcR0Aj3GKAhk5GjVEu/ysmhE3/39ufSlSk8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-700-normal-CCfeRI-3#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5iauvmav1e",
+      "Integrity": "rYfTFRebGfNdo7A/9cVeLToXdueiiaB0HHGkf0Q/r3g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-latin-ext-700-normal-CgolUQuG#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vhml2ecatg",
+      "Integrity": "3SB4pXujZ0vYzJlIiFdgbkdWCkVVURwz0wGvvaxYCrM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-400-normal-BnC03Rcj#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dlem9tiamr",
+      "Integrity": "YdBacxdMoRUgD2iQ2Wee+fKWK+/ptc8hRGYrJR5MIaI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-400-normal-TxZB8OSn#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jfqd1s6yoh",
+      "Integrity": "8cd3dbNl9OeKZWb1DJt7u8ieF9uFwACJcFDTTGi8QP8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-500-normal-BsTjTmjh#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ivx4gdpim5",
+      "Integrity": "fvia6pcWWJ0aFXreh3EibmP3X7YmbHq4wmGSAb3A/5I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-500-normal-DjztbcKe#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iul45s4jdr",
+      "Integrity": "mlwRa2bjNSVOMiC6CN/+KS2QA2a9GWIRHHjG54GSQmA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-600-normal-CtE6oKHE#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4liaxdri1h",
+      "Integrity": "mMGr4LorgqQiuKDHBvf59EZTmonXCUcFKuWij7acqo8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-600-normal-P4BtCUdw#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w4hn9k4jxf",
+      "Integrity": "gNArI/KwwHGtJAmoocUf1Ji5VoUDD9HYkWeCkhZwvRU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-700-normal-BYtl4jcW#[.{fingerprint}]?.woff",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ic3wk1hkg4",
+      "Integrity": "Dt9Q0FvmGEWFB7cM5UA+n+yFK3tCalqW6c3QiDO1zug=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/public-sans-vietnamese-700-normal-D97ShjGS#[.{fingerprint}]?.woff2",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vlt002x86q",
+      "Integrity": "HRI5187JjYvmvJdEfuTBdurjxZEpxA8EJcoVsjMjUYg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\RegisterPage-7TZn_ijO.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/RegisterPage-7TZn_ijO#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lv5te9dt10",
+      "Integrity": "/5pyDjqh33fTbtH7BrQJ05QDbeqCBgVcqTs6AP73cMs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\RegisterPage-7TZn_ijO.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ShadowPage-kwtHDijm.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/ShadowPage-kwtHDijm#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qlwo66reud",
+      "Integrity": "8nbEttLMWfn5vlt4HBVghT4Uu/R/ROD0Bh1ZS8omgWU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\ShadowPage-kwtHDijm.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\StarterPage-Bltg3ANE.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/StarterPage-Bltg3ANE#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "e9wq6k49q3",
+      "Integrity": "LsTrx/U1TtT6gZ+UTnWOXX80I83DQoAcZbIIEp6RX+k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\StarterPage-Bltg3ANE.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TwoCone-5iyjn531.png",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/TwoCone-5iyjn531#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "evku2l9c92",
+      "Integrity": "KguMD4nEIIAPX3xLyG8bIf48ghT2Nsgz3S0s2k0V9CU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\TwoCone-5iyjn531.png"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TypographyPage-DyGzBpb5.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/TypographyPage-DyGzBpb5#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b0s65vy4vj",
+      "Integrity": "tQsN8HrKnBTspMmrEp1kTnOMY9gt7Q7WXMqzF+u7frw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\TypographyPage-DyGzBpb5.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72c4c6awvi",
+      "Integrity": "Dxos9QuZQXZuxlGEpQQDgCPDbnCkCFBiZGKpHZikeVI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard-CojRJeRA.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/UiParentCard-CojRJeRA#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jgy109nobe",
+      "Integrity": "TWdrpYPWsYz1hbSTlmofMs3BXgyvYm6a7XhGPj2X0EE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\UiParentCard-CojRJeRA.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.svg",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "favicon#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "btxzkshmys",
+      "Integrity": "EVZQaX5Y7QTk9vGCtzgoO9bhnJ7EyP2sav9OxcEyznw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.svg"
     },
     {
       "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
@@ -94,8 +1207,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ci4y3507ua",
-      "Integrity": "rN3bUnATqnGloM5cpwQXF5CA3Zy8+A4qzsybWOlfO+Q=",
+      "Fingerprint": "dg12h7zapp",
+      "Integrity": "I69FS0M9cCDchJfF3+jNfkczCR2xehdgTfo8+hFvbsk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
@@ -103,8 +1216,8 @@
   ],
   "Endpoints": [
     {
-      "Route": "assets/index-CrXw9O2d.css",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "Route": "_redirects",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\_redirects",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -113,19 +1226,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3706"
+          "Value": "25"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "application/octet-stream"
         },
         {
           "Name": "ETag",
-          "Value": "\"xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=\""
+          "Value": "\"pl1nEIY2zt0lHEDB/mKorxS1oPQgZZgQ7GoKn2AbJ5Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Wed, 23 Apr 2025 13:44:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -135,13 +1248,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k="
+          "Value": "sha256-pl1nEIY2zt0lHEDB/mKorxS1oPQgZZgQ7GoKn2AbJ5Q="
         }
       ]
     },
     {
-      "Route": "assets/index-CrXw9O2d.opqohi0nja.css",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "Route": "_redirects.ajnqgpxxtv",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\_redirects",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -150,19 +1263,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "3706"
+          "Value": "25"
         },
         {
           "Name": "Content-Type",
-          "Value": "text/css"
+          "Value": "application/octet-stream"
         },
         {
           "Name": "ETag",
-          "Value": "\"xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=\""
+          "Value": "\"pl1nEIY2zt0lHEDB/mKorxS1oPQgZZgQ7GoKn2AbJ5Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Wed, 23 Apr 2025 13:44:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -172,21 +1285,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "opqohi0nja"
+          "Value": "ajnqgpxxtv"
         },
         {
           "Name": "label",
-          "Value": "assets/index-CrXw9O2d.css"
+          "Value": "_redirects"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k="
+          "Value": "sha256-pl1nEIY2zt0lHEDB/mKorxS1oPQgZZgQ7GoKn2AbJ5Q="
         }
       ]
     },
     {
-      "Route": "assets/index-Ufd5lQT9.1nut6tzvms.js",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Ufd5lQT9.js",
+      "Route": "assets/_plugin-vue_export-helper-DlAUqK2U.19vc5bet57.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\_plugin-vue_export-helper-DlAUqK2U.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -195,7 +1308,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "69576"
+          "Value": "91"
         },
         {
           "Name": "Content-Type",
@@ -203,11 +1316,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XYoSSHR/4MAg8GuoVMw10eHUgCBND4jq/cvi7do+N80=\""
+          "Value": "\"y4Ww8mPb4k6FczgwHAYnB2WS6fHxpWYpKfhtLBJkRKo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -217,21 +1330,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "1nut6tzvms"
+          "Value": "19vc5bet57"
         },
         {
           "Name": "label",
-          "Value": "assets/index-Ufd5lQT9.js"
+          "Value": "assets/_plugin-vue_export-helper-DlAUqK2U.js"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-XYoSSHR/4MAg8GuoVMw10eHUgCBND4jq/cvi7do+N80="
+          "Value": "sha256-y4Ww8mPb4k6FczgwHAYnB2WS6fHxpWYpKfhtLBJkRKo="
         }
       ]
     },
     {
-      "Route": "assets/index-Ufd5lQT9.js",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Ufd5lQT9.js",
+      "Route": "assets/_plugin-vue_export-helper-DlAUqK2U.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\_plugin-vue_export-helper-DlAUqK2U.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -240,7 +1353,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "69576"
+          "Value": "91"
         },
         {
           "Name": "Content-Type",
@@ -248,11 +1361,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"XYoSSHR/4MAg8GuoVMw10eHUgCBND4jq/cvi7do+N80=\""
+          "Value": "\"y4Ww8mPb4k6FczgwHAYnB2WS6fHxpWYpKfhtLBJkRKo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -262,13 +1375,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-XYoSSHR/4MAg8GuoVMw10eHUgCBND4jq/cvi7do+N80="
+          "Value": "sha256-y4Ww8mPb4k6FczgwHAYnB2WS6fHxpWYpKfhtLBJkRKo="
         }
       ]
     },
     {
-      "Route": "favicon.ico",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "Route": "assets/AntDesignIcons-CBjX_HBn.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AntDesignIcons-CBjX_HBn.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -277,19 +1390,966 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4286"
+          "Value": "765"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/x-icon"
+          "Value": "text/javascript"
         },
         {
           "Name": "ETag",
-          "Value": "\"23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=\""
+          "Value": "\"PlQYqqsony//xqGZE4vfkK0ymWOEoK77rbA4Iu22uz4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 14:02:30 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-PlQYqqsony//xqGZE4vfkK0ymWOEoK77rbA4Iu22uz4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AntDesignIcons-CBjX_HBn.ulv74f7m1u.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AntDesignIcons-CBjX_HBn.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "765"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"PlQYqqsony//xqGZE4vfkK0ymWOEoK77rbA4Iu22uz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ulv74f7m1u"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/AntDesignIcons-CBjX_HBn.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-PlQYqqsony//xqGZE4vfkK0ymWOEoK77rbA4Iu22uz4="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "972"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z6uA5Vzp8NimNG1kq8xraOu/iHT1QWsiM1CvxN7cJzU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z6uA5Vzp8NimNG1kq8xraOu/iHT1QWsiM1CvxN7cJzU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.ps90rer66h.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "972"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Z6uA5Vzp8NimNG1kq8xraOu/iHT1QWsiM1CvxN7cJzU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ps90rer66h"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/AuthFooter.vue_vue_type_script_setup_true_lang-B8wxYPpG.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Z6uA5Vzp8NimNG1kq8xraOu/iHT1QWsiM1CvxN7cJzU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27426"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MKyJHB33GKThIbd5Ov+P8qjmAjmjOOg/Eq9lbBb1qqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MKyJHB33GKThIbd5Ov+P8qjmAjmjOOg/Eq9lbBb1qqw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.sls4ym78ey.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27426"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MKyJHB33GKThIbd5Ov+P8qjmAjmjOOg/Eq9lbBb1qqw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sls4ym78ey"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/AuthLogin.vue_vue_type_style_index_0_lang-C5A9Eul3.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MKyJHB33GKThIbd5Ov+P8qjmAjmjOOg/Eq9lbBb1qqw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthLogin-BxteO0Ld.1ui6w3hx2s.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin-BxteO0Ld.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J/+euaCL8jjmTGILOuzeZA/ewErCrbXA1yV+ws6jVyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1ui6w3hx2s"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/AuthLogin-BxteO0Ld.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-J/+euaCL8jjmTGILOuzeZA/ewErCrbXA1yV+ws6jVyU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/AuthLogin-BxteO0Ld.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin-BxteO0Ld.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J/+euaCL8jjmTGILOuzeZA/ewErCrbXA1yV+ws6jVyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-J/+euaCL8jjmTGILOuzeZA/ewErCrbXA1yV+ws6jVyU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/avatar-1-ClrX7t5f.g0dcjkf9yh.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\avatar-1-ClrX7t5f.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4L9c1Id2+gJhsYAb0JAPKz6vDqCwU5JTkc3QiokTNdE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g0dcjkf9yh"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/avatar-1-ClrX7t5f.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4L9c1Id2+gJhsYAb0JAPKz6vDqCwU5JTkc3QiokTNdE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/avatar-1-ClrX7t5f.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\avatar-1-ClrX7t5f.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4L9c1Id2+gJhsYAb0JAPKz6vDqCwU5JTkc3QiokTNdE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4L9c1Id2+gJhsYAb0JAPKz6vDqCwU5JTkc3QiokTNdE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/BlankLayout-Dkk7IrKH.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\BlankLayout-Dkk7IrKH.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "308"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"go5DxdmD+6PlyH2+S25lq/JJxNEKfJ6SbMt9xYEUOis=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-go5DxdmD+6PlyH2+S25lq/JJxNEKfJ6SbMt9xYEUOis="
+        }
+      ]
+    },
+    {
+      "Route": "assets/BlankLayout-Dkk7IrKH.yrdjt2uhwn.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\BlankLayout-Dkk7IrKH.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "308"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"go5DxdmD+6PlyH2+S25lq/JJxNEKfJ6SbMt9xYEUOis=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yrdjt2uhwn"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/BlankLayout-Dkk7IrKH.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-go5DxdmD+6PlyH2+S25lq/JJxNEKfJ6SbMt9xYEUOis="
+        }
+      ]
+    },
+    {
+      "Route": "assets/ColorPage-DQHsMCT0.9323efegb8.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ColorPage-DQHsMCT0.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1058"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q4g1VW6/IjCXrhQeYsJz2PKuC+4FhgoHtktXGFz4Hog=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9323efegb8"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/ColorPage-DQHsMCT0.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-q4g1VW6/IjCXrhQeYsJz2PKuC+4FhgoHtktXGFz4Hog="
+        }
+      ]
+    },
+    {
+      "Route": "assets/ColorPage-DQHsMCT0.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ColorPage-DQHsMCT0.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1058"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"q4g1VW6/IjCXrhQeYsJz2PKuC+4FhgoHtktXGFz4Hog=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-q4g1VW6/IjCXrhQeYsJz2PKuC+4FhgoHtktXGFz4Hog="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DashboardLayout-B6dka7z8.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-B6dka7z8.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZQLuN6up/ZqEq0ixkYwma88TKItxdVFTSweb7vO/HJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZQLuN6up/ZqEq0ixkYwma88TKItxdVFTSweb7vO/HJk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DashboardLayout-B6dka7z8.jic9a3qmao.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-B6dka7z8.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZQLuN6up/ZqEq0ixkYwma88TKItxdVFTSweb7vO/HJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jic9a3qmao"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/DashboardLayout-B6dka7z8.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZQLuN6up/ZqEq0ixkYwma88TKItxdVFTSweb7vO/HJk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DashboardLayout-Ci5BoWzI.95muvgjnl8.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-Ci5BoWzI.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y4Va0LYlGMeCWB5jxza9z2gmfTIOY8o/SqmyoO7iOqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "95muvgjnl8"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/DashboardLayout-Ci5BoWzI.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y4Va0LYlGMeCWB5jxza9z2gmfTIOY8o/SqmyoO7iOqY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DashboardLayout-Ci5BoWzI.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-Ci5BoWzI.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45924"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y4Va0LYlGMeCWB5jxza9z2gmfTIOY8o/SqmyoO7iOqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y4Va0LYlGMeCWB5jxza9z2gmfTIOY8o/SqmyoO7iOqY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DefaultDashboard-CPK_bOxm.hfb6mkj5sw.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-CPK_bOxm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o2rhe5qbEayZAWT8VOuMJiKt1YUATc+/6XLrPgqlaAY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hfb6mkj5sw"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/DefaultDashboard-CPK_bOxm.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-o2rhe5qbEayZAWT8VOuMJiKt1YUATc+/6XLrPgqlaAY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DefaultDashboard-CPK_bOxm.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-CPK_bOxm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26690"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"o2rhe5qbEayZAWT8VOuMJiKt1YUATc+/6XLrPgqlaAY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-o2rhe5qbEayZAWT8VOuMJiKt1YUATc+/6XLrPgqlaAY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DefaultDashboard-DqhBppdG.4olcu69dsq.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-DqhBppdG.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tH7e/vm1588QXjfJIuj1eFg1HaAyTd4HsvBYju3r/6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4olcu69dsq"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/DefaultDashboard-DqhBppdG.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tH7e/vm1588QXjfJIuj1eFg1HaAyTd4HsvBYju3r/6U="
+        }
+      ]
+    },
+    {
+      "Route": "assets/DefaultDashboard-DqhBppdG.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-DqhBppdG.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "131"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tH7e/vm1588QXjfJIuj1eFg1HaAyTd4HsvBYju3r/6U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tH7e/vm1588QXjfJIuj1eFg1HaAyTd4HsvBYju3r/6U="
+        }
+      ]
+    },
+    {
+      "Route": "assets/Error404-AdsfEbqB.a20mh29ksk.png",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404-AdsfEbqB.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0jLpnUIb7BhOXzo6CEzwpyHDXUzVD0XUZ41eOg7dsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a20mh29ksk"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/Error404-AdsfEbqB.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0jLpnUIb7BhOXzo6CEzwpyHDXUzVD0XUZ41eOg7dsE0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/Error404-AdsfEbqB.png",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404-AdsfEbqB.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26107"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0jLpnUIb7BhOXzo6CEzwpyHDXUzVD0XUZ41eOg7dsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -299,13 +2359,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU="
+          "Value": "sha256-0jLpnUIb7BhOXzo6CEzwpyHDXUzVD0XUZ41eOg7dsE0="
         }
       ]
     },
     {
-      "Route": "favicon.r8e75ffup4.ico",
-      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "Route": "assets/Error404Page-BI9GeKY-.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-BI9GeKY-.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -314,19 +2374,56 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4286"
+          "Value": "412"
         },
         {
           "Name": "Content-Type",
-          "Value": "image/x-icon"
+          "Value": "text/css"
         },
         {
           "Name": "ETag",
-          "Value": "\"23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=\""
+          "Value": "\"zCYPznidVV+aCoOvQVUKKVoj5JQDFIC6aq0E7T04PKs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 14:02:30 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zCYPznidVV+aCoOvQVUKKVoj5JQDFIC6aq0E7T04PKs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/Error404Page-BI9GeKY-.s21r3qxodu.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-BI9GeKY-.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "412"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zCYPznidVV+aCoOvQVUKKVoj5JQDFIC6aq0E7T04PKs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -336,20 +2433,3382 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r8e75ffup4"
+          "Value": "s21r3qxodu"
         },
         {
           "Name": "label",
-          "Value": "favicon.ico"
+          "Value": "assets/Error404Page-BI9GeKY-.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU="
+          "Value": "sha256-zCYPznidVV+aCoOvQVUKKVoj5JQDFIC6aq0E7T04PKs="
         }
       ]
     },
     {
-      "Route": "index.ci4y3507ua.html",
+      "Route": "assets/Error404Page-DA42tMhp.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-DA42tMhp.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1034"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wTJNXrJwPuKLVS+b/bUnlZX0pVxHEDTVI5mFH2xDj7I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wTJNXrJwPuKLVS+b/bUnlZX0pVxHEDTVI5mFH2xDj7I="
+        }
+      ]
+    },
+    {
+      "Route": "assets/Error404Page-DA42tMhp.vk15q721in.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-DA42tMhp.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1034"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wTJNXrJwPuKLVS+b/bUnlZX0pVxHEDTVI5mFH2xDj7I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vk15q721in"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/Error404Page-DA42tMhp.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wTJNXrJwPuKLVS+b/bUnlZX0pVxHEDTVI5mFH2xDj7I="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-C6lUpHTD.7jpu1xmojx.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-C6lUpHTD.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "446248"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pf54WnKeQXaLHbkh1OI7hxrSEiqzEVP2Fi1vxzoqcUg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7jpu1xmojx"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-C6lUpHTD.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pf54WnKeQXaLHbkh1OI7hxrSEiqzEVP2Fi1vxzoqcUg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-C6lUpHTD.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-C6lUpHTD.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "446248"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Pf54WnKeQXaLHbkh1OI7hxrSEiqzEVP2Fi1vxzoqcUg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Pf54WnKeQXaLHbkh1OI7hxrSEiqzEVP2Fi1vxzoqcUg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-D8Pif44C.4rgsdcsixb.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-D8Pif44C.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6072981"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MJ9770ZJi5PHARVOdTLibo++PoJF62zmzzsgxpjY+3Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4rgsdcsixb"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-D8Pif44C.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MJ9770ZJi5PHARVOdTLibo++PoJF62zmzzsgxpjY+3Q="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-D8Pif44C.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-D8Pif44C.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6072981"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MJ9770ZJi5PHARVOdTLibo++PoJF62zmzzsgxpjY+3Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MJ9770ZJi5PHARVOdTLibo++PoJF62zmzzsgxpjY+3Q="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoaderWrapper-Cg_U_kqM.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-Cg_U_kqM.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c1wL71LW+sXf6UJkO/+PKbXoZ4BokcTRRd5H/wjpjAA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c1wL71LW+sXf6UJkO/+PKbXoZ4BokcTRRd5H/wjpjAA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoaderWrapper-Cg_U_kqM.xnzgzqqloy.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-Cg_U_kqM.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c1wL71LW+sXf6UJkO/+PKbXoZ4BokcTRRd5H/wjpjAA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xnzgzqqloy"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LoaderWrapper-Cg_U_kqM.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c1wL71LW+sXf6UJkO/+PKbXoZ4BokcTRRd5H/wjpjAA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoaderWrapper-DrhNC4jr.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-DrhNC4jr.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ml7MhqjES5nWYZEG6J1UDkxPFhWyz1SOCNLpGrIqKVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ml7MhqjES5nWYZEG6J1UDkxPFhWyz1SOCNLpGrIqKVU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoaderWrapper-DrhNC4jr.y551x0puh4.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-DrhNC4jr.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ml7MhqjES5nWYZEG6J1UDkxPFhWyz1SOCNLpGrIqKVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y551x0puh4"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LoaderWrapper-DrhNC4jr.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ml7MhqjES5nWYZEG6J1UDkxPFhWyz1SOCNLpGrIqKVU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-BStAXhvl.2oyahguhm1.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-BStAXhvl.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2651"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2oyahguhm1"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LoginPage-BStAXhvl.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-BStAXhvl.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-BStAXhvl.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2651"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-DtZgvSTE.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-DtZgvSTE.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ThI/BXPz1SkBdQfhpbyBPJq8v+6C41RiD1TNUI2mbWk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ThI/BXPz1SkBdQfhpbyBPJq8v+6C41RiD1TNUI2mbWk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-DtZgvSTE.ibbcm66ltw.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-DtZgvSTE.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ThI/BXPz1SkBdQfhpbyBPJq8v+6C41RiD1TNUI2mbWk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ibbcm66ltw"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LoginPage-DtZgvSTE.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ThI/BXPz1SkBdQfhpbyBPJq8v+6C41RiD1TNUI2mbWk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-HllmzAN9.2oyahguhm1.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-HllmzAN9.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2651"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2oyahguhm1"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LoginPage-HllmzAN9.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LoginPage-HllmzAN9.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-HllmzAN9.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2651"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/iD6+5YPTdzfHeKA6TNxKoN+pFndp66FA0tnt4EOuZ0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.7ja44s0yci.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rf2T/YnsZgKk9zs4+N3wlSIYmGKeYE8kqaS1D7PmCNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7ja44s0yci"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rf2T/YnsZgKk9zs4+N3wlSIYmGKeYE8kqaS1D7PmCNI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-VTsXUXzc.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4213"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rf2T/YnsZgKk9zs4+N3wlSIYmGKeYE8kqaS1D7PmCNI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rf2T/YnsZgKk9zs4+N3wlSIYmGKeYE8kqaS1D7PmCNI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-400-normal-8Rpg0ruU.ea4uytc87j.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14632"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NidLV4e08Dsn5lrpcdbICKloOMzWDJ2rruFUiJtruoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ea4uytc87j"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-400-normal-8Rpg0ruU.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NidLV4e08Dsn5lrpcdbICKloOMzWDJ2rruFUiJtruoI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-400-normal-8Rpg0ruU.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14632"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NidLV4e08Dsn5lrpcdbICKloOMzWDJ2rruFUiJtruoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NidLV4e08Dsn5lrpcdbICKloOMzWDJ2rruFUiJtruoI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-400-normal-BJe8n-hT.6buyii16za.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18540"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8je1ccM8ReE/gs7Q23GKmQEdLigFxfFotxJyVfgGB44=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6buyii16za"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-400-normal-BJe8n-hT.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8je1ccM8ReE/gs7Q23GKmQEdLigFxfFotxJyVfgGB44="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-400-normal-BJe8n-hT.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18540"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8je1ccM8ReE/gs7Q23GKmQEdLigFxfFotxJyVfgGB44=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8je1ccM8ReE/gs7Q23GKmQEdLigFxfFotxJyVfgGB44="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-500-normal-Kkjf6c6R.78ur22z5o2.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OTQdPrFLtpeCaYuAb3V8ddTPr5Cm9qilsSAsXhfcKoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "78ur22z5o2"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-500-normal-Kkjf6c6R.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OTQdPrFLtpeCaYuAb3V8ddTPr5Cm9qilsSAsXhfcKoI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-500-normal-Kkjf6c6R.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18576"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OTQdPrFLtpeCaYuAb3V8ddTPr5Cm9qilsSAsXhfcKoI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OTQdPrFLtpeCaYuAb3V8ddTPr5Cm9qilsSAsXhfcKoI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-500-normal-NlrCPXnF.jyh75z3wya.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VehmoAyqGXvJ+vpSyQf03+iOUbuz9YXHd5MdA+uWHpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jyh75z3wya"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-500-normal-NlrCPXnF.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VehmoAyqGXvJ+vpSyQf03+iOUbuz9YXHd5MdA+uWHpY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-500-normal-NlrCPXnF.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14656"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VehmoAyqGXvJ+vpSyQf03+iOUbuz9YXHd5MdA+uWHpY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VehmoAyqGXvJ+vpSyQf03+iOUbuz9YXHd5MdA+uWHpY="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-600-normal-BjQ8ENXZ.neu8g9d2il.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EZCJs8mK5TXI/GTXIPdnPb5wtmWGg3mBHm6zDjz7siA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "neu8g9d2il"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-600-normal-BjQ8ENXZ.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EZCJs8mK5TXI/GTXIPdnPb5wtmWGg3mBHm6zDjz7siA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-600-normal-BjQ8ENXZ.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EZCJs8mK5TXI/GTXIPdnPb5wtmWGg3mBHm6zDjz7siA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EZCJs8mK5TXI/GTXIPdnPb5wtmWGg3mBHm6zDjz7siA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-600-normal-Fru-LXNs.pgecbj1y47.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x4QvlzRt8bO0cOnXGs3pDxMt2FhQjsWuZgZAHl0JOPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pgecbj1y47"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-600-normal-Fru-LXNs.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-x4QvlzRt8bO0cOnXGs3pDxMt2FhQjsWuZgZAHl0JOPc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-600-normal-Fru-LXNs.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"x4QvlzRt8bO0cOnXGs3pDxMt2FhQjsWuZgZAHl0JOPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-x4QvlzRt8bO0cOnXGs3pDxMt2FhQjsWuZgZAHl0JOPc="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-700-normal-AugGdtWM.647d6oaj73.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-AugGdtWM.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18692"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uhRFkKD4+SXBMlm2dVh6GXIF0Ur2S3/h/+M9EZXO9RU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "647d6oaj73"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-700-normal-AugGdtWM.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uhRFkKD4+SXBMlm2dVh6GXIF0Ur2S3/h/+M9EZXO9RU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-700-normal-AugGdtWM.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-AugGdtWM.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18692"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uhRFkKD4+SXBMlm2dVh6GXIF0Ur2S3/h/+M9EZXO9RU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uhRFkKD4+SXBMlm2dVh6GXIF0Ur2S3/h/+M9EZXO9RU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-700-normal-BqJmxWdE.uigemovn38.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2s50FhNpaCf2Hb7i2YToaF8UooRhNng/OtHIlQkUvx0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uigemovn38"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-700-normal-BqJmxWdE.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2s50FhNpaCf2Hb7i2YToaF8UooRhNng/OtHIlQkUvx0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-700-normal-BqJmxWdE.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14600"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2s50FhNpaCf2Hb7i2YToaF8UooRhNng/OtHIlQkUvx0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2s50FhNpaCf2Hb7i2YToaF8UooRhNng/OtHIlQkUvx0="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-400-normal-mk90oQqJ.holndpv1z0.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10452"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gS78yPd4QGNpIHa+HRQxh2dkaEfeiXSonRgHRZYUGlQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "holndpv1z0"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-400-normal-mk90oQqJ.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gS78yPd4QGNpIHa+HRQxh2dkaEfeiXSonRgHRZYUGlQ="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-400-normal-mk90oQqJ.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10452"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gS78yPd4QGNpIHa+HRQxh2dkaEfeiXSonRgHRZYUGlQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gS78yPd4QGNpIHa+HRQxh2dkaEfeiXSonRgHRZYUGlQ="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-400-normal-ylhOdEnv.ar5lsyp3mk.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjtQTGF2ru2FzWf6j06R+bgEulDdP2wZUTe5OyBDtPI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ar5lsyp3mk"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-400-normal-ylhOdEnv.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjtQTGF2ru2FzWf6j06R+bgEulDdP2wZUTe5OyBDtPI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-400-normal-ylhOdEnv.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjtQTGF2ru2FzWf6j06R+bgEulDdP2wZUTe5OyBDtPI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjtQTGF2ru2FzWf6j06R+bgEulDdP2wZUTe5OyBDtPI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-500-normal-CmwLalnN.u9sv3i6lq9.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HlQJ317ru7+mbhPUbGz18ukRZ72Y0q520KPFqPLvSyI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u9sv3i6lq9"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-500-normal-CmwLalnN.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HlQJ317ru7+mbhPUbGz18ukRZ72Y0q520KPFqPLvSyI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-500-normal-CmwLalnN.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14280"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HlQJ317ru7+mbhPUbGz18ukRZ72Y0q520KPFqPLvSyI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HlQJ317ru7+mbhPUbGz18ukRZ72Y0q520KPFqPLvSyI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-500-normal-DC-z7ASZ.bbsb38qq6o.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F4eqRa37hwoIbOwRIVBR468R8+bz3Y4Xs9e/yBw1Iac=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bbsb38qq6o"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-500-normal-DC-z7ASZ.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-F4eqRa37hwoIbOwRIVBR468R8+bz3Y4Xs9e/yBw1Iac="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-500-normal-DC-z7ASZ.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10448"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"F4eqRa37hwoIbOwRIVBR468R8+bz3Y4Xs9e/yBw1Iac=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-F4eqRa37hwoIbOwRIVBR468R8+bz3Y4Xs9e/yBw1Iac="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-600-normal-C1bpx0IC.dvelp6s157.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dzArLk8GCC6gPfeF3d3OXsaNfFkxh7iVD6lMKb4334w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dvelp6s157"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-600-normal-C1bpx0IC.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dzArLk8GCC6gPfeF3d3OXsaNfFkxh7iVD6lMKb4334w="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-600-normal-C1bpx0IC.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14296"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dzArLk8GCC6gPfeF3d3OXsaNfFkxh7iVD6lMKb4334w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dzArLk8GCC6gPfeF3d3OXsaNfFkxh7iVD6lMKb4334w="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-600-normal-DchWdWJ_.mwclty7y79.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lil5hGoskcR0Aj3GKAhk5GjVEu/ysmhE3/39ufSlSk8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mwclty7y79"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-600-normal-DchWdWJ_.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lil5hGoskcR0Aj3GKAhk5GjVEu/ysmhE3/39ufSlSk8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-600-normal-DchWdWJ_.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lil5hGoskcR0Aj3GKAhk5GjVEu/ysmhE3/39ufSlSk8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lil5hGoskcR0Aj3GKAhk5GjVEu/ysmhE3/39ufSlSk8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-700-normal-CCfeRI-3.5iauvmav1e.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rYfTFRebGfNdo7A/9cVeLToXdueiiaB0HHGkf0Q/r3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5iauvmav1e"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-700-normal-CCfeRI-3.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rYfTFRebGfNdo7A/9cVeLToXdueiiaB0HHGkf0Q/r3g="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-700-normal-CCfeRI-3.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rYfTFRebGfNdo7A/9cVeLToXdueiiaB0HHGkf0Q/r3g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rYfTFRebGfNdo7A/9cVeLToXdueiiaB0HHGkf0Q/r3g="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-700-normal-CgolUQuG.vhml2ecatg.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10532"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3SB4pXujZ0vYzJlIiFdgbkdWCkVVURwz0wGvvaxYCrM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vhml2ecatg"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-latin-ext-700-normal-CgolUQuG.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3SB4pXujZ0vYzJlIiFdgbkdWCkVVURwz0wGvvaxYCrM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-latin-ext-700-normal-CgolUQuG.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10532"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3SB4pXujZ0vYzJlIiFdgbkdWCkVVURwz0wGvvaxYCrM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3SB4pXujZ0vYzJlIiFdgbkdWCkVVURwz0wGvvaxYCrM="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-400-normal-BnC03Rcj.dlem9tiamr.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YdBacxdMoRUgD2iQ2Wee+fKWK+/ptc8hRGYrJR5MIaI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dlem9tiamr"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-400-normal-BnC03Rcj.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YdBacxdMoRUgD2iQ2Wee+fKWK+/ptc8hRGYrJR5MIaI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-400-normal-BnC03Rcj.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YdBacxdMoRUgD2iQ2Wee+fKWK+/ptc8hRGYrJR5MIaI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YdBacxdMoRUgD2iQ2Wee+fKWK+/ptc8hRGYrJR5MIaI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-400-normal-TxZB8OSn.jfqd1s6yoh.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cd3dbNl9OeKZWb1DJt7u8ieF9uFwACJcFDTTGi8QP8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jfqd1s6yoh"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-400-normal-TxZB8OSn.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cd3dbNl9OeKZWb1DJt7u8ieF9uFwACJcFDTTGi8QP8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-400-normal-TxZB8OSn.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4524"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cd3dbNl9OeKZWb1DJt7u8ieF9uFwACJcFDTTGi8QP8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cd3dbNl9OeKZWb1DJt7u8ieF9uFwACJcFDTTGi8QP8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-500-normal-BsTjTmjh.ivx4gdpim5.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fvia6pcWWJ0aFXreh3EibmP3X7YmbHq4wmGSAb3A/5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ivx4gdpim5"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-500-normal-BsTjTmjh.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fvia6pcWWJ0aFXreh3EibmP3X7YmbHq4wmGSAb3A/5I="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-500-normal-BsTjTmjh.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5956"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fvia6pcWWJ0aFXreh3EibmP3X7YmbHq4wmGSAb3A/5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fvia6pcWWJ0aFXreh3EibmP3X7YmbHq4wmGSAb3A/5I="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-500-normal-DjztbcKe.iul45s4jdr.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4496"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mlwRa2bjNSVOMiC6CN/+KS2QA2a9GWIRHHjG54GSQmA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iul45s4jdr"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-500-normal-DjztbcKe.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mlwRa2bjNSVOMiC6CN/+KS2QA2a9GWIRHHjG54GSQmA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-500-normal-DjztbcKe.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4496"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mlwRa2bjNSVOMiC6CN/+KS2QA2a9GWIRHHjG54GSQmA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mlwRa2bjNSVOMiC6CN/+KS2QA2a9GWIRHHjG54GSQmA="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-600-normal-CtE6oKHE.4liaxdri1h.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5952"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mMGr4LorgqQiuKDHBvf59EZTmonXCUcFKuWij7acqo8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4liaxdri1h"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-600-normal-CtE6oKHE.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mMGr4LorgqQiuKDHBvf59EZTmonXCUcFKuWij7acqo8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-600-normal-CtE6oKHE.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5952"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mMGr4LorgqQiuKDHBvf59EZTmonXCUcFKuWij7acqo8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mMGr4LorgqQiuKDHBvf59EZTmonXCUcFKuWij7acqo8="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-600-normal-P4BtCUdw.w4hn9k4jxf.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4500"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gNArI/KwwHGtJAmoocUf1Ji5VoUDD9HYkWeCkhZwvRU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w4hn9k4jxf"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-600-normal-P4BtCUdw.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gNArI/KwwHGtJAmoocUf1Ji5VoUDD9HYkWeCkhZwvRU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-600-normal-P4BtCUdw.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4500"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gNArI/KwwHGtJAmoocUf1Ji5VoUDD9HYkWeCkhZwvRU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gNArI/KwwHGtJAmoocUf1Ji5VoUDD9HYkWeCkhZwvRU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-700-normal-BYtl4jcW.ic3wk1hkg4.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dt9Q0FvmGEWFB7cM5UA+n+yFK3tCalqW6c3QiDO1zug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ic3wk1hkg4"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-700-normal-BYtl4jcW.woff"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dt9Q0FvmGEWFB7cM5UA+n+yFK3tCalqW6c3QiDO1zug="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-700-normal-BYtl4jcW.woff",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5948"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/font-woff"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dt9Q0FvmGEWFB7cM5UA+n+yFK3tCalqW6c3QiDO1zug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dt9Q0FvmGEWFB7cM5UA+n+yFK3tCalqW6c3QiDO1zug="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-700-normal-D97ShjGS.vlt002x86q.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4512"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HRI5187JjYvmvJdEfuTBdurjxZEpxA8EJcoVsjMjUYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vlt002x86q"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/public-sans-vietnamese-700-normal-D97ShjGS.woff2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HRI5187JjYvmvJdEfuTBdurjxZEpxA8EJcoVsjMjUYg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/public-sans-vietnamese-700-normal-D97ShjGS.woff2",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4512"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "font/woff2"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HRI5187JjYvmvJdEfuTBdurjxZEpxA8EJcoVsjMjUYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HRI5187JjYvmvJdEfuTBdurjxZEpxA8EJcoVsjMjUYg="
+        }
+      ]
+    },
+    {
+      "Route": "assets/RegisterPage-7TZn_ijO.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\RegisterPage-7TZn_ijO.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6385"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/5pyDjqh33fTbtH7BrQJ05QDbeqCBgVcqTs6AP73cMs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/5pyDjqh33fTbtH7BrQJ05QDbeqCBgVcqTs6AP73cMs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/RegisterPage-7TZn_ijO.lv5te9dt10.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\RegisterPage-7TZn_ijO.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6385"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/5pyDjqh33fTbtH7BrQJ05QDbeqCBgVcqTs6AP73cMs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lv5te9dt10"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/RegisterPage-7TZn_ijO.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/5pyDjqh33fTbtH7BrQJ05QDbeqCBgVcqTs6AP73cMs="
+        }
+      ]
+    },
+    {
+      "Route": "assets/ShadowPage-kwtHDijm.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ShadowPage-kwtHDijm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8nbEttLMWfn5vlt4HBVghT4Uu/R/ROD0Bh1ZS8omgWU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8nbEttLMWfn5vlt4HBVghT4Uu/R/ROD0Bh1ZS8omgWU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/ShadowPage-kwtHDijm.qlwo66reud.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ShadowPage-kwtHDijm.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1396"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8nbEttLMWfn5vlt4HBVghT4Uu/R/ROD0Bh1ZS8omgWU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qlwo66reud"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/ShadowPage-kwtHDijm.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8nbEttLMWfn5vlt4HBVghT4Uu/R/ROD0Bh1ZS8omgWU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/StarterPage-Bltg3ANE.e9wq6k49q3.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\StarterPage-Bltg3ANE.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LsTrx/U1TtT6gZ+UTnWOXX80I83DQoAcZbIIEp6RX+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e9wq6k49q3"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/StarterPage-Bltg3ANE.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LsTrx/U1TtT6gZ+UTnWOXX80I83DQoAcZbIIEp6RX+k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/StarterPage-Bltg3ANE.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\StarterPage-Bltg3ANE.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1082"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LsTrx/U1TtT6gZ+UTnWOXX80I83DQoAcZbIIEp6RX+k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LsTrx/U1TtT6gZ+UTnWOXX80I83DQoAcZbIIEp6RX+k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/TwoCone-5iyjn531.evku2l9c92.png",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TwoCone-5iyjn531.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10764"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KguMD4nEIIAPX3xLyG8bIf48ghT2Nsgz3S0s2k0V9CU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "evku2l9c92"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/TwoCone-5iyjn531.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KguMD4nEIIAPX3xLyG8bIf48ghT2Nsgz3S0s2k0V9CU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/TwoCone-5iyjn531.png",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TwoCone-5iyjn531.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10764"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KguMD4nEIIAPX3xLyG8bIf48ghT2Nsgz3S0s2k0V9CU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KguMD4nEIIAPX3xLyG8bIf48ghT2Nsgz3S0s2k0V9CU="
+        }
+      ]
+    },
+    {
+      "Route": "assets/TypographyPage-DyGzBpb5.b0s65vy4vj.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TypographyPage-DyGzBpb5.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tQsN8HrKnBTspMmrEp1kTnOMY9gt7Q7WXMqzF+u7frw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b0s65vy4vj"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/TypographyPage-DyGzBpb5.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tQsN8HrKnBTspMmrEp1kTnOMY9gt7Q7WXMqzF+u7frw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/TypographyPage-DyGzBpb5.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TypographyPage-DyGzBpb5.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tQsN8HrKnBTspMmrEp1kTnOMY9gt7Q7WXMqzF+u7frw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tQsN8HrKnBTspMmrEp1kTnOMY9gt7Q7WXMqzF+u7frw="
+        }
+      ]
+    },
+    {
+      "Route": "assets/UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.72c4c6awvi.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dxos9QuZQXZuxlGEpQQDgCPDbnCkCFBiZGKpHZikeVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72c4c6awvi"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dxos9QuZQXZuxlGEpQQDgCPDbnCkCFBiZGKpHZikeVI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-BtRTIxa8.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1484"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dxos9QuZQXZuxlGEpQQDgCPDbnCkCFBiZGKpHZikeVI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dxos9QuZQXZuxlGEpQQDgCPDbnCkCFBiZGKpHZikeVI="
+        }
+      ]
+    },
+    {
+      "Route": "assets/UiParentCard-CojRJeRA.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard-CojRJeRA.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "52"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TWdrpYPWsYz1hbSTlmofMs3BXgyvYm6a7XhGPj2X0EE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TWdrpYPWsYz1hbSTlmofMs3BXgyvYm6a7XhGPj2X0EE="
+        }
+      ]
+    },
+    {
+      "Route": "assets/UiParentCard-CojRJeRA.jgy109nobe.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard-CojRJeRA.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "52"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TWdrpYPWsYz1hbSTlmofMs3BXgyvYm6a7XhGPj2X0EE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jgy109nobe"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/UiParentCard-CojRJeRA.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TWdrpYPWsYz1hbSTlmofMs3BXgyvYm6a7XhGPj2X0EE="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.btxzkshmys.svg",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EVZQaX5Y7QTk9vGCtzgoO9bhnJ7EyP2sav9OxcEyznw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 13:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "btxzkshmys"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-EVZQaX5Y7QTk9vGCtzgoO9bhnJ7EyP2sav9OxcEyznw="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.svg",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"EVZQaX5Y7QTk9vGCtzgoO9bhnJ7EyP2sav9OxcEyznw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 23 Apr 2025 13:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-EVZQaX5Y7QTk9vGCtzgoO9bhnJ7EyP2sav9OxcEyznw="
+        }
+      ]
+    },
+    {
+      "Route": "index.dg12h7zapp.html",
       "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -359,7 +5818,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "428"
+          "Value": "496"
         },
         {
           "Name": "Content-Type",
@@ -367,11 +5826,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rN3bUnATqnGloM5cpwQXF5CA3Zy8+A4qzsybWOlfO+Q=\""
+          "Value": "\"I69FS0M9cCDchJfF3+jNfkczCR2xehdgTfo8+hFvbsk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -381,7 +5840,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ci4y3507ua"
+          "Value": "dg12h7zapp"
         },
         {
           "Name": "label",
@@ -389,7 +5848,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-rN3bUnATqnGloM5cpwQXF5CA3Zy8+A4qzsybWOlfO+Q="
+          "Value": "sha256-I69FS0M9cCDchJfF3+jNfkczCR2xehdgTfo8+hFvbsk="
         }
       ]
     },
@@ -404,7 +5863,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "428"
+          "Value": "496"
         },
         {
           "Name": "Content-Type",
@@ -412,11 +5871,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"rN3bUnATqnGloM5cpwQXF5CA3Zy8+A4qzsybWOlfO+Q=\""
+          "Value": "\"I69FS0M9cCDchJfF3+jNfkczCR2xehdgTfo8+hFvbsk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 29 Apr 2025 16:14:07 GMT"
+          "Value": "Tue, 29 Apr 2025 18:01:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -426,7 +5885,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-rN3bUnATqnGloM5cpwQXF5CA3Zy8+A4qzsybWOlfO+Q="
+          "Value": "sha256-I69FS0M9cCDchJfF3+jNfkczCR2xehdgTfo8+hFvbsk="
         }
       ]
     }
