@@ -1,0 +1,257 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\SFB.Server.bundle.scp.css",
+      "PackagePath": "staticwebassets\\SFB.Server.2y3wpvspbr.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\_redirects",
+      "PackagePath": "staticwebassets"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AntDesignIcons-CUAMvRzn.js",
+      "PackagePath": "staticwebassets\\assets\\AntDesignIcons-CUAMvRzn.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-DcpjWRDY.js",
+      "PackagePath": "staticwebassets\\assets\\AuthFooter.vue_vue_type_script_setup_true_lang-DcpjWRDY.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin-BxteO0Ld.css",
+      "PackagePath": "staticwebassets\\assets\\AuthLogin-BxteO0Ld.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-DxuiP6KS.js",
+      "PackagePath": "staticwebassets\\assets\\AuthLogin.vue_vue_type_style_index_0_lang-DxuiP6KS.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\BlankLayout-B9DT3CTt.js",
+      "PackagePath": "staticwebassets\\assets\\BlankLayout-B9DT3CTt.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ColorPage-BRd62bEQ.js",
+      "PackagePath": "staticwebassets\\assets\\ColorPage-BRd62bEQ.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-B6dka7z8.css",
+      "PackagePath": "staticwebassets\\assets\\DashboardLayout-B6dka7z8.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DashboardLayout-Du9mZOYu.js",
+      "PackagePath": "staticwebassets\\assets\\DashboardLayout-Du9mZOYu.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-DqhBppdG.css",
+      "PackagePath": "staticwebassets\\assets\\DefaultDashboard-DqhBppdG.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\DefaultDashboard-z_IC9RYz.js",
+      "PackagePath": "staticwebassets\\assets\\DefaultDashboard-z_IC9RYz.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404-AdsfEbqB.png",
+      "PackagePath": "staticwebassets\\assets\\Error404-AdsfEbqB.png"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-BI9GeKY-.css",
+      "PackagePath": "staticwebassets\\assets\\Error404Page-BI9GeKY-.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\Error404Page-DM-djcAY.js",
+      "PackagePath": "staticwebassets\\assets\\Error404Page-DM-djcAY.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-C8ysAYkY.js",
+      "PackagePath": "staticwebassets\\assets\\LoaderWrapper-C8ysAYkY.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoaderWrapper-DrhNC4jr.css",
+      "PackagePath": "staticwebassets\\assets\\LoaderWrapper-DrhNC4jr.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-BdGYTyyy.js",
+      "PackagePath": "staticwebassets\\assets\\LoginPage-BdGYTyyy.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-CYIDF5PL.js",
+      "PackagePath": "staticwebassets\\assets\\LoginPage-CYIDF5PL.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LoginPage-DtZgvSTE.css",
+      "PackagePath": "staticwebassets\\assets\\LoginPage-DtZgvSTE.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-BcC_Hitn.js",
+      "PackagePath": "staticwebassets\\assets\\LogoDark.vue_vue_type_script_setup_true_lang-BcC_Hitn.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\RegisterPage-CTGjsLtK.js",
+      "PackagePath": "staticwebassets\\assets\\RegisterPage-CTGjsLtK.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\ShadowPage-CgMOOO05.js",
+      "PackagePath": "staticwebassets\\assets\\ShadowPage-CgMOOO05.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\StarterPage-CBw3ehny.js",
+      "PackagePath": "staticwebassets\\assets\\StarterPage-CBw3ehny.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TwoCone-5iyjn531.png",
+      "PackagePath": "staticwebassets\\assets\\TwoCone-5iyjn531.png"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\TypographyPage-D5v1HS51.js",
+      "PackagePath": "staticwebassets\\assets\\TypographyPage-D5v1HS51.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard-CojRJeRA.css",
+      "PackagePath": "staticwebassets\\assets\\UiParentCard-CojRJeRA.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-zQPsVZ4t.js",
+      "PackagePath": "staticwebassets\\assets\\UiParentCard.vue_vue_type_script_setup_true_lang-zQPsVZ4t.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\_plugin-vue_export-helper-DlAUqK2U.js",
+      "PackagePath": "staticwebassets\\assets\\_plugin-vue_export-helper-DlAUqK2U.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\avatar-1-BYH4fPfn.js",
+      "PackagePath": "staticwebassets\\assets\\avatar-1-BYH4fPfn.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-C6lUpHTD.css",
+      "PackagePath": "staticwebassets\\assets\\index-C6lUpHTD.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-z6g0ae9S.js",
+      "PackagePath": "staticwebassets\\assets\\index-z6g0ae9S.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-400-normal-8Rpg0ruU.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-400-normal-BJe8n-hT.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-500-normal-Kkjf6c6R.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-500-normal-NlrCPXnF.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-600-normal-BjQ8ENXZ.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-600-normal-Fru-LXNs.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-AugGdtWM.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-700-normal-AugGdtWM.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-700-normal-BqJmxWdE.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-400-normal-mk90oQqJ.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-400-normal-ylhOdEnv.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-500-normal-CmwLalnN.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-500-normal-DC-z7ASZ.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-600-normal-C1bpx0IC.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-600-normal-DchWdWJ_.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-700-normal-CCfeRI-3.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-latin-ext-700-normal-CgolUQuG.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-400-normal-BnC03Rcj.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-400-normal-TxZB8OSn.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-500-normal-BsTjTmjh.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-500-normal-DjztbcKe.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-600-normal-CtE6oKHE.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-600-normal-P4BtCUdw.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-700-normal-BYtl4jcW.woff"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2",
+      "PackagePath": "staticwebassets\\assets\\public-sans-vietnamese-700-normal-D97ShjGS.woff2"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.svg",
+      "PackagePath": "staticwebassets\\favicon.svg"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SFB.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SFB.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SFB.Server.props",
+      "PackagePath": "build\\SFB.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SFB.Server.props",
+      "PackagePath": "buildMultiTargeting\\SFB.Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SFB.Server.props",
+      "PackagePath": "buildTransitive\\SFB.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
