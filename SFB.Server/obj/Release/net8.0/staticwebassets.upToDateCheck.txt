@@ -1,4 +1,0 @@
-wwwroot\assets\index-CrXw9O2d.css
-wwwroot\assets\index-Dhl93YI3.js
-wwwroot\favicon.ico
-wwwroot\index.html
