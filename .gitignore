@@ -1,3 +1,11 @@
 
 
 .vs/
+
+## Ignorar carpetas de compilación de .NET
+**/bin/
+**/obj/
+
+## (Opcional) Ignorar wwwroot solo si no quieres subir recursos estáticos
+**/wwwroot/
+
