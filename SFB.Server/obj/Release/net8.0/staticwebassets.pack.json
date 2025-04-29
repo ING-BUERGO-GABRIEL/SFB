@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "PackagePath": "staticwebassets\\assets\\index-CrXw9O2d.css"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Dhl93YI3.js",
+      "PackagePath": "staticwebassets\\assets\\index-Dhl93YI3.js"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SFB.Server.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.SFB.Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.build.SFB.Server.props",
+      "PackagePath": "build\\SFB.Server.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SFB.Server.props",
+      "PackagePath": "buildMultiTargeting\\SFB.Server.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\staticwebassets\\msbuild.buildTransitive.SFB.Server.props",
+      "PackagePath": "buildTransitive\\SFB.Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

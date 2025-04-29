@@ -14,10 +14,10 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Documentation</template>
+    <template #heading>Documentrrrration Hola Mundo</template>
 
     Vue’s
-    <a href="https://vuejs.org/" target="_blank" rel="noopener">official documentation</a>
+    <a href="https://vuejs.org/" target="_blank" rel="noopener">officialfff documentation</a>
     provides you with all information you need to get started.
   </WelcomeItem>
 

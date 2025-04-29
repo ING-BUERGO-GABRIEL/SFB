@@ -1,9 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<Target Name="BuildVue" BeforeTargets="Build">
+		<Message Importance="high" Text="🏗️ Compilando frontend Vue..." />
+
+		<!-- Paso 1: Ejecuta npm install y npm run build -->
+		<Exec WorkingDirectory="..\SFB.vue" Command="npm install" />
+		<Exec WorkingDirectory="..\SFB.vue" Command="npm run build" ContinueOnError="false" />
+
+		<!-- Paso 2: Espera a que dist/index.html exista -->
+		<Message Importance="high" Text="⏳ Esperando a que Vue compile..." />
+		<Exec Command="powershell -Command &quot;while (!(Test-Path '..\SFB.vue\dist\index.html')) { Start-Sleep -Milliseconds 200 }&quot;" />
+
+		<!-- Paso 3: Copiar archivos a wwwroot -->
+		<Message Importance="high" Text="📂 Copiando archivos Vue a wwwroot..." />
+		<RemoveDir Directories="wwwroot" />
+		<MakeDir Directories="wwwroot" />
+		<ItemGroup>
+			<VueFilesToCopy Include="..\SFB.vue\dist\**\*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(VueFilesToCopy)" DestinationFolder="wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true" />
+	</Target>
+
+
 
 </Project>

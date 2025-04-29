@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SFB.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52135af2fe081efd40c1bbc1cc1c2b708c2adc09")]
 [assembly: System.Reflection.AssemblyProductAttribute("SFB.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SFB.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

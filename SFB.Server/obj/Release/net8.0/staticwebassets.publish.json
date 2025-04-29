@@ -1,0 +1,434 @@
+{
+  "Version": 1,
+  "Hash": "T60x6AmyvMGwk5Ngy17V0bozjM239sTOj4OmYR+KXiw=",
+  "Source": "SFB.Server",
+  "BasePath": "_content/SFB.Server",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SFB.Server\\wwwroot",
+      "Source": "SFB.Server",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/index-CrXw9O2d#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "opqohi0nja",
+      "Integrity": "xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-CrXw9O2d.css"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Dhl93YI3.js",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "assets/index-Dhl93YI3#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vepitygesr",
+      "Integrity": "J9aOch1dHu0J907dPyatcdxfRISeLQFTiCiMNrp9DDk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\index-Dhl93YI3.js"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "favicon#[.{fingerprint}]?.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r8e75ffup4",
+      "Integrity": "23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
+      "SourceId": "SFB.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\",
+      "BasePath": "_content/SFB.Server",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d9uapogeby",
+      "Integrity": "T68clYQWioKVsxTMtYtAR5t+BmVf/dL6VBwXmkX1VSM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "assets/index-CrXw9O2d.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-CrXw9O2d.opqohi0nja.css",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-CrXw9O2d.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3706"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "opqohi0nja"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-CrXw9O2d.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xGkYPoACJbSnkX5eHZCOefLX5IhembqtyDszQh0OL6k="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-Dhl93YI3.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Dhl93YI3.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69580"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J9aOch1dHu0J907dPyatcdxfRISeLQFTiCiMNrp9DDk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-J9aOch1dHu0J907dPyatcdxfRISeLQFTiCiMNrp9DDk="
+        }
+      ]
+    },
+    {
+      "Route": "assets/index-Dhl93YI3.vepitygesr.js",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\assets\\index-Dhl93YI3.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69580"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"J9aOch1dHu0J907dPyatcdxfRISeLQFTiCiMNrp9DDk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vepitygesr"
+        },
+        {
+          "Name": "label",
+          "Value": "assets/index-Dhl93YI3.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-J9aOch1dHu0J907dPyatcdxfRISeLQFTiCiMNrp9DDk="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 14:02:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.r8e75ffup4.ico",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4286"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 14:02:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r8e75ffup4"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-23SrC3gzjB93j4OYxF9BA8ma6g6EWjEYp3ULTur9NEU="
+        }
+      ]
+    },
+    {
+      "Route": "index.d9uapogeby.html",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "428"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T68clYQWioKVsxTMtYtAR5t+BmVf/dL6VBwXmkX1VSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d9uapogeby"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-T68clYQWioKVsxTMtYtAR5t+BmVf/dL6VBwXmkX1VSM="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Server\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "428"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"T68clYQWioKVsxTMtYtAR5t+BmVf/dL6VBwXmkX1VSM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 29 Apr 2025 16:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-T68clYQWioKVsxTMtYtAR5t+BmVf/dL6VBwXmkX1VSM="
+        }
+      ]
+    }
+  ]
+}

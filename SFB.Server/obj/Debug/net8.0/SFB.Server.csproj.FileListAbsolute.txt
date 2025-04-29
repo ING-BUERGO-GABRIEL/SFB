@@ -12,11 +12,7 @@ C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Ser
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.AssemblyInfo.cs
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.csproj.CoreCompileInputs.cache
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.RazorAssemblyInfo.cache
-C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.RazorAssemblyInfo.cs
-C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\scopedcss\bundle\SFB.Server.styles.css
-C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\scopedcss\projectbundle\SFB.Server.bundle.scp.css
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
@@ -32,3 +28,4 @@ C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\refint\
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.pdb
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.genruntimeconfig.cache
 C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\ref\SFB.Server.dll
+C:\Users\ING-GABRIEL-BUERGO\source\repos\SFB\SFB.Server\obj\Debug\net8.0\SFB.Server.sourcelink.json
