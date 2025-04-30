@@ -10,7 +10,7 @@
 		<Message Importance="high" Text="🏗️ Compilando frontend Vue..." />
 
 		<!-- Paso 1: Ejecuta npm install y npm run build -->
-		<!--<Exec WorkingDirectory="..\SFB.vue" Command="npm install" />-->
+		<Exec WorkingDirectory="..\SFB.vue" Command="npm install" />
 		<Exec WorkingDirectory="..\SFB.vue" Command="npm run build" ContinueOnError="false" />
 
 		<!-- Paso 2: Espera a que dist/index.html exista -->
