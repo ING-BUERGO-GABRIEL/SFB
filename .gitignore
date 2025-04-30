@@ -6,6 +6,5 @@
 **/bin/
 **/obj/
 
-## (Opcional) Ignorar wwwroot solo si no quieres subir recursos estáticos
-**/wwwroot/
-
+# 1) Ignora TODO lo que haya dentro de cualquier carpeta llamada wwwroot
+**/wwwroot/**
