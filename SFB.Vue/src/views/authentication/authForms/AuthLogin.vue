@@ -47,14 +47,14 @@
     <div class="d-flex align-center mt-4 mb-7 mb-sm-0">
       <v-checkbox v-model="checkbox"
                   :rules="[(v: any) => !!v || 'You must agree to continue!']"
-                  label="Keep me sign in"
+                  label="Mantener Sesion"
                   required
                   color="primary"
                   class="ms-n2"
                   hide-details></v-checkbox>
-      <div class="ml-auto">
+      <!-- <div class="ml-auto">
         <router-link to="/login1" class="text-darkText link-hover">Forgot Password?</router-link>
-      </div>
+      </div> -->
     </div>
     <v-btn color="primary" :loading="isSubmitting" block class="mt-5" variant="flat" size="large" :disabled="valid" type="submit">
       Iniciar Sesion
