@@ -1,8 +1,12 @@
 import { defineStore } from 'pinia'
 import { router } from '@/router'
 import { fetchWrapper } from '@/utils/helpers/fetch-wrapper'
+import { hostTool } from '@/utils/locales/hostTool'
 
-const baseUrl = `${import.meta.env.VITE_API_URL}/users`
+
+const baseApiUrl = import.meta.env.MODE === 'production' ? `${window.location.origin}/api` : import.meta.env.VITE_API_URL
+
+const baseUrl = `${baseApiUrl}/users`
 
 export const useAuthStore = defineStore({
   id: 'auth',
@@ -12,6 +16,7 @@ export const useAuthStore = defineStore({
   }),
   actions: {
     async login(username, password) {
+      console.log("Hola",baseUrl);
       const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { username, password })
       this.user = user
       localStorage.setItem('user', JSON.stringify(user))
