@@ -14,12 +14,12 @@
     <div class="mb-6">
       <v-label>Usuario</v-label>
       <v-text-field aria-label="email address" v-model="username" :rules="emailRules" class="mt-2" required
-        hide-details="auto" variant="outlined" color="primary" @update:modelValue="onUsernameInput"></v-text-field>
+        hide-details="auto" variant="outlined" color="primary" ></v-text-field>
     </div>
     <div>
       <v-label>Contraseña</v-label>
       <v-text-field aria-label="password" v-model="password" :rules="passwordRules" required variant="outlined"
-        color="primary" hide-details="auto" :type="show1 ? 'text' : 'password'" class="mt-2" @update:modelValue="onUsernameInput">
+        color="primary" hide-details="auto" :type="show1 ? 'text' : 'password'" class="mt-2">
         <template v-slot:append-inner>
           <v-btn color="secondary" icon rounded variant="text">
             <EyeInvisibleOutlined :style="{ color: 'rgb(var(--v-theme-secondary))' }" v-if="show1 == false"

@@ -1,4 +1,5 @@
 import { useAuthStore } from '@/stores/auth';
+import { hostTool } from '@/utils/hostTool'
 
 export const fetchWrapper = {
   get: request('GET'),
@@ -25,7 +26,7 @@ function authHeader(url) {
   const { user } = useAuthStore();
   const isLoggedIn = !!user?.token;
   
-  const isApiUrl = url.startsWith(import.meta.env.VITE_API_URL);
+  const isApiUrl = url.startsWith(hostTool.getUrlBase());
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` };
   } else {

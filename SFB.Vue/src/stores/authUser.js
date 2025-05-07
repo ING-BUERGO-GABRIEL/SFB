@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { fetchWrapper } from '@/utils/helpers/fetch-wrapper'
+import { hostTool } from '@/utils/hostTool'
 
-const baseApiUrl = import.meta.env.MODE === 'production' ? `${window.location.origin}/api` : import.meta.env.VITE_API_URL
-const baseUrl = `${baseApiUrl}/users`
+const baseUrl = `${hostTool.getUrlBase()}/users`
 
 export const useUsersStore = defineStore({
   id: 'Authuser',
