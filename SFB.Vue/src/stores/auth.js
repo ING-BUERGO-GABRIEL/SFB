@@ -13,10 +13,11 @@ export const useAuthStore = defineStore({
   }),
   actions: {
     async login(username, password) {
-      console.log("Hola",baseUrl);
+      console.log("Hola",baseUrl,username,password);
       const user = await fetchWrapper.post(`${baseUrl}/authenticate`, { username, password })
       this.user = user
       localStorage.setItem('user', JSON.stringify(user))
+      console.log("Hola",user);
       router.push(this.returnUrl || '/dashboard')
     },
     logout() {
