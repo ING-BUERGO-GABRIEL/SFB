@@ -25,11 +25,7 @@ function request(method) {
 function authHeader(url) {
   const { user } = useAuthStore();
   const isLoggedIn = !!user?.token;
-  
   const isApiUrl = url.startsWith(hostTool.getUrlBase());
-
-  console.log("Log",isApiUrl);
-  
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` };
   } else {
@@ -40,17 +36,14 @@ function authHeader(url) {
 function handleResponse(response) {
   return response.text().then((text) => {
     const data = text && JSON.parse(text);
-    console.log("Ini",data);
     if (!response.ok) {
       const { user, logout } = useAuthStore();
       if ([401, 403].includes(response.status) && user) {
         logout();
       }
-      console.log("entro Esrro",response);
       const error = (data && data.message) || response.statusText;
       return Promise.reject(error);
     }
-    console.log("Paso",response);
     return data;
   });
 }
