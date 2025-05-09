@@ -1,10 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGD.Infrastructure.Contexts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SGD.Shared.Backend.Repositories
 {

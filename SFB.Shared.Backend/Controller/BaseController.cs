@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SGD.Infrastructure.Helper;
 using SGD.Shared.Backend.Helpers;
 using SGD.Shared.Backend.Repositories;
 using SGD.Shared.Models;
