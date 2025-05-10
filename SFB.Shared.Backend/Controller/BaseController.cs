@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using SGD.Shared.Backend.Helpers;
 using SGD.Shared.Backend.Repositories;
 using SGD.Shared.Models;
-using System.Dynamic;
 
 namespace SGD.Shared.Backend.Controller
 {
