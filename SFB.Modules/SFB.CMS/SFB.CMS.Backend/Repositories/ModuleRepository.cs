@@ -1,11 +1,11 @@
 ﻿using Mapster;
 using Microsoft.EntityFrameworkCore;
-using SGD.CMS.Shared.Models;
-using SGD.Infrastructure.Contexts;
-using SGD.Infrastructure.Entities.CMS;
-using SGD.Shared.Backend.Repositories;
+using SFB.CMS.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.CMS;
+using SFB.Shared.Backend.Repositories;
 
-namespace SGD.CMS.Backend.Repositories
+namespace SFB.CMS.Backend.Repositories
 {
     public class ModuleRepository : BaseRepository<SGDContext>
     {

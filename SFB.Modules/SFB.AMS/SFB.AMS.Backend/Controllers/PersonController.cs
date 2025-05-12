@@ -1,12 +1,12 @@
 ﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using SGD.AMS.Backend.Repositories;
-using SGD.AMS.Shared.Models;
-using SGD.Infrastructure.Contexts;
-using SGD.Shared.Backend.Controller;
+using SFB.AMS.Backend.Repositories;
+using SFB.AMS.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.Shared.Backend.Controller;
 
 
-namespace SGD.AMS.Backend.Controllers
+namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
     public class PersonController(SGDContext context) : BaseController<SGDContext, PersonRepository>(context)

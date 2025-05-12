@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SGD.CMS.Backend.Repositories;
-using SGD.Infrastructure.Contexts;
-using SGD.Shared.Backend.Controller;
+using SFB.CMS.Backend.Repositories;
+using SFB.Infrastructure.Contexts;
+using SFB.Shared.Backend.Controller;
 
-namespace SGD.CMS.Backend.Controllers
+namespace SFB.CMS.Backend.Controllers
 {
     [Route("api/CMS/[controller]/[action]")]
     public class ModuleController : BaseController<SGDContext, ModuleRepository>

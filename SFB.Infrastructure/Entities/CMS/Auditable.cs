@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using SGD.Infrastructure.Interfaces;
+using SFB.Infrastructure.Interfaces;
 
-namespace SGD.Infrastructure.Entities.CMS
+namespace SFB.Infrastructure.Entities.CMS
 {
     public class Auditable : IAuditable
     {

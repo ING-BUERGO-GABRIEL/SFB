@@ -1,8 +1,8 @@
-﻿using SGD.Infrastructure.Entities.AMS;
+﻿using SFB.Infrastructure.Entities.AMS;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SGD.Infrastructure.Entities.CMS
+namespace SFB.Infrastructure.Entities.CMS
 {
     [Table("CMS_Group")]
     public class EGroup

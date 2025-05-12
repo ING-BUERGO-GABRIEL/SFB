@@ -20,6 +20,11 @@
 		</ItemGroup>
 		<Copy SourceFiles="@(VueFilesToCopy)" DestinationFolder="wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true" />
 	</Target>
+	<ItemGroup>
+	  <ProjectReference Include="..\SFB.Modules\SFB.AMS\SFB.AMS.Backend\SFB.AMS.Backend.csproj" />
+	  <ProjectReference Include="..\SFB.Modules\SFB.CMS\SFB.CMS.Backend\SFB.CMS.Backend.csproj" />
+	  <ProjectReference Include="..\SFB.Shared.Backend\SFB.Shared.Backend.csproj" />
+	</ItemGroup>
 
 
 

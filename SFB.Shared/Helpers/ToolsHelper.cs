@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace SGD.Shared.Helpers
+namespace SFB.Shared.Helpers
 {
     public static class ToolsHelper
     {

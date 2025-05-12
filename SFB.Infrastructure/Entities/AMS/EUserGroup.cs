@@ -1,8 +1,8 @@
-﻿using SGD.Infrastructure.Entities.CMS;
+﻿using SFB.Infrastructure.Entities.CMS;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SGD.Infrastructure.Entities.AMS
+namespace SFB.Infrastructure.Entities.AMS
 {
     [Table("AMS_UserGroup")]
     public class EUserGroup

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.CMS.Shared.Models
+namespace SFB.CMS.Shared.Models
 {
     public class MModule
     {

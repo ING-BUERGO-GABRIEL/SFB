@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Shared.Backend.Helpers
+namespace SFB.Shared.Backend.Helpers
 {
     public static class HelperBackend
     {

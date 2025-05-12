@@ -1,9 +1,9 @@
-﻿using SGD.Shared.Enums;
+﻿using SFB.Shared.Enums;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
-namespace SGD.Shared.Helpers
+namespace SFB.Shared.Helpers
 {
     public class RestApiClient
     {

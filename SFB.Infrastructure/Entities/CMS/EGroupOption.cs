@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Infrastructure.Entities.CMS
+namespace SFB.Infrastructure.Entities.CMS
 {
     [Table("CMS_GroupOption")]
     public class EGroupOption

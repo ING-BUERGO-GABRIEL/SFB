@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using SGD.Infrastructure.Models;
+using SFB.Infrastructure.Models;
 
-
-namespace SGD.Infrastructure.Helper
+namespace SFB.Infrastructure.Helper
 {
     public static class EFProvidersHelper
     {

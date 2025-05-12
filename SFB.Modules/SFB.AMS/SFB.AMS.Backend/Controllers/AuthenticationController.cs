@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SGD.Shared.Backend.Controller;
-using SGD.AMS.Shared.Models;
-using SGD.Infrastructure.Contexts;
-using SGD.AMS.Backend.Repositories;
-using SGD.Shared.Backend.Helpers;
+using SFB.Shared.Backend.Controller;
+using SFB.AMS.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.AMS.Backend.Repositories;
+using SFB.Shared.Backend.Helpers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 
-namespace SGD.AMS.Backend.Controllers
+namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
     public class AuthenticationController : BaseController<SGDContext, AuthenticationRepository>

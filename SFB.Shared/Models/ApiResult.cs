@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Shared.Models
+namespace SFB.Shared.Models
 {
     public class ApiResult<T>
     {

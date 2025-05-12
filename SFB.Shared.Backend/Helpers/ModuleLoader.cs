@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Shared.Backend.Helpers
+namespace SFB.Shared.Backend.Helpers
 {
     public static class ModuleLoader
     {

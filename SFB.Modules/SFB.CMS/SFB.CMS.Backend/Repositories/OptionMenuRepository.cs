@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGD.Infrastructure.Contexts;
-using SGD.Infrastructure.Entities.CMS;
-using SGD.Shared.Backend.Repositories;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.CMS;
+using SFB.Shared.Backend.Repositories;
 
 
-namespace SGD.CMS.Backend.Repositories
+namespace SFB.CMS.Backend.Repositories
 {
     public class OptionMenuRepository : BaseRepository<SGDContext>
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SGD.Infrastructure.Entities.CMS;
+using SFB.Infrastructure.Entities.CMS;
 
-namespace SGD.Infrastructure.Contexts
+namespace SFB.Infrastructure.Contexts
 {
     public partial class SGDContext
     {

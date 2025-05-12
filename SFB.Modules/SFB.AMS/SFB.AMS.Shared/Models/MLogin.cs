@@ -1,5 +1,5 @@
 ﻿
-namespace SGD.AMS.Shared.Models
+namespace SFB.AMS.Shared.Models
 {
     public class MLogin
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
-namespace SGD.Infrastructure.Contexts
+namespace SFB.Infrastructure.Contexts
 {
     public partial class SGDContext : DbContext
     {

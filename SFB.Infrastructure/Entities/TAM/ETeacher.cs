@@ -1,9 +1,9 @@
-﻿using SGD.Infrastructure.Entities.AMS;
+﻿using SFB.Infrastructure.Entities.AMS;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
-namespace SGD.Infrastructure.Entities.TAM
+namespace SFB.Infrastructure.Entities.TAM
 {
     public class ETeacher
     {

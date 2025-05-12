@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Infrastructure.Entities.AMS
+namespace SFB.Infrastructure.Entities.AMS
 {
     [Table("AMS_User")]
     public class EUser

@@ -1,10 +1,10 @@
 ﻿
-using SGD.Infrastructure.Entities.AMS;
-using SGD.Infrastructure.Entities.CMS;
+using SFB.Infrastructure.Entities.AMS;
+using SFB.Infrastructure.Entities.CMS;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SGD.Infrastructure.Entities.TAM
+namespace SFB.Infrastructure.Entities.TAM
 {
     public class ETeacherTask : Auditable
     {

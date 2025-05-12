@@ -17,6 +17,7 @@
     "@mdi/js": "^7.4.47",
     "ant-design-vue": "^4.2.6",
     "apexcharts": "^4.3.0",
+    "axios": "^1.9.0",
     "pinia": "^2.3.0",
     "sass": "^1.87.0",
     "sass-loader": "^16.0.5",

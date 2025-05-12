@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Infrastructure.Interfaces
+namespace SFB.Infrastructure.Interfaces
 {
     public interface IAuditable
     {

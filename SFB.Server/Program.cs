@@ -1,6 +1,12 @@
+using SFB.Server.Shared;
+using SFB.Shared.Backend.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers(); 
+builder.Services.AddEndpointsApiExplorer();
+
+var modules = CustomModules.GetBackendModules();
+ModuleLoader.LoadBackendModules(modules, builder.Services);
 
 var app = builder.Build();
 
@@ -11,7 +17,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseDefaultFiles();   // <<--- Esta línea es nueva: sirve el index.html automáticamente
+app.UseDefaultFiles();   // <<--- Esta lï¿½nea es nueva: sirve el index.html automï¿½ticamente
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();

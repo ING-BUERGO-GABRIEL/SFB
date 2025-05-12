@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SGD.Shared.Enums
+namespace SFB.Shared.Enums
 {
     public enum Platform
     {

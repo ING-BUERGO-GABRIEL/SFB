@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-namespace SGD.AMS.Shared.Models
+namespace SFB.AMS.Shared.Models
 {
     public class MPerson
     {

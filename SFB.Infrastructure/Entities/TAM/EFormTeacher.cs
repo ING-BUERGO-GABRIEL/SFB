@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace SGD.Infrastructure.Entities.TAM
+namespace SFB.Infrastructure.Entities.TAM
 {
     public class EFormTeacher
     {

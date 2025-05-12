@@ -1,6 +1,6 @@
-﻿using SGD.Infrastructure.Helper;
+﻿using SFB.Infrastructure.Helper;
 
-namespace SGD.Infrastructure.Models
+namespace SFB.Infrastructure.Models
 {
     public class DBConfiguration
     {

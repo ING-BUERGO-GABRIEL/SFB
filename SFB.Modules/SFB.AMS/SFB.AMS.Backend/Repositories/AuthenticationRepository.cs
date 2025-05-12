@@ -1,17 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using SGD.AMS.Shared.Models;
-using SGD.Infrastructure.Contexts;
-using SGD.Infrastructure.Entities.AMS;
-using SGD.Shared.Backend.Helpers;
-using SGD.Shared.Backend.Repositories;
+using SFB.AMS.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.AMS;
+using SFB.Shared.Backend.Helpers;
+using SFB.Shared.Backend.Repositories;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 
-namespace SGD.AMS.Backend.Repositories
+namespace SFB.AMS.Backend.Repositories
 {
     public class AuthenticationRepository : BaseRepository<SGDContext>
     {

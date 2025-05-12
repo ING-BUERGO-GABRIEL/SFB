@@ -1,10 +1,10 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
-using SGD.Infrastructure.Contexts;
-using SGD.Infrastructure.Entities.AMS;
-using SGD.Shared.Backend.Repositories;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.AMS;
+using SFB.Shared.Backend.Repositories;
 
-namespace SGD.AMS.Backend.Repositories
+namespace SFB.AMS.Backend.Repositories
 {
     public class PersonRepository(SGDContext context) : BaseRepository<SGDContext>(context)
     {

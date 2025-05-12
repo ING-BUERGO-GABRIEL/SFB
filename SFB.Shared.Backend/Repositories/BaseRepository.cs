@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace SGD.Shared.Backend.Repositories
+namespace SFB.Shared.Backend.Repositories
 {
     public abstract  class BaseRepository<TContext> 
         where TContext : DbContext
