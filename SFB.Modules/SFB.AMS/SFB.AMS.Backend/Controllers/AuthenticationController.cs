@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
-    public class AuthenticationController : BaseController<SGDContext, AuthenticationRepository>
+    public class AuthenticationController : BaseController<SFBContext, AuthenticationRepository>
     {
-        public AuthenticationController(SGDContext context, IConfiguration configuration)
+        public AuthenticationController(SFBContext context, IConfiguration configuration)
         {
             Repository = new AuthenticationRepository(context, configuration);
         }
@@ -31,11 +31,11 @@ namespace SFB.AMS.Backend.Controllers
             }
             catch (ControllerException ex)
             {
-                return ControlledExceptionResult(ex);
+                return ControlledException(ex);
             }
-            catch (Exception ex)
+            catch 
             {
-                return InternalServerErrorResult(ex);
+                return InternalServerError("Interna Server Error : Login");
             }
         }
 
@@ -53,11 +53,11 @@ namespace SFB.AMS.Backend.Controllers
             }
             catch (ControllerException ex)
             {
-                return ControlledExceptionResult(ex);
+                return ControlledException(ex);
             }
             catch (Exception ex)
             {
-                return InternalServerErrorResult(ex);
+                return InternalServerError(ex);
             }
         }
     }

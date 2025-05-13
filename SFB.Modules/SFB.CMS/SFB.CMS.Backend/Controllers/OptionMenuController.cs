@@ -6,9 +6,9 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.CMS.Backend.Controllers
 {
     [Route("api/CMS/[controller]/[action]")]
-    public class OptionMenuController : BaseController<SGDContext, OptionMenuRepository>
+    public class OptionMenuController : BaseController<SFBContext, OptionMenuRepository>
     {
-        public OptionMenuController(SGDContext context)
+        public OptionMenuController(SFBContext context)
         {
             Repository = new OptionMenuRepository(context);
         }
@@ -28,7 +28,7 @@ namespace SFB.CMS.Backend.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerErrorResult(ex);
+                return InternalServerError(ex);
             }
         }
     }

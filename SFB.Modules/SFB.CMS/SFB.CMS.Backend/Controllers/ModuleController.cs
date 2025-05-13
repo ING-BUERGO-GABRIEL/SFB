@@ -6,9 +6,9 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.CMS.Backend.Controllers
 {
     [Route("api/CMS/[controller]/[action]")]
-    public class ModuleController : BaseController<SGDContext, ModuleRepository>
+    public class ModuleController : BaseController<SFBContext, ModuleRepository>
     {
-        public ModuleController(SGDContext context)
+        public ModuleController(SFBContext context)
         {
             Repository = new ModuleRepository(context);
         }
@@ -26,7 +26,7 @@ namespace SFB.CMS.Backend.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerErrorResult(ex);
+                return InternalServerError(ex);
             }
         }
     }

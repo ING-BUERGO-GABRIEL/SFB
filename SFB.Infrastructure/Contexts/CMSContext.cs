@@ -3,7 +3,7 @@ using SFB.Infrastructure.Entities.CMS;
 
 namespace SFB.Infrastructure.Contexts
 {
-    public partial class SGDContext
+    public partial class SFBContext
     {
         public DbSet<EModule> CMSModules { get; set; }
         public DbSet<EOptionMenu> CMSOptionMenus { get; set; }

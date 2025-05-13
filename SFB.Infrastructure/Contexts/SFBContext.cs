@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SFB.Infrastructure.Contexts
 {
-    public partial class SGDContext : DbContext
+    public partial class SFBContext : DbContext
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public SGDContext(DbContextOptions<SGDContext> options, IHttpContextAccessor httpContextAccessor)
+        public SFBContext(DbContextOptions<SFBContext> options, IHttpContextAccessor httpContextAccessor)
             : base(options)
         {
             _httpContextAccessor = httpContextAccessor;

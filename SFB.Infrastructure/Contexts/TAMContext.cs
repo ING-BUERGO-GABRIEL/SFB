@@ -3,7 +3,7 @@ using SFB.Infrastructure.Entities.TAM;
 
 namespace SFB.Infrastructure.Contexts
 {
-    public partial class SGDContext
+    public partial class SFBContext
     {
         public DbSet<ETeacher> TAMTeacher { get; set; }
         public DbSet<EFormTeacher> TAMFormTeachers { get; set; }

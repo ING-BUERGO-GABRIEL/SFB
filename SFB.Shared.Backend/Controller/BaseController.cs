@@ -63,19 +63,25 @@ namespace SFB.Shared.Backend.Controller
             var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = $"No existen registros con cumplan con el criterio de búsqueda." };
             return StatusCode(StatusCodes.Status200OK, ApiResult);
         }
-        protected IActionResult ControlledExceptionResult(string message)
+        protected IActionResult ControlledException(string message)
         {
             var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = message };
             return StatusCode(StatusCodes.Status200OK, ApiResult);
         }
-        protected IActionResult ControlledExceptionResult(ControllerException ex)
+        protected IActionResult ControlledException(ControllerException ex)
         {
             var ApiResult = new ApiResult<dynamic> { IsSuccess = ex.Status, Data = ex.ErrorData, Message = ex.Message };
             return StatusCode(ex.CodeStatus, ApiResult);
         }
-        protected IActionResult InternalServerErrorResult(Exception ex)
+        protected IActionResult InternalServerError(Exception ex)
         {
             var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = $"Internal server error: {ex.Message} - {ex.InnerException?.Message}" };
+            return StatusCode(StatusCodes.Status500InternalServerError, ApiResult);
+        }
+
+        protected IActionResult InternalServerError(string message)
+        {
+            var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = message };
             return StatusCode(StatusCodes.Status500InternalServerError, ApiResult);
         }
     }

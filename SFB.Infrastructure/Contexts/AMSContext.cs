@@ -3,7 +3,7 @@ using SFB.Infrastructure.Entities.AMS;
 
 namespace SFB.Infrastructure.Contexts
 {
-    public partial class SGDContext
+    public partial class SFBContext
     {
         public DbSet<EUser> AMSUsers { get; set; }
         public DbSet<EUserGroup> AMSUserGroup { get; set; }

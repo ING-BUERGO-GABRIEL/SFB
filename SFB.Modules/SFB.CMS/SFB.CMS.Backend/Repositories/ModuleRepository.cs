@@ -7,9 +7,9 @@ using SFB.Shared.Backend.Repositories;
 
 namespace SFB.CMS.Backend.Repositories
 {
-    public class ModuleRepository : BaseRepository<SGDContext>
+    public class ModuleRepository : BaseRepository<SFBContext>
     {
-        public ModuleRepository(SGDContext context)
+        public ModuleRepository(SFBContext context)
         : base(context)
         {
         }

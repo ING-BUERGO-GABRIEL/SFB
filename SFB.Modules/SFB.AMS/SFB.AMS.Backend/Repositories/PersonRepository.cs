@@ -6,7 +6,7 @@ using SFB.Shared.Backend.Repositories;
 
 namespace SFB.AMS.Backend.Repositories
 {
-    public class PersonRepository(SGDContext context) : BaseRepository<SGDContext>(context)
+    public class PersonRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
         internal async Task<List<EPerson>> GetPersons()
         {

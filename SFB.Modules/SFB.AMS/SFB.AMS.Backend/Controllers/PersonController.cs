@@ -9,7 +9,7 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
-    public class PersonController(SGDContext context) : BaseController<SGDContext, PersonRepository>(context)
+    public class PersonController(SFBContext context) : BaseController<SFBContext, PersonRepository>(context)
     {
         [HttpGet]
         public async Task<IActionResult> GetPersons()
@@ -22,7 +22,7 @@ namespace SFB.AMS.Backend.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerErrorResult(ex);
+                return InternalServerError(ex);
             }
         }
     }

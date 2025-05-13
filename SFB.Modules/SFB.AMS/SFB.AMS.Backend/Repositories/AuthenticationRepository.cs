@@ -13,10 +13,10 @@ using System.Text;
 
 namespace SFB.AMS.Backend.Repositories
 {
-    public class AuthenticationRepository : BaseRepository<SGDContext>
+    public class AuthenticationRepository : BaseRepository<SFBContext>
     {
         private readonly IConfiguration _configuration;
-        public AuthenticationRepository(SGDContext context, IConfiguration configuration)
+        public AuthenticationRepository(SFBContext context, IConfiguration configuration)
         : base(context)
         {
             _configuration = configuration;

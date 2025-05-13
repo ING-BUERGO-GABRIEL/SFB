@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Server  + Web Dev",
+    "Projects": [
+      {
+        "Path": "SFB.Server\\SFB.Server.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "SFB.Vue\\SFB.Vue.esproj",
+        "Action": "Start",
+        "DebugTarget": "localhost (Chrome)"
+      }
+    ]
+  }
+]

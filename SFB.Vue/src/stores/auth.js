@@ -15,9 +15,9 @@ export const useAuthStore = defineStore({
   actions: {
     async login(user, password) {
       const login = { User: user, Password: password }
-      const user = await apiClient.post(`${baseController}/Login`, login)
-      this.user = user
-      localStorage.setItem('user', JSON.stringify(user))
+      const userData  = await apiClient.post(`${baseController}/Login`, login)
+      this.user = userData 
+      localStorage.setItem('user', JSON.stringify(userData))
       router.push(this.returnUrl || '/dashboard')
     },
     logout() {

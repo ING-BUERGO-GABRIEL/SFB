@@ -6,9 +6,9 @@ using SFB.Shared.Backend.Repositories;
 
 namespace SFB.CMS.Backend.Repositories
 {
-    public class OptionMenuRepository : BaseRepository<SGDContext>
+    public class OptionMenuRepository : BaseRepository<SFBContext>
     {
-        public OptionMenuRepository(SGDContext context)
+        public OptionMenuRepository(SFBContext context)
         : base(context)
         {
         }
