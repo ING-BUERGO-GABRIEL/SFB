@@ -7,8 +7,8 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
 
 //Configure
-ProgramHelper.ConfigureDBContext<SFBContext>(builder);
-ProgramHelper.ConfigureAddCors(builder);
+ProgramHelper.ConfigureDBContext<SFBContext>(builder, "SFB");
+ProgramHelper.ConfigureAddCors(builder, "AllowAll");
 ProgramHelper.ConfigureJsonSerialize(builder);
 ProgramHelper.ConfigureJwtAuthenticate(builder);
 

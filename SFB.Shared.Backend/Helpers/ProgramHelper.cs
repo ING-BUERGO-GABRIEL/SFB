@@ -48,9 +48,9 @@ namespace SFB.Shared.Backend.Helpers
             });
         }
 
-        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder) where TContext : DbContext
+        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder,string nameConfig) where TContext : DbContext
         {
-            var SGD = builder.Configuration.GetSection("ConnectionString:SFB").Get<DBConfiguration>();
+            var SGD = builder.Configuration.GetSection($"ConnectionString:{nameConfig}").Get<DBConfiguration>();
             builder.Services.AddDbContext<TContext>(options =>
             {
                 UseConfiguredProviderName(options, SGD);
@@ -72,11 +72,11 @@ namespace SFB.Shared.Backend.Helpers
             }
         }
 
-        public static void ConfigureAddCors(WebApplicationBuilder builder)
+        public static void ConfigureAddCors(WebApplicationBuilder builder,string name)
         {
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", policy =>
+                options.AddPolicy(name, policy =>
                 {
                     policy
                       //.WithOrigins("http://localhost:5173")

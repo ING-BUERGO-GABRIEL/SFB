@@ -9,8 +9,8 @@ const api = axios.create({
 
 api.interceptors.request.use(config => {
   const { user } = useAuthStore();
-  if (user?.token) {
-    config.headers.Authorization = `Bearer ${user.token}`;
+  if (user?.MinToken) {
+    config.headers.Authorization = `Bearer ${user.MinToken}`;
   }
   return config;
 });
