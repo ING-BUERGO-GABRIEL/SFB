@@ -75,7 +75,7 @@ const emailRules = ref([
     const trimmedEmail = v.trim()
     return !/\s/.test(trimmedEmail) || 'E-mail must not contain spaces'
   },
-  (v) => /.+@.+\..+/.test(v.trim()) || 'E-mail must be valid'
+  //(v) => /.+@.+\..+/.test(v.trim()) || 'E-mail must be valid'
 ])
 
 function validate(values, { setErrors }) {

@@ -1,32 +1,16 @@
 using SFB.Infrastructure.Contexts;
-using SFB.Infrastructure.Helper;
-using SFB.Infrastructure.Models;
 using SFB.Server.Shared;
 using SFB.Shared.Backend.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
 
-var SFB = builder.Configuration.GetSection("ConnectionString:SFB").Get<DBConfiguration>();
-builder.Services.AddDbContext<SFBContext>(options =>
-{
-    EFProvidersHelper.UseConfiguredProviderName(options, SFB);
-});
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy
-        //.WithOrigins("http://localhost:5173")
-          .AllowAnyOrigin()    // acepta cualquier dominio
-          .AllowAnyMethod()    // GET, POST, PUT, DELETE, OPTIONS…
-          .AllowAnyHeader();   // Content-Type, Authorization…n
-    });
-});
+ProgramHelper.ConfigureDBContext<SFBContext>(builder);
+ProgramHelper.ConfigureAddCors(builder);
+ProgramHelper.ConfigureJsonSerialize(builder);
+ProgramHelper.ConfigureJwtAuthenticate(builder);
 
 builder.Services.AddEndpointsApiExplorer();
-
 var modules = CustomModules.GetBackendModules();
 ModuleLoader.LoadBackendModules(modules, builder.Services);
 
@@ -34,6 +18,8 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
+    app.UseSwagger();
+    app.UseSwaggerUI();
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }

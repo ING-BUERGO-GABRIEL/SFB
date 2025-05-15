@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SFB.Shared.Backend.Helpers
 {
@@ -21,6 +16,11 @@ namespace SFB.Shared.Backend.Helpers
         public ControllerException(string? message) : base(message)
         {
 
+        }
+
+        public ControllerException(int statusCodes, string? message) : base(message)
+        {
+            CodeStatus = statusCodes;
         }
     }
 }

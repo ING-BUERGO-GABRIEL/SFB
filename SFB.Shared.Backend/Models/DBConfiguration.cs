@@ -1,6 +1,6 @@
-﻿using SFB.Infrastructure.Helper;
+﻿using SFB.Shared.Backend.Enums;
 
-namespace SFB.Infrastructure.Models
+namespace SFB.Shared.Backend.Models
 {
     public class DBConfiguration
     {

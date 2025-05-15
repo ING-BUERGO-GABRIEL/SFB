@@ -2,7 +2,7 @@
 export const hostTool = {
   getUrlBase() {
     return import.meta.env.MODE === 'production'
-      ? `${window.location.origin}/api`
+      ? `${window.location.origin}/`
       : import.meta.env.VITE_API_URL
   }
 }

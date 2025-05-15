@@ -26,7 +26,7 @@ namespace SFB.Infrastructure.Contexts
             base.OnModelCreating(modelBuilder);
             AMSModelCreating(modelBuilder);
             CMSModelCreating(modelBuilder);
-            TAMModelCreating(modelBuilder);
+            //TAMModelCreating(modelBuilder);
         }
     }
 }

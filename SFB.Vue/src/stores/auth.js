@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { router } from '@/router'
-//import { fetchWrapper } from '@/utils/helpers/fetch-wrapper'
 import { apiClient } from '@/utils/apiClient'
-//import { hostTool } from '@/utils/hostTool'
 
-const baseController = `/AMS/Authentication`
+const baseController = `api/AMS/Authentication/`
+const getRoute = method => {
+  return `${baseController}${method}`;
+}
 
 export const useAuthStore = defineStore({
   id: 'auth',
@@ -14,9 +15,9 @@ export const useAuthStore = defineStore({
   }),
   actions: {
     async login(user, password) {
-      const login = { User: user, Password: password }
-      const userData  = await apiClient.post(`${baseController}/Login`, login)
-      this.user = userData 
+      const route = getRoute('Login');
+      const userData = await apiClient.post(route, { User: user, Password: password })
+      this.user = userData
       localStorage.setItem('user', JSON.stringify(userData))
       router.push(this.returnUrl || '/dashboard')
     },

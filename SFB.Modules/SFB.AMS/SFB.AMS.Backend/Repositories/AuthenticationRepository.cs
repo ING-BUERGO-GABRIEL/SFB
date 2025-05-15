@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using SFB.AMS.Shared.Models;
@@ -27,7 +28,7 @@ namespace SFB.AMS.Backend.Repositories
             EUser? user = await Context.AMSUsers.Include(u=> u.Person).FirstOrDefaultAsync(x => x.NameUser == login.User && x.Password == login.Password);
 
             if (user == null)
-                throw new ControllerException("Usuario o contraseña Incorrecto");
+                throw new ControllerException(StatusCodes.Status401Unauthorized, "Usuario o contraseña Incorrecto");
 
             return GenerateToken(user);
         }

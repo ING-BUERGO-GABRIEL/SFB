@@ -1,5 +1,5 @@
 ﻿
-namespace SFB.Infrastructure.Helper
+namespace SFB.Shared.Backend.Enums
 {
     public enum NameProvider
     {

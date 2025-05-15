@@ -1,4 +1,4 @@
-﻿using SFB.Infrastructure.Entities.TAM;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,11 +28,6 @@ namespace SFB.Infrastructure.Entities.AMS
         [MaxLength(200)]
         public string Address { get; set; }
 
-        [NotMapped]
-        public virtual ICollection<ETeacherTask>? TeacherTasksAssigned { get; set; }
-
-        [NotMapped]
-        public virtual ICollection<ETeacherTask>? TeacherTasksReturned { get; set; }
 
         [NotMapped]
         public virtual ICollection<EUser> Users { get; set; } = new List<EUser>();

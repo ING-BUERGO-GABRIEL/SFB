@@ -22,7 +22,7 @@ api.interceptors.response.use(
     if ([401, 403].includes(status)) {
       useAuthStore().logout();
     }
-    return Promise.reject(err.response?.data?.message || err.message);
+    return Promise.reject(err.response?.data?.Message || err.message);
   }
 );
 
