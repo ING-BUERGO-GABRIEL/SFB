@@ -4,13 +4,15 @@ using SFB.Shared.Backend.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddEndpointsApiExplorer();
 
+//Configure
 ProgramHelper.ConfigureDBContext<SFBContext>(builder);
 ProgramHelper.ConfigureAddCors(builder);
 ProgramHelper.ConfigureJsonSerialize(builder);
 ProgramHelper.ConfigureJwtAuthenticate(builder);
 
-builder.Services.AddEndpointsApiExplorer();
+//Load Modules
 var modules = CustomModules.GetBackendModules();
 ModuleLoader.LoadBackendModules(modules, builder.Services);
 
