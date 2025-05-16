@@ -58,8 +58,8 @@ import { Form } from 'vee-validate'
 const checkbox = ref(false)
 const valid = ref(false)
 const show1 = ref(false)
-const password = ref('admin123')
-const username = ref('info@codedthemes.com')
+const password = ref('1234')
+const username = ref('gabriel')
 
 // Password validation rules
 const passwordRules = ref([

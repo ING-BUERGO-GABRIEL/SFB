@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useCustomizerStore } from '../../../stores/customizer';
 // icons
-import { MenuFoldOutlined, SearchOutlined, GithubOutlined } from '@ant-design/icons-vue';
+import { MenuFoldOutlined, SearchOutlined } from '@ant-design/icons-vue';
 
 // dropdown imports
 import NotificationDD from './NotificationDD.vue';
@@ -77,7 +77,7 @@ const customizer = useCustomizerStore();
     <!-- ---------------------------------------------- -->
     <!-- Github -->
     <!-- ---------------------------------------------- -->
-    <v-btn
+    <!-- <v-btn
       icon
       class="text-secondary hidden-sm-and-down d-flex"
       color="darkText"
@@ -87,7 +87,7 @@ const customizer = useCustomizerStore();
       target="_blank"
     >
       <GithubOutlined :style="{ fontSize: '16px' }" />
-    </v-btn>
+    </v-btn> -->
 
     <!-- ---------------------------------------------- -->
     <!-- Notification -->
@@ -104,7 +104,7 @@ const customizer = useCustomizerStore();
             <v-avatar class="mr-sm-2 mr-0 py-2">
               <img src="@/assets/images/users/avatar-1.png" alt="Julia" />
             </v-avatar>
-            <h6 class="text-subtitle-1 mb-0 d-sm-block d-none">JWT User</h6>
+            <h6 class="text-subtitle-1 mb-0 d-sm-block d-none">User</h6>
           </div>
         </v-btn>
       </template>
