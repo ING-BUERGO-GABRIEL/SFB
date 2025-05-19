@@ -48,12 +48,12 @@ namespace SFB.Shared.Backend.Helpers
             });
         }
 
-        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder,string nameConfig) where TContext : DbContext
+        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder,string nameConexion) where TContext : DbContext
         {
-            var SGD = builder.Configuration.GetSection($"ConnectionString:{nameConfig}").Get<DBConfiguration>();
+            var configDB = builder.Configuration.GetSection($"ConnectionString:{nameConexion}").Get<DBConfiguration>();
             builder.Services.AddDbContext<TContext>(options =>
             {
-                UseConfiguredProviderName(options, SGD);
+                UseConfiguredProviderName(options, configDB);
             });
         }
 
