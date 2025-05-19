@@ -6,16 +6,6 @@ export default {
   redirect: '/main',
   component: () => import('@/layouts/dashboard/DashboardLayout.vue'),
   children: [
-    //{
-    //  name: 'LandingPage',
-    //  path: '/',
-    //  component: () => import('@/views/dashboard/DefaultDashboard.vue')
-    //},
-    {
-      name: 'Dashboard',
-      path: '/dashboard',
-      component: () => import('@/views/dashboard/DefaultDashboard.vue')
-    },
     {
       name: 'Typography',
       path: '/typography',

@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainRoutes from './MainRoutes'
 import PublicRoutes from './PublicRoutes'
+import TemplateRoutes from './TemplateRoutes'
+import CmsRoutes from './CmsRoutes'
+import IawRoutes from './IawRoutes'
 import { useAuthStore } from '@/stores/auth'
 import { useUIStore } from '@/stores/ui'
 
@@ -11,12 +13,14 @@ const router = createRouter({
             path: '/:pathMatch(.*)*',
             component: () => import('@/views/pages/maintenance/error/Error404Page.vue')
         },
-        MainRoutes,
         PublicRoutes,
+        TemplateRoutes,
+        CmsRoutes,
+        IawRoutes
     ]
 })
 
-// Middleware de autenticación
+// Middleware de autenticaciï¿½n
 router.beforeEach((to, from, next) => {
     const publicPages = ['/']
     const auth = useAuthStore()

@@ -11,23 +11,8 @@ import {
   CrownOutlined
 } from '@ant-design/icons-vue';
 
-export interface menu {
-  header?: string;
-  title?: string;
-  icon?: object;
-  to?: string;
-  divider?: boolean;
-  chip?: string;
-  chipColor?: string;
-  chipVariant?: string;
-  chipIcon?: string;
-  children?: menu[];
-  disabled?: boolean;
-  type?: string;
-  subCaption?: string;
-}
-
-const sidebarItem: menu[] = [
+// Definición sin tipos TypeScript
+const sidebarItem = [
   { header: 'Navigation' },
   {
     title: 'Dashboard',

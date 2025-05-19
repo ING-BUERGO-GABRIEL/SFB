@@ -88,8 +88,4 @@ function validate(values, { setErrors }) {
   })
 }
 
-function onUsernameInput(val) {
-  username.value = val.trim();  // o cualquier otra lógica
-}
-
 </script>

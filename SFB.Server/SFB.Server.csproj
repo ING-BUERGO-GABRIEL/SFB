@@ -5,8 +5,8 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-	<Target Name="BuildVue" BeforeTargets="Publish">
-	<!--<Target Name="BuildVue" BeforeTargets="Build">-->
+	<!--<Target Name="BuildVue" BeforeTargets="Publish">-->
+	<Target Name="BuildVue" BeforeTargets="Build">
 		<Message Importance="high" Text="🏗️ Compilando frontend Vue..." />
 		<Exec WorkingDirectory="..\SFB.vue" Command="npm install" />
 		<Exec WorkingDirectory="..\SFB.vue" Command="npm run build" ContinueOnError="false" />
