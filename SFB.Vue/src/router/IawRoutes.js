@@ -9,7 +9,7 @@ export default {
     {
       name: 'Products',
       path: '/iaw/products',
-      component: () => import('@/views/modules/iaw/products/Products.vue')
+      component: () => import('@/views/modules/iaw/products/ProductsList.vue')
     }
 
   ]

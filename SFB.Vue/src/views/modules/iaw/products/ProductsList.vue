@@ -10,7 +10,7 @@
   </v-row>
 </template>
 <script setup>
-import Header from './components/Header.vue';
+import Header from './components/HeaderBar.vue';
 import DataTable from './components/DataTable.vue';
 import AnalyticsReport from './components/AnalyticsReport.vue';
 </script>
