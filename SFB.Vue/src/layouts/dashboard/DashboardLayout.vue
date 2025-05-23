@@ -1,10 +1,3 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router';
-import LoaderWrapper from './LoaderWrapper.vue';
-import VerticalSidebarVue from './vertical-sidebar/VerticalSidebar.vue';
-import VerticalHeaderVue from './vertical-header/VerticalHeader.vue';
-import FooterPanel from './footer/FooterPanel.vue';
-</script>
 
 <template>
   <v-locale-provider>
@@ -13,8 +6,8 @@ import FooterPanel from './footer/FooterPanel.vue';
       <VerticalHeaderVue />
 
       <v-main class="page-wrapper">
-        <v-container fluid>
-          <div>
+        <v-container fluid class="content-wrapper">
+          <div >
             <!-- Loader start -->
             <LoaderWrapper />
             <!-- Loader end -->
@@ -30,3 +23,18 @@ import FooterPanel from './footer/FooterPanel.vue';
     </v-app>
   </v-locale-provider>
 </template>
+
+<script setup lang="ts">
+import { RouterView } from 'vue-router';
+import LoaderWrapper from './LoaderWrapper.vue';
+import VerticalSidebarVue from './vertical-sidebar/VerticalSidebar.vue';
+import VerticalHeaderVue from './vertical-header/VerticalHeader.vue';
+import FooterPanel from './footer/FooterPanel.vue';
+</script>
+<style>
+.content-wrapper {
+  position: relative;
+  /* opcional: si quieres que ocupe toda la altura restante
+     podrías darle height: calc(100vh - alturaDelNavYHeader) */
+}
+</style>
