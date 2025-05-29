@@ -1,5 +1,6 @@
 <template>
     <HeaderBar />
+    <v-btn color="primary" >Crear Producto</v-btn>
     <v-row class="mb-0">
       <v-col cols="12" md="8">
         <DataTable />
@@ -8,14 +9,23 @@
         <AnalyticsReport />
       </v-col>
     </v-row>
+<DialogBody v-model="showModal" @click="closeModal">
+  <h3>Holasasas</h3>
+</DialogBody>
 </template>
 
 <script setup>
-//import { ref } from 'vue'
+import { ref } from 'vue'
+import DialogBody from '@/components/shared/DialogBody.vue'
 import HeaderBar from './components/HeaderBar.vue'
 import DataTable from './components/DataTable.vue'
 import AnalyticsReport from './components/AnalyticsReport.vue'
 
+const showModal = ref(false)
+
+function closeModal() {
+  showModal.value = true;
+}
 
 </script>
 
