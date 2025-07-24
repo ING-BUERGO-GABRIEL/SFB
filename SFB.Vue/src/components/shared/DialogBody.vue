@@ -1,5 +1,5 @@
 <template>
-  <div v-if="modelValue" class="full-cover" @click="closeModal">
+  <div v-if="modelValue" class="full-cover" @click="close">
     <div class="modal-card" @click.stop>
       <slot />
     </div>
@@ -7,13 +7,17 @@
 </template>
 
 <script setup>
-const { modelValue } = defineProps({
-  modelValue: Boolean
+import { ref, watch } from 'vue'
+const props = defineProps({
+   modelValue: { type: Boolean, default: false },
 })
 const emit = defineEmits(['update:modelValue'])
+const isOpen = ref(props.modelValue)
+watch(() => props.modelValue, v => (isOpen.value = v))
+watch(isOpen, v => emit('update:modelValue', v))
 
-function closeModal() {
-  emit('update:modelValue', false)
+function close() {
+    isOpen.value = false
 }
 </script>
 

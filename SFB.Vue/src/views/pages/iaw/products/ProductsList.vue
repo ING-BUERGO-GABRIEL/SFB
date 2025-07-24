@@ -1,6 +1,6 @@
 <template>
     <HeaderBar />
-    <v-btn color="primary" >Crear Producto</v-btn>
+    <v-btn color="primary" @click="closeModal">Crear Producto2</v-btn>
     <v-row class="mb-0">
       <v-col cols="12" md="8">
         <DataTable />
@@ -9,7 +9,7 @@
         <AnalyticsReport />
       </v-col>
     </v-row>
-<DialogBody v-model="showModal" @click="closeModal">
+<DialogBody v-model="showModal" >
   <h3>Holasasas</h3>
 </DialogBody>
 </template>
