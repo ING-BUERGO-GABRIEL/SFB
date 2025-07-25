@@ -9,14 +9,14 @@
         <AnalyticsReport />
       </v-col>
     </v-row>
-<DialogBody v-model="showModal" >
-  <h3>Holasasas</h3>
-</DialogBody>
+<dialog-body v-model="showModal" >
+  <h3>Holasdsdas</h3>
+</dialog-body>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import DialogBody from '@/components/shared/DialogBody.vue'
+//import DialogBody from '@/components/shared/DialogBody.vue'
 import HeaderBar from './components/HeaderBar.vue'
 import DataTable from './components/DataTable.vue'
 import AnalyticsReport from './components/AnalyticsReport.vue'
