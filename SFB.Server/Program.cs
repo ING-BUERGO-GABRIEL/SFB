@@ -18,10 +18,14 @@ ModuleLoader.LoadBackendModules(modules, builder.Services);
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
+
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+else
+{
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
@@ -33,5 +37,5 @@ app.UseRouting();
 app.UseCors("AllowAll");
 app.UseAuthorization();
 app.MapControllers();
-app.MapFallbackToFile("index.html"); 
+app.MapFallbackToFile("index.html");
 app.Run();
