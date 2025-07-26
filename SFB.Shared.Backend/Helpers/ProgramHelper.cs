@@ -48,31 +48,19 @@ namespace SFB.Shared.Backend.Helpers
             });
         }
 
-        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder,string nameConexion) where TContext : DbContext
+        public static void ConfigureDBContext<TContext>(WebApplicationBuilder builder, string nameConexion) where TContext : DbContext
         {
-            var configDB = builder.Configuration.GetSection($"ConnectionString:{nameConexion}").Get<DBConfiguration>();
+            var configSection = builder.Configuration.GetSection($"ConnectionString:{nameConexion}");
+            var configDB = new DBConfiguration(configSection);
             builder.Services.AddDbContext<TContext>(options =>
             {
-                UseConfiguredProviderName(options, configDB);
+                DBConfiguration.UseConfiguredProviderName(options, configDB);
             });
         }
 
-        public static void UseConfiguredProviderName(DbContextOptionsBuilder options, DBConfiguration conexion)
-        {
-            switch (conexion.NameProvider)
-            {
-                case NameProvider.MYSQL:
-                    var serverVersion = new MySqlServerVersion(conexion.Version);
-                    options.UseMySql(conexion.GetConnectionString(), serverVersion, mySqlOptions =>
-                    {
-                        mySqlOptions.SchemaBehavior(MySqlSchemaBehavior.Ignore);
-                    });
-                    break;
 
-            }
-        }
 
-        public static void ConfigureAddCors(WebApplicationBuilder builder,string name)
+        public static void ConfigureAddCors(WebApplicationBuilder builder, string name)
         {
             builder.Services.AddCors(options =>
             {

@@ -1,7 +1,14 @@
 <template>
-<dialog-body v-model="showModal" >
-  <h3>Holasdsdas</h3>
-</dialog-body>
+  <dialog-body v-model="showModal" title="Producto">
+    <v-row class="mb-0">
+      <v-col cols="12" md="8">
+        <h3>Hola</h3>
+      </v-col>
+      <v-col cols="12" md="4">
+        <h3>Hola</h3>
+      </v-col>
+    </v-row>
+  </dialog-body>
 </template>
 
 <script setup>
@@ -27,5 +34,3 @@ defineExpose({
   delete: remove
 })
 </script>
-
-
