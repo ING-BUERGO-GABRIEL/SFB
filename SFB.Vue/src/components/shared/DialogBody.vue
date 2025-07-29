@@ -1,6 +1,6 @@
 <template>
   <div v-if="modelValue" class="full-cover" >
-    <v-card class="modal-card d-flex flex-column">
+    <v-card variant="outlined" elevation="0" class="modal-card d-flex flex-column bg-surface">
       <!-- Header -->
       <v-card-title class="d-flex align-center bg-containerBg">
         <span>{{ props.title }}</span>
