@@ -4,7 +4,7 @@
       <v-card elevation="0">
         <v-card variant="outlined">
           <v-card-text>
-            <div class="d-flex align-items-center justify-space-between">
+            <div class="d-flex align-center">
               <slot />
             </div>
           </v-card-text>

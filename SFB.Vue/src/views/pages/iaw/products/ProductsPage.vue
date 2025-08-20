@@ -1,6 +1,5 @@
 <template>
-  <HeaderBar />
-  <v-btn color="primary" @click="closeModal">Crear Producto2</v-btn>
+  <HeaderBar @crear-producto="closeModal"/>
   <v-row class="mb-0">
     <v-col cols="12" md="8">
       <DataTable />

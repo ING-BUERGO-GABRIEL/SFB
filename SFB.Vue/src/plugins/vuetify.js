@@ -69,7 +69,11 @@ export default createVuetify({
       rounded: 'md'
     },
     VTextField: {
-      rounded: 'lg'
+      variant: 'outlined',
+      color: 'primary',
+      hideDetails: 'auto',
+      rounded: 'lg',
+      class: 'mt-2',
     },
     VTooltip: {
       location: 'top'
