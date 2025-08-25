@@ -1,5 +1,5 @@
 <template>
-  <dialog-body v-model="showModal" title="Producto">
+  <dialog-body v-model="showModal" :title="titleDlg">
     <v-row class="mb-0" justify="center">
       <v-col cols="12" md="6">
         <parent-card :showHeader="true" title="Datos de Producto">
@@ -7,20 +7,20 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo</v-label>
-                <v-text-field v-model="firstname" :rules="firstRules" required placeholder="Codigo"/>
+                <v-text-field disabled v-model="product.NroProduct" required placeholder="Codigo" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Nombre</v-label>
-                <v-text-field v-model="lastname" :rules="lastRules" required placeholder="Nombre"/>
+                <v-text-field v-model="product.Name" required placeholder="Nombre" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="lastname" :rules="lastRules" required
-                  placeholder="Codigo de Barras"/>
+                <v-text-field v-model="product.SerialNumber" :rules="lastRules" required
+                  placeholder="Codigo de Barras" />
               </div>
             </v-col>
 
@@ -28,20 +28,20 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Precio</v-label>
-                <v-text-field v-model="price" type="number" step="0.01" min="0" required
-                  placeholder="Ej: 15.50"/>
+                <v-text-field v-model="product.Price" type="number" step="0.01" min="0" required
+                  placeholder="Ej: 15.50" />
               </div>
             </v-col>
             <!-- Checkboxes Positivo / Negativo -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-checkbox v-model="isPositive" label="Habilitado para Copras" color="primary"
+                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Copras" color="primary"
                   class="mt-2"></v-checkbox>
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-checkbox v-model="isPositive" label="Habilitado para Ventas" color="primary"
+                <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary"
                   class="mt-2"></v-checkbox>
               </div>
             </v-col>
@@ -59,22 +59,62 @@
 import { ref } from 'vue'
 
 const showModal = ref(false)
-function insert() {
-  // tu lógica de Insert
+const modeDlg = ref('')
+const titleDlg = ref('')
+const product = ref({})
+const prodResult = ref(null)
+
+let _resolve = null
+
+// function insert() {
+//   // tu lógica de Insert
+// }
+
+// function update() {
+//   // tu lógica de Update
+// }
+
+// function remove() {
+//   // tu lógica de Delete
+// }
+
+async function openForm(mode, item = null) {
+  modeDlg.value = mode
+
+  switch (mode) {
+    case "Insert":
+      titleDlg.value = "Nuevo Producto"
+      product.value = { NroProduct: 0 }
+      showModal.value = true
+      break;
+    case "Update":
+      titleDlg.value = "Editar Producto"
+      product.value = item
+      showModal.value = true
+      break;
+    case "Delete":
+
+      showModal.value = true
+      break;
+  }
+
+  return new Promise((resolve) => {
+    _resolve = resolve
+  })
 }
 
-function update() {
-  // tu lógica de Update
+function onAccept() {
+  _resolve({ ...product.value })
+  showModal.value = false
+  _resolve = null
 }
 
-function remove() {
-  // tu lógica de Delete
-}
+// const getProduct = async() =>{
+//  return {}
+// }
 
 // expongo los tres métodos al consumidor del componente
 defineExpose({
-  insert,
-  update,
-  delete: remove
+  openForm
 })
 </script>

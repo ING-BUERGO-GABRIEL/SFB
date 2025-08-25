@@ -1,5 +1,5 @@
 <template>
-  <HeaderBar @crear-producto="closeModal"/>
+  <HeaderBar @crear-producto="showModal"/>
   <v-row class="mb-0">
     <v-col cols="12" md="8">
       <DataTable />
@@ -8,7 +8,7 @@
       <AnalyticsReport />
     </v-col>
   </v-row>
-  <ProductForm v-model="showModal" />
+  <ProductForm ref="productForm"/>
 </template>
 
 <script setup>
@@ -18,10 +18,10 @@ import HeaderBar from './components/HeaderBar.vue'
 import DataTable from './components/DataTable.vue'
 import AnalyticsReport from './components/AnalyticsReport.vue'
 
-const showModal = ref(false)
+const productForm = ref(null)
 
-function closeModal() {
-  showModal.value = true;
+function showModal(mode) {
+   productForm.value.openForm(mode)
 }
 
 </script>

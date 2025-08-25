@@ -1,19 +1,20 @@
 <template>
-  <UiTitleCard title="Lista Productos" class-name="px-0 pb-0 rounded-md">
+  <title-card title="Lista Productos" class-name="px-0 pb-0 rounded-md">
     <v-table class="bordered-table" hover density="comfortable">
       <thead class="bg-containerBg">
         <tr>
-          <th class="text-left text-caption font-weight-bold text-uppercase">Tracking no.</th>
-          <th class="text-left text-caption font-weight-bold text-uppercase">Product name</th>
-          <th class="text-right text-caption font-weight-bold text-uppercase" style="min-width: 100px">Total order</th>
-          <th class="text-left text-caption font-weight-bold text-uppercase">Status</th>
-          <th class="text-right text-caption font-weight-bold text-uppercase">Total amount</th>
+          <th class="text-left text-caption font-weight-bold text-uppercase">Id Prod.</th>
+          <th class="text-left text-caption font-weight-bold text-uppercase">Nombre Pro.</th>
+          <th class="text-right text-caption font-weight-bold text-uppercase" style="min-width: 100px">Total Stock</th>
+          <th class="text-left text-caption font-weight-bold text-uppercase">Estado</th>
+          <th class="text-right text-caption font-weight-bold text-uppercase">Precio</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="item in projects" :key="item.name">
-          <td class="py-3">
-            <router-link to="/dashboard/default" class="text-secondary link-hover">{{ item.number }}</router-link>
+          <td class="py-3 text-secondary ">
+            {{ item.number }}
+            <!-- <router-link to="/dashboard/default" class="text-secondary link-hover">{{ item.number }}</router-link> -->
           </td>
           <td class="py-3">{{ item.name }}</td>
           <td class="py-3 text-right" style="min-width: 100px">{{ item.order }}</td>
@@ -35,12 +36,10 @@
         </tr>
       </tbody>
     </v-table>
-  </UiTitleCard>
+  </title-card>
 </template>
 <script setup lang="ts">
 import { shallowRef } from 'vue';
-
-import UiTitleCard from '@/components/shared/UiTitleCard.vue';
 
 const projects = shallowRef([
   {

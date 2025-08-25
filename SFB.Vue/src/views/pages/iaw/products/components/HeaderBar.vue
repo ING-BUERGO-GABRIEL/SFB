@@ -2,7 +2,7 @@
   <header-bar>
     <search-field v-model="filtro" style="max-width:300px; width:100%" />
     <v-spacer />
-    <v-btn color="primary" @click="$emit('crear-producto')">Crear Producto</v-btn>
+    <v-btn color="primary" @click="$emit('crear-producto','Insert')">Crear Producto</v-btn>
   </header-bar>
 </template>
 
