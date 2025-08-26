@@ -20,8 +20,9 @@ import AnalyticsReport from './components/AnalyticsReport.vue'
 
 const productForm = ref(null)
 
-function showModal(mode) {
-   productForm.value.openForm(mode)
+async function showModal(mode) {
+  var item = await productForm.value.openForm(mode)
+  console.log(item)
 }
 
 </script>

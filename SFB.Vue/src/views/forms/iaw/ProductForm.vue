@@ -1,5 +1,5 @@
 <template>
-  <dialog-body v-model="showModal" :title="titleDlg">
+  <dialog-body v-model="showModal" :title="titleDlg" @accept="onAccept" @cancel="onCancel">
     <v-row class="mb-0" justify="center">
       <v-col cols="12" md="6">
         <parent-card :showHeader="true" title="Datos de Producto">
@@ -62,7 +62,7 @@ const showModal = ref(false)
 const modeDlg = ref('')
 const titleDlg = ref('')
 const product = ref({})
-const prodResult = ref(null)
+//const prodResult = ref(null)
 
 let _resolve = null
 
@@ -105,13 +105,15 @@ async function openForm(mode, item = null) {
 
 function onAccept() {
   _resolve({ ...product.value })
-  showModal.value = false
   _resolve = null
+  showModal.value = false
 }
 
-// const getProduct = async() =>{
-//  return {}
-// }
+function onCancel() {       
+  _resolve(null)
+  _resolve = null
+  showModal.value = false
+}
 
 // expongo los tres métodos al consumidor del componente
 defineExpose({

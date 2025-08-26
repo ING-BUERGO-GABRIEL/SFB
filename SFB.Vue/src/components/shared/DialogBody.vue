@@ -1,11 +1,11 @@
 <template>
-  <div v-if="modelValue" class="full-cover" >
+  <div v-if="modelValue" class="full-cover">
     <v-card variant="outlined" elevation="0" class="modal-card d-flex flex-column bg-surface">
       <!-- Header -->
       <v-card-title class="d-flex align-center bg-containerBg">
         <span>{{ props.title }}</span>
         <v-spacer />
-        <v-avatar size="36" @click="close">
+        <v-avatar size="36" @click="onCancelClick">
           <component :is="CloseOutlined" :style="{ fontSize: '16px' }" />
         </v-avatar>
       </v-card-title>
@@ -15,9 +15,9 @@
       </v-card-text>
       <!-- footer -->
       <v-card-actions class="bg-containerBg">
-        <v-spacer/>
-         <v-btn color="primary"  variant="elevated">Aceptar</v-btn>
-          <v-btn color="lightprimary"  variant="elevated" @click="close">Cancelar</v-btn>
+        <v-spacer />
+        <v-btn color="primary" variant="elevated" @click="onAcceptClick">Aceptar</v-btn>
+        <v-btn color="lightprimary" variant="elevated" @click="onCancelClick">Cancelar</v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -29,8 +29,9 @@ import { CloseOutlined } from '@ant-design/icons-vue';
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
   title: { type: String, default: '' },
+  formValidate: { type: Boolean, default: false },
 })
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'accept','cancel'])
 const isOpen = ref(props.modelValue)
 watch(() => props.modelValue, v => (isOpen.value = v))
 watch(isOpen, v => emit('update:modelValue', v))
@@ -38,6 +39,21 @@ watch(isOpen, v => emit('update:modelValue', v))
 function close() {
   isOpen.value = false
 }
+
+function onAcceptClick() {
+
+  if(props.formValidate) {
+
+  }
+
+  emit('accept')
+}
+
+function onCancelClick() {
+  emit('cancel')
+  close()
+}
+
 </script>
 
 <style scoped>
