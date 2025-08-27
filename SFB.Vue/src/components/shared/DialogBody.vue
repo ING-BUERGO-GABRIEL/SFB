@@ -11,7 +11,9 @@
       </v-card-title>
       <!-- Body -->
       <v-card-text class="modal-body">
-        <slot></slot>
+        <v-form ref="formRef">
+          <slot></slot>
+        </v-form>
       </v-card-text>
       <!-- footer -->
       <v-card-actions class="bg-containerBg">
@@ -26,13 +28,18 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { CloseOutlined } from '@ant-design/icons-vue';
+
+const emit = defineEmits(['update:modelValue', 'accept', 'cancel'])
+
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
   title: { type: String, default: '' },
   formValidate: { type: Boolean, default: false },
 })
-const emit = defineEmits(['update:modelValue', 'accept','cancel'])
+
 const isOpen = ref(props.modelValue)
+const formRef = ref(null)
+
 watch(() => props.modelValue, v => (isOpen.value = v))
 watch(isOpen, v => emit('update:modelValue', v))
 
@@ -40,10 +47,15 @@ function close() {
   isOpen.value = false
 }
 
-function onAcceptClick() {
+async function onAcceptClick() {
 
-  if(props.formValidate) {
-
+  if (props.formValidate) {
+    const res = await formRef.value.validate()
+    const valid = typeof res === 'boolean' ? res : res?.valid
+    if (!valid) {
+      //emit('invalid', { source: 'rules' })
+      return
+    }
   }
 
   emit('accept')

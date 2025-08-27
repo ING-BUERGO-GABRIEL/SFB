@@ -1,5 +1,5 @@
 <template>
-  <dialog-body v-model="showModal" :title="titleDlg" @accept="onAccept" @cancel="onCancel">
+  <dialog-body v-model="showModal" :title="titleDlg" formValidate @accept="onAccept" @cancel="onCancel">
     <v-row class="mb-0" justify="center">
       <v-col cols="12" md="6">
         <parent-card :showHeader="true" title="Datos de Producto">
@@ -13,13 +13,13 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Nombre</v-label>
-                <v-text-field v-model="product.Name" required placeholder="Nombre" />
+                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="product.SerialNumber" :rules="lastRules" required
+                <v-text-field v-model="product.SerialNumber" :rules="[rRequired]" required
                   placeholder="Codigo de Barras" />
               </div>
             </v-col>
@@ -28,8 +28,8 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Precio</v-label>
-                <v-text-field v-model="product.Price" type="number" step="0.01" min="0" required
-                  placeholder="Ej: 15.50" />
+                <v-text-field v-model="product.Price" :rules="[rRequired, rNonNegative]" type="number" step="0.01"
+                  min="0" required placeholder="Ej: 15.50" />
               </div>
             </v-col>
             <!-- Checkboxes Positivo / Negativo -->
@@ -62,7 +62,9 @@ const showModal = ref(false)
 const modeDlg = ref('')
 const titleDlg = ref('')
 const product = ref({})
-//const prodResult = ref(null)
+
+const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
+const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser > 0'
 
 let _resolve = null
 
@@ -104,12 +106,22 @@ async function openForm(mode, item = null) {
 }
 
 function onAccept() {
+
+  switch (modeDlg.value) {
+    case "Insert":
+
+      break;
+    case "Update":
+
+      break;
+  }
+
   _resolve({ ...product.value })
   _resolve = null
   showModal.value = false
 }
 
-function onCancel() {       
+function onCancel() {
   _resolve(null)
   _resolve = null
   showModal.value = false
