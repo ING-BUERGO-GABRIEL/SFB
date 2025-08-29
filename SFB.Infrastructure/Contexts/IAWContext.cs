@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SFB.Infrastructure.Entities.IAM;
+using SFB.Infrastructure.Entities.IAW;
 
 namespace SFB.Infrastructure.Contexts
 {

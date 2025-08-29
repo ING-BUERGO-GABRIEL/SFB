@@ -10,13 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
-    public class AuthenticationController : BaseController<SFBContext, AuthenticationRepository>
+    public class AuthenticationController(IServiceProvider services) : BaseController<SFBContext, AuthenticationRepository>(services)
     {
-        public AuthenticationController(SFBContext context, IConfiguration configuration)
-        {
-            Repository = new AuthenticationRepository(context, configuration);
-        }
-
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] MLogin login)

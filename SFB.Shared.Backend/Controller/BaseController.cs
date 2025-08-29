@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Repositories;
 using SFB.Shared.Models;
@@ -15,14 +16,19 @@ namespace SFB.Shared.Backend.Controller
         where TRepository : BaseRepository<TContext>
     {
         protected TRepository Repository;
+        public BaseController()
+        {
+        }
         public BaseController(TContext context)
         {
             Repository = (TRepository)Activator.CreateInstance(typeof(TRepository), context);
         }
-        public BaseController()
-        {
 
+        public BaseController(IServiceProvider services)
+        {
+            Repository = ActivatorUtilities.CreateInstance<TRepository>(services);            
         }
+
         protected IActionResult OkResult(dynamic model)
         {
             var ApiResult = new ApiResult<dynamic> { IsSuccess = true, Data = model };

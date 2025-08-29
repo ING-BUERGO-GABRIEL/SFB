@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SFB.Infrastructure.Entities.IAM
+namespace SFB.Infrastructure.Entities.IAW
 {
     [Table("IAW_Product")]
     public class EProduct : Auditable

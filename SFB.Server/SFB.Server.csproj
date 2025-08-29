@@ -29,6 +29,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\SFB.Modules\SFB.AMS\SFB.AMS.Backend\SFB.AMS.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Modules\SFB.CMS\SFB.CMS.Backend\SFB.CMS.Backend.csproj" />
+	  <ProjectReference Include="..\SFB.Modules\SFB.IAW\SFB.IAW.Backend\SFB.IAW.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Shared.Backend\SFB.Shared.Backend.csproj" />
 	</ItemGroup>
 

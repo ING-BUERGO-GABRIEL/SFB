@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SFB.Shared.Backend.Repositories
 {
@@ -6,10 +7,13 @@ namespace SFB.Shared.Backend.Repositories
         where TContext : DbContext
     {
         protected readonly TContext Context ;
-        public BaseRepository(TContext repositoryContext)
+        public BaseRepository(TContext context)
         {
-            this.Context = repositoryContext;
-            //this.Contexts = new DbContext[] { repositoryContext };
+            this.Context = context;
         }
+        //public BaseRepository(IServiceProvider serviceProvider)
+        //{
+        //    this.Context = serviceProvider.GetRequiredService<TContext>();
+        //}
     }
 }

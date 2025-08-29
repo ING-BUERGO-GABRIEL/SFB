@@ -9,7 +9,7 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]
-    public class PersonController(SFBContext context) : BaseController<SFBContext, PersonRepository>(context)
+    public class PersonController(IServiceProvider services) : BaseController<SFBContext, PersonRepository>(services)
     {
         [HttpGet]
         public async Task<IActionResult> GetPersons()
