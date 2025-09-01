@@ -56,7 +56,8 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
+const { productServ } = inject('services')
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -86,7 +87,7 @@ async function openForm(mode, item = null) {
   switch (mode) {
     case "Insert":
       titleDlg.value = "Nuevo Producto"
-      product.value = { NroProduct: 0 }
+      product.value = { NroProduct: 0, IsPurchases: true, IsSales: true }
       showModal.value = true
       break;
     case "Update":
@@ -105,18 +106,23 @@ async function openForm(mode, item = null) {
   })
 }
 
-function onAccept() {
-
+async function onAccept() {
   switch (modeDlg.value) {
-    case "Insert":
+    case "Insert": {
+      const newProd = await productServ.createProduct(product.value)
+      if (newProd) {
+        product.value = newProd
+      } else {
+        return
+      }
+      break;
+    } case "Update":{
 
       break;
-    case "Update":
-
-      break;
+    }
   }
 
-  _resolve({ ...product.value })
+  _resolve(product.value)
   _resolve = null
   showModal.value = false
 }

@@ -4,6 +4,7 @@ import App from './App.vue'
 import { router } from './router'
 import vuetify from './plugins/vuetify'
 import { registerComponents } from './plugins/global-components'
+import { configServices } from './plugins/config-services'
 
 // Plugins
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
@@ -27,5 +28,6 @@ app.use(createPinia())
 app.use(VueTablerIcons)
 app.use(Antd)
 app.use(VueApexCharts)
+app.use(configServices)
 registerComponents(app)
 app.use(vuetify).mount('#app');

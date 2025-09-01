@@ -6,13 +6,8 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.CMS.Backend.Controllers
 {
     [Route("api/CMS/[controller]/[action]")]
-    public class ModuleController : BaseController<SFBContext, ModuleRepository>
+    public class ModuleController(IServiceProvider services) : BaseController<SFBContext, ModuleRepository>(services)
     {
-        public ModuleController(SFBContext context)
-        {
-            Repository = new ModuleRepository(context);
-        }
-
         [HttpGet]
         public async Task<IActionResult> GetHomeModules()
         {

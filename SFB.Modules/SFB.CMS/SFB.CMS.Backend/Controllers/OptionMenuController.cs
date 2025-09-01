@@ -6,12 +6,8 @@ using SFB.Shared.Backend.Controller;
 namespace SFB.CMS.Backend.Controllers
 {
     [Route("api/CMS/[controller]/[action]")]
-    public class OptionMenuController : BaseController<SFBContext, OptionMenuRepository>
+    public class OptionMenuController(IServiceProvider services) : BaseController<SFBContext, OptionMenuRepository>(services)
     {
-        public OptionMenuController(SFBContext context)
-        {
-            Repository = new OptionMenuRepository(context);
-        }
 
         [HttpGet]
         public async Task<IActionResult> GetOptionMenu()

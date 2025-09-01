@@ -11,9 +11,4 @@
     <ProjectReference Include="..\SFB.IAW.Shared\SFB.IAW.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

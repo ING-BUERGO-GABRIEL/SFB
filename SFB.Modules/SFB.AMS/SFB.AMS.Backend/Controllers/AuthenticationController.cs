@@ -4,7 +4,6 @@ using SFB.AMS.Shared.Models;
 using SFB.Infrastructure.Contexts;
 using SFB.AMS.Backend.Repositories;
 using SFB.Shared.Backend.Helpers;
-using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authorization;
 
 namespace SFB.AMS.Backend.Controllers

@@ -1,39 +1,21 @@
 import { defineStore } from 'pinia'
 import { apiClient } from '@/utils/apiClient'
-import * as AntIcons from '@ant-design/icons-vue';
 
-const DefaultIcon = AntIcons['QuestionOutlined'];
-const baseController = 'api/IAW/Product/';
-const getRoute = method => `${baseController}${method}`;
-
-const mapModulesToSidebar = modules => {
-  const result = [];
-
-  for (const mod of modules) {
-    result.push({ header: mod.Name }); // encabezado tipo 'Navigation', 'Authentication'
-
-    for (const opt of mod.OptionMenus) {
-      result.push({
-        title: opt.Name,
-        icon: AntIcons[opt.Icon] || DefaultIcon, // puedes mapear opt.Icon si gustas
-        to: opt.Route
-      });
-    }
-  }
-
-  return result;
-}
+const getRoute = method => `api/IAW/Product/${method}`;
 
 export const productService = defineStore('productService', {
   state: () => ({
     options: []
   }),
   actions: {
-    async getOptionsMenu() {
+    async createProduct(product) {
       try {
-        const route = getRoute('GetHomeModules');
-        const apiResult = await apiClient.get(route);
-        this.options = mapModulesToSidebar(apiResult.Data);
+        const route = getRoute('Create');
+
+        const apiResult = await apiClient.post(route,product);
+
+        console.log(apiResult)
+
         return this.options;
       } catch (error) {
         console.error('Error al obtener módulos:', error);
