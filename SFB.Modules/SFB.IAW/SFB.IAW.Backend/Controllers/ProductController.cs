@@ -31,5 +31,21 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetPage()
+        {
+            try
+            {
+                var result = await Repository.GetPage();
+
+                //var result = page.Adapt<List<MProduct>>();
+
+                return OkResult(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }

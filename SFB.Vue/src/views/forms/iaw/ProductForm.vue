@@ -19,7 +19,7 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="product.SerialNumber" :rules="[rRequired]" required
+                <v-text-field v-model="product.SerialNumber"
                   placeholder="Codigo de Barras" />
               </div>
             </v-col>
@@ -69,18 +69,6 @@ const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser 
 
 let _resolve = null
 
-// function insert() {
-//   // tu lógica de Insert
-// }
-
-// function update() {
-//   // tu lógica de Update
-// }
-
-// function remove() {
-//   // tu lógica de Delete
-// }
-
 async function openForm(mode, item = null) {
   modeDlg.value = mode
 
@@ -109,14 +97,11 @@ async function openForm(mode, item = null) {
 async function onAccept() {
   switch (modeDlg.value) {
     case "Insert": {
-      const newProd = await productServ.createProduct(product.value)
-      if (newProd) {
-        product.value = newProd
-      } else {
-        return
-      }
+      const newProd = await productServ.create(product.value)
+      if (!newProd) return;  
+      product.value = newProd;
       break;
-    } case "Update":{
+    } case "Update": {
 
       break;
     }

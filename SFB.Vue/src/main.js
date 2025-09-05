@@ -29,5 +29,5 @@ app.use(VueTablerIcons)
 app.use(Antd)
 app.use(VueApexCharts)
 app.use(configServices)
-registerComponents(app)
+app.use(registerComponents)
 app.use(vuetify).mount('#app');

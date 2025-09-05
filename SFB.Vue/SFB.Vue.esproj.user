@@ -3,11 +3,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>LaunchJsonDebugger</DebuggerFlavor>
     <LaunchJsonTarget>{
+  "name": "localhost (Edge)",
+  "type": "edge",
+  "request": "launch",
+  "url": "http://localhost:5173",
+  "userDataDir": false,
+  "webRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue"
+}</LaunchJsonTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebuggerFlavor>LaunchJsonDebugger</DebuggerFlavor>
+    <LaunchJsonTarget>{
   "name": "localhost (Chrome)",
   "type": "chrome",
   "request": "launch",
   "url": "http://localhost:5173",
-  "webRoot": "C:\\Users\\Gabriel-MSI\\source\\repos\\SFB\\SFB.Vue"
+  "webRoot": "C:\\Users\\ING-GABRIEL-BUERGO\\source\\repos\\SFB\\SFB.Vue"
 }</LaunchJsonTarget>
   </PropertyGroup>
 </Project>

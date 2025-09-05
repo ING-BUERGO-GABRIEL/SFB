@@ -1,6 +1,6 @@
-﻿using SFB.IAW.Shared.Models;
-using SFB.Infrastructure.Contexts;
+﻿using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
+using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
 
 namespace SFB.IAW.Backend.Repositories
@@ -15,6 +15,15 @@ namespace SFB.IAW.Backend.Repositories
             await Context.SaveChangesAsync();
 
             return product;
+        }
+
+        internal async Task<PagedListModel<EProduct>> GetPage()
+        {
+            var query = Context.IAWProducts.AsQueryable();
+
+            var result = await base.GetPage(query,"");
+
+            return result;
         }
     }
 }

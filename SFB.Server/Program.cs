@@ -18,21 +18,8 @@ ModuleLoader.LoadBackendModules(modules, builder.Services);
 
 var app = builder.Build();
 
-if (!app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-//else
-//{
-//    app.UseExceptionHandler("/Home/Error");
-//    app.UseHsts();
-//}
-
 app.UseHttpsRedirection();
-app.UseDefaultFiles();   // <<--- Esta l�nea es nueva: sirve el index.html autom�ticamente
+app.UseDefaultFiles();   
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("AllowAll");
