@@ -1,24 +1,34 @@
+<!-- PagTable.vue -->
 <template>
-  <v-data-table :header-props="{ class: 'bg-containerBg text-caption font-weight-bold text-uppercase' }"
-  :items="pageData?.Data">
-      <template v-slot:item.IsSales="{ value }">
-        <v-chip variant="text" size="small" class="px-0">
-          <v-avatar size="8" :color="value ?'success':'error'" variant="flat" class="mr-2"></v-avatar>
-          <p class="text-h6 mb-0">{{value ?'Habilitado':'Desabilitado'}}</p>
-        </v-chip>
-      </template>
-  </v-data-table>
+  <v-data-table-server :headers="props.headers" :items="props.service?.pageData?.Data ?? []" :loading="loading"
+    :header-props="{ class: 'bg-containerBg text-caption font-weight-bold text-uppercase' }" item-key="NroProduct"
+    :items-length="Math.max(1, props.service?.pageData?.TotalCount ?? 0)"
+    :items-per-page="props.service?.pageData?.PageSize ?? 10" :items-per-page-options="[5, 10, 25]"
+    items-per-page-text="Ítems por página:" page-text="{0}-{1} de {2}">
+    <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
+      <slot :name="name" v-bind="slotProps"></slot>
+    </template>
+    <template #no-data>
+      <div class="text-center pa-4 text-medium-emphasis">
+        Sin datos disponibles
+      </div>
+    </template>
+  </v-data-table-server>
 </template>
 
 <script setup>
-import { defineProps,onMounted, ref } from 'vue';
-const props = defineProps({ service: { type: Object, required: true } })
+import { defineProps, onMounted, ref } from 'vue'
 
-var pageData = ref({})
+const props = defineProps({
+  service: { type: Object, required: true },
+  headers: { type: Array, required: true }
+})
+
+const loading = ref(false)
 
 onMounted(async () => {
-  pageData.value = props.service.pageData
+  loading.value = true
   await props.service.loadPage()
-});
-
+  loading.value = false
+})
 </script>
