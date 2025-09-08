@@ -6,7 +6,6 @@ using SFB.IAW.Shared.Models;
 using Mapster;
 using SFB.Infrastructure.Entities.IAW;
 
-
 namespace SFB.IAW.Backend.Controllers
 {
     [Route("api/IAW/[controller]/[action]")]
