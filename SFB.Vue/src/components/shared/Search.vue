@@ -1,38 +1,39 @@
 <template>
   <v-text-field v-model="searchText" :placeholder="placeholder" persistent-placeholder color="primary"
-    variant="outlined" hide-details density="compact" clearable>
+    variant="outlined" hide-details density="compact" clearable @keyup.enter="onSearch" @click:prepend-inner="onSearch"
+    @click:clear="onClear">
     <template v-slot:prepend-inner>
-      <SearchOutlined :style="{ fontSize: '12px', color: 'rgb(var(--v-theme-lightText))' }" />
+      <SearchOutlined :style="{ fontSize: '16px', color: 'rgb(var(--v-theme-lightText))', cursor: 'pointer' }" />
     </template>
   </v-text-field>
 </template>
 
 <script setup>
-import { SearchOutlined } from '@ant-design/icons-vue';
-import { defineProps, defineEmits, watch, ref } from 'vue';
+import { SearchOutlined } from '@ant-design/icons-vue'
+import { defineProps, defineEmits, watch, ref } from 'vue'
 
-// Props: placeholder y modelValue
 const props = defineProps({
   modelValue: String,
-  placeholder: {
-    type: String,
-    default: 'Buscar...'
-  }
-});
+  placeholder: { type: String, default: 'Buscar...' }
+})
 
-// Emitir evento al escribir
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'search'])
 
-// Valor interno editable (v-model)
-const searchText = ref(props.modelValue);
+const searchText = ref(props.modelValue)
 
-// Sincroniza con padre
-watch(searchText, (val) => emit('update:modelValue', val));
-
-// Opcional: sincroniza desde fuera
+watch(searchText, (val) => emit('update:modelValue', val))
 watch(() => props.modelValue, (val) => {
-  if (val !== searchText.value) {
-    searchText.value = val;
-  }
-});
+  if (val !== searchText.value) searchText.value = val
+})
+
+function onSearch () {
+  emit('search', searchText.value)
+}
+
+function onClear () {
+  searchText.value = ''
+  emit('update:modelValue', '')
+  emit('search', '')
+}
 </script>
+

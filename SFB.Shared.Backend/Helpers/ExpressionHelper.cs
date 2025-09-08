@@ -10,7 +10,7 @@ namespace SFB.Shared.Backend.Helpers
 {
     public abstract class ExpressionHelper<T>
     {
-        public static IQueryable<T> GenerateSearchQuery(List<string> filterProps, IQueryable<T> query, string filter)
+        public static IQueryable<T> GenerateSearchQuery(List<string> filterProps, IQueryable<T> query, string? filter)
         {
             if (string.IsNullOrEmpty(filter) || filterProps.Count == 0)
                 return query;

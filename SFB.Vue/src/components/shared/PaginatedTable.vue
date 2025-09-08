@@ -3,9 +3,9 @@
   <v-data-table-server :headers="props.headers" :items="props.service?.pageData?.Data ?? []" :loading="loading"
     :header-props="{ class: 'bg-containerBg text-caption font-weight-bold text-uppercase' }" item-key="NroProduct"
     :items-length="Math.max(1, props.service?.pageData?.TotalCount ?? 0)"
-    :items-per-page="itemsPerPage" :items-per-page-options="[7, 15, 25]"
-    items-per-page-text="Ítems por página:" page-text="{0}-{1} de {2}"               
-    @update:items-per-page="onItemsPerPage" @update:page="onPage" >
+    :items-per-page="props.service?.pageData?.PageSize" :items-per-page-options="[7, 15, 25]"
+    items-per-page-text="Ítems por página:" page-text="{0}-{1} de {2}" @update:items-per-page="onItemsPerPage"
+    @update:page="onPage">
     <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
       <slot :name="name" v-bind="slotProps"></slot>
     </template>
@@ -26,40 +26,34 @@ const props = defineProps({
 })
 
 const loading = ref(false)
-
-const itemsPerPage = ref(7)
+const defaultParams = ref({
+    pageSize: 7,
+    pageNumber: 1,
+    filter: ''
+  })
 
 const onPage = async (newPage) => {
-  console.log(newPage)
-
-  // const direction = newPage > lastPage.value ? 'next' : (newPage < lastPage.value ? 'prev' : 'stay')
-  // lastPage.value = newPage
-
-  // page.value = newPage
-  // // 👉 aquí ya “capturaste” el evento:
-  // console.log('Cambio de página:', { page: newPage, direction })
-  // fetchPage()
+  loading.value = true
+  // eslint-disable-next-line vue/no-mutating-props
+  props.service.pageParams.pageNumber = newPage
+  await props.service.loadPage()
+  loading.value = false
 }
 
 const onItemsPerPage = async (newSize) => {
-
-  console.log(newSize)
-  itemsPerPage.value = newSize
-  // page.value = 1 // conviene resetear a la primera página
-  // // 👉 evento capturado:
-  // console.log('Cambio de pageSize:', { itemsPerPage: newSize })
-  // fetchPage()
+  loading.value = true
+  // eslint-disable-next-line vue/no-mutating-props
+  props.service.pageParams.pageSize = newSize
+  // eslint-disable-next-line vue/no-mutating-props
+  props.service.pageParams.pageNumber = 1
+  await props.service.loadPage()
+  loading.value = false
 }
-
-
 
 onMounted(async () => {
   loading.value = true
-  var pageParams = {
-    PageSize:7,
-    PageNumber:1,
-  }
-  props.service.pageParams = pageParams
+  // eslint-disable-next-line vue/no-mutating-props
+  props.service.pageParams = defaultParams.value
   await props.service.loadPage()
   loading.value = false
 })

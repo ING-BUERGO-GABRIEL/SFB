@@ -1,16 +1,21 @@
 <template>
   <header-bar>
-    <search-field v-model="filtro" style="max-width:300px; width:100%" />
+    <search-field style="max-width:300px; width:100%" @search="onSearch" />
     <v-spacer />
-    <v-btn color="primary" @click="$emit('crear-producto','Insert')">Crear Producto</v-btn>
+    <v-btn color="primary" @click="emit('crear-producto', 'Insert')">Crear Producto</v-btn>
   </header-bar>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const filtro = ref('');
+import { inject } from 'vue';
+const { productServ } = inject('services')
 
 const emit = defineEmits(['crear-producto']);
+
+const onSearch = async (filtro) => {
+  productServ.pageParams.pageNumber = 1
+  productServ.pageParams.filter = filtro
+  await productServ.loadPage()
+}
 
 </script>

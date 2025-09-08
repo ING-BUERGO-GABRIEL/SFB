@@ -22,7 +22,7 @@ namespace SFB.Shared.Backend.Repositories
         //    this.Context = serviceProvider.GetRequiredService<TContext>();
         //}
 
-        protected async Task<PagedListModel<TEntity>> GetPage<TEntity>(IQueryable<TEntity> query, string filter, int pageSize, int pageNumber, List<string>? orderBy) where TEntity : class
+        protected async Task<PagedListModel<TEntity>> GetPage<TEntity>(IQueryable<TEntity> query, string? filter, int pageSize, int pageNumber, List<string>? orderBy) where TEntity : class
         {
             query = Filter(query, filter);
 
@@ -34,7 +34,7 @@ namespace SFB.Shared.Backend.Repositories
             return pagedList.ToPagedListModel();
         }
 
-        protected Task<PagedListModel<TEntity>> GetPage<TEntity>(IQueryable<TEntity> query, string filter, int pageSize, int pageNumber) where TEntity : class
+        protected Task<PagedListModel<TEntity>> GetPage<TEntity>(IQueryable<TEntity> query, string? filter, int pageSize, int pageNumber) where TEntity : class
         {
             return GetPage(query, filter, pageSize, pageNumber, new List<string>());
         }
@@ -49,7 +49,7 @@ namespace SFB.Shared.Backend.Repositories
             return GetPage(query, filter, PageSize, PageNumber, new List<string>());
         }
 
-        protected virtual IQueryable<TEntity> Filter<TEntity>(IQueryable<TEntity> query, string value)
+        protected virtual IQueryable<TEntity> Filter<TEntity>(IQueryable<TEntity> query, string? value)
         {
             try
             {

@@ -5,16 +5,8 @@ const getRoute = method => `api/IAW/Product/${method}`;
 
 export const productService = defineStore('productService', {
   state: () => ({
-    pageData: {
-      TotalCount: 0,
-      PageSize: 1,
-      CurrentPage: 1,
-      TotalPages: 0,
-      HasNext: 0,
-      HasPrevious: 0,
-      Data: []
-    },
-    pageParams:{}
+    pageData: {},
+    pageParams: {}
   }),
   actions: {
     async create(product) {
@@ -29,14 +21,12 @@ export const productService = defineStore('productService', {
     },
     async loadPage() {
       try {
-
         const route = getRoute('GetPage') + apiClient.queryString(this.pageParams);
         const apiResult = await apiClient.get(route);
 
         if (apiResult.IsSuccess) {
           this.pageData = apiResult.Data
         }
-
       } catch (error) {
         console.error('Error al obtener módulos:', error);
       }

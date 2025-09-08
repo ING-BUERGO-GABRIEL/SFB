@@ -32,13 +32,14 @@ namespace SFB.IAW.Backend.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetPage()
+        public async Task<IActionResult> GetPage(
+            [FromQuery] int pageSize,
+            [FromQuery] int PageNumber,
+            [FromQuery] string? filter = null)
         {
             try
             {
-                var result = await Repository.GetPage();
-
-                //var result = page.Adapt<List<MProduct>>();
+                var result = await Repository.GetPage(filter,pageSize,PageNumber);
 
                 return OkResult(result);
             }

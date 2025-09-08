@@ -17,13 +17,18 @@ namespace SFB.IAW.Backend.Repositories
             return product;
         }
 
-        internal async Task<PagedListModel<EProduct>> GetPage()
+        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
         {
             var query = Context.IAWProducts.AsQueryable();
 
-            var result = await base.GetPage(query,"");
+            var result = await base.GetPage(query, filter,pageSize, pageNumber);
 
             return result;
+        }
+
+        protected override List<string> GetFilterableProperties()
+        {
+            return new List<string> { "NroProduct", "Name", "SerialNumber" }; 
         }
     }
 }
