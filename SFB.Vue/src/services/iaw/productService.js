@@ -5,7 +5,6 @@ const getRoute = method => `api/IAW/Product/${method}`;
 
 export const productService = defineStore('productService', {
   state: () => ({
-    productList: [],
     pageData: {
       TotalCount: 0,
       PageSize: 1,
@@ -14,7 +13,8 @@ export const productService = defineStore('productService', {
       HasNext: 0,
       HasPrevious: 0,
       Data: []
-    }
+    },
+    pageParams:{}
   }),
   actions: {
     async create(product) {
@@ -30,7 +30,7 @@ export const productService = defineStore('productService', {
     async loadPage() {
       try {
 
-        const route = getRoute('GetPage');
+        const route = getRoute('GetPage') + apiClient.queryString(this.pageParams);
         const apiResult = await apiClient.get(route);
 
         if (apiResult.IsSuccess) {

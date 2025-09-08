@@ -26,9 +26,24 @@ api.interceptors.response.use(
   }
 );
 
+const queryString = (params) => {
+  if (params) {
+    let queryString = Object.keys(params)
+      .filter(key => {
+        const value = params[key];
+        return value !== null && value !== undefined && value.toString().trim() !== '';
+      })
+      .map(key => `${key}=${encodeURIComponent(params[key])}`)
+      .join('&');
+    return queryString ? `?${queryString}` : '';
+  }
+  return "";
+};
+
 export const apiClient = {
-  get:    url => api.get(url),
-  post:   (url, body) => api.post(url, body),
-  put:    (url, body) => api.put(url, body),
-  delete: url => api.delete(url)
+  get: url => api.get(url),
+  post: (url, body) => api.post(url, body),
+  put: (url, body) => api.put(url, body),
+  delete: url => api.delete(url),
+  queryString: params => queryString(params)
 };
