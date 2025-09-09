@@ -6,14 +6,15 @@ const getRoute = method => `api/IAW/Product/${method}`;
 export const productService = defineStore('productService', {
   state: () => ({
     pageData: {},
-    pageParams: {}
+    pageParams: {},
+    loadTable:true
   }),
   actions: {
     async create(product) {
       try {
         const route = getRoute('Create');
         const apiResult = await apiClient.post(route, product);
-        return apiResult.Status ? apiResult.Result : null;
+        return apiResult.IsSuccess ? apiResult.Data : null;
       } catch (error) {
         console.error('Error al obtener módulos:', error);
         throw error;
@@ -21,6 +22,7 @@ export const productService = defineStore('productService', {
     },
     async loadPage() {
       try {
+        this.loadTable = true
         const route = getRoute('GetPage') + apiClient.queryString(this.pageParams);
         const apiResult = await apiClient.get(route);
 
@@ -29,6 +31,9 @@ export const productService = defineStore('productService', {
         }
       } catch (error) {
         console.error('Error al obtener módulos:', error);
+      }
+      finally{
+         this.loadTable = false
       }
     }
   }

@@ -53,7 +53,6 @@ async function onAcceptClick() {
     const res = await formRef.value.validate()
     const valid = typeof res === 'boolean' ? res : res?.valid
     if (!valid) {
-      //emit('invalid', { source: 'rules' })
       return
     }
   }

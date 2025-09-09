@@ -1,6 +1,6 @@
 <!-- PagTable.vue -->
 <template>
-  <v-data-table-server :headers="props.headers" :items="props.service?.pageData?.Data ?? []" :loading="loading"
+  <v-data-table-server :headers="props.headers" :items="props.service?.pageData?.Data ?? []" :loading=" props.service?.loadTable"
     :header-props="{ class: 'bg-containerBg text-caption font-weight-bold text-uppercase' }" item-key="NroProduct"
     :items-length="Math.max(1, props.service?.pageData?.TotalCount ?? 0)"
     :items-per-page="props.service?.pageData?.PageSize" :items-per-page-options="[7, 15, 25]"
@@ -25,7 +25,6 @@ const props = defineProps({
   headers: { type: Array, required: true }
 })
 
-const loading = ref(false)
 const defaultParams = ref({
     pageSize: 7,
     pageNumber: 1,
@@ -33,28 +32,22 @@ const defaultParams = ref({
   })
 
 const onPage = async (newPage) => {
-  loading.value = true
   // eslint-disable-next-line vue/no-mutating-props
   props.service.pageParams.pageNumber = newPage
   await props.service.loadPage()
-  loading.value = false
 }
 
 const onItemsPerPage = async (newSize) => {
-  loading.value = true
   // eslint-disable-next-line vue/no-mutating-props
   props.service.pageParams.pageSize = newSize
   // eslint-disable-next-line vue/no-mutating-props
   props.service.pageParams.pageNumber = 1
   await props.service.loadPage()
-  loading.value = false
 }
 
 onMounted(async () => {
-  loading.value = true
   // eslint-disable-next-line vue/no-mutating-props
   props.service.pageParams = defaultParams.value
   await props.service.loadPage()
-  loading.value = false
 })
 </script>

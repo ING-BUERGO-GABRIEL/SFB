@@ -48,9 +48,6 @@
           </v-row>
         </parent-card>
       </v-col>
-      <!-- <v-col cols="12" md="6">
-        <h3>Hola</h3>
-      </v-col> -->
     </v-row>
   </dialog-body>
 </template>
@@ -98,6 +95,7 @@ async function onAccept() {
   switch (modeDlg.value) {
     case "Insert": {
       const newProd = await productServ.create(product.value)
+      console.log(newProd)
       if (!newProd) return;  
       product.value = newProd;
       break;
