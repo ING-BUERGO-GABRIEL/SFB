@@ -18,7 +18,7 @@
 		<ItemGroup>
 			<VueFilesToCopy Include="..\SFB.vue\dist\**\*" />
 		</ItemGroup>
-		<Copy SourceFiles="@(VueFilesToCopy)" DestinationFolder="wwwroot\%(RecursiveDir)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="@(VueFilesToCopy)" DestinationFolder="wwwroot\%(RecursiveDir)" />
 	</Target>
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.12">
@@ -31,6 +31,9 @@
 	  <ProjectReference Include="..\SFB.Modules\SFB.CMS\SFB.CMS.Backend\SFB.CMS.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Modules\SFB.IAW\SFB.IAW.Backend\SFB.IAW.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Shared.Backend\SFB.Shared.Backend.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
 	</ItemGroup>
 
 
