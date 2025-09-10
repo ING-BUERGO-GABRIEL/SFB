@@ -20,6 +20,26 @@ export const productService = defineStore('productService', {
         throw error;
       }
     },
+    async update(product) {
+      try {
+        const route = getRoute('Update');
+        const apiResult = await apiClient.put(route, product);
+        return apiResult.IsSuccess ? apiResult.Data : null;
+      } catch (error) {
+        console.error('Error al actualizar producto:', error);
+        throw error;
+      }
+    },
+    async remove(id) {
+      try {
+        const route = getRoute(`Delete/${id}`);
+        const apiResult = await apiClient.delete(route);
+        return apiResult.IsSuccess;
+      } catch (error) {
+        console.error('Error al eliminar producto:', error);
+        throw error;
+      }
+    },
     async loadPage() {
       try {
         this.loadTable = true

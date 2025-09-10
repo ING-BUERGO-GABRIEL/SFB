@@ -2,7 +2,8 @@
   <HeaderBar @crear-producto="showModal"/>
   <v-row class="mb-0">
     <v-col cols="12" md="8">
-      <DataTable />
+      <DataTable @edit-product="item => showModal('Update', item)"
+                 @delete-product="item => showModal('Delete', item)"/>
     </v-col>
     <v-col cols="12" md="4">
       <AnalyticsReport />
@@ -20,9 +21,9 @@ import AnalyticsReport from './components/AnalyticsReport.vue'
 
 const productForm = ref(null)
 
-async function showModal(mode) {
-  var item = await productForm.value.openForm(mode)
-  console.log(item)
+async function showModal(mode, item = null) {
+  const result = await productForm.value.openForm(mode, item)
+  console.log(result)
 }
 
 </script>
