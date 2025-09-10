@@ -101,9 +101,6 @@ async function onAccept() {
       product.value = newProd
       productServ.pageData.Data.unshift(newProd)
       productServ.pageData.TotalCount++
-      if (productServ.pageData.Data.length > productServ.pageData.PageSize) {
-        productServ.pageData.Data.pop()
-      }
       break
     }
     case 'Update': {
