@@ -13,14 +13,13 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Nombre</v-label>
-                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre" />
+                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre" :disabled="isReadOnly" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="product.SerialNumber"
-                  placeholder="Codigo de Barras" />
+                <v-text-field v-model="product.SerialNumber" placeholder="Codigo de Barras" :disabled="isReadOnly" />
               </div>
             </v-col>
 
@@ -29,20 +28,20 @@
               <div class="mb-6">
                 <v-label>Precio</v-label>
                 <v-text-field v-model="product.Price" :rules="[rRequired, rNonNegative]" type="number" step="0.01"
-                  min="0" required placeholder="Ej: 15.50" />
+                  min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
               </div>
             </v-col>
             <!-- Checkboxes Positivo / Negativo -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-checkbox v-model="product.IsPurchases" label="Habilitado para Copras" color="primary"
-                  class="mt-2"></v-checkbox>
+                  class="mt-2" :disabled="isReadOnly"></v-checkbox>
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary"
-                  class="mt-2"></v-checkbox>
+                  class="mt-2" :disabled="isReadOnly"></v-checkbox>
               </div>
             </v-col>
           </v-row>
@@ -53,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref, inject } from 'vue'
+import { ref, inject, computed } from 'vue'
 const { productServ } = inject('services')
 
 const showModal = ref(false)
@@ -64,44 +63,69 @@ const product = ref({})
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser > 0'
 
+const isReadOnly = computed(() => modeDlg.value === 'Delete')
+
 let _resolve = null
 
 async function openForm(mode, item = null) {
   modeDlg.value = mode
 
   switch (mode) {
-    case "Insert":
-      titleDlg.value = "Nuevo Producto"
+    case 'Insert':
+      titleDlg.value = 'Nuevo Producto'
       product.value = { NroProduct: 0, IsPurchases: true, IsSales: true }
       showModal.value = true
-      break;
-    case "Update":
-      titleDlg.value = "Editar Producto"
-      product.value = item
+      break
+    case 'Update':
+      titleDlg.value = 'Editar Producto'
+      product.value = { ...item }
       showModal.value = true
-      break;
-    case "Delete":
-
+      break
+    case 'Delete':
+      titleDlg.value = 'Eliminar Producto'
+      product.value = { ...item }
       showModal.value = true
-      break;
+      break
   }
 
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     _resolve = resolve
   })
 }
 
 async function onAccept() {
   switch (modeDlg.value) {
-    case "Insert": {
+    case 'Insert': {
       const newProd = await productServ.create(product.value)
-      console.log(newProd)
-      if (!newProd) return;  
-      product.value = newProd;
-      break;
-    } case "Update": {
-
-      break;
+      if (!newProd) return
+      product.value = newProd
+      productServ.pageData.Data.unshift(newProd)
+      productServ.pageData.TotalCount++
+      if (productServ.pageData.Data.length > productServ.pageData.PageSize) {
+        productServ.pageData.Data.pop()
+      }
+      break
+    }
+    case 'Update': {
+      const updProd = await productServ.update(product.value)
+      if (!updProd) return
+      product.value = updProd
+      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === updProd.NroProduct)
+      if (idx !== -1) productServ.pageData.Data[idx] = updProd
+      break
+    }
+    case 'Delete': {
+      const ok = await productServ.remove(product.value.NroProduct)
+      if (!ok) return
+      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === product.value.NroProduct)
+      if (idx !== -1) {
+        productServ.pageData.Data.splice(idx, 1)
+        productServ.pageData.TotalCount--
+        if (productServ.pageData.Data.length === 0 && productServ.pageData.TotalCount > 0) {
+          await productServ.loadPage()
+        }
+      }
+      break
     }
   }
 
@@ -116,7 +140,6 @@ function onCancel() {
   showModal.value = false
 }
 
-// expongo los tres métodos al consumidor del componente
 defineExpose({
   openForm
 })
