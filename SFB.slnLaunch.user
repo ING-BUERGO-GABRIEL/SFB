@@ -5,7 +5,7 @@
       {
         "Path": "SFB.Server\\SFB.Server.csproj",
         "Action": "Start",
-        "DebugTarget": "https"
+        "DebugTarget": "http"
       },
       {
         "Path": "SFB.Vue\\SFB.Vue.esproj",

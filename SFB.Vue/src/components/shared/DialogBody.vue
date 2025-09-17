@@ -5,9 +5,9 @@
       <v-card-title class="d-flex align-center bg-containerBg">
         <span>{{ props.title }}</span>
         <v-spacer />
-        <v-avatar size="36" @click="onCancelClick">
+        <v-btn height="36" @click="onCancelClick" icon elevation="0">
           <component :is="CloseOutlined" :style="{ fontSize: '16px' }" />
-        </v-avatar>
+        </v-btn>
       </v-card-title>
       <!-- Body -->
       <v-card-text class="modal-body">
