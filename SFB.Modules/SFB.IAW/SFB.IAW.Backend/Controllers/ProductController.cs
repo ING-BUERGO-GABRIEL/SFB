@@ -11,6 +11,24 @@ namespace SFB.IAW.Backend.Controllers
     [Route("api/IAW/[controller]/[action]")]
     public class ProductController(IServiceProvider services) : BaseController<SFBContext, ProductRepository>(services)
     {
+        [HttpGet]
+        public async Task<IActionResult> GetPage(
+            [FromQuery] int pageSize,
+            [FromQuery] int PageNumber,
+            [FromQuery] string? filter = null)
+        {
+            try
+            {
+                var result = await Repository.GetPage(filter,pageSize,PageNumber);
+
+                return OkResult(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] MProduct product)
         {
@@ -30,15 +48,16 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetPage(
-            [FromQuery] int pageSize,
-            [FromQuery] int PageNumber,
-            [FromQuery] string? filter = null)
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] MProduct product)
         {
             try
             {
-                var result = await Repository.GetPage(filter,pageSize,PageNumber);
+                var eProduct = product.Adapt<EProduct>();
+
+                var resultcreate = await Repository.Update(eProduct);
+
+                var result = resultcreate.Adapt<MProduct>();
 
                 return OkResult(result);
             }

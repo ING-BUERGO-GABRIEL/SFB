@@ -78,6 +78,7 @@ async function openForm(mode, item = null) {
       break
     case 'Update':
       titleDlg.value = 'Editar Producto'
+      console.log(item)
       product.value = { ...item }
       showModal.value = true
       break

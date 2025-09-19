@@ -17,10 +17,10 @@
 
       <!-- Acciones de edición y eliminación -->
       <template #item.actions="{ item }">
-        <v-btn icon variant="text" color="primary" @click="emit('edit-product', item.raw)">
+        <v-btn icon variant="text" color="primary" @click="emit('edit-product', item)">
           <EditOutlined :style="{ fontSize: '18px' }" />
         </v-btn>
-        <v-btn icon variant="text" color="error" @click="emit('delete-product', item.raw)">
+        <v-btn icon variant="text" color="error" @click="emit('delete-product', item)">
           <DeleteOutlined :style="{ fontSize: '18px' }" />
         </v-btn>
       </template>

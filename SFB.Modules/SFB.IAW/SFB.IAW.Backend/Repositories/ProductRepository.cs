@@ -7,6 +7,18 @@ namespace SFB.IAW.Backend.Repositories
 {
     public class ProductRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
+        protected override List<string> GetFilterableProperties()
+        {
+            return new List<string> { "NroProduct", "Name", "SerialNumber" }; 
+        }
+        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
+        {
+            var query = Context.IAWProducts.Where(p=>p.Status);
+
+            var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "NroProduct" });
+
+            return result;
+        }
         internal async Task<EProduct> Create(EProduct product)
         {
             product.Status = true;
@@ -17,18 +29,14 @@ namespace SFB.IAW.Backend.Repositories
             return product;
         }
 
-        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
+        internal async Task<EProduct> Update(EProduct product)
         {
-            var query = Context.IAWProducts.AsQueryable();
 
-            var result = await base.GetPage(query, filter,pageSize, pageNumber);
+            Context.IAWProducts.Update(product);
+            await Context.SaveChangesAsync();
 
-            return result;
+            return product;
         }
 
-        protected override List<string> GetFilterableProperties()
-        {
-            return new List<string> { "NroProduct", "Name", "SerialNumber" }; 
-        }
     }
 }
