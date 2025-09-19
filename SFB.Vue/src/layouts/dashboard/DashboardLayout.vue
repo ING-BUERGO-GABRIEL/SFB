@@ -22,6 +22,7 @@
       </v-main>
     </v-app>
   </v-locale-provider>
+   
 </template>
 
 <script setup lang="ts">

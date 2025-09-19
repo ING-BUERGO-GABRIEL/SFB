@@ -54,6 +54,7 @@
 <script setup>
 import { ref, inject, computed } from 'vue'
 const { productServ } = inject('services')
+const { ask } = inject('MsgDialog')
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -84,8 +85,12 @@ async function openForm(mode, item = null) {
       break
     case 'Delete':
       titleDlg.value = 'Eliminar Producto'
-      product.value = { ...item }
-      showModal.value = true
+        console.log(item)
+          console.log(ask)
+      var result = await ask('tutulo','texto')
+      console.log(result)
+      // product.value = { ...item }
+      // showModal.value = true
       break
   }
 

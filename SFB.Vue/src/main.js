@@ -2,9 +2,12 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import { router } from './router'
+
+//Plugins custom
 import vuetify from './plugins/vuetify'
 import { registerComponents } from './plugins/global-components'
 import { configServices } from './plugins/config-services'
+import { messagePlugin } from './plugins/message-dialog'
 
 // Plugins
 import { PerfectScrollbarPlugin } from 'vue3-perfect-scrollbar'
@@ -30,4 +33,5 @@ app.use(Antd)
 app.use(VueApexCharts)
 app.use(configServices)
 app.use(registerComponents)
+app.use(messagePlugin)
 app.use(vuetify).mount('#app');
