@@ -66,5 +66,20 @@ namespace SFB.IAW.Backend.Controllers
                 return InternalServerError(ex);
             }
         }
+
+        [HttpDelete("{nroProd:int}")]
+        public async Task<IActionResult> Delete(int nroProd)
+        {
+            try
+            {
+                await Repository.Delete(nroProd);
+
+                return DeletedResult();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }

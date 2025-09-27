@@ -1,28 +1,34 @@
 import { defineStore } from 'pinia'
 import { apiClient } from '@/utils/apiClient'
+import { message } from 'ant-design-vue'
 
-const getRoute = method => `api/IAW/Product/${method}`;
+const Route = method => `api/IAW/Product/${method}`;
 
 export const productService = defineStore('productService', {
   state: () => ({
     pageData: {},
     pageParams: {},
-    loadTable:true
+    loadTable: true
   }),
   actions: {
     async create(product) {
       try {
-        const route = getRoute('Create');
-        const apiResult = await apiClient.post(route, product);
-        return apiResult.IsSuccess ? apiResult.Data : null;
-      } catch (error) {
-        console.error('Error al obtener módulos:', error);
-        throw error;
+        const { IsSuccess, Data, Message } = await apiClient.post(Route('Create'), product)
+        if (!IsSuccess) {
+          message.warning(Message)
+          return null
+        }
+        message.success('Producto creado con éxito.')
+        return Data
+      } catch (err) {
+        const msg = err?.response?.data?.message || err?.message || String(err)
+        message.error(msg)
+        return null
       }
     },
     async update(product) {
       try {
-        const route = getRoute('Update');
+        const route = Route('Update');
         const apiResult = await apiClient.put(route, product);
         return apiResult.IsSuccess ? apiResult.Data : null;
       } catch (error) {
@@ -32,7 +38,7 @@ export const productService = defineStore('productService', {
     },
     async remove(id) {
       try {
-        const route = getRoute(`Delete/${id}`);
+        const route = Route(`Delete/${id}`);
         const apiResult = await apiClient.delete(route);
         return apiResult.IsSuccess;
       } catch (error) {
@@ -43,7 +49,7 @@ export const productService = defineStore('productService', {
     async loadPage() {
       try {
         this.loadTable = true
-        const route = getRoute('GetPage') + apiClient.queryString(this.pageParams);
+        const route = Route('GetPage') + apiClient.queryString(this.pageParams);
         const apiResult = await apiClient.get(route);
 
         if (apiResult.IsSuccess) {
@@ -52,8 +58,8 @@ export const productService = defineStore('productService', {
       } catch (error) {
         console.error('Error al obtener módulos:', error);
       }
-      finally{
-         this.loadTable = false
+      finally {
+        this.loadTable = false
       }
     }
   }

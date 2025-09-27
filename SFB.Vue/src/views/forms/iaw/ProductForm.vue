@@ -13,7 +13,8 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Nombre</v-label>
-                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre" :disabled="isReadOnly" />
+                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre"
+                  :disabled="isReadOnly" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
@@ -34,14 +35,14 @@
             <!-- Checkboxes Positivo / Negativo -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Copras" color="primary"
-                  class="mt-2" :disabled="isReadOnly"></v-checkbox>
+                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Copras" color="primary" class="mt-2"
+                  :disabled="isReadOnly"></v-checkbox>
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary"
-                  class="mt-2" :disabled="isReadOnly"></v-checkbox>
+                <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary" class="mt-2"
+                  :disabled="isReadOnly"></v-checkbox>
               </div>
             </v-col>
           </v-row>
@@ -82,11 +83,27 @@ async function openForm(mode, item = null) {
       product.value = { ...item }
       showModal.value = true
       break
-    case 'Delete':
-      titleDlg.value = 'Eliminar Producto'
-      product.value = { ...item }
-      showModal.value = true
+    case 'Delete': {
+      const confirmed = await question(
+        'Eliminar Producto',
+        `Esta acción eliminará el producto (${item.Name}). ¿Desea continuar?`
+      )
+
+      if (!confirmed) return null
+
+      const ok = await productServ.remove(item.NroProduct)
+      if (!ok) return
+      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === product.value.NroProduct)
+      if (idx !== -1) {
+        productServ.pageData.Data.splice(idx, 1)
+        productServ.pageData.TotalCount--
+        if (productServ.pageData.Data.length === 0 && productServ.pageData.TotalCount > 0) {
+          await productServ.loadPage()
+        }
+      }
+
       break
+    }
   }
 
   return new Promise(resolve => {
@@ -112,28 +129,7 @@ async function onAccept() {
       if (idx !== -1) productServ.pageData.Data[idx] = updProd
       break
     }
-    case 'Delete': {
-      const confirmed = await question(
-        'Eliminar Producto',
-        'Esta acción eliminará el producto seleccionado. ¿Desea continuar?'
-      )
 
-      if (!confirmed) {
-        return
-      }
-
-      const ok = await productServ.remove(product.value.NroProduct)
-      if (!ok) return
-      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === product.value.NroProduct)
-      if (idx !== -1) {
-        productServ.pageData.Data.splice(idx, 1)
-        productServ.pageData.TotalCount--
-        if (productServ.pageData.Data.length === 0 && productServ.pageData.TotalCount > 0) {
-          await productServ.loadPage()
-        }
-      }
-      break
-    }
   }
 
   _resolve(product.value)

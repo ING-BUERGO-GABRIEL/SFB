@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import { router } from './router'
-
+import { message } from 'ant-design-vue'
 //Plugins custom
 import vuetify from './plugins/vuetify'
 import { registerComponents } from './plugins/global-components'
@@ -26,6 +26,7 @@ import '@fontsource/public-sans/700.css'
 // Luego tus estilos
 import '@/scss/style.scss'
 
+message.config({duration: 4})
 
 const app = createApp(App)
 

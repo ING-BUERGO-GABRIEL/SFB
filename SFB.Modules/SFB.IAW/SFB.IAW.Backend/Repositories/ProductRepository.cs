@@ -1,5 +1,8 @@
-﻿using SFB.Infrastructure.Contexts;
+﻿using System.Runtime;
+using Microsoft.EntityFrameworkCore;
+using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
+using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
 
@@ -31,11 +34,37 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<EProduct> Update(EProduct product)
         {
-
             Context.IAWProducts.Update(product);
             await Context.SaveChangesAsync();
-
             return product;
+        }
+
+        public async Task<bool> Delete(int nroProd)
+        {
+            var entity = await Context.IAWProducts.FindAsync(nroProd);
+
+            if (entity is null) throw new ControllerException("Producto no encontrado");
+
+            try
+            {
+                Context.IAWProducts.Remove(entity);
+                await Context.SaveChangesAsync();
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {
+                // si el error viene por foreign keys
+                if (ex.InnerException?.Message.Contains("FOREIGN KEY") == true)
+                {
+                    // revertimos la eliminación y hacemos un "soft delete"
+                    Context.Entry(entity).State = EntityState.Unchanged;
+                    entity.Status = false;
+                    await Context.SaveChangesAsync();
+                    return true; // se procesó el "borrado lógico"
+                }
+
+                throw; // si no es por FK, relanzamos
+            }
         }
 
     }
