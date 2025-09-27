@@ -54,7 +54,7 @@
 <script setup>
 import { ref, inject, computed } from 'vue'
 const { productServ } = inject('services')
-const { ask } = inject('MsgDialog')
+const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -113,7 +113,7 @@ async function onAccept() {
       break
     }
     case 'Delete': {
-      const confirmed = await ask(
+      const confirmed = await question(
         'Eliminar Producto',
         'Esta acción eliminará el producto seleccionado. ¿Desea continuar?'
       )

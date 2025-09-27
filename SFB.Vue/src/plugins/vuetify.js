@@ -5,6 +5,10 @@ import * as directives from 'vuetify/directives'
 
 const light = {
   dark: false,
+   icons: {
+    // Forzamos el set de **fuente** MDI
+    defaultSet: 'mdi',
+  },
   variables: {
     'border-color': '#f0f0f0',
     'carousel-control-size': 10,

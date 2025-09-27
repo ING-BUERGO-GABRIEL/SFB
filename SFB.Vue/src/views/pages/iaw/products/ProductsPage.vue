@@ -1,5 +1,7 @@
 <template>
   <HeaderBar @crear-producto="showModal"/>
+  <v-icon icon="mdi-alert-circle" />
+
   <v-row class="mb-0">
     <v-col cols="12" md="8">
       <DataTable @edit-product="item => showModal('Update', item)"

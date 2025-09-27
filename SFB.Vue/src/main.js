@@ -16,12 +16,16 @@ import VueApexCharts from 'vue3-apexcharts'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/reset.css'
 
-// Estilos
-import '@/scss/style.scss'
+// Fonts/Icons primero
+import '@mdi/font/css/materialdesignicons.css'
 import '@fontsource/public-sans/400.css'
 import '@fontsource/public-sans/500.css'
 import '@fontsource/public-sans/600.css'
 import '@fontsource/public-sans/700.css'
+
+// Luego tus estilos
+import '@/scss/style.scss'
+
 
 const app = createApp(App)
 
