@@ -79,18 +79,13 @@ async function openForm(mode, item = null) {
       break
     case 'Update':
       titleDlg.value = 'Editar Producto'
-      console.log(item)
       product.value = { ...item }
       showModal.value = true
       break
     case 'Delete':
       titleDlg.value = 'Eliminar Producto'
-        console.log(item)
-          console.log(ask)
-      var result = await ask('tutulo','texto')
-      console.log(result)
-      // product.value = { ...item }
-      // showModal.value = true
+      product.value = { ...item }
+      showModal.value = true
       break
   }
 
@@ -118,6 +113,15 @@ async function onAccept() {
       break
     }
     case 'Delete': {
+      const confirmed = await ask(
+        'Eliminar Producto',
+        'Esta acción eliminará el producto seleccionado. ¿Desea continuar?'
+      )
+
+      if (!confirmed) {
+        return
+      }
+
       const ok = await productServ.remove(product.value.NroProduct)
       if (!ok) return
       const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === product.value.NroProduct)
