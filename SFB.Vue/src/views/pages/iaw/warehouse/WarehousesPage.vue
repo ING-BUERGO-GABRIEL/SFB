@@ -1,28 +1,28 @@
 <template>  
-  <HeaderBar @crear-producto="showModal"/>
+  <HeaderBar @create="showModal"/>
     <v-row class="mb-0">
     <v-col cols="12" md="8">
-      <DataTable @edit-product="item => showModal('Update', item)"
-                 @delete-product="item => showModal('Delete', item)"/>
+      <DataTable @edit="item => showModal('Update', item)"
+                 @delete="item => showModal('Delete', item)"/>
     </v-col>
     <v-col cols="12" md="4">
       <AnalyticsReport />
     </v-col>
   </v-row>
-  <ProductForm ref="productForm"/>
+  <WarehouseForm ref="refForm"/>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import ProductForm from './components/ProductForm.vue'
+import WarehouseForm from './components/WarehouseForm.vue'
 import HeaderBar from './components/HeaderBar.vue'
 import DataTable from './components/DataTable.vue'
 import AnalyticsReport from './components/AnalyticsReport.vue'
 
-const productForm = ref(null)
+const refForm = ref(null)
 
 async function showModal(mode, item = null) {
-  await productForm.value.openForm(mode, item)
+  await refForm.value.openForm(mode, item)
 }
 
 </script>

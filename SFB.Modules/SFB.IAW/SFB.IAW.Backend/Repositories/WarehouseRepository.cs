@@ -7,17 +7,18 @@ using SFB.Shared.Backend.Repositories;
 
 namespace SFB.IAW.Backend.Repositories
 {
-    public class ProductRepository(SFBContext context) : BaseRepository<SFBContext>(context)
+    public class WarehouseRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
         protected override List<string> GetFilterableProperties()
         {
-            return new List<string> { "NroProduct", "Name", "SerialNumber" }; 
+            return new List<string> { "Name", "Location" }; 
         }
-        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
-        {
-            var query = Context.IAWProducts.Where(p=>p.Status);
 
-            var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "NroProduct" });
+        internal async Task<PagedListModel<EWarehouse>> GetPage(string? filter, int pageSize,int pageNumber)
+        {
+            var query = Context.IAWWarehouse.AsQueryable();
+
+            var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "WarehouseId" });
 
             return result;
         }

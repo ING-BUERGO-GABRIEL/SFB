@@ -2,9 +2,9 @@ import { defineStore } from 'pinia'
 import { apiClient } from '@/utils/apiClient'
 import { message } from 'ant-design-vue'
 
-const Route = method => `api/IAW/Product/${method}`;
+const Route = method => `api/IAW/Warehouse/${method}`;
 
-export const productService = defineStore('productService', {
+export const warehouseService = defineStore('warehouseService', {
   state: () => ({
     pageData: {},
     pageParams: {},

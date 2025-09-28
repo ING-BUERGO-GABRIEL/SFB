@@ -93,7 +93,7 @@ async function openForm(mode, item = null) {
 
       const ok = await productServ.remove(item.NroProduct)
       if (!ok) return
-      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === product.value.NroProduct)
+      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === item.NroProduct)
       if (idx !== -1) {
         productServ.pageData.Data.splice(idx, 1)
         productServ.pageData.TotalCount--

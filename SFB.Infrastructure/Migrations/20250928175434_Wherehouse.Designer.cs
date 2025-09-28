@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SFB.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using SFB.Infrastructure.Contexts;
 namespace SFB.Infrastructure.Migrations
 {
     [DbContext(typeof(SFBContext))]
-    partial class SFBContextModelSnapshot : ModelSnapshot
+    [Migration("20250928175434_Wherehouse")]
+    partial class Wherehouse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,46 +280,6 @@ namespace SFB.Infrastructure.Migrations
                     b.HasKey("NroProduct");
 
                     b.ToTable("IAW_Product", (string)null);
-                });
-
-            modelBuilder.Entity("SFB.Infrastructure.Entities.IAW.EWarehouse", b =>
-                {
-                    b.Property<int>("WarehouseId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("WarehouseId"));
-
-                    b.Property<DateTime>("DateReg")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime?>("DateUpd")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Location")
-                        .HasMaxLength(250)
-                        .HasColumnType("character varying(250)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("character varying(120)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("UserReg")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("UserUpd")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.HasKey("WarehouseId");
-
-                    b.ToTable("IAW_Warehouse", (string)null);
                 });
 
             modelBuilder.Entity("SFB.Infrastructure.Entities.AMS.EUser", b =>

@@ -12,6 +12,7 @@ namespace SFB.Shared.Backend.Repositories
 
         protected  int PageSize = 10;
         protected  int PageNumber = 1;
+
         public BaseRepository(TContext context)
         {
             this.Context = context;
