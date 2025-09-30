@@ -1,5 +1,6 @@
 
 import DialogBody from '@/components/shared/DialogBody.vue'
+import CardDialogBody from '@/components/shared/CardDialogBody.vue'
 import HeaderBar from '@/components/shared/HeaderBar.vue'
 import Search from '@/components/shared/Search.vue'
 import ParentCard from '@/components/shared/UiParentCard.vue';
@@ -14,5 +15,6 @@ export const registerComponents = {
     app.component('ParentCard', ParentCard)
     app.component('TitleCard', TitleCard)
     app.component('PagTable', PagTable)
+    app.component('CardDialog', CardDialogBody)
   },
 };
