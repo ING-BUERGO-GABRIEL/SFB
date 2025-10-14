@@ -11,59 +11,52 @@ namespace SFB.IAW.Backend.Repositories
     {
         protected override List<string> GetFilterableProperties()
         {
-            return new List<string> { "Name", "Location" }; 
+            return new List<string> { "Name", "Location" };
         }
 
-        internal async Task<PagedListModel<EWarehouse>> GetPage(string? filter, int pageSize,int pageNumber)
+        internal async Task<PagedListModel<EWarehouse>> GetPage(string? filter, int pageSize, int pageNumber)
         {
             var query = Context.IAWWarehouse.AsQueryable();
 
-            var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "WarehouseId" });
+            var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "WarehouseId" });
 
             return result;
         }
-        internal async Task<EProduct> Create(EProduct product)
+        internal async Task<EWarehouse> Create(EWarehouse warehouse)
         {
-            product.Status = true;
+            warehouse.Status = true;
 
-            Context.IAWProducts.Add(product);
+            Context.IAWWarehouse.Add(warehouse);
+
             await Context.SaveChangesAsync();
 
+            return warehouse;
+        }
+
+        internal async Task<EWarehouse> Update(EWarehouse product)
+        {
+            Context.IAWWarehouse.Update(product);
+            await Context.SaveChangesAsync();
             return product;
         }
 
-        internal async Task<EProduct> Update(EProduct product)
+        public async Task<bool> Delete(int warehouseId)
         {
-            Context.IAWProducts.Update(product);
-            await Context.SaveChangesAsync();
-            return product;
-        }
+            var entity = await Context.IAWWarehouse.FindAsync(warehouseId);
 
-        public async Task<bool> Delete(int nroProd)
-        {
-            var entity = await Context.IAWProducts.FindAsync(nroProd);
-
-            if (entity is null) throw new ControllerException("Producto no encontrado");
+            if (entity is null) throw new ControllerException("Almacen no encontrado");
 
             try
             {
-                Context.IAWProducts.Remove(entity);
+                Context.IAWWarehouse.Remove(entity);
                 await Context.SaveChangesAsync();
                 return true;
             }
             catch (DbUpdateException ex)
             {
-                // si el error viene por foreign keys
                 if (ex.InnerException?.Message.Contains("FOREIGN KEY") == true)
-                {
-                    // revertimos la eliminación y hacemos un "soft delete"
-                    Context.Entry(entity).State = EntityState.Unchanged;
-                    entity.Status = false;
-                    await Context.SaveChangesAsync();
-                    return true; // se procesó el "borrado lógico"
-                }
-
-                throw; // si no es por FK, relanzamos
+                    throw new ControllerException("No es posible eliminar, item en uso"); // si no es por FK, relanzamos
+                throw; 
             }
         }
 

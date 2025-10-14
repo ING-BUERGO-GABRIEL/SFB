@@ -11,29 +11,29 @@ export const warehouseService = defineStore('warehouseService', {
     loadTable: true
   }),
   actions: {
-    async create(product) {
+    async create(model) {
       try {
-        const { IsSuccess, Data, Message } = await apiClient.post(Route('Create'), product)
+        const { IsSuccess, Data, Message } = await apiClient.post(Route('Create'), model)
         if (!IsSuccess) {
           message.warning(Message)
           return null
         }
-        message.success('Producto creado con éxito.')
+        message.success('Almacen creado con éxito.')
         return Data
       } catch (err) {
         message.error(err)
         return null
       }
     },
-    async update(product) {
+    async update(model) {
       try {
         const route = Route('Update');
-        const { IsSuccess, Data, Message } = await apiClient.put(route, product);
+        const { IsSuccess, Data, Message } = await apiClient.put(route, model);
         if (!IsSuccess) {
           message.warning(Message)
           return null
         }
-        message.success('Producto actualizado con éxito.')
+        message.success('Almacen actualizado con éxito.')
         return Data
       } catch (err) {
         message.error(err)
@@ -47,7 +47,7 @@ export const warehouseService = defineStore('warehouseService', {
         if (!IsSuccess) {
           message.warning(Message)
         }
-        message.success('Producto eliminado con éxito.')
+        message.success('Almacen eliminado con éxito.')
         return IsSuccess
       } catch (err) {
         message.error(err)
@@ -64,7 +64,7 @@ export const warehouseService = defineStore('warehouseService', {
           this.pageData = apiResult.Data
         }
       } catch (error) {
-        console.error('Error al obtener módulos:', error);
+        console.error('Error al obtener la pagina:', error);
       }
       finally {
         this.loadTable = false

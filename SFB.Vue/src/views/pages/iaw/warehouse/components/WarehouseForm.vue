@@ -1,64 +1,32 @@
 <template>
-  <!-- <dialog-body v-model="showModal" :title="titleDlg" formValidate @accept="onAccept" @cancel="onCancel">
-    <v-row class="mb-0" justify="center">
-      <v-col cols="12" md="6">
-        <parent-card :showHeader="true" title="Datos de Producto">
-          <v-row class="pa-4">
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-label>Codigo</v-label>
-                <v-text-field disabled v-model="model.NroProduct" required placeholder="Codigo" />
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-label>Nombre</v-label>
-                <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre"
-                  :disabled="isReadOnly" />
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="model.SerialNumber" placeholder="Codigo de Barras" :disabled="isReadOnly" />
-              </div>
-            </v-col>
-
-          
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-label>Precio</v-label>
-                <v-text-field v-model="model.Price" :rules="[rRequired, rNonNegative]" type="number" step="0.01"
-                  min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
-              </div>
-            </v-col>
-     
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-checkbox v-model="model.IsPurchases" label="Habilitado para Copras" color="primary" class="mt-2"
-                  :disabled="isReadOnly"></v-checkbox>
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-checkbox v-model="model.IsSales" label="Habilitado para Ventas" color="primary" class="mt-2"
-                  :disabled="isReadOnly"></v-checkbox>
-              </div>
-            </v-col>
-          </v-row>
-        </parent-card>
+  <card-dialog v-model="showModal" :title="titleDlg" height="350"  formValidate @accept="onAccept" @cancel="onCancel">
+    <v-row class="pa-4 pb-0">
+      <v-col cols="12" sm="6" class="py-0">
+        <div class="mb-6">
+          <v-label>Codigo</v-label>
+          <v-text-field disabled v-model="model.WarehouseId" required placeholder="Codigo" />
+        </div>
+      </v-col>
+      <v-col cols="12" sm="6" class="py-0">
+        <div class="mb-6">
+          <v-label>Nombre</v-label>
+          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre"
+             />
+        </div>
+      </v-col>
+      <v-col cols="12" sm="6" class="py-0">
+        <div class="mb-6">
+          <v-label>Localizacion</v-label>
+          <v-text-field v-model="model.Location" placeholder="Lugar del almacen" />
+        </div>
       </v-col>
     </v-row>
-  </dialog-body> -->
-
-  <card-dialog v-model="showModal" :title="titleDlg" formValidate @accept="onAccept" @cancel="onCancel">
-
   </card-dialog>
 </template>
 
 <script setup>
-import { ref, inject, computed } from 'vue'
-const { productServ } = inject('services')
+import { ref, inject } from 'vue'
+const { warehouseServ } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
@@ -67,9 +35,6 @@ const titleDlg = ref('')
 const model = ref({})
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
-const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser > 0'
-
-const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
 let _resolve = null
 
@@ -79,30 +44,30 @@ async function openForm(mode, item = null) {
   switch (mode) {
     case 'Insert':
       titleDlg.value = 'Nuevo Almacen'
-      model.value = { NroProduct: 0, IsPurchases: true, IsSales: true }
+      model.value = { WarehouseId: 0 }
       showModal.value = true
       break
     case 'Update':
-      titleDlg.value = 'Editar Producto'
+      titleDlg.value = 'Editar Almacen'
       model.value = { ...item }
       showModal.value = true
       break
     case 'Delete': {
       const confirmed = await question(
-        'Eliminar Producto',
-        `Esta acción eliminará el producto (${item.Name}). ¿Desea continuar?`
+        'Eliminar Almacen',
+        `Esta acción eliminará el Almacen (${item.Name}). ¿Desea continuar?`
       )
 
       if (!confirmed) return null
 
-      const ok = await productServ.remove(item.NroProduct)
+      const ok = await warehouseServ.remove(item.WarehouseId)
       if (!ok) return
-      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === item.NroProduct)
+      const idx = warehouseServ.pageData.Data.findIndex(p => p.WarehouseId === item.WarehouseId)
       if (idx !== -1) {
-        productServ.pageData.Data.splice(idx, 1)
-        productServ.pageData.TotalCount--
-        if (productServ.pageData.Data.length === 0 && productServ.pageData.TotalCount > 0) {
-          await productServ.loadPage()
+        warehouseServ.pageData.Data.splice(idx, 1)
+        warehouseServ.pageData.TotalCount--
+        if (warehouseServ.pageData.Data.length === 0 && warehouseServ.pageData.TotalCount > 0) {
+          await warehouseServ.loadPage()
         }
       }
 
@@ -118,19 +83,18 @@ async function openForm(mode, item = null) {
 async function onAccept() {
   switch (modeDlg.value) {
     case 'Insert': {
-      const newProd = await productServ.create(model.value)
+      const newProd = await warehouseServ.create(model.value)
       if (!newProd) return
       model.value = newProd
-      productServ.pageData.Data.unshift(newProd)
-      productServ.pageData.TotalCount++
+      warehouseServ.pageData.Data.unshift(newProd)
+      warehouseServ.pageData.TotalCount++
       break
     }
     case 'Update': {
-      const updProd = await productServ.update(model.value)
-      if (!updProd) return
-      model.value = updProd
-      const idx = productServ.pageData.Data.findIndex(p => p.NroProduct === updProd.NroProduct)
-      if (idx !== -1) productServ.pageData.Data[idx] = updProd
+      const updWare = await warehouseServ.update(model.value)
+      if (!updWare) return
+      const idx = warehouseServ.pageData.Data.findIndex(p => p.WarehouseId === updWare.WarehouseId)
+      if (idx !== -1) warehouseServ.pageData.Data[idx] = updWare
       break
     }
 

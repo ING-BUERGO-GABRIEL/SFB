@@ -30,15 +30,15 @@ namespace SFB.IAW.Backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] MProduct product)
+        public async Task<IActionResult> Create([FromBody] MWarehouse product)
         {
             try
             {
-                var eProduct = product.Adapt<EProduct>();
+                var eWarehouse = product.Adapt<EWarehouse>();
 
-                var resultcreate = await Repository.Create(eProduct);
+                var resultcreate = await Repository.Create(eWarehouse);
 
-                var result = resultcreate.Adapt<MProduct>();
+                var result = resultcreate.Adapt<MWarehouse>();
 
                 return OkResult(result);
             }
@@ -49,15 +49,15 @@ namespace SFB.IAW.Backend.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] MProduct product)
+        public async Task<IActionResult> Update([FromBody] MWarehouse product)
         {
             try
             {
-                var eProduct = product.Adapt<EProduct>();
+                var eProduct = product.Adapt<EWarehouse>();
 
                 var resultcreate = await Repository.Update(eProduct);
 
-                var result = resultcreate.Adapt<MProduct>();
+                var result = resultcreate.Adapt<MWarehouse>();
 
                 return OkResult(result);
             }
@@ -67,12 +67,12 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
-        [HttpDelete("{nroProd:int}")]
-        public async Task<IActionResult> Delete(int nroProd)
+        [HttpDelete("{warehouseId:int}")]
+        public async Task<IActionResult> Delete(int warehouseId)
         {
             try
             {
-                await Repository.Delete(nroProd);
+                await Repository.Delete(warehouseId);
 
                 return DeletedResult();
             }

@@ -2,19 +2,6 @@
 <template>
   <title-card title="Lista Almacenes" class-name="px-0 pb-0 rounded-md">
     <pag-table :headers="headers" :service="warehouseServ">
-      <!-- Slot personalizado para campo de ventas -->
-      <template #item.IsSales="{ value }">
-        <v-chip variant="text" size="small" class="px-0">
-          <v-avatar
-            size="8"
-            :color="value ? 'success' : 'error'"
-            variant="flat"
-            class="mr-2"
-          />
-          <p class="text-h6 mb-0">{{ value ? 'Habilitado' : 'Deshabilitado' }}</p>
-        </v-chip>
-      </template>
-
       <!-- Acciones de edición y eliminación -->
       <template #item.actions="{ item }">
         <v-btn icon variant="text" color="primary" @click="emit('edit', item)">
@@ -36,11 +23,9 @@ const emit = defineEmits(['edit', 'delete'])
 const { warehouseServ } = inject('services')
 
 const headers = ref([
-  { title: 'ID PROD.', key: 'NroProduct' },
-  { title: 'NOMBRE PRO.', key: 'Name' },
-  { title: 'TOTAL STOCK', key: 'TotalStock', align: 'end' },
-  { title: 'VENTAS', key: 'IsSales' },
-  { title: 'PRECIO Bs.', key: 'Price', align: 'end' },
+  { title: 'ID ALM.', key: 'WarehouseId' },
+  { title: 'NOMBRE ALM.', key: 'Name' },
+  { title: 'LOCALIZACION', key: 'Location', align: 'end' },
   { title: 'ACCIONES', key: 'actions', sortable: false, align: 'center' }
 ])
 </script>
