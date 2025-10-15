@@ -15,6 +15,11 @@ export default {
       name: 'Warehouse',
       path: '/iaw/warehouses',
       component: () => import('@/views/pages/iaw/warehouse/WarehousesPage.vue')
+    },
+    {
+      name: 'InventoryTxn',
+      path: '/iaw/inventoryTxn',
+      component: () => import('@/views/pages/iaw/inventoryTxn/InventoryTxn.vue')
     }
   ]
 }
