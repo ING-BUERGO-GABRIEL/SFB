@@ -6,8 +6,10 @@ namespace SFB.Infrastructure.Contexts
     public partial class SFBContext
     {
         public DbSet<EProduct> IAWProducts { get; set; }
-
         public DbSet<EWarehouse> IAWWarehouse { get; set; }
+        public DbSet<EStock> IAWStocks { get; set; }
+        public DbSet<EInventoryTxn> IAWInventoryTxn { get; set; }
+        public DbSet<EInvDetail> IAWInvDetail { get; set; }
 
         private static void IAWModelCreating(ModelBuilder modelBuilder)
         {
