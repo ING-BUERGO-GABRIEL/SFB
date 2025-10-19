@@ -14,10 +14,13 @@ namespace SFB.Infrastructure.Entities.IAW
         [Required]
         public int TxnId { get; set; }
 
+        [ForeignKey(nameof(TxnId))]
+        public virtual EInventoryTxn? InventoryTxn { get; set; }
+
         [Required]
         public int NroProduct { get; set; }
 
-        [NotMapped]
+        [ForeignKey(nameof(NroProduct))]
         public virtual EProduct? Product { get; set; }
 
         [Required]

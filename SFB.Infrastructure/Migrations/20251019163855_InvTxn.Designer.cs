@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SFB.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using SFB.Infrastructure.Contexts;
 namespace SFB.Infrastructure.Migrations
 {
     [DbContext(typeof(SFBContext))]
-    partial class SFBContextModelSnapshot : ModelSnapshot
+    [Migration("20251019163855_InvTxn")]
+    partial class InvTxn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,17 +299,17 @@ namespace SFB.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<int?>("WarehouseDestId")
+                    b.Property<int?>("WareHouseDest")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("WarehouseOriginId")
+                    b.Property<int?>("WarehouseOri")
                         .HasColumnType("integer");
 
                     b.HasKey("TxnId");
 
-                    b.HasIndex("WarehouseDestId");
+                    b.HasIndex("WareHouseDest");
 
-                    b.HasIndex("WarehouseOriginId");
+                    b.HasIndex("WarehouseOri");
 
                     b.ToTable("IAW_InventoryTxn", (string)null);
                 });
@@ -538,11 +541,11 @@ namespace SFB.Infrastructure.Migrations
                 {
                     b.HasOne("SFB.Infrastructure.Entities.IAW.EWarehouse", "WarehouseDest")
                         .WithMany("TxnsAsDestination")
-                        .HasForeignKey("WarehouseDestId");
+                        .HasForeignKey("WareHouseDest");
 
                     b.HasOne("SFB.Infrastructure.Entities.IAW.EWarehouse", "WarehouseOrigin")
                         .WithMany("TxnsAsOrigin")
-                        .HasForeignKey("WarehouseOriginId");
+                        .HasForeignKey("WarehouseOri");
 
                     b.Navigation("WarehouseDest");
 

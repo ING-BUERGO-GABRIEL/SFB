@@ -1,5 +1,4 @@
 ﻿using SFB.Infrastructure.Entities.CMS;
-using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,18 +17,23 @@ namespace SFB.Infrastructure.Entities.IAW
         [Required, MaxLength(3)]
         public string ModOrigin { get; set; }
 
-        public int? WarehouseOri { get; set; }
+        public int? WarehouseOriginId { get; set; }
+        public int? WarehouseDestId { get; set; }
 
-        public int? WareHouseDest { get; set; }
-
-        [NotMapped]
+        [ForeignKey(nameof(WarehouseOriginId))]
         public virtual EWarehouse? WarehouseOrigin { get; set; }
 
-        [NotMapped]
+        [ForeignKey(nameof(WarehouseDestId))]
         public virtual EWarehouse? WarehouseDest { get; set; }
 
+
+        [Required, MaxLength(3)]
+        public string StatusCode { get; set; }
+
         [Required]
-        public ICollection<EInvDetail>? InvDetails { get; set; }
+        public bool Delete { get; set; }
+
+        public virtual ICollection<EInvDetail>? InvDetails { get; set; } = new List<EInvDetail>();
 
     }
 }

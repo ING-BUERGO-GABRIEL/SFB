@@ -19,5 +19,11 @@ namespace SFB.Infrastructure.Entities.IAW
 
         [Required]
         public bool Status { get; set; } = true;
+
+        [InverseProperty(nameof(EInventoryTxn.WarehouseOrigin))]
+        public virtual ICollection<EInventoryTxn>? TxnsAsOrigin { get; set; }
+
+        [InverseProperty(nameof(EInventoryTxn.WarehouseDest))]
+        public virtual ICollection<EInventoryTxn>? TxnsAsDestination { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
-  <title-card title="Lista Almacenes" class-name="px-0 pb-0 rounded-md">
-    <pag-table :headers="headers" :service="warehouseServ">
+  <title-card title="Transacciones de Inventario" class-name="px-0 pb-0 rounded-md">
+    <pag-table :headers="headers" :service="invTxnServ">
       <!-- Acciones de edición y eliminación -->
       <template #item.actions="{ item }">
         <v-btn icon variant="text" color="primary" @click="emit('edit', item)">
@@ -20,7 +20,7 @@ import { inject, ref } from 'vue'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 
 const emit = defineEmits(['edit', 'delete'])
-const { warehouseServ } = inject('services')
+const { invTxnServ } = inject('services')
 
 const headers = ref([
   { title: 'ID ALM.', key: 'WarehouseId' },

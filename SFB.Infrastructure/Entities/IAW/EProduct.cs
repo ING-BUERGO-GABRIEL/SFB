@@ -30,5 +30,7 @@ namespace SFB.Infrastructure.Entities.IAW
 
         [Required]
         public bool Status { get; set; } = true;
+
+        public virtual ICollection<EInvDetail>? InvDetails { get; set; }
     }
 }
