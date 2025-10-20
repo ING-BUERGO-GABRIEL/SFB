@@ -5,6 +5,7 @@ using SFB.Shared.Backend.Helpers;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 //Configure
 ProgramHelper.ConfigureDBContext<SFBContext>(builder, "SFB");
@@ -17,6 +18,12 @@ var modules = CustomModules.GetBackendModules();
 ModuleLoader.LoadBackendModules(modules, builder.Services);
 
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())               // <-- Solo en desarrollo
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 app.UseDefaultFiles();   

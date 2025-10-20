@@ -18,7 +18,7 @@ namespace SFB.IAW.Backend.Repositories
         {
             var query = Context.IAWInventoryTxn.AsQueryable();
 
-            var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "WarehouseId" });
+            var result = await base.GetPage(query, filter, pageSize, pageNumber);
 
             return result;
         }

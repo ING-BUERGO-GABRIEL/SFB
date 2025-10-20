@@ -26,7 +26,7 @@
 
 <script setup>
 import { ref, inject } from 'vue'
-const { warehouseServ } = inject('services')
+const { invTxnServ } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
@@ -60,14 +60,14 @@ async function openForm(mode, item = null) {
 
       if (!confirmed) return null
 
-      const ok = await warehouseServ.remove(item.WarehouseId)
+      const ok = await invTxnServ.remove(item.WarehouseId)
       if (!ok) return
-      const idx = warehouseServ.pageData.Data.findIndex(p => p.WarehouseId === item.WarehouseId)
+      const idx = invTxnServ.pageData.Data.findIndex(p => p.WarehouseId === item.WarehouseId)
       if (idx !== -1) {
-        warehouseServ.pageData.Data.splice(idx, 1)
-        warehouseServ.pageData.TotalCount--
-        if (warehouseServ.pageData.Data.length === 0 && warehouseServ.pageData.TotalCount > 0) {
-          await warehouseServ.loadPage()
+        invTxnServ.pageData.Data.splice(idx, 1)
+        invTxnServ.pageData.TotalCount--
+        if (invTxnServ.pageData.Data.length === 0 && invTxnServ.pageData.TotalCount > 0) {
+          await invTxnServ.loadPage()
         }
       }
 
@@ -83,18 +83,18 @@ async function openForm(mode, item = null) {
 async function onAccept() {
   switch (modeDlg.value) {
     case 'Insert': {
-      const newProd = await warehouseServ.create(model.value)
+      const newProd = await invTxnServ.create(model.value)
       if (!newProd) return
       model.value = newProd
-      warehouseServ.pageData.Data.unshift(newProd)
-      warehouseServ.pageData.TotalCount++
+      invTxnServ.pageData.Data.unshift(newProd)
+      invTxnServ.pageData.TotalCount++
       break
     }
     case 'Update': {
-      const updWare = await warehouseServ.update(model.value)
+      const updWare = await invTxnServ.update(model.value)
       if (!updWare) return
-      const idx = warehouseServ.pageData.Data.findIndex(p => p.WarehouseId === updWare.WarehouseId)
-      if (idx !== -1) warehouseServ.pageData.Data[idx] = updWare
+      const idx = invTxnServ.pageData.Data.findIndex(p => p.WarehouseId === updWare.WarehouseId)
+      if (idx !== -1) invTxnServ.pageData.Data[idx] = updWare
       break
     }
 

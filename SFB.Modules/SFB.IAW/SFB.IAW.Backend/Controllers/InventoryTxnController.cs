@@ -1,27 +1,45 @@
 ﻿using SFB.IAW.Backend.Repositories;
 using SFB.Infrastructure.Contexts;
 using SFB.Shared.Backend.Controller;
-using Microsoft.AspNetCore.Mvc;
 using SFB.IAW.Shared.Models;
-using Mapster;
 using SFB.Infrastructure.Entities.IAW;
+using Microsoft.AspNetCore.Mvc;
+using Mapster;
 
 namespace SFB.IAW.Backend.Controllers
 {
     [Route("api/IAW/[controller]/[action]")]
-    public class InventoryTxnController(IServiceProvider services) : BaseController<SFBContext, InventoryTxnRepository>(services)
+    public class InventoryTxnController : BaseController<SFBContext, InventoryTxnRepository>
     {
+        public InventoryTxnController(IServiceProvider services) : base(services) { }
+
         [HttpGet]
         public async Task<IActionResult> GetPage(
-            [FromQuery] int pageSize,
-            [FromQuery] int PageNumber,
-            [FromQuery] string? filter = null)
+                [FromQuery] int pageSize,
+                [FromQuery] int pageNumber = 1,
+                [FromQuery] string? filter = null)
         {
             try
             {
-                var result = await Repository.GetPage(filter,pageSize,PageNumber);
+                var result = await Repository.GetPage(filter, pageSize, pageNumber);
 
                 return OkResult(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetPagePrueva()
+        {
+            try
+            {
+
+                return OkResult("Hola");
             }
             catch (Exception ex)
             {
