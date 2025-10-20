@@ -4,9 +4,15 @@
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
           <v-label>Codigo</v-label>
-          <v-text-field disabled v-model="model.WarehouseId" required placeholder="Codigo" />
+          <v-text-field disabled v-model="model.TxnId" required placeholder="Codigo" />
         </div>
       </v-col>
+        <!-- <v-select v-model="filters.codEsp"
+            :items="specialties" item-title="TitEsp" item-value="CodEsp" placeholder="Seleccionar especialidad">
+            <template #prepend-inner>
+                <smo-icon name="search" />
+            </template>
+        </v-select> -->
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
           <v-label>Nombre</v-label>
@@ -33,6 +39,7 @@ const showModal = ref(false)
 const modeDlg = ref('')
 const titleDlg = ref('')
 const model = ref({})
+const metadata = ref({})
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 
@@ -44,7 +51,7 @@ async function openForm(mode, item = null) {
   switch (mode) {
     case 'Insert':
       titleDlg.value = 'Nuevo Almacen'
-      model.value = { WarehouseId: 0 }
+      model.value = { TxnId: 0,ModOrigin:'IAW' }
       showModal.value = true
       break
     case 'Update':
