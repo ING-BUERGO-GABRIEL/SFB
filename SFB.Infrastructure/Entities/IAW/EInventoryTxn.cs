@@ -17,6 +17,9 @@ namespace SFB.Infrastructure.Entities.IAW
         [Required, MaxLength(3)]
         public string ModOrigin { get; set; }
 
+        [Required, MaxLength(3)]
+        public string Type { get; set; }
+
         public int? WarehouseOriginId { get; set; }
         public int? WarehouseDestId { get; set; }
 
