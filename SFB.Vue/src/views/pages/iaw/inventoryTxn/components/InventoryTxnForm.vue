@@ -1,5 +1,5 @@
 <template>
-  <card-dialog v-model="showModal" :title="titleDlg" height="350"  formValidate @accept="onAccept" @cancel="onCancel">
+  <card-dialog v-model="showModal" :title="titleDlg" height="350" formValidate @accept="onAccept" @cancel="onCancel">
     <v-row class="pa-4 pb-0">
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
@@ -7,17 +7,19 @@
           <v-text-field disabled v-model="model.TxnId" required placeholder="Codigo" />
         </div>
       </v-col>
-        <!-- <v-select v-model="filters.codEsp"
-            :items="specialties" item-title="TitEsp" item-value="CodEsp" placeholder="Seleccionar especialidad">
-            <template #prepend-inner>
-                <smo-icon name="search" />
-            </template>
-        </v-select> -->
+
+      <v-col cols="12" sm="6" class="py-0">
+        <div class="mb-6">
+          <v-label>Typo Transaccion</v-label>
+          <v-select v-model="model.Type" :items="metadata.CmbType" item-title="Name" item-value="Type"
+            placeholder="Seleccionar Tipo" variant="outlined" hide-details="auto"/>
+        </div>
+      </v-col>
+
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
           <v-label>Nombre</v-label>
-          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre"
-             />
+          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
@@ -50,8 +52,9 @@ async function openForm(mode, item = null) {
 
   switch (mode) {
     case 'Insert':
+      await LoadMetatdata()
       titleDlg.value = 'Nuevo Almacen'
-      model.value = { TxnId: 0,ModOrigin:'IAW' }
+      model.value = { TxnId: 0, ModOrigin: 'IAW' }
       showModal.value = true
       break
     case 'Update':
@@ -116,6 +119,14 @@ function onCancel() {
   _resolve(null)
   _resolve = null
   showModal.value = false
+}
+
+async function LoadMetatdata() {
+  const meta = await invTxnServ.getMetadata()
+  console.log(meta)
+  if (meta) {
+    metadata.value = meta
+  }
 }
 
 defineExpose({

@@ -9,9 +9,8 @@ using Mapster;
 namespace SFB.IAW.Backend.Controllers
 {
     [Route("api/IAW/[controller]/[action]")]
-    public class InventoryTxnController : BaseController<SFBContext, InventoryTxnRepository>
-    {
-        public InventoryTxnController(IServiceProvider services) : base(services) { }
+    public class InventoryTxnController(IServiceProvider services) : BaseController<SFBContext, InventoryTxnRepository>(services)
+    {       
 
         [HttpGet]
         public async Task<IActionResult> GetPage(
@@ -24,22 +23,6 @@ namespace SFB.IAW.Backend.Controllers
                 var result = await Repository.GetPage(filter, pageSize, pageNumber);
 
                 return OkResult(result);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
-
-
-        [HttpGet]
-        public async Task<IActionResult> GetPagePrueva()
-        {
-            try
-            {
-
-                return OkResult("Hola");
             }
             catch (Exception ex)
             {
@@ -93,6 +76,21 @@ namespace SFB.IAW.Backend.Controllers
                 await Repository.Delete(warehouseId);
 
                 return DeletedResult();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMetadata()
+        {
+            try
+            {
+                Dictionary<string,object> result =  await Repository.GetMetadata();
+
+                return OkResult(result);
             }
             catch (Exception ex)
             {

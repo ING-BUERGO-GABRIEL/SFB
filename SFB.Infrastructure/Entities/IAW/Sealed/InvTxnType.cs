@@ -19,7 +19,7 @@ namespace SFB.Infrastructure.Entities.IAW.Sealed
 
         public static readonly InvTxnType Ingreso = new InvTxnType("ING", "Ingreso");
         public static readonly InvTxnType Salida = new InvTxnType("SAL", "Salida");
-        public static readonly InvTxnType Traspaso = new InvTxnType("SAL", "Traspaso");
+        public static readonly InvTxnType Traspaso = new InvTxnType("TRA", "Traspaso");
 
         public static IEnumerable<InvTxnType> List() => new[] { Ingreso, Salida, Traspaso };
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
+using SFB.Infrastructure.Entities.IAW.Sealed;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
@@ -56,9 +57,16 @@ namespace SFB.IAW.Backend.Repositories
             {
                 if (ex.InnerException?.Message.Contains("FOREIGN KEY") == true)
                     throw new ControllerException("No es posible eliminar, item en uso"); // si no es por FK, relanzamos
-                throw; 
+                throw;
             }
         }
 
+        internal async Task<Dictionary<string, object>> GetMetadata()
+        {
+            return new Dictionary<string, object>
+            {
+                {"CmbType",InvTxnType.List() }
+            };
+        }
     }
 }
