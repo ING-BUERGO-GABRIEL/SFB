@@ -79,6 +79,13 @@ export default createVuetify({
       rounded: 'lg',
       class: 'mt-2',
     },
+    VSelect: {
+      variant: 'outlined',
+      color: 'primary',
+      hideDetails: 'auto',
+      rounded: 'lg',
+      class: 'mt-2',
+    },
     VTooltip: {
       location: 'top'
     }

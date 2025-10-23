@@ -12,22 +12,11 @@
         <div class="mb-6">
           <v-label>Typo Transaccion</v-label>
           <v-select v-model="model.Type" :items="metadata.CmbType" item-title="Name" item-value="Type"
-            placeholder="Seleccionar Tipo" variant="outlined" hide-details="auto"/>
+            placeholder="Seleccionar Tipo" />
         </div>
       </v-col>
 
-      <v-col cols="12" sm="6" class="py-0">
-        <div class="mb-6">
-          <v-label>Nombre</v-label>
-          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre" />
-        </div>
-      </v-col>
-      <v-col cols="12" sm="6" class="py-0">
-        <div class="mb-6">
-          <v-label>Localizacion</v-label>
-          <v-text-field v-model="model.Location" placeholder="Lugar del almacen" />
-        </div>
-      </v-col>
+
     </v-row>
   </card-dialog>
 </template>
@@ -41,7 +30,10 @@ const showModal = ref(false)
 const modeDlg = ref('')
 const titleDlg = ref('')
 const model = ref({})
-const metadata = ref({})
+const metadata = ref({
+  CmbType: [],
+  CmbAlm: []
+})
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 
