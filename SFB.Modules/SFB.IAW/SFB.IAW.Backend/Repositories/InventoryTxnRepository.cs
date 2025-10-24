@@ -63,9 +63,15 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<Dictionary<string, object>> GetMetadata()
         {
+            var CmbWerehouses = await Context.IAWWarehouse
+                .Where(w => w.Status)
+                .ToListAsync();
+
+
             return new Dictionary<string, object>
             {
-                {"CmbType",InvTxnType.List() }
+                {"CmbType",InvType.List() },
+                {"CmbWerehouses",CmbWerehouses }
             };
         }
     }

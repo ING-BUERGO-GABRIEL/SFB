@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SFB.Infrastructure.Entities.IAW.Sealed
+{
+    public sealed class InvType
+    {
+        public string Type { get; }
+        public string Name { get; }
+
+        private InvType(string type, string name)
+        {
+            Type = type;
+            Name = name;
+        }
+
+        public static readonly InvType Ingreso = new InvType("ING", "Ingreso");
+        public static readonly InvType Salida = new InvType("SAL", "Salida");
+        public static readonly InvType Traspaso = new InvType("TRA", "Traspaso");
+
+        public static IEnumerable<InvType> List() => new[] { Ingreso, Salida, Traspaso };
+
+        public static InvType? FromCode(string type) =>
+            List().SingleOrDefault(m => m.Type == type) ?? null;
+    }
+
+}

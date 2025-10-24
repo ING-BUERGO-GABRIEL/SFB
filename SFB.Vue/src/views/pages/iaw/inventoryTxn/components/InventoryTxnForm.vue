@@ -15,8 +15,6 @@
           <v-text-field
             v-model="model.TxnId"
             disabled
-            variant="outlined"
-            density="comfortable"
             placeholder="Código"
           />
         </div>
@@ -31,8 +29,7 @@
             :rules="[rRequired]"
             item-title="Name"
             item-value="Type"
-            variant="outlined"
-            density="comfortable"
+            
             placeholder="Seleccionar tipo"
           />
         </div>
@@ -46,8 +43,7 @@
             :items="statusOptions"
             item-title="label"
             item-value="value"
-            variant="outlined"
-            density="comfortable"
+            
             placeholder="Seleccionar estado"
           />
         </div>
@@ -64,8 +60,7 @@
             item-title="label"
             item-value="value"
             clearable
-            variant="outlined"
-            density="comfortable"
+            
             placeholder="Seleccionar almacén"
           />
         </div>
@@ -82,8 +77,7 @@
             item-title="label"
             item-value="value"
             clearable
-            variant="outlined"
-            density="comfortable"
+            
             placeholder="Seleccionar almacén"
           />
         </div>
@@ -96,8 +90,7 @@
             v-model.number="model.TxnOrigin"
             type="number"
             min="0"
-            variant="outlined"
-            density="comfortable"
+            
             placeholder="Opcional"
           />
         </div>
@@ -321,6 +314,10 @@ function onCancel() {
 }
 
 async function loadMetadata() {
+
+  const meta = await invTxnServ.getMetadata()
+  console.log('Metadata:', meta)
+
   const [metaTypes, warehousesRes, productsRes] = await Promise.allSettled([
     invTxnServ.getMetadata(),
     apiClient.get('api/IAW/Warehouse/GetPage?pageSize=200&pageNumber=1'),

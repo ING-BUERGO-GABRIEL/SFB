@@ -1,7 +1,7 @@
 <template>
   <div v-if="modelValue" class="full-cover">
     <div class="modal-card d-flex flex-column justify-center align-center">
-      <v-card variant="outlined" elevation="0" class="bg-surface" :height="props.height" :width="props.width">
+      <v-card variant="outlined" style="max-width: 100%; max-width: 100%;" elevation="0" class="bg-surface" :height="props.height" :width="props.width">
 
         <v-card-title class="d-flex align-center bg-containerBg">
           <span>{{ props.title }}</span>

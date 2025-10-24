@@ -88,7 +88,7 @@ namespace SFB.IAW.Backend.Controllers
         {
             try
             {
-                Dictionary<string,object> result =  await Repository.GetMetadata();
+                var result =  await Repository.GetMetadata();
 
                 return OkResult(result);
             }
