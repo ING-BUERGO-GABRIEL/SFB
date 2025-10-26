@@ -28,8 +28,7 @@
             :items="metadata.CmbType"
             :rules="[rRequired]"
             item-title="Name"
-            item-value="Type"
-            
+            item-value="Type"            
             placeholder="Seleccionar tipo"
           />
         </div>
@@ -40,10 +39,9 @@
           <v-label>Estado</v-label>
           <v-select
             v-model="model.StatusCode"
-            :items="statusOptions"
-            item-title="label"
-            item-value="value"
-            
+            :items="metadata.CmbStatus"
+            item-title="Name"
+            item-value="Code"            
             placeholder="Seleccionar estado"
           />
         </div>
@@ -54,11 +52,11 @@
           <v-label>Almacén Origen</v-label>
           <v-select
             v-model="model.WarehouseOriginId"
-            :items="warehouseOptions"
+            :items="metadata.CmbWerehouses"
             :rules="originRules"
             :disabled="originDisabled"
-            item-title="label"
-            item-value="value"
+            item-title="Name"
+            item-value="WarehouseId"
             clearable
             
             placeholder="Seleccionar almacén"
@@ -71,27 +69,25 @@
           <v-label>Almacén Destino</v-label>
           <v-select
             v-model="model.WarehouseDestId"
-            :items="warehouseOptions"
+            :items="metadata.CmbWerehouses"
             :rules="destRules"
             :disabled="destDisabled"
-            item-title="label"
-            item-value="value"
-            clearable
-            
+            item-title="Name"
+            item-value="WarehouseId"
+            clearable            
             placeholder="Seleccionar almacén"
           />
         </div>
       </v-col>
 
-      <v-col cols="12" sm="4" class="py-0">
+      <v-col v-if="model?.ModOrigin != 'IAW'" cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Nro. Transacción Origen</v-label>
           <v-text-field
             v-model.number="model.TxnOrigin"
             type="number"
+            disabled
             min="0"
-            
-            placeholder="Opcional"
           />
         </div>
       </v-col>
@@ -102,6 +98,7 @@
     <div class="px-4 py-3">
       <div class="d-flex align-center justify-space-between mb-3">
         <h4 class="text-subtitle-2 mb-0">Detalle de Productos</h4>
+        
         <v-btn color="primary" variant="tonal" size="small" @click="addDetail">
           Agregar producto
         </v-btn>
@@ -110,47 +107,46 @@
       <v-table density="comfortable" class="inventory-details-table">
         <thead>
           <tr>
-            <th class="text-left">Producto</th>
-            <th class="text-left" style="width: 160px">Cantidad</th>
-            <th class="text-center" style="width: 80px">Acciones</th>
+            <th class="text-left px-0">Producto</th>
+            <th class="text-left " style="width: 50px">Cantidad</th>
+            <th class="text-center px-0" style="width: 50px">Acc.</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(detail, idx) in model.InvDetails" :key="idx">
-            <td>
-              <v-select
-                v-model="detail.NroProduct"
-                :items="productOptions"
-                :rules="[rRequired]"
-                item-title="label"
-                item-value="value"
-                clearable
-                variant="outlined"
-                density="comfortable"
-                placeholder="Seleccionar producto"
-              />
-            </td>
-            <td>
+<td class="px-0">
+  <select-page
+    v-model="detail.NroProduct"
+    :service="productServ"
+    :taken-ids="[...selectedIds(detail)]"   
+    :selected-label="detail._ProdName"    
+    :rules="[rRequired]"
+    placeholder="Seleccionar producto"
+    @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }"
+  />
+</td>
+
+            <td class="pr-0">
               <v-text-field
-                v-model.number="detail.QtyProduct"
-                :rules="qtyRules"
-                type="number"
-                min="0"
-                step="0.0001"
-                variant="outlined"
-                density="comfortable"
-                placeholder="Cantidad"
+          v-model.number="detail.QtyProduct"
+          :rules="qtyRules"
+          type="number"
+          min="0"
+          step="1"     
+          variant="filled"          
+          placeholder="Cant."
               />
             </td>
-            <td class="text-center">
+            <td class="text-center px-0" >
               <v-btn
                 icon
                 variant="text"
                 color="error"
+                size="small"
                 :disabled="model.InvDetails.length === 1"
                 @click="removeDetail(idx)"
               >
-                <v-icon icon="mdi-delete-outline" />
+                <DeleteOutlined :style="{ fontSize: '15px' }" />
               </v-btn>
             </td>
           </tr>
@@ -163,25 +159,22 @@
 <script setup>
 import { computed, ref, inject, watch } from 'vue'
 import { message } from 'ant-design-vue'
-import { apiClient } from '@/utils/apiClient'
+import { DeleteOutlined } from '@ant-design/icons-vue'
 
-const { invTxnServ } = inject('services')
+const { invTxnServ, productServ } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
 const modeDlg = ref('')
 const titleDlg = ref('')
 const model = ref({})
+
 const metadata = ref({
   CmbType: [],
-  CmbWarehouses: [],
-  CmbProducts: []
+  CmbWerehouses: [],
+  CmbStatus: []
 })
 
-const statusOptions = [
-  { label: 'Activa', value: 'ACT' },
-  { label: 'Anulada', value: 'ANU' }
-]
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 const qtyRules = [
@@ -192,22 +185,10 @@ const qtyRules = [
 const originRules = computed(() => (originDisabled.value ? [] : [rRequired]))
 const destRules = computed(() => (destDisabled.value ? [] : [rRequired]))
 
-const warehouseOptions = computed(() =>
-  (metadata.value.CmbWarehouses ?? []).map(w => ({
-    label: `${w.Name} (#${w.WarehouseId})`,
-    value: w.WarehouseId
-  }))
-)
-
-const productOptions = computed(() =>
-  (metadata.value.CmbProducts ?? []).map(p => ({
-    label: `${p.Name} (${p.NroProduct})`,
-    value: p.NroProduct
-  }))
-)
-
 const originDisabled = computed(() => !['SAL', 'TRA'].includes(model.value?.Type))
 const destDisabled = computed(() => !['ING', 'TRA'].includes(model.value?.Type))
+
+
 
 watch(
   () => model.value?.Type,
@@ -225,7 +206,7 @@ let _resolve = null
 
 async function openForm(mode, item = null) {
   modeDlg.value = mode
-
+  productServ.loadTable = false
   switch (mode) {
     case 'Insert':
       await loadMetadata()
@@ -314,29 +295,10 @@ function onCancel() {
 }
 
 async function loadMetadata() {
-
   const meta = await invTxnServ.getMetadata()
-  console.log('Metadata:', meta)
-
-  const [metaTypes, warehousesRes, productsRes] = await Promise.allSettled([
-    invTxnServ.getMetadata(),
-    apiClient.get('api/IAW/Warehouse/GetPage?pageSize=200&pageNumber=1'),
-    apiClient.get('api/IAW/Product/GetPage?pageSize=200&pageNumber=1')
-  ])
-
-  metadata.value.CmbType = metaTypes.status === 'fulfilled' && metaTypes.value?.CmbType
-    ? metaTypes.value.CmbType
-    : []
-
-  metadata.value.CmbWarehouses =
-    warehousesRes.status === 'fulfilled' && warehousesRes.value?.IsSuccess
-      ? warehousesRes.value.Data?.Data ?? []
-      : []
-
-  metadata.value.CmbProducts =
-    productsRes.status === 'fulfilled' && productsRes.value?.IsSuccess
-      ? productsRes.value.Data?.Data ?? []
-      : []
+  if(meta){
+    metadata.value =  meta
+  }
 }
 
 function addDetail() {
@@ -369,7 +331,7 @@ function getDefaultModel() {
     TxnId: 0,
     TxnOrigin: null,
     ModOrigin: 'IAW',
-    Type: '',
+    Type: null,
     WarehouseOriginId: null,
     WarehouseDestId: null,
     StatusCode: 'ACT',
@@ -411,6 +373,19 @@ function createDetail() {
     QtyProduct: null
   }
 }
+
+// IDs ya seleccionados (excluye la fila actual)
+function selectedIds(exceptDetail = null) {
+  return new Set(
+    (model.value.InvDetails ?? [])
+      .filter(d => d !== exceptDetail && d?.NroProduct != null)
+      .map(d => d.NroProduct)
+  )
+}
+
+
+
+
 
 defineExpose({
   openForm

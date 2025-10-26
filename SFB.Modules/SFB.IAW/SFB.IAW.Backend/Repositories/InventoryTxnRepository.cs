@@ -63,7 +63,7 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<Dictionary<string, object>> GetMetadata()
         {
-            var CmbWerehouses = await Context.IAWWarehouse
+            var cmbWerehouses = await Context.IAWWarehouse
                 .Where(w => w.Status)
                 .ToListAsync();
 
@@ -71,7 +71,8 @@ namespace SFB.IAW.Backend.Repositories
             return new Dictionary<string, object>
             {
                 {"CmbType",InvType.List() },
-                {"CmbWerehouses",CmbWerehouses }
+                {"CmbWerehouses",cmbWerehouses },
+                {"CmbStatus",InvStatus.List() }
             };
         }
     }

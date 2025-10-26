@@ -14,12 +14,12 @@ namespace SFB.IAW.Backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPage(
             [FromQuery] int pageSize,
-            [FromQuery] int PageNumber,
+            [FromQuery] int pageNumber,
             [FromQuery] string? filter = null)
         {
             try
             {
-                var result = await Repository.GetPage(filter,pageSize,PageNumber);
+                var result = await Repository.GetPage(filter,pageSize,pageNumber);
 
                 return OkResult(result);
             }

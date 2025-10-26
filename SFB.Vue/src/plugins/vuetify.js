@@ -85,6 +85,11 @@ export default createVuetify({
       hideDetails: 'auto',
       rounded: 'lg',
       class: 'mt-2',
+      noDataText:"Sin Datos" 
+    },
+    VAutocomplete: {
+      hideDetails: 'auto',
+      noDataText:"Sin Datos" 
     },
     VTooltip: {
       location: 'top'
