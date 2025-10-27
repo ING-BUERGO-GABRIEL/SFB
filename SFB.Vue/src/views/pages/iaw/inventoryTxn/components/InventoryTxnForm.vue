@@ -114,27 +114,27 @@
         </thead>
         <tbody>
           <tr v-for="(detail, idx) in model.InvDetails" :key="idx">
-<td class="px-0">
-  <select-page
-    v-model="detail.NroProduct"
-    :service="productServ"
-    :taken-ids="[...selectedIds(detail)]"   
-    :selected-label="detail._ProdName"    
-    :rules="[rRequired]"
-    placeholder="Seleccionar producto"
-    @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }"
-  />
-</td>
+            <td class="px-0">
+              <select-page
+                v-model="detail.NroProduct"
+                :service="productServ"
+                :taken-ids="[...selectedIds(detail)]"   
+                :selected-label="detail._ProdName"    
+                :rules="[rRequired]"
+                placeholder="Seleccionar producto"
+                @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }"
+              />
+            </td>
 
             <td class="pr-0">
               <v-text-field
-          v-model.number="detail.QtyProduct"
-          :rules="qtyRules"
-          type="number"
-          min="0"
-          step="1"     
-          variant="filled"          
-          placeholder="Cant."
+                v-model.number="detail.QtyProduct"
+                :rules="qtyRules"
+                type="number"
+                min="0"
+                step="1"     
+                variant="filled"          
+                placeholder="Cant."
               />
             </td>
             <td class="text-center px-0" >
