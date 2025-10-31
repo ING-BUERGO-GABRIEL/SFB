@@ -23,15 +23,15 @@ namespace SFB.IAW.Backend.Repositories
 
             return result;
         }
-        internal async Task<EWarehouse> Create(EWarehouse warehouse)
+        internal async Task<EInventoryTxn> Create(EInventoryTxn warehouse)
         {
-            warehouse.Status = true;
+            //warehouse.Status = true;
 
-            Context.IAWWarehouse.Add(warehouse);
+            //Context.IAWWarehouse.Add(warehouse);
 
-            await Context.SaveChangesAsync();
+            //await Context.SaveChangesAsync();
 
-            return warehouse;
+            return null;
         }
 
         internal async Task<EWarehouse> Update(EWarehouse product)
@@ -66,7 +66,6 @@ namespace SFB.IAW.Backend.Repositories
             var cmbWerehouses = await Context.IAWWarehouse
                 .Where(w => w.Status)
                 .ToListAsync();
-
 
             return new Dictionary<string, object>
             {

@@ -31,15 +31,15 @@ namespace SFB.IAW.Backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] MWarehouse product)
+        public async Task<IActionResult> Create([FromBody] MInventoryTxn model)
         {
             try
             {
-                var eWarehouse = product.Adapt<EWarehouse>();
+                var entity = model.Adapt<EInventoryTxn>();
 
-                var resultcreate = await Repository.Create(eWarehouse);
+                entity = await Repository.Create(entity);
 
-                var result = resultcreate.Adapt<MWarehouse>();
+                var result = entity.Adapt<MInventoryTxn>();
 
                 return OkResult(result);
             }

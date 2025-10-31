@@ -18,7 +18,7 @@ export const inventoryTxnService = defineStore('inventoryTxnService', {
           message.warning(Message)
           return null
         }
-        message.success('Almacen creado con éxito.')
+        message.success('Transaccion creado con éxito.')
         return Data
       } catch (err) {
         message.error(err)
