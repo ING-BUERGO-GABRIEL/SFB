@@ -23,16 +23,32 @@ namespace SFB.IAW.Backend.Repositories
 
             return result;
         }
-        internal async Task<EInventoryTxn> Create(EInventoryTxn warehouse)
+        internal async Task<EInventoryTxn> Create(EInventoryTxn invTxn)
         {
-            //warehouse.Status = true;
 
-            //Context.IAWWarehouse.Add(warehouse);
-
-            //await Context.SaveChangesAsync();
-
-            return null;
+            await using var transaction = await Context.Database.BeginTransactionAsync();
+            try
+            {
+                await CreateTxn(invTxn);
+                await Context.SaveChangesAsync();
+                await transaction.CommitAsync();
+                return invTxn;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
         }
+
+        internal  async Task<EInventoryTxn> CreateTxn(EInventoryTxn invTxn)
+        {
+
+            Context.IAWInventoryTxn.Add(invTxn);
+
+            return invTxn;
+        }
+
 
         internal async Task<EWarehouse> Update(EWarehouse product)
         {

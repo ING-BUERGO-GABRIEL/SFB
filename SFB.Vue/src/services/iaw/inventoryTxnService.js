@@ -78,6 +78,14 @@ export const inventoryTxnService = defineStore('inventoryTxnService', {
         console.error('Error al obtener metadata:', error);
         return null
       }
+    },
+    addItemPage(item) {
+      this.pageData.Data.unshift(item)
+      this.pageData.TotalCount = (this.pageData.TotalCount ?? 0) + 1
+    },
+    updItemPage(item) {
+      const idx = this.pageData.Data.findIndex(p => p.TxnId === item.TxnId)
+      if (idx !== -1) this.pageData.Data[idx] = item
     }
   }
 });
