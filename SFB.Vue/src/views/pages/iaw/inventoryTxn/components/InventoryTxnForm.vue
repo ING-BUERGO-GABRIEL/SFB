@@ -140,7 +140,7 @@ let _resolve = null
 
 async function openForm(mode, item = null) {
   modeDlg.value = mode
-  invTxnServ.loadTable = false
+  productServ.loadTable = false
   switch (mode) {
     case 'Insert':
       await loadMetadata()
