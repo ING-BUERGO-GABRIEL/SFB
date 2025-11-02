@@ -7,9 +7,6 @@
         <v-btn icon variant="text" color="primary" @click="emit('edit', item)">
           <EditOutlined :style="{ fontSize: '18px' }" />
         </v-btn>
-        <v-btn icon variant="text" color="error" @click="emit('delete', item)">
-          <DeleteOutlined :style="{ fontSize: '18px' }" />
-        </v-btn>
       </template>
     </pag-table>
   </title-card>
@@ -17,15 +14,31 @@
 
 <script setup>
 import { inject, ref } from 'vue'
-import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
+import { EditOutlined } from '@ant-design/icons-vue'
 
 const emit = defineEmits(['edit', 'delete'])
 const { invTxnServ } = inject('services')
 
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
+
 const headers = ref([
-  { title: 'ID ALM.', key: 'WarehouseId' },
-  { title: 'NOMBRE ALM.', key: 'Name' },
-  { title: 'LOCALIZACION', key: 'Location', align: 'end' },
+  { title: 'ID TXN.', key: 'TxnId' },
+  { title: 'MODULO ORIGEN', key: 'ModOrigin' },
+  { title: 'TXN ORIGEN', key: 'TxnOrigin', align: 'end' },
+  { title: 'TIPO', key: 'NameType'},
+  { title: 'ESTADO', key: 'NameStatus'},
+    {
+    title: 'FECHA',
+    key: 'DateReg',
+    align: 'center',
+    value: (item) => formatDate(item.DateReg)
+  },
   { title: 'ACCIONES', key: 'actions', sortable: false, align: 'center' }
 ])
 </script>

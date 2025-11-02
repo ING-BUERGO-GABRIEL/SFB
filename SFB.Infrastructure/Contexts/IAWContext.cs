@@ -49,6 +49,12 @@ namespace SFB.Infrastructure.Contexts
 
             });
 
+            modelBuilder.Entity<EStock>(entity =>
+            {
+                entity.ToTable("IAW_Stock");
+                entity.HasKey(e =>  new { e.NroProduct, e.WarehouseId });                
+            });
+
             //indices
             modelBuilder.Entity<EInventoryTxn>().HasIndex(e => e.WarehouseOriginId);
             modelBuilder.Entity<EInventoryTxn>().HasIndex(e => e.WarehouseDestId);

@@ -23,8 +23,8 @@ namespace SFB.Infrastructure.Entities.IAW.Sealed
 
         public static IEnumerable<InvStatus> List() => new[] { Activo, Anulado, Pendiente };
 
-        public static InvStatus? FromCode(string code) =>
-            List().SingleOrDefault(m => m.Code == code) ?? null;
+        public static InvStatus FromCode(string code) =>
+            List().SingleOrDefault(m => m.Code == code) ?? throw new Exception("Codigo Status Error");
     }
 
 }

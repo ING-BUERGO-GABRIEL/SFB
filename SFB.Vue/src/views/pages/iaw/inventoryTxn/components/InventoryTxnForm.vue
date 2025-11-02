@@ -13,14 +13,14 @@
         <div class="mb-6">
           <v-label>Tipo de Transacción</v-label>
           <v-select v-model="model.Type" :items="metadata.CmbType" :rules="[rRequired]" item-title="Name"
-            item-value="Type" placeholder="Seleccionar tipo" />
+            item-value="Code" placeholder="Seleccionar tipo" />
         </div>
       </v-col>
 
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Estado</v-label>
-          <v-select v-model="model.StatusCode" :items="metadata.CmbStatus" item-title="Name" item-value="Code"
+          <v-select v-model="model.StatusCode" readonly :items="metadata.CmbStatus" item-title="Name" item-value="Code"
             placeholder="Seleccionar estado" />
         </div>
       </v-col>
@@ -118,11 +118,11 @@ const qtyRules = [
   v => (v !== null && v !== undefined && Number(v) > 0) || 'Debe ser mayor a 0'
 ]
 
+const originDisabled = computed(() => !['SAL', 'TRA'].includes(model.value?.Type))
+const destDisabled = computed(() => !['ING', 'TRA', 'INI'].includes(model.value?.Type))
+
 const originRules = computed(() => (originDisabled.value ? [] : [rRequired]))
 const destRules = computed(() => (destDisabled.value ? [] : [rRequired]))
-
-const originDisabled = computed(() => !['SAL', 'TRA'].includes(model.value?.Type))
-const destDisabled = computed(() => !['ING', 'TRA'].includes(model.value?.Type))
 
 watch(
   () => model.value?.Type,
@@ -194,6 +194,7 @@ function onCancel() {
 
 async function loadMetadata() {
   const meta = await invTxnServ.getMetadata()
+  console.log(meta)
   if (meta) {
     metadata.value = meta
   }

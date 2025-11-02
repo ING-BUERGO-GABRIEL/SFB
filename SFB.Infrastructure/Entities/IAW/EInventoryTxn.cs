@@ -34,9 +34,9 @@ namespace SFB.Infrastructure.Entities.IAW
         public string StatusCode { get; set; }
 
         [Required]
-        public bool Delete { get; set; }
+        public bool Delete { get; set; } = false;
 
-        public virtual ICollection<EInvDetail>? InvDetails { get; set; } = new List<EInvDetail>();
+        public virtual ICollection<EInvDetail> InvDetails { get; set; } = new List<EInvDetail>();
 
     }
 }

@@ -1,10 +1,13 @@
-﻿using SFB.IAW.Backend.Repositories;
-using SFB.Infrastructure.Contexts;
-using SFB.Shared.Backend.Controller;
-using SFB.IAW.Shared.Models;
-using SFB.Infrastructure.Entities.IAW;
+﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using Mapster;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using SFB.IAW.Backend.Repositories;
+using SFB.IAW.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.IAW;
+using SFB.Shared.Backend.Controller;
+using SFB.Shared.Backend.Helpers;
+using SFB.Shared.Backend.Models;
 
 namespace SFB.IAW.Backend.Controllers
 {
@@ -20,9 +23,15 @@ namespace SFB.IAW.Backend.Controllers
         {
             try
             {
-                var result = await Repository.GetPage(filter, pageSize, pageNumber);
+                var page = await Repository.GetPage(filter, pageSize, pageNumber);
+
+                var result = page.Adapt<PagedListModel<MInventoryTxn>>();
 
                 return OkResult(result);
+            }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
             }
             catch (Exception ex)
             {
@@ -43,6 +52,10 @@ namespace SFB.IAW.Backend.Controllers
 
                 return OkResult(result);
             }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
+            }
             catch (Exception ex)
             {
                 return InternalServerError(ex);
@@ -62,6 +75,10 @@ namespace SFB.IAW.Backend.Controllers
 
                 return OkResult(result);
             }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
+            }
             catch (Exception ex)
             {
                 return InternalServerError(ex);
@@ -77,6 +94,10 @@ namespace SFB.IAW.Backend.Controllers
 
                 return DeletedResult();
             }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
+            }
             catch (Exception ex)
             {
                 return InternalServerError(ex);
@@ -91,6 +112,10 @@ namespace SFB.IAW.Backend.Controllers
                 var result =  await Repository.GetMetadata();
 
                 return OkResult(result);
+            }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
             }
             catch (Exception ex)
             {

@@ -2,6 +2,7 @@
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
 using SFB.Infrastructure.Entities.IAW.Sealed;
+using SFB.Infrastructure.Migrations;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
@@ -10,6 +11,8 @@ namespace SFB.IAW.Backend.Repositories
 {
     public class InventoryTxnRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
+        private readonly StockRepository _stockRepository = new StockRepository(context);
+
         protected override List<string> GetFilterableProperties()
         {
             return new List<string> { "Name", "Location" };
@@ -17,7 +20,10 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<PagedListModel<EInventoryTxn>> GetPage(string? filter, int pageSize, int pageNumber)
         {
-            var query = Context.IAWInventoryTxn.AsQueryable();
+            var query = Context.IAWInventoryTxn
+                        .Where(inv=> !inv.Delete)
+                        .Include(i=> i.WarehouseOrigin)
+                        .Include(i => i.WarehouseDest);
 
             var result = await base.GetPage(query, filter, pageSize, pageNumber);
 
@@ -44,10 +50,65 @@ namespace SFB.IAW.Backend.Repositories
         internal  async Task<EInventoryTxn> CreateTxn(EInventoryTxn invTxn)
         {
 
+            await ValidateTxnInit(invTxn.InvDetails, invTxn.Type);
+
+            await _stockRepository.UpdateFromTxn(invTxn);
+
             Context.IAWInventoryTxn.Add(invTxn);
 
             return invTxn;
         }
+
+
+        internal async Task ValidateTxnInit(ICollection<EInvDetail> invDetail, string type)
+        {
+            if (invDetail is null || invDetail.Count == 0)
+                return;
+
+            var productIds = invDetail.Select(d => d.NroProduct).Distinct().ToList();
+
+            // Productos que ya tienen una transacción inicial activa (si la hay)
+            var initialProductIds = await Context.IAWInvDetail
+                .Where(d => productIds.Contains(d.NroProduct)
+                            && d.InventoryTxn != null
+                            && d.InventoryTxn.Type == InvType.TxnInicial.Code
+                            && d.InventoryTxn.StatusCode == InvStatus.Activo.Code
+                            && !d.InventoryTxn.Delete)
+                .Select(d => d.NroProduct)
+                .Distinct()
+                .ToListAsync();
+
+            // Si estamos creando una Txn Inicial, impedir duplicados: no permitir productos que ya tienen inicial
+            if (type == InvType.TxnInicial.Code)
+            {
+                if (initialProductIds.Any())
+                {
+                    var productNames = await Context.IAWProducts
+                        .Where(p => initialProductIds.Contains(p.NroProduct))
+                        .Select(p => p.Name)
+                        .ToListAsync();
+
+                    throw new ControllerException($"No se puede crear transacción inicial: los productos ya tienen transacción inicial: {string.Join(", ", productNames)}");
+                }
+
+                return;
+            }
+
+            // Para transacciones distintas de inicial, asegurar que exista una inicial previa para cada producto
+            var missing = productIds.Except(initialProductIds).ToList();
+
+            if (missing.Any())
+            {
+                var productNames = await Context.IAWProducts
+                    .Where(p => missing.Contains(p.NroProduct))
+                    .Select(p => p.Name)
+                    .ToListAsync();
+
+                throw new ControllerException($"Falta transacción inicial para los productos: {string.Join(", ", productNames)}");
+            }
+        }
+
+
 
 
         internal async Task<EWarehouse> Update(EWarehouse product)

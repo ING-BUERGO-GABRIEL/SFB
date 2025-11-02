@@ -8,12 +8,12 @@ namespace SFB.Infrastructure.Entities.IAW.Sealed
 {
     public sealed class InvType
     {
-        public string Type { get; }
+        public string Code { get; }
         public string Name { get; }
 
         private InvType(string type, string name)
         {
-            Type = type;
+            Code = type;
             Name = name;
         }
 
@@ -24,8 +24,8 @@ namespace SFB.Infrastructure.Entities.IAW.Sealed
 
         public static IEnumerable<InvType> List() => new[] { Ingreso, Salida, Traspaso, TxnInicial };
 
-        public static InvType? FromCode(string type) =>
-            List().SingleOrDefault(m => m.Type == type) ?? null;
+        public static InvType FromCode(string type) =>
+            List().SingleOrDefault(m => m.Code == type) ?? throw new Exception("Tipo de transaccion erroneo");
     }
 
 }

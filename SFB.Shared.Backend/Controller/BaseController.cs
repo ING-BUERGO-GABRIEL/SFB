@@ -81,7 +81,7 @@ namespace SFB.Shared.Backend.Controller
         }
         protected IActionResult InternalServerError(Exception ex)
         {
-            var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = $"Internal server error: {ex.Message} - {ex.InnerException?.Message}" };
+            var ApiResult = new ApiResult<dynamic> { IsSuccess = false, Message = $"Internal server error: {ex.Message}  {ex.InnerException?.Message}" };
             return StatusCode(StatusCodes.Status500InternalServerError, ApiResult);
         }
 

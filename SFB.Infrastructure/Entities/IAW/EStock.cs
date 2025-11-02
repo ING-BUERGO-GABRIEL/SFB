@@ -7,16 +7,19 @@ namespace SFB.Infrastructure.Entities.IAW
     [Table("IAW_Stock")]
     public class EStock : Auditable
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int StockId { get; set; }
 
-        [Required, ForeignKey(nameof(Product))]
+        [Key]
+        [Required]
         public int NroProduct { get; set; }
+
+        [ForeignKey(nameof(NroProduct))]
         public EProduct Product { get; set; }
 
-        [Required, ForeignKey(nameof(Warehouse))]
+        [Key]
+        [Required]
         public int WarehouseId { get; set; }
+
+        [ForeignKey(nameof(WarehouseId))]
         public EWarehouse Warehouse { get; set; }
 
         // Cantidad disponible física
