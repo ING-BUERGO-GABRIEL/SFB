@@ -39,6 +39,26 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
+        [HttpGet("{txnId:int}")]
+        public async Task<IActionResult> GetById(int txnId)
+        {
+            try
+            {
+                var result =  await Repository.GetById(txnId);
+
+                return OkResult(result);
+            }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] MInventoryTxn model)
         {

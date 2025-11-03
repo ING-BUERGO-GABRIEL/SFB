@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace SFB.Infrastructure.Entities.IAW.Sealed
+namespace SFB.IAW.Shared.Sealed
 {
     public sealed class InvType
     {

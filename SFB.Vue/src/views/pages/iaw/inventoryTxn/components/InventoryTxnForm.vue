@@ -146,17 +146,19 @@ async function openForm(mode, item = null) {
       await loadMetadata()
       titleDlg.value = 'Nueva transacción'
       model.value = getDefaultModel()
-      showModal.value = true
       break
     case 'Update':
       await loadMetadata()
       titleDlg.value = `Editar transacción`
-      model.value = item
-      showModal.value = true
+      const resp = await invTxnServ.getById(item.TxnId)
+      if (!resp) return null
+      model.value = resp
       break
     default:
       return Promise.resolve(null)
   }
+
+  showModal.value = true
 
   return new Promise(resolve => {
     _resolve = resolve

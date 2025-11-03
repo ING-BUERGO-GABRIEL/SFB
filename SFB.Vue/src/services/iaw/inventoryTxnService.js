@@ -25,6 +25,20 @@ export const inventoryTxnService = defineStore('inventoryTxnService', {
         return null
       }
     },
+    async getById(txnId) {
+      try {
+        const route = Route(`GetById/${txnId}`);
+        const { IsSuccess, Data, Message } = await apiClient.get(route)
+        if (!IsSuccess) {
+          message.warning(Message)
+          return null
+        }
+        return Data
+      } catch (err) {
+        message.error(err)
+        return null
+      }
+    },
     async update(model) {
       try {
         const route = Route('Update');

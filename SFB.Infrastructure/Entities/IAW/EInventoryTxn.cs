@@ -30,6 +30,7 @@ namespace SFB.Infrastructure.Entities.IAW
         public virtual EWarehouse? WarehouseDest { get; set; }
 
 
+
         [Required, MaxLength(3)]
         public string StatusCode { get; set; }
 

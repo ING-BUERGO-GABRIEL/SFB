@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 ProgramHelper.ConfigureDBContext<SFBContext>(builder, "SFB");
 ProgramHelper.ConfigureAddCors(builder, "AllowAll");
 ProgramHelper.ConfigureJsonSerialize(builder);
-ProgramHelper.ConfigureJwtAuthenticate(builder);
+ProgramHelper.ConfigureJwtAuthenticate(builder); 
 
 //Load Modules
 var modules = CustomModules.GetBackendModules();

@@ -1,11 +1,6 @@
-﻿using SFB.Infrastructure.Entities.IAW.Sealed;
-using System;
-using System.Collections.Generic;
+﻿using SFB.IAW.Shared.Sealed;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SFB.IAW.Shared.Models
 {
@@ -14,23 +9,23 @@ namespace SFB.IAW.Shared.Models
         [Key, Required]
         public int TxnId { get; set; }
 
+        [Required, MaxLength(3)]
+        public string ModOrigin { get; set; }
         public int? TxnOrigin { get; set; }
 
         [Required, MaxLength(3)]
-        public string ModOrigin { get; set; }
-
-        [Required, MaxLength(3)]
         public string Type { get; set; }
-
         public string NameType => InvType.FromCode(Type).Name;
 
         public int? WarehouseOriginId { get; set; }
         public int? WarehouseDestId { get; set; }
+        public virtual MWarehouse? WarehouseOrigin { get; set; }
+        public virtual MWarehouse? WarehouseDest { get; set; }
+
 
         [Required, MaxLength(3)]
         public string StatusCode { get; set; }
-
-        public string NameStatus => InvStatus.FromCode(StatusCode).Name;
+        public InvStatus Status => InvStatus.FromCode(StatusCode);
 
         public DateTime? DateReg { get; set; }
 

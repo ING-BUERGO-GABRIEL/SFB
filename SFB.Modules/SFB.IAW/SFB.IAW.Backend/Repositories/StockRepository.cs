@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
-using SFB.Infrastructure.Entities.IAW.Sealed;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
-using System.Linq;
 
 namespace SFB.IAW.Backend.Repositories
 {
@@ -41,7 +39,7 @@ namespace SFB.IAW.Backend.Repositories
             var destId = invTxn.WarehouseDestId ?? 0;
 
             // Obtener nombres para mensajes
-            var productNames = await Context.IAWProducts
+            var productNames = await Context.IAWProducts.AsNoTracking()
                 .Where(p => productIds.Contains(p.NroProduct))
                 .ToDictionaryAsync(p => p.NroProduct, p => p.Name);
 

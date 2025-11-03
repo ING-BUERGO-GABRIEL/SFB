@@ -2,7 +2,12 @@
 <template>
   <title-card title="Transacciones de Inventario" class-name="px-0 pb-0 rounded-md">
     <pag-table :headers="headers" :service="invTxnServ">
-      <!-- Acciones de edición y eliminación -->
+      <template #item.Status="{ value }">
+        <v-chip variant="text" size="small" class="px-0">
+          <v-avatar size="8" :color="value.Code === 'ACT'? 'success' : 'error'" variant="flat" class="mr-2" />
+          <p class="text-h6 mb-0">{{ value.Name }}</p>
+        </v-chip>
+      </template>
       <template #item.actions="{ item }">
         <v-btn icon variant="text" color="primary" @click="emit('edit', item)">
           <EditOutlined :style="{ fontSize: '18px' }" />
@@ -31,9 +36,11 @@ const headers = ref([
   { title: 'ID TXN.', key: 'TxnId' },
   { title: 'MODULO ORIGEN', key: 'ModOrigin' },
   { title: 'TXN ORIGEN', key: 'TxnOrigin', align: 'end' },
-  { title: 'TIPO', key: 'NameType'},
-  { title: 'ESTADO', key: 'NameStatus'},
-    {
+  { title: 'TIPO', key: 'NameType' },
+  { title: 'ALM. ORIGEN', key: 'WarehouseOrigin.Name' },
+  { title: 'ALM. DESTINO', key: 'WarehouseDest.Name' },
+  { title: 'ESTADO', key: 'Status' },
+  {
     title: 'FECHA',
     key: 'DateReg',
     align: 'center',

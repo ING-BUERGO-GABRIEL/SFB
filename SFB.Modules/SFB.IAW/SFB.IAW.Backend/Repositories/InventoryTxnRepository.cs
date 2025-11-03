@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SFB.IAW.Shared.Sealed;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
-using SFB.Infrastructure.Entities.IAW.Sealed;
-using SFB.Infrastructure.Migrations;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
@@ -68,7 +67,7 @@ namespace SFB.IAW.Backend.Repositories
             var productIds = invDetail.Select(d => d.NroProduct).Distinct().ToList();
 
             // Productos que ya tienen una transacción inicial activa (si la hay)
-            var initialProductIds = await Context.IAWInvDetail
+            var initialProductIds = await Context.IAWInvDetail.AsNoTracking()
                 .Where(d => productIds.Contains(d.NroProduct)
                             && d.InventoryTxn != null
                             && d.InventoryTxn.Type == InvType.TxnInicial.Code
@@ -84,6 +83,7 @@ namespace SFB.IAW.Backend.Repositories
                 if (initialProductIds.Any())
                 {
                     var productNames = await Context.IAWProducts
+                        .AsNoTracking()
                         .Where(p => initialProductIds.Contains(p.NroProduct))
                         .Select(p => p.Name)
                         .ToListAsync();
@@ -99,7 +99,7 @@ namespace SFB.IAW.Backend.Repositories
 
             if (missing.Any())
             {
-                var productNames = await Context.IAWProducts
+                var productNames = await Context.IAWProducts.AsNoTracking()
                     .Where(p => missing.Contains(p.NroProduct))
                     .Select(p => p.Name)
                     .ToListAsync();
@@ -150,6 +150,13 @@ namespace SFB.IAW.Backend.Repositories
                 {"CmbWerehouses",cmbWerehouses },
                 {"CmbStatus",InvStatus.List() }
             };
+        }
+
+        internal async Task<EInventoryTxn> GetById(int txnId)
+        {
+            return await Context.IAWInventoryTxn.AsNoTracking()
+                .Include(t=>t.InvDetails)
+                .FirstAsync(t=>t.TxnId == txnId);
         }
     }
 }
