@@ -12,7 +12,7 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Tipo de Transacción</v-label>
-          <v-select v-model="model.Type" :items="metadata.CmbType" :rules="[rRequired]" item-title="Name"
+          <v-select v-model="model.Type" :readonly="updReadOnly" :items="metadata.CmbType" :rules="[rRequired]" item-title="Name"
             item-value="Code" placeholder="Seleccionar tipo" />
         </div>
       </v-col>
@@ -28,8 +28,8 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Almacén Origen</v-label>
-          <v-select v-model="model.WarehouseOriginId" :items="metadata.CmbWerehouses" :rules="originRules"
-            :disabled="originDisabled" item-title="Name" item-value="WarehouseId" clearable
+          <v-select v-model="model.WarehouseOriginId" :readonly="updReadOnly" :items="metadata.CmbWerehouses" :rules="originRules"
+            :disabled="originDisabled" item-title="Name" item-value="WarehouseId" 
             placeholder="Seleccionar almacén" />
         </div>
       </v-col>
@@ -37,8 +37,8 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Almacén Destino</v-label>
-          <v-select v-model="model.WarehouseDestId" :items="metadata.CmbWerehouses" :rules="destRules"
-            :disabled="destDisabled" item-title="Name" item-value="WarehouseId" clearable
+          <v-select v-model="model.WarehouseDestId" :readonly="updReadOnly" :items="metadata.CmbWerehouses" :rules="destRules"
+            :disabled="destDisabled" item-title="Name" item-value="WarehouseId" 
             placeholder="Seleccionar almacén" />
         </div>
       </v-col>
@@ -57,7 +57,7 @@
       <div class="d-flex align-center justify-space-between mb-3">
         <h4 class="text-subtitle-2 mb-0">Detalle de Productos</h4>
 
-        <v-btn color="primary" variant="tonal" size="small" @click="addDetail">
+        <v-btn color="primary" variant="tonal" size="small" @click="addDetail" :readonly="updReadOnly">
           Agregar producto
         </v-btn>
       </div>
@@ -73,17 +73,16 @@
         <tbody>
           <tr v-for="(detail, idx) in model.InvDetails" :key="idx">
             <td class="px-0">
-              <select-page v-model="detail.NroProduct" :service="productServ" :taken-ids="[...selectedIds(detail)]"
+              <select-page v-model="detail.NroProduct" :readonly="updReadOnly" :service="productServ" :taken-ids="[...selectedIds(detail)]"
                 :selected-label="detail._ProdName" :rules="[rRequired]" placeholder="Seleccionar producto"
                 @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }" />
             </td>
-
             <td class="pr-0">
-              <v-text-field v-model.number="detail.QtyProduct" :rules="qtyRules" type="number" min="0" step="1"
+              <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number" min="0" step="1"
                 variant="filled" placeholder="Cant." />
             </td>
             <td class="text-center px-0">
-              <v-btn icon variant="text" color="error" size="small" :disabled="model.InvDetails.length === 1"
+              <v-btn icon variant="text" :readonly="updReadOnly" color="error" size="small" :disabled="model.InvDetails.length === 1"
                 @click="removeDetail(idx)">
                 <DeleteOutlined :style="{ fontSize: '15px' }" />
               </v-btn>
@@ -121,6 +120,8 @@ const qtyRules = [
 const originDisabled = computed(() => !['SAL', 'TRA'].includes(model.value?.Type))
 const destDisabled = computed(() => !['ING', 'TRA', 'INI'].includes(model.value?.Type))
 
+const updReadOnly = computed(() => modeDlg.value === 'Update')
+
 const originRules = computed(() => (originDisabled.value ? [] : [rRequired]))
 const destRules = computed(() => (destDisabled.value ? [] : [rRequired]))
 
@@ -147,13 +148,14 @@ async function openForm(mode, item = null) {
       titleDlg.value = 'Nueva transacción'
       model.value = getDefaultModel()
       break
-    case 'Update':
+    case 'Update': {
       await loadMetadata()
       titleDlg.value = `Editar transacción`
       const resp = await invTxnServ.getById(item.TxnId)
       if (!resp) return null
       model.value = resp
       break
+    }
     default:
       return Promise.resolve(null)
   }
@@ -232,7 +234,8 @@ function createDetail() {
     DetailId: 0,
     TxnId: 0,
     NroProduct: null,
-    QtyProduct: null
+    QtyProduct: null,
+    _ProdName: null,
   }
 }
 

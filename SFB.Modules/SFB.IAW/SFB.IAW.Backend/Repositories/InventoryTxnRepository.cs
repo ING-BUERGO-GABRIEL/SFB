@@ -156,6 +156,7 @@ namespace SFB.IAW.Backend.Repositories
         {
             return await Context.IAWInventoryTxn.AsNoTracking()
                 .Include(t=>t.InvDetails)
+                .ThenInclude(p=>p.Product)
                 .FirstAsync(t=>t.TxnId == txnId);
         }
     }

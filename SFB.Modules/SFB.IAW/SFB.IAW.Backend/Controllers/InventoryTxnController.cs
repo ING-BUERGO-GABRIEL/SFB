@@ -46,7 +46,7 @@ namespace SFB.IAW.Backend.Controllers
             {
                 var result =  await Repository.GetById(txnId);
 
-                return OkResult(result);
+                return OkResult(result.Adapt<MInventoryTxn>());
             }
             catch (ControllerException ex)
             {

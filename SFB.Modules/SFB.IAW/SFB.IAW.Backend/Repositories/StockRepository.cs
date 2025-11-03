@@ -124,6 +124,9 @@ namespace SFB.IAW.Backend.Repositories
                             throw new ControllerException("Almacén destino requerido para traspaso.");
 
 
+                        if(originId == destId)
+                            throw new ControllerException("Almacén origen y destino no pueden ser el mismo.");
+
                         // Obtener stocks en origen y destino
                         var stocksOrigin = await Context.IAWStocks
                             .Where(s => s.WarehouseId == originId && productIds.Contains(s.NroProduct))

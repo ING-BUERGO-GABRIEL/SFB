@@ -27,6 +27,5 @@ namespace SFB.Infrastructure.Entities.IAW
         [Column(TypeName = "decimal(18,4)")]
         public decimal QtyProduct { get; set; }
 
-
     }
 }

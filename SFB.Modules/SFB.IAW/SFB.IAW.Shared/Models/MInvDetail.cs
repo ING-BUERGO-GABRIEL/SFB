@@ -20,9 +20,12 @@ namespace SFB.IAW.Shared.Models
         [Required]
         public int NroProduct { get; set; }
 
+        public virtual MProduct? Product { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18,4)")]
         public decimal QtyProduct { get; set; }
+
+        public virtual string? _ProdName => Product?.Name;
     }
 }
