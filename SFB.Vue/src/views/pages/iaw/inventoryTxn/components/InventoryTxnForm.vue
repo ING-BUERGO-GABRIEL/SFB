@@ -1,6 +1,6 @@
 <template>
-  <card-dialog v-model="showModal" :title="titleDlg" height="640" width="900" formValidate @accept="onAccept"
-    @cancel="onCancel">
+  <card-dialog v-model="showModal" :extraButton="updReadOnly" textExtraButton="Anular Txn" :disabledAccept="updReadOnly" :title="titleDlg" height="640" width="900" formValidate @accept="onAccept"
+    @cancel="onCancel" @btnExtra="onAnular">
     <v-row class="pa-4 pb-0" dense>
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
@@ -98,6 +98,7 @@
 import { computed, ref, inject, watch } from 'vue'
 import { DeleteOutlined } from '@ant-design/icons-vue'
 const { invTxnServ, productServ } = inject('services')
+const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -190,6 +191,23 @@ async function onAccept() {
   showModal.value = false
 }
 
+async function onAnular() {
+
+  const confirmed = await question(
+        'Anular Transacción',
+        `¿Esta seguro de Anular la Transaccion ?`
+      )
+  console.log(confirmed)
+
+  // const res = await invTxnServ.anular(model.value.TxnId)
+  // if (res) {
+  //   invTxnServ.updItemPage(res)
+  //   _resolve?.(res)
+  //   _resolve = null
+  //   showModal.value = false
+  // }
+}
+
 function onCancel() {
   _resolve?.(null)
   _resolve = null
@@ -198,7 +216,6 @@ function onCancel() {
 
 async function loadMetadata() {
   const meta = await invTxnServ.getMetadata()
-  console.log(meta)
   if (meta) {
     metadata.value = meta
   }

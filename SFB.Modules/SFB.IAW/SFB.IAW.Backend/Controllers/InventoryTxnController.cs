@@ -82,37 +82,14 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] MWarehouse product)
+        [HttpDelete("{txnId:int}")]
+        public async Task<IActionResult> Delete(int txnId)
         {
             try
             {
-                var eProduct = product.Adapt<EWarehouse>();
+                var result = await Repository.Anular(txnId);
 
-                var resultcreate = await Repository.Update(eProduct);
-
-                var result = resultcreate.Adapt<MWarehouse>();
-
-                return OkResult(result);
-            }
-            catch (ControllerException ex)
-            {
-                return ControlledException(ex);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
-
-        [HttpDelete("{warehouseId:int}")]
-        public async Task<IActionResult> Delete(int warehouseId)
-        {
-            try
-            {
-                await Repository.Delete(warehouseId);
-
-                return DeletedResult();
+                return OkResult(result.Adapt<MInventoryTxn>());
             }
             catch (ControllerException ex)
             {

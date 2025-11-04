@@ -18,8 +18,9 @@
         </v-card-text>
         <!-- footer -->
         <v-card-actions class="bg-containerBg">
+          <v-btn v-if="props.extraButton" color="borderLight" variant="elevated" @click="emit('btnExtra')">{{props.textExtraButton}}</v-btn>
           <v-spacer />
-          <v-btn color="primary" variant="elevated" @click="onAcceptClick">Aceptar</v-btn>
+          <v-btn color="primary" :disabled="props.disabledAccept" variant="elevated" @click="onAcceptClick">Aceptar</v-btn>
           <v-btn color="lightprimary" variant="elevated" @click="onCancelClick">Cancelar</v-btn>
         </v-card-actions>
       </v-card>
@@ -31,7 +32,7 @@
 import { ref, watch } from 'vue'
 import { CloseOutlined } from '@ant-design/icons-vue';
 
-const emit = defineEmits(['update:modelValue', 'accept', 'cancel'])
+const emit = defineEmits(['update:modelValue', 'accept', 'cancel','btnExtra'])
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
@@ -39,6 +40,9 @@ const props = defineProps({
   formValidate: { type: Boolean, default: false },
   height: { type: String, default: '400' },
   width: { type: String, default: '500' },
+  extraButton: { type: Boolean, default: false },
+  textExtraButton: { type: String, default: 'Anular' },
+  disabledAccept: { type: Boolean, default: false }
 })
 
 const isOpen = ref(props.modelValue)

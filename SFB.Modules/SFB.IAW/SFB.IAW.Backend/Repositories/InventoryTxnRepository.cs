@@ -108,36 +108,6 @@ namespace SFB.IAW.Backend.Repositories
             }
         }
 
-
-
-
-        internal async Task<EWarehouse> Update(EWarehouse product)
-        {
-            Context.IAWWarehouse.Update(product);
-            await Context.SaveChangesAsync();
-            return product;
-        }
-
-        public async Task<bool> Delete(int warehouseId)
-        {
-            var entity = await Context.IAWWarehouse.FindAsync(warehouseId);
-
-            if (entity is null) throw new ControllerException("Almacen no encontrado");
-
-            try
-            {
-                Context.IAWWarehouse.Remove(entity);
-                await Context.SaveChangesAsync();
-                return true;
-            }
-            catch (DbUpdateException ex)
-            {
-                if (ex.InnerException?.Message.Contains("FOREIGN KEY") == true)
-                    throw new ControllerException("No es posible eliminar, item en uso"); // si no es por FK, relanzamos
-                throw;
-            }
-        }
-
         internal async Task<Dictionary<string, object>> GetMetadata()
         {
             var cmbWerehouses = await Context.IAWWarehouse
@@ -158,6 +128,14 @@ namespace SFB.IAW.Backend.Repositories
                 .Include(t=>t.InvDetails)
                 .ThenInclude(p=>p.Product)
                 .FirstAsync(t=>t.TxnId == txnId);
+        }
+
+        internal async Task<EInventoryTxn> Anular(int txnId)
+        {
+            var txn = Context.IAWInventoryTxn.First(t => t.TxnId == txnId);
+
+
+            return null;
         }
     }
 }

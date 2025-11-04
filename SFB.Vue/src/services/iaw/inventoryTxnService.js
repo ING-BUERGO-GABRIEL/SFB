@@ -39,29 +39,14 @@ export const inventoryTxnService = defineStore('inventoryTxnService', {
         return null
       }
     },
-    async update(model) {
+    async anular(id) {
       try {
-        const route = Route('Update');
-        const { IsSuccess, Data, Message } = await apiClient.put(route, model);
-        if (!IsSuccess) {
-          message.warning(Message)
-          return null
-        }
-        message.success('Almacen actualizado con éxito.')
-        return Data
-      } catch (err) {
-        message.error(err)
-        return null
-      }
-    },
-    async remove(id) {
-      try {
-        const route = Route(`Delete/${id}`);
-        const { IsSuccess, Message } = await apiClient.delete(route);
+        const route = Route(`Anular/${id}`);
+        const { IsSuccess, Message } = await apiClient.post(route);
         if (!IsSuccess) {
           message.warning(Message)
         }
-        message.success('Almacen eliminado con éxito.')
+        message.success('Transaccion anulada con éxito.')
         return IsSuccess
       } catch (err) {
         message.error(err)
