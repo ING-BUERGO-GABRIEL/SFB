@@ -197,9 +197,9 @@ async function onAnular() {
         'Anular Transacción',
         `¿Esta seguro de Anular la Transaccion ?`
       )
-  console.log(confirmed)
-
-  // const res = await invTxnServ.anular(model.value.TxnId)
+  if (!confirmed) return null    
+  
+  const res = await invTxnServ.anular(model.value.TxnId)
   // if (res) {
   //   invTxnServ.updItemPage(res)
   //   _resolve?.(res)

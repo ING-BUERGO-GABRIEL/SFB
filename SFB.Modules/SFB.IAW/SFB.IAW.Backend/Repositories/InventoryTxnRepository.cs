@@ -132,10 +132,30 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<EInventoryTxn> Anular(int txnId)
         {
+            await using var transaction = await Context.Database.BeginTransactionAsync();
+            try
+            {
+                var result = await AnularTxn(txnId);
+                await Context.SaveChangesAsync();
+                await transaction.CommitAsync();
+                return result;
+            }
+            catch
+            {
+                await transaction.RollbackAsync();
+                throw;
+            }
+        }
+
+        internal async Task<EInventoryTxn> AnularTxn(int txnId)
+        {
             var txn = Context.IAWInventoryTxn.First(t => t.TxnId == txnId);
+            await _stockRepository.RevertFromTxn(txn);
 
-
-            return null;
+            txn.StatusCode = InvStatus.Anulado.Code;
+            
+            Context.IAWInventoryTxn.Update(txn);
+            return txn;
         }
     }
 }
