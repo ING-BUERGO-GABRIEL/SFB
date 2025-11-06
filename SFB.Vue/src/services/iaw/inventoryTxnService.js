@@ -45,6 +45,7 @@ export const inventoryTxnService = defineStore('inventoryTxnService', {
         const { IsSuccess, Message,Data } = await apiClient.post(route);
         if (!IsSuccess) {
           message.warning(Message)
+          return
         }
         message.success('Transaccion anulada con éxito.')
         return Data

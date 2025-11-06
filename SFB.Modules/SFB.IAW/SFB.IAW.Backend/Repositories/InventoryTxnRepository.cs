@@ -149,11 +149,12 @@ namespace SFB.IAW.Backend.Repositories
 
         internal async Task<EInventoryTxn> AnularTxn(int txnId)
         {
-            var txn = Context.IAWInventoryTxn.First(t => t.TxnId == txnId);
+            var txn = Context.IAWInventoryTxn
+                .Include(t => t.InvDetails)
+                .First(t => t.TxnId == txnId);
             await _stockRepository.RevertFromTxn(txn);
 
-            txn.StatusCode = InvStatus.Anulado.Code;
-            
+            txn.StatusCode = InvStatus.Anulado.Code;            
             Context.IAWInventoryTxn.Update(txn);
             return txn;
         }

@@ -70,12 +70,9 @@ namespace SFB.IAW.Backend.Repositories
                             if (st.QtyOnHand < qty)
                             {
                                 var name = productNames.TryGetValue(st.NroProduct, out var n) ? n : st.NroProduct.ToString();
-                                throw new ControllerException($"Stock insuficiente en destino para revertir INI de: {name}");
+                                throw new ControllerException($"Stock insuficiente en almacen destino para revertir INI de: {name}");
                             }
-
                             st.QtyOnHand -= qty;
-                            st.UserUpd = "SYSTEM";
-                            st.DateUpd = DateTime.UtcNow;
                             Context.IAWStocks.Update(st);
                         }
                     }
@@ -108,8 +105,6 @@ namespace SFB.IAW.Backend.Repositories
                             }
 
                             st.QtyOnHand -= qty;
-                            st.UserUpd = "SYSTEM";
-                            st.DateUpd = DateTime.UtcNow;
                             Context.IAWStocks.Update(st);
                         }
                     }
@@ -135,8 +130,6 @@ namespace SFB.IAW.Backend.Repositories
                             if (originMap.TryGetValue(prodId, out var st))
                             {
                                 st.QtyOnHand += qty;
-                                st.UserUpd = "SYSTEM";
-                                st.DateUpd = DateTime.UtcNow;
                                 Context.IAWStocks.Update(st);
                             }
                             else
@@ -147,8 +140,6 @@ namespace SFB.IAW.Backend.Repositories
                                     WarehouseId = originId,
                                     QtyOnHand = qty,
                                     QtyReserved = 0m,
-                                    UserUpd = "SYSTEM",
-                                    DateUpd = DateTime.UtcNow
                                 };
                                 Context.IAWStocks.Add(created);
                             }
@@ -192,8 +183,6 @@ namespace SFB.IAW.Backend.Repositories
                             if (originMap.TryGetValue(prodId, out var st))
                             {
                                 st.QtyOnHand += qty;
-                                st.UserUpd = "SYSTEM";
-                                st.DateUpd = DateTime.UtcNow;
                                 Context.IAWStocks.Update(st);
                             }
                             else
@@ -204,8 +193,6 @@ namespace SFB.IAW.Backend.Repositories
                                     WarehouseId = originId,
                                     QtyOnHand = qty,
                                     QtyReserved = 0m,
-                                    UserUpd = "SYSTEM",
-                                    DateUpd = DateTime.UtcNow
                                 };
                                 Context.IAWStocks.Add(created);
                             }
@@ -222,8 +209,6 @@ namespace SFB.IAW.Backend.Repositories
                             }
 
                             st.QtyOnHand -= qty;
-                            st.UserUpd = "SYSTEM";
-                            st.DateUpd = DateTime.UtcNow;
                             Context.IAWStocks.Update(st);
                         }
                     }
@@ -232,8 +217,6 @@ namespace SFB.IAW.Backend.Repositories
                 default:
                     throw new ControllerException("Tipo de transacción no manejado para reversión.");
             }
-
-            // Sin SaveChanges / transacciones: lo maneja la capa superior.
         }
 
 
@@ -282,17 +265,40 @@ namespace SFB.IAW.Backend.Repositories
                         if (!invTxn.WarehouseDestId.HasValue)
                             throw new ControllerException("Almacén destino requerido para ingreso.");
 
-                        var stocks = await Context.IAWStocks
-                            .Where(s => s.WarehouseId == destId
-                            && productIds.Contains(s.NroProduct))
-                            .ToListAsync();
+                        // Opcional: filtra solo cantidades > 0 (evita ensuciar con ceros/negativos)
+                        var positiveDetailSums = detailSums
+                            .Where(kv => kv.Value > 0m)
+                            .ToDictionary(kv => kv.Key, kv => kv.Value);
 
-                        foreach (var st in stocks)
+                        if (positiveDetailSums.Count == 0)
+                            break;
+
+                        // Traer EXISTENTES del almacén destino y mapear por producto
+                        var existing = await Context.IAWStocks
+                            .Where(s => s.WarehouseId == destId && productIds.Contains(s.NroProduct))
+                            .ToDictionaryAsync(s => s.NroProduct);
+
+                        // Por cada producto del ingreso: actualizar o crear
+                        foreach (var kv in positiveDetailSums)
                         {
-                            if (detailSums.TryGetValue(st.NroProduct, out var qty))
+                            var prodId = kv.Key;
+                            var qty = kv.Value;
+
+                            if (existing.TryGetValue(prodId, out var st))
                             {
                                 st.QtyOnHand += qty;
                                 Context.IAWStocks.Update(st);
+                            }
+                            else
+                            {
+                                var created = new EStock
+                                {
+                                    NroProduct = prodId,
+                                    WarehouseId = destId,
+                                    QtyOnHand = qty,
+                                    QtyReserved = 0m,
+                                };
+                                Context.IAWStocks.Add(created);
                             }
                         }
                     }
@@ -336,8 +342,6 @@ namespace SFB.IAW.Backend.Repositories
                             throw new ControllerException("Almacén origen requerido para traspaso.");
                         if (!invTxn.WarehouseDestId.HasValue)
                             throw new ControllerException("Almacén destino requerido para traspaso.");
-
-
                         if (originId == destId)
                             throw new ControllerException("Almacén origen y destino no pueden ser el mismo.");
 

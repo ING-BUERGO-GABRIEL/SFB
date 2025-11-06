@@ -82,8 +82,8 @@ namespace SFB.IAW.Backend.Controllers
             }
         }
 
-        [HttpDelete("{txnId:int}")]
-        public async Task<IActionResult> Delete(int txnId)
+        [HttpPost("{txnId:int}")]
+        public async Task<IActionResult> Anular(int txnId)
         {
             try
             {
