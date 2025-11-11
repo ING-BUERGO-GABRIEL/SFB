@@ -28,8 +28,16 @@ namespace SFB.Infrastructure.Entities.IAW
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price {  get; set; }
 
+        [Required,MaxLength(3)]
+        public string PresentCode { get; set; }
+
+        [ForeignKey(nameof(PresentCode))]
+        public virtual EPresentation? Presentation { get; set; }
+
         [Required]
         public bool Status { get; set; } = true;
+
+        public virtual ICollection<EProductPresent>? ProductPresent { get; set; } = new List<EProductPresent>();
 
         public virtual ICollection<EInvDetail>? InvDetails { get; set; }
     }
