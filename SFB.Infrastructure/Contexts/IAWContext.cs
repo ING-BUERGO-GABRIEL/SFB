@@ -10,7 +10,8 @@ namespace SFB.Infrastructure.Contexts
         public DbSet<EStock> IAWStocks { get; set; }
         public DbSet<EInventoryTxn> IAWInventoryTxn { get; set; }
         public DbSet<EInvDetail> IAWInvDetail { get; set; }
-        public DbSet<EPresentation> IAWUnit { get; set; }
+        public DbSet<EPresentation> IAWPresentation { get; set; }
+        public DbSet<EProductPresent> IAWProductPresent { get; set; }
 
         private static void IAWModelCreating(ModelBuilder modelBuilder)
         {
@@ -60,6 +61,12 @@ namespace SFB.Infrastructure.Contexts
             {
                 entity.ToTable("IAW_Presentation");
                 entity.HasKey(e => new { e.Code });
+            });
+
+            modelBuilder.Entity<EProductPresent>(entity =>
+            {
+                entity.ToTable("IAW_ProductPresent");
+                entity.HasKey(e => new { e.ProductId, e.PresentCode });
             });
 
             //indices
