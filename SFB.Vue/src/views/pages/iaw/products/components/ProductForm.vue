@@ -32,6 +32,20 @@
                   min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
               </div>
             </v-col>
+
+            <v-col cols="12" sm="6" class="py-0">
+              <div class="mb-6">
+                <v-label>Presentación</v-label>
+                <v-select v-model="product.PresentCode" :items="metadata.CmbPresent" :rules="[rRequired]"
+                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+              </div>
+            </v-col>
+
+            <v-col cols="12" sm="4" class="py-0">
+              <div class="mb-6">
+              </div>
+            </v-col>
+
             <!-- Checkboxes Positivo / Negativo -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
@@ -67,6 +81,10 @@ const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser 
 
 const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
+const metadata = ref({
+  CmbPresent: [],
+})
+
 let _resolve = null
 
 async function openForm(mode, item = null) {
@@ -74,11 +92,13 @@ async function openForm(mode, item = null) {
 
   switch (mode) {
     case 'Insert':
+      await loadMetadata()
       titleDlg.value = 'Nuevo Producto'
-      product.value = { NroProduct: 0, IsPurchases: true, IsSales: true }
+      product.value = { NroProduct: 0, IsPurchases: true, IsSales: true, PresentCode: null}
       showModal.value = true
       break
     case 'Update':
+      await loadMetadata()
       titleDlg.value = 'Editar Producto'
       product.value = { ...item }
       showModal.value = true
@@ -109,6 +129,13 @@ async function openForm(mode, item = null) {
   return new Promise(resolve => {
     _resolve = resolve
   })
+}
+
+async function loadMetadata() {
+  const meta = await productServ.getMetadata()
+  if (meta) {
+    metadata.value = meta
+  }
 }
 
 async function onAccept() {

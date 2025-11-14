@@ -1,11 +1,12 @@
-﻿using SFB.IAW.Backend.Repositories;
-using SFB.Infrastructure.Contexts;
-using SFB.Shared.Backend.Controller;
+﻿using Mapster;
 using Microsoft.AspNetCore.Mvc;
-using SFB.IAW.Shared.Models;
-using Mapster;
-using SFB.Infrastructure.Entities.IAW;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SFB.IAW.Backend.Repositories;
+using SFB.IAW.Shared.Models;
+using SFB.Infrastructure.Contexts;
+using SFB.Infrastructure.Entities.IAW;
+using SFB.Shared.Backend.Controller;
+using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 
 namespace SFB.IAW.Backend.Controllers
@@ -77,6 +78,25 @@ namespace SFB.IAW.Backend.Controllers
                 await Repository.Delete(nroProd);
 
                 return DeletedResult();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetMetadata()
+        {
+            try
+            {
+                var result = await Repository.GetMetadata();
+
+                return OkResult(result);
+            }
+            catch (ControllerException ex)
+            {
+                return ControlledException(ex);
             }
             catch (Exception ex)
             {

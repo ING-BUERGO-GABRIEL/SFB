@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SFB.IAW.Shared.Sealed;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
 using SFB.Shared.Backend.Helpers;
@@ -64,6 +65,18 @@ namespace SFB.IAW.Backend.Repositories
 
                 throw; // si no es por FK, relanzamos
             }
+        }
+
+        internal async Task<Dictionary<string, object>> GetMetadata()
+        {
+            var cmbPresent = await Context.IAWPresentation
+                .AsNoTracking()
+                .ToListAsync();
+
+            return new Dictionary<string, object>
+            {
+                {"CmbPresent",cmbPresent },
+            };
         }
 
     }

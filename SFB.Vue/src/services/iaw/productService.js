@@ -69,6 +69,15 @@ export const productService = defineStore('productService', {
       finally {
         this.loadTable = false
       }
-    }
+    },
+    async getMetadata() {
+      try {
+        const { Data } = await apiClient.get(Route('GetMetadata'));
+        return Data ?? null
+      } catch (error) {
+        console.error('Error al obtener metadata:', error);
+        return null
+      }
+    },
   }
 });
