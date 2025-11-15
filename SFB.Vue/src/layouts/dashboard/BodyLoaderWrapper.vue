@@ -8,9 +8,10 @@ const { isLoadingBody } = storeToRefs(uiStore);
 
 <template>
   <transition name="body-loader-fade">
-    <div v-if="isLoadingBody" class="body-loader" role="status" aria-live="polite">
-      <div class="body-loader__bar">
-        <div class="body-loader__indicator" />
+    <div v-if="isLoadingBody" class="body-loader" role="presentation">
+      <div class="body-loader__scrim" />
+      <div class="body-loader__bar" aria-hidden="true">
+        <div class="body-loader__bar-fill" />
       </div>
     </div>
   </transition>
@@ -21,48 +22,48 @@ const { isLoadingBody } = storeToRefs(uiStore);
   position: absolute;
   inset: 0;
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  pointer-events: all;
 }
 
-.body-loader::after {
-  content: '';
-  flex: 1 1 auto;
-  background-color: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(1px);
+.body-loader__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.118);
+  pointer-events: all;
+  cursor: default;
 }
 
 .body-loader__bar {
-  position: relative;
-  height: 4px;
-  width: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.08);
-}
-
-.body-loader__indicator {
   position: absolute;
   top: 0;
-  left: -40%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.body-loader__bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  width: 40%;
+  width: 100%;
   background-color: rgb(var(--v-theme-primary));
-  animation: body-loading 1.35s ease-in-out infinite;
+  animation: body-loading 2000ms ease-in-out infinite;
 }
 
 @keyframes body-loading {
   0% {
-    left: -40%;
-    width: 40%;
+    width: 0;
+    left: 0;
   }
   50% {
-    left: 30%;
-    width: 40%;
+    width: 100%;
+    left: 0;
   }
   100% {
+    width: 100%;
     left: 100%;
-    width: 40%;
   }
 }
 
