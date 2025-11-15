@@ -7,48 +7,47 @@ const { isLoadingBody } = storeToRefs(uiStore);
 </script>
 
 <template>
-  <transition name="body-loader-fade">
-    <div v-if="isLoadingBody" class="body-loader" role="presentation">
-      <div class="body-loader__scrim" />
-      <div class="body-loader__progress" aria-hidden="true">
-        <div class="body-loader__progress-bar" />
-      </div>
-    </div>
-  </transition>
+  <div
+    :class="{
+      'body-loader': true,
+      loading: isLoadingBody,
+      hidden: !isLoadingBody
+    }"
+    role="presentation"
+  >
+    <div class="bar" aria-hidden="true" />
+  </div>
 </template>
 
 <style scoped>
 .body-loader {
   position: absolute;
-  inset: 0;
-  z-index: 1000;
-}
-
-.body-loader__scrim {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.118);
-  pointer-events: all;
-  cursor: default;
-}
-
-.body-loader__progress {
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   height: 5px;
-  overflow: hidden;
+  z-index: 1000;
   pointer-events: none;
+  opacity: 0;
+  transition:
+    width 1350ms ease-in-out,
+    opacity 350ms linear,
+    left 50ms ease-in-out;
 }
 
-.body-loader__progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.bar {
   background-color: rgb(var(--v-theme-primary));
+  height: 5px;
+  width: 100%;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.loading {
+  opacity: 1;
   animation: loading 2000ms ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -66,15 +65,5 @@ const { isLoadingBody } = storeToRefs(uiStore);
     width: 100%;
     left: 100%;
   }
-}
-
-.body-loader-fade-enter-active,
-.body-loader-fade-leave-active {
-  transition: opacity 150ms linear;
-}
-
-.body-loader-fade-enter-from,
-.body-loader-fade-leave-to {
-  opacity: 0;
 }
 </style>
