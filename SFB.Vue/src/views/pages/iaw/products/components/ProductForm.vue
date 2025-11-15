@@ -62,13 +62,20 @@
           </v-row>
         </parent-card>
       </v-col>
+      <v-col cols="12" md="6">
+        <title-card title="Presentaciones y precios" class-name="px-0 pb-0 rounded-md">
+          <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
+
+          </ui-table>
+        </title-card>
+      </v-col>
     </v-row>
   </dialog-body>
 </template>
 
 <script setup>
 import { ref, inject, computed } from 'vue'
-const { productServ } = inject('services')
+const { productServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
@@ -81,9 +88,41 @@ const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser 
 
 const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
+const headers = [
+  { title: 'PRESENTACION', key: 'PresentCode' },
+  { title: 'CANTIDAD', key: 'QtyProduct' },
+  { title: 'PRECIO', key: 'Name' },
+  { title: 'NRO. SERIE', key: 'SerialNumber' },
+  { title: 'ACT.', key: 'Name' },
+]
+
 const metadata = ref({
   CmbPresent: [],
 })
+
+const productDefault = () => {
+  return {
+    NroProduct: 0,
+    Name: null,
+    SerialNumber: null,
+    Price: null,
+    PresentCode: null,
+    IsPurchases: true,
+    IsSales: true,
+    ProductPresent: []
+  }
+}
+
+const productPresentDefault = () => {
+  return {
+    ProductId: modeDlg.value === 'Insert' ? 0 : product.value.NroProduct,
+    PresentCode: null,
+    QtyProduct: null,
+    Price: null,
+    SerialNumber: null,
+  }
+}
+
 
 let _resolve = null
 
@@ -92,12 +131,14 @@ async function openForm(mode, item = null) {
 
   switch (mode) {
     case 'Insert':
+      uiStore.isLoadingBody = true
       await loadMetadata()
       titleDlg.value = 'Nuevo Producto'
-      product.value = { NroProduct: 0, IsPurchases: true, IsSales: true, PresentCode: null}
+      product.value = productDefault()
       showModal.value = true
       break
     case 'Update':
+      uiStore.isLoadingBody = true
       await loadMetadata()
       titleDlg.value = 'Editar Producto'
       product.value = { ...item }
@@ -125,6 +166,8 @@ async function openForm(mode, item = null) {
       break
     }
   }
+
+  uiStore.isLoadingBody = false
 
   return new Promise(resolve => {
     _resolve = resolve
