@@ -10,8 +10,8 @@ const { isLoadingBody } = storeToRefs(uiStore);
   <transition name="body-loader-fade">
     <div v-if="isLoadingBody" class="body-loader" role="presentation">
       <div class="body-loader__scrim" />
-      <div class="body-loader__bar" aria-hidden="true">
-        <div class="body-loader__bar-fill" />
+      <div class="body-loader__progress" aria-hidden="true">
+        <div class="body-loader__progress-bar" />
       </div>
     </div>
   </transition>
@@ -32,27 +32,28 @@ const { isLoadingBody } = storeToRefs(uiStore);
   cursor: default;
 }
 
-.body-loader__bar {
+.body-loader__progress {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 5px;
-  pointer-events: none;
   overflow: hidden;
+  pointer-events: none;
 }
 
-.body-loader__bar-fill {
+.body-loader__progress-bar {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: rgb(var(--v-theme-primary));
-  animation: body-loading 2000ms ease-in-out infinite;
+  animation: loading 2000ms ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-@keyframes body-loading {
+@keyframes loading {
   0% {
     width: 0;
     left: 0;
