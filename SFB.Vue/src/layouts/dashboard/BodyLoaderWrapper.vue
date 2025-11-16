@@ -24,34 +24,39 @@ const { isLoadingBody } = storeToRefs(uiStore);
   z-index: 1000;
 }
 
+/* Fondo gris que bloquea la edición */
 .body-loader__scrim {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.118);
   pointer-events: all;
   cursor: default;
-  z-index: 1; /* scrim debajo de la barra */
+  z-index: 1;
 }
 
-/* 🔹 Contenedor de la barra (equivalente a .page-loader) */
+/* 🔹 Contenedor de la barra: se comporta como .page-loader */
 .body-loader__progress {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;          /* igual que .page-loader */
   height: 5px;
-  z-index: 2;              /* por encima del scrim */
+  z-index: 2;           /* por encima del scrim */
+  opacity: 1;
   pointer-events: none;
   animation: loading 2000ms ease-in-out;
   animation-iteration-count: infinite;
+  overflow: hidden;
 }
 
-/* 🔹 La barra azul (equivalente a .bar) */
+/* 🔹 La barra azul: se comporta como .bar */
 .body-loader__progress-bar {
-  height: 100%;
-  width: 100%;
   background-color: rgb(var(--v-theme-primary));
+  height: 5PX;
+  width: 100%;
 }
 
+/* misma animación que en LoaderWrapper */
 @keyframes loading {
   0% {
     width: 0;
@@ -76,5 +81,5 @@ const { isLoadingBody } = storeToRefs(uiStore);
 .body-loader-fade-leave-to {
   opacity: 0;
 }
-
 </style>
+

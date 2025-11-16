@@ -1,18 +1,14 @@
-
 <template>
   <v-locale-provider>
     <v-app :class="[]">
       <VerticalSidebarVue />
       <VerticalHeaderVue />
 
-      <v-main
-        class="page-wrapper"
-        :aria-busy="isLoadingBody ? 'true' : 'false'"
-      >
-        <BodyLoaderWrapper />
+      <v-main class="page-wrapper" :aria-busy="isLoadingBody ? 'true' : 'false'">
         <v-container fluid class="content-wrapper">
           <div>
             <!-- Loader start -->
+            <BodyLoaderWrapper />
             <LoaderWrapper />
             <!-- Loader end -->
             <RouterView />
@@ -26,7 +22,7 @@
       </v-main>
     </v-app>
   </v-locale-provider>
-   
+
 </template>
 
 <script setup lang="ts">

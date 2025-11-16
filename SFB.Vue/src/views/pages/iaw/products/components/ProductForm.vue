@@ -64,8 +64,21 @@
       </v-col>
       <v-col cols="12" md="6">
         <title-card title="Presentaciones y precios" class-name="px-0 pb-0 rounded-md">
+          <template #title-right>
+            <v-btn color="primary" variant="tonal" size="small">
+              Agregar presentacion
+            </v-btn>
+          </template>
           <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
+            <template #item.QtyProduct="{ item }">
+              <v-text-field  >
 
+              </v-text-field>
+            </template>
+            <template #item.PresentCode="{ item }">
+             <v-select v-model="item.PresentCode" :items="metadata.CmbPresent" :rules="[rRequired]"
+                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+            </template>
           </ui-table>
         </title-card>
       </v-col>
@@ -90,8 +103,8 @@ const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
 const headers = [
   { title: 'PRESENTACION', key: 'PresentCode' },
-  { title: 'CANTIDAD', key: 'QtyProduct' },
-  { title: 'PRECIO', key: 'Name' },
+  { title: 'CANTIDAD', key: 'QtyProduct',class: 'px-0' },
+  { title: 'PRECIO', key: 'Name', class: 'px-0' },
   { title: 'NRO. SERIE', key: 'SerialNumber' },
   { title: 'ACT.', key: 'Name' },
 ]
@@ -109,7 +122,7 @@ const productDefault = () => {
     PresentCode: null,
     IsPurchases: true,
     IsSales: true,
-    ProductPresent: []
+    ProductPresent: [{}]
   }
 }
 

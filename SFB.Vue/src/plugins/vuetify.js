@@ -78,6 +78,7 @@ export default createVuetify({
       hideDetails: 'auto',
       rounded: 'lg',
       class: 'mt-2',
+      density: 'compact'
     },
     VSelect: {
       variant: 'outlined',

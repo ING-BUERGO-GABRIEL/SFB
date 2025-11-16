@@ -5,6 +5,7 @@
     :items="props.items"
     :loading="props.loading"
     :item-key="props.itemKey"
+    class="mb-3"
     :header-props="{
       class: 'bg-containerBg text-caption font-weight-bold text-uppercase'
     }"
