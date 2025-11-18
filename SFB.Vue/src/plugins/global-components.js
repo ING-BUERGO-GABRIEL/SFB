@@ -8,6 +8,7 @@ import TitleCard from '@/components/shared/UiTitleCard.vue';
 import PagTable from '@/components/shared/PaginatedTable.vue';
 import SelectPage from '@/components/shared/SelectPage.vue';
 import UiTable from '@/components/shared/UiTable.vue';
+import UiIcon from '@/components/shared/UiIcon.vue';
 
 export const registerComponents = {
   install: (app) => {
@@ -20,5 +21,6 @@ export const registerComponents = {
     app.component('CardDialog', CardDialogBody)
     app.component('SelectPage', SelectPage)
     app.component('UiTable', UiTable)
+    app.component('UiIcon', UiIcon)
   },
 };

@@ -65,19 +65,31 @@
       <v-col cols="12" md="6">
         <title-card title="Presentaciones y precios" class-name="px-0 pb-0 rounded-md">
           <template #title-right>
-            <v-btn color="primary" variant="tonal" size="small">
+            <v-btn color="primary" variant="tonal" size="small" @click="addProductPresent">
               Agregar presentacion
             </v-btn>
           </template>
           <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
-            <template #item.QtyProduct="{ item }">
-              <v-text-field  >
-
-              </v-text-field>
-            </template>
             <template #item.PresentCode="{ item }">
              <v-select v-model="item.PresentCode" :items="metadata.CmbPresent" :rules="[rRequired]"
                   item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+            </template>
+            <template #item.QtyProduct="{ item }">
+              <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1"
+                  min="0" required placeholder="00.00"  />
+            </template>
+            <template #item.Price="{ item }">
+              <v-text-field v-model="item.Price" :rules="[rRequired, rNonNegative]" type="number" step="1"
+                  min="0" required placeholder="00.00"  />
+            </template>
+            <template #item.SerialNumber="{ item }">
+              <v-text-field v-model="item.SerialNumber"  type="number" step="1"
+                  min="0" required placeholder="Codigo de Barras" />
+            </template>
+            <template #item.Actions="{ item }">
+              <v-btn icon variant="text" color="error" size="small" >
+                <ui-icon name="DeleteOutlined" size="18"/>
+              </v-btn>
             </template>
           </ui-table>
         </title-card>
@@ -104,9 +116,9 @@ const isReadOnly = computed(() => modeDlg.value === 'Delete')
 const headers = [
   { title: 'PRESENTACION', key: 'PresentCode' },
   { title: 'CANTIDAD', key: 'QtyProduct',class: 'px-0' },
-  { title: 'PRECIO', key: 'Name', class: 'px-0' },
-  { title: 'NRO. SERIE', key: 'SerialNumber' },
-  { title: 'ACT.', key: 'Name' },
+  { title: 'PRECIO', key: 'Price', class: 'px-0' },
+  { title: 'COD. BARRAS', key: 'SerialNumber' },
+  { title: 'ACT.', key: 'Actions' },
 ]
 
 const metadata = ref({
@@ -136,6 +148,10 @@ const productPresentDefault = () => {
   }
 }
 
+const addProductPresent = () => {
+  product.value.ProductPresent.push(productPresentDefault())
+  console.log(product.value)
+}
 
 let _resolve = null
 
