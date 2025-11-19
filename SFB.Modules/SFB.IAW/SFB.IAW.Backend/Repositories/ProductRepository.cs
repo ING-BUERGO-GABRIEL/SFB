@@ -5,6 +5,7 @@ using SFB.Infrastructure.Entities.IAW;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
+using System.Collections.ObjectModel;
 
 namespace SFB.IAW.Backend.Repositories
 {
@@ -16,29 +17,68 @@ namespace SFB.IAW.Backend.Repositories
         }
         internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
         {
-            var query = Context.IAWProducts.Include(p=>p.ProductPresent)
-                        .Where(p=>p.Status);
-
+            var query = Context.IAWProducts
+                        .Include(p => p.ProductPresent)
+                        .Where(p => p.Status);
             var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "NroProduct" });
-
             return result;
         }
+
         internal async Task<EProduct> Create(EProduct product)
         {
             product.Status = true;
-
             Context.IAWProducts.Add(product);
             await Context.SaveChangesAsync();
-
             return product;
         }
 
         internal async Task<EProduct> Update(EProduct product)
         {
+            await UpdProductPresent(product.NroProduct, product.ProductPresent);
+            product.ProductPresent.Clear();
             Context.IAWProducts.Update(product);
             await Context.SaveChangesAsync();
             return product;
         }
+
+        private async Task UpdProductPresent(int productId, ICollection<EProductPresent> newProductPresents)
+        {
+            var dbProductPresents = await Context.IAWProductPresent
+                                                 .Where(p => p.ProductId == productId)
+                                                 .ToListAsync();
+
+            newProductPresents ??= new List<EProductPresent>();
+
+            foreach (var dbItem in dbProductPresents)
+            {
+                bool stillExists = newProductPresents
+                    .Any(p => p.PresentCode == dbItem.PresentCode && p.ProductId == productId);
+
+                if (!stillExists)
+                {
+                    Context.IAWProductPresent.Remove(dbItem);
+                }
+            }
+
+            foreach (var newItem in newProductPresents)
+            {
+                newItem.ProductId = productId;
+                var existing = dbProductPresents
+                    .FirstOrDefault(p => p.ProductId == productId && p.PresentCode == newItem.PresentCode);
+
+                if (existing is null)
+                {
+                    Context.IAWProductPresent.Add(newItem);
+                }
+                else
+                {
+                    existing.Price = newItem.Price;
+                    existing.QtyProduct = newItem.QtyProduct;
+                    existing.SerialNumber = newItem.SerialNumber;
+                }
+            }
+        }
+
 
         public async Task<bool> Delete(int nroProd)
         {
@@ -54,17 +94,14 @@ namespace SFB.IAW.Backend.Repositories
             }
             catch (DbUpdateException ex)
             {
-                // si el error viene por foreign keys
                 if (ex.InnerException?.Message.Contains("FOREIGN KEY") == true)
                 {
-                    // revertimos la eliminación y hacemos un "soft delete"
                     Context.Entry(entity).State = EntityState.Unchanged;
                     entity.Status = false;
                     await Context.SaveChangesAsync();
-                    return true; // se procesó el "borrado lógico"
+                    return true; 
                 }
-
-                throw; // si no es por FK, relanzamos
+                throw;
             }
         }
 

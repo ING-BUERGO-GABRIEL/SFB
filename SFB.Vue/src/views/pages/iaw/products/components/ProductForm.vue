@@ -36,7 +36,7 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Presentación</v-label>
-                <v-select v-model="product.PresentCode" :items="metadata.CmbPresent" :rules="[rRequired]"
+                <v-select v-model="product.PresentCode" :items="cmbPresent" :rules="[rRequired]"
                   item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
               </div>
             </v-col>
@@ -83,8 +83,8 @@
                   min="0" required placeholder="00.00"  />
             </template>
             <template #item.SerialNumber="{ item }">
-              <v-text-field v-model="item.SerialNumber"  type="number" step="1"
-                  min="0" required placeholder="Codigo de Barras" />
+              <v-text-field v-model="item.SerialNumber" 
+                    placeholder="Codigo de Barras" />
             </template>
             <template #item.Actions="{ item }">
               <v-btn icon variant="text" color="error" size="small" @click="deleteProductPresent(item)">
@@ -134,6 +134,13 @@ const metadata = ref({
 const cmdProductPresent = computed(() => {
   return metadata.value.CmbPresent.filter(p => p.Code !== product.value.PresentCode)
 })
+
+
+const cmbPresent = computed(() => {
+  const presentCodes = (product.value?.ProductPresent || []).map(p => p.PresentCode);
+  return (metadata.value?.CmbPresent || []).filter(p => !presentCodes.includes(p.Code));
+})
+
 
 const productDefault = () => {
   return {
@@ -192,7 +199,7 @@ async function openForm(mode, item = null) {
       uiStore.isLoadingBody = true
       await loadMetadata()
       titleDlg.value = 'Editar Producto'
-      product.value = { ...item }
+      product.value = JSON.parse(JSON.stringify(item));
       showModal.value = true
       break
     case 'Delete': {
