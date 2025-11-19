@@ -1,7 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-
 namespace SFB.IAW.Shared.Models
 {
     public class MProduct
@@ -26,6 +25,11 @@ namespace SFB.IAW.Shared.Models
         [Required]
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
+
+        [Required, MaxLength(3)]
+        public string PresentCode { get; set; }
+
+        public ICollection<MProductPresent>? ProductPresent { get; set; } = new List<MProductPresent>();
 
     }
 

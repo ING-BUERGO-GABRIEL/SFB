@@ -49,7 +49,7 @@
             <!-- Checkboxes Positivo / Negativo -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Copras" color="primary" class="mt-2"
+                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Compras" color="primary" class="mt-2"
                   :disabled="isReadOnly"></v-checkbox>
               </div>
             </v-col>
@@ -71,8 +71,8 @@
           </template>
           <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
             <template #item.PresentCode="{ item }">
-             <v-select v-model="item.PresentCode" :items="metadata.CmbPresent" :rules="[rRequired]"
-                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+             <v-select v-model="item.PresentCode" :items="cmdProductPresent" 
+                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
             </template>
             <template #item.QtyProduct="{ item }">
               <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1"
@@ -87,7 +87,7 @@
                   min="0" required placeholder="Codigo de Barras" />
             </template>
             <template #item.Actions="{ item }">
-              <v-btn icon variant="text" color="error" size="small" >
+              <v-btn icon variant="text" color="error" size="small" @click="deleteProductPresent(item)">
                 <ui-icon name="DeleteOutlined" size="18"/>
               </v-btn>
             </template>
@@ -102,6 +102,7 @@
 import { ref, inject, computed } from 'vue'
 const { productServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
+import { message } from 'ant-design-vue'
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -110,6 +111,11 @@ const product = ref({})
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 const rNonNegative = v => (v !== '' && v != null && Number(v) > 0) || 'Debe ser > 0'
+const rUniquePresent = value => {
+  const productPresent = product.value?.ProductPresent ?? [];
+  const count = productPresent.filter(item => item.PresentCode === value).length;
+  return count <= 1 || 'Esta presentación ya ha sido agregada.';
+}
 
 const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
@@ -125,6 +131,10 @@ const metadata = ref({
   CmbPresent: [],
 })
 
+const cmdProductPresent = computed(() => {
+  return metadata.value.CmbPresent.filter(p => p.Code !== product.value.PresentCode)
+})
+
 const productDefault = () => {
   return {
     NroProduct: 0,
@@ -134,7 +144,7 @@ const productDefault = () => {
     PresentCode: null,
     IsPurchases: true,
     IsSales: true,
-    ProductPresent: [{}]
+    ProductPresent: []
   }
 }
 
@@ -149,8 +159,20 @@ const productPresentDefault = () => {
 }
 
 const addProductPresent = () => {
+
+  if (!product.value.PresentCode) {
+    message.warning("Debe seleccionar una presentación")
+    return
+  }
   product.value.ProductPresent.push(productPresentDefault())
-  console.log(product.value)
+}
+
+const deleteProductPresent = (item) => {
+    const index = product.value.ProductPresent.indexOf(item)
+    if (index === -1) return false
+
+    product.value.ProductPresent.splice(index, 1)
+    return true
 }
 
 let _resolve = null
