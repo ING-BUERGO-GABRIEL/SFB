@@ -1,6 +1,6 @@
 <template>
-  <card-dialog v-model="showModal" :extraButton="updReadOnly" textExtraButton="Anular Txn" :disabledAccept="updReadOnly" :title="titleDlg" height="640" width="900" formValidate @accept="onAccept"
-    @cancel="onCancel" @btnExtra="onAnular">
+  <card-dialog v-model="showModal" :extraButton="updReadOnly" textExtraButton="Anular Txn" :disabledAccept="updReadOnly"
+    :title="titleDlg" height="640" width="900" formValidate @accept="onAccept" @cancel="onCancel" @btnExtra="onAnular">
     <v-row class="pa-4 pb-0" dense>
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
@@ -12,8 +12,8 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Tipo de Transacción</v-label>
-          <v-select v-model="model.Type" :readonly="updReadOnly" :items="metadata.CmbType" :rules="[rRequired]" item-title="Name"
-            item-value="Code" placeholder="Seleccionar tipo" />
+          <v-select v-model="model.Type" :readonly="updReadOnly" :items="metadata.CmbType" :rules="[rRequired]"
+            item-title="Name" item-value="Code" placeholder="Seleccionar tipo" />
         </div>
       </v-col>
 
@@ -28,8 +28,8 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Almacén Origen</v-label>
-          <v-select v-model="model.WarehouseOriginId" :readonly="updReadOnly" :items="metadata.CmbWerehouses" :rules="originRules"
-            :disabled="originDisabled" item-title="Name" item-value="WarehouseId" 
+          <v-select v-model="model.WarehouseOriginId" :readonly="updReadOnly" :items="metadata.CmbWerehouses"
+            :rules="originRules" :disabled="originDisabled" item-title="Name" item-value="WarehouseId"
             placeholder="Seleccionar almacén" />
         </div>
       </v-col>
@@ -37,8 +37,8 @@
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
           <v-label>Almacén Destino</v-label>
-          <v-select v-model="model.WarehouseDestId" :readonly="updReadOnly" :items="metadata.CmbWerehouses" :rules="destRules"
-            :disabled="destDisabled" item-title="Name" item-value="WarehouseId" 
+          <v-select v-model="model.WarehouseDestId" :readonly="updReadOnly" :items="metadata.CmbWerehouses"
+            :rules="destRules" :disabled="destDisabled" item-title="Name" item-value="WarehouseId"
             placeholder="Seleccionar almacén" />
         </div>
       </v-col>
@@ -73,17 +73,18 @@
         <tbody>
           <tr v-for="(detail, idx) in model.InvDetails" :key="idx">
             <td class="px-0">
-              <select-page v-model="detail.NroProduct" :readonly="updReadOnly" :service="productServ" :taken-ids="[...selectedIds(detail)]"
-                :selected-label="detail._ProdName" :rules="[rRequired]" placeholder="Seleccionar producto"
+              <select-page v-model="detail.NroProduct" :readonly="updReadOnly" :service="productServ"
+                :taken-ids="[...selectedIds(detail)]" :selected-label="detail._ProdName" :rules="[rRequired]"
+                placeholder="Seleccionar producto"
                 @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }" />
             </td>
             <td class="pr-0">
-              <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number" min="0" step="1"
-                variant="filled" placeholder="Cant." />
+              <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number"
+                min="0" step="1" variant="filled" placeholder="Cant." />
             </td>
             <td class="text-center px-0">
-              <v-btn icon variant="text" :readonly="updReadOnly" color="error" size="small" :disabled="model.InvDetails.length === 1"
-                @click="removeDetail(idx)">
+              <v-btn icon variant="text" :readonly="updReadOnly" color="error" size="small"
+                :disabled="model.InvDetails.length === 1" @click="removeDetail(idx)">
                 <DeleteOutlined :style="{ fontSize: '15px' }" />
               </v-btn>
             </td>
@@ -97,7 +98,7 @@
 <script setup>
 import { computed, ref, inject, watch } from 'vue'
 import { DeleteOutlined } from '@ant-design/icons-vue'
-const { invTxnServ, productServ } = inject('services')
+const { invTxnServ, productServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
@@ -145,11 +146,13 @@ async function openForm(mode, item = null) {
   productServ.loadTable = false
   switch (mode) {
     case 'Insert':
+      uiStore.isLoadingBody = true
       await loadMetadata()
       titleDlg.value = 'Nueva transacción'
       model.value = getDefaultModel()
       break
     case 'Update': {
+      uiStore.isLoadingBody = true
       await loadMetadata()
       titleDlg.value = `Editar transacción`
       const resp = await invTxnServ.getById(item.TxnId)
@@ -161,6 +164,7 @@ async function openForm(mode, item = null) {
       return Promise.resolve(null)
   }
 
+  uiStore.isLoadingBody = false
   showModal.value = true
 
   return new Promise(resolve => {
@@ -194,11 +198,11 @@ async function onAccept() {
 async function onAnular() {
 
   const confirmed = await question(
-        'Anular Transacción',
-        `¿Esta seguro de Anular la Transaccion ?`
-      )
-  if (!confirmed) return null    
-  
+    'Anular Transacción',
+    `¿Esta seguro de Anular la Transaccion ?`
+  )
+  if (!confirmed) return null
+
   const res = await invTxnServ.anular(model.value.TxnId)
   // if (res) {
   //   invTxnServ.updItemPage(res)
