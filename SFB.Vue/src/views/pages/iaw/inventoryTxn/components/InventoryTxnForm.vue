@@ -1,6 +1,6 @@
 <template>
   <card-dialog v-model="showModal" :extraButton="updReadOnly" textExtraButton="Anular Txn" :disabledAccept="updReadOnly"
-    :title="titleDlg" height="640" width="900" formValidate @accept="onAccept" @cancel="onCancel" @btnExtra="onAnular">
+    :title="titleDlg" height="100%" width="900" formValidate @accept="onAccept" @cancel="onCancel" @btnExtra="onAnular">
     <v-row class="pa-4 pb-0" dense>
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
@@ -78,6 +78,10 @@
                 placeholder="Seleccionar producto"
                 @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }" />
             </td>
+            <!-- <td v-if="condition" class="pr-0">
+                <v-select v-model="item.PresentCode" :items="cmdProductPresent" 
+                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
+            </td> -->
             <td class="pr-0">
               <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number"
                 min="0" step="1" variant="filled" placeholder="Cant." />

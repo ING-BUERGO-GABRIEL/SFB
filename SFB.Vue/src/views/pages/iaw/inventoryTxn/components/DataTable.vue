@@ -40,12 +40,8 @@ const headers = ref([
   { title: 'ALM. ORIGEN', key: 'WarehouseOrigin.Name' },
   { title: 'ALM. DESTINO', key: 'WarehouseDest.Name' },
   { title: 'ESTADO', key: 'Status' },
-  {
-    title: 'FECHA',
-    key: 'DateReg',
-    align: 'center',
-    value: (item) => formatDate(item.DateReg)
-  },
+  { title: 'FECHA', key: 'DateReg', align: 'center',
+    value: (item) => formatDate(item.DateReg) },
   { title: 'ACCIONES', key: 'actions', sortable: false, align: 'center' }
 ])
 </script>
