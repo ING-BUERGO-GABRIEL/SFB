@@ -1,16 +1,6 @@
-
-<template>  
-  <v-autocomplete
-    :items="items"
-    :item-title="labelKey"
-    :item-value="valueKey"
-    :loading="service.loadTable"
-    :multiple="false"
-    :model-value="modelValue"
-    v-bind="$attrs"
-    @update:search="onSearch"
-    @update:modelValue="onPick"
-  />
+<template>
+  <v-autocomplete :items="items" :item-title="labelKey" :item-value="valueKey" :loading="service.loadTable"
+    :multiple="false" :model-value="modelValue" v-bind="$attrs" @update:search="onSearch" @update:modelValue="onPick" />
 </template>
 
 <script setup>

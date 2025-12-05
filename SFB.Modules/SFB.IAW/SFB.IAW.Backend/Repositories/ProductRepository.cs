@@ -19,6 +19,7 @@ namespace SFB.IAW.Backend.Repositories
         {
             var query = Context.IAWProducts
                         .Include(p => p.ProductPresent)
+                            .ThenInclude(pr=>pr.Presentation)
                         .Where(p => p.Status);
             var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "NroProduct" });
             return result;

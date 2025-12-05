@@ -53,7 +53,7 @@
 
     <v-divider class="mx-4" />
 
-    <div class="px-4 py-3">
+    <div class="px-0 py-3">
       <div class="d-flex align-center justify-space-between mb-3">
         <h4 class="text-subtitle-2 mb-0">Detalle de Productos</h4>
 
@@ -66,6 +66,7 @@
         <thead>
           <tr>
             <th class="text-left px-0">Producto</th>
+            <th class="text-left " style="width: 100px">Present.</th>
             <th class="text-left " style="width: 50px">Cantidad</th>
             <th class="text-center px-0" style="width: 50px">Acc.</th>
           </tr>
@@ -75,13 +76,17 @@
             <td class="px-0">
               <select-page v-model="detail.NroProduct" :readonly="updReadOnly" :service="productServ"
                 :taken-ids="[...selectedIds(detail)]" :selected-label="detail._ProdName" :rules="[rRequired]"
-                placeholder="Seleccionar producto"
-                @picked="p => { detail._ProdName = p?.Name ?? detail._ProdName ?? null }" />
+                placeholder="Seleccionar producto" @picked="p => onProductPicked(detail, p)" />
             </td>
-            <!-- <td v-if="condition" class="pr-0">
-                <v-select v-model="item.PresentCode" :items="cmdProductPresent" 
-                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
-            </td> -->
+            <td class="pr-0">
+              <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"
+                :disabled="!detail.PresentItems.length" item-title="Presentation.Name" item-value="Presentation.Code"
+                placeholder="Pre">
+                <template #selection="{ item }">
+                  {{ item.raw.Presentation.Code }}
+                </template>
+              </v-select>
+            </td>
             <td class="pr-0">
               <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number"
                 min="0" step="1" variant="filled" placeholder="Cant." />
@@ -260,8 +265,18 @@ function createDetail() {
     TxnId: 0,
     NroProduct: null,
     QtyProduct: null,
+    PresentCode: null,
+    PresentItems: [],
     _ProdName: null,
   }
+}
+
+function onProductPicked(detail, product) {
+  detail._ProdName = product?.Name ?? detail._ProdName ?? null
+  detail.PresentItems = product?.ProductPresent ?? []
+  console.log(product.PresentCode)
+  //detail.PresentCode = product?.PresentCode ?? null
+  //detail.PresentCode = product?.ProductPresent.length ? null : product?.PresentCode
 }
 
 // IDs ya seleccionados (excluye la fila actual)
