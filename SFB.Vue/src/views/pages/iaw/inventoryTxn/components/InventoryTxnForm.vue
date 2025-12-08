@@ -80,10 +80,13 @@
             </td>
             <td class="pr-0">
               <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"
-                :disabled="!detail.PresentItems.length" item-title="Presentation.Name" item-value="Presentation.Code"
+                :disabled="detail.DisablePresent" item-title="Presentation.Name" item-value="Presentation.Code"
                 placeholder="Pre">
                 <template #selection="{ item }">
                   {{ item.raw.Presentation.Code }}
+                </template>
+                <template #item="{ props, item }">
+                  <v-list-item v-bind="props" :title="item.raw.Presentation.Name + ' - ' + item.raw.QtyProduct" />
                 </template>
               </v-select>
             </td>
@@ -265,18 +268,26 @@ function createDetail() {
     TxnId: 0,
     NroProduct: null,
     QtyProduct: null,
+    QtyPresent: null,
     PresentCode: null,
     PresentItems: [],
+    DisablePresent: true,
     _ProdName: null,
   }
 }
 
 function onProductPicked(detail, product) {
   detail._ProdName = product?.Name ?? detail._ProdName ?? null
-  detail.PresentItems = product?.ProductPresent ?? []
-  console.log(product.PresentCode)
-  //detail.PresentCode = product?.PresentCode ?? null
-  //detail.PresentCode = product?.ProductPresent.length ? null : product?.PresentCode
+  detail.PresentItems = [{ QtyProduct: 1, Presentation: { Name: product.Presentation.Name, Code: product.Presentation.Code } }]
+  detail.PresentCode = product?.PresentCode
+  detail.QtyProduct = 1
+  detail.QtyPresent = 1
+  if (product?.ProductPresent.length) {
+    detail.DisablePresent = false
+    detail.PresentItems.push(...product.ProductPresent)
+  } else {
+    detail.DisablePresent = true
+  }
 }
 
 // IDs ya seleccionados (excluye la fila actual)

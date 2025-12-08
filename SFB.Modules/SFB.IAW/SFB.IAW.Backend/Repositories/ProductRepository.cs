@@ -18,6 +18,7 @@ namespace SFB.IAW.Backend.Repositories
         internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
         {
             var query = Context.IAWProducts
+                        .Include(p=>p.Presentation)
                         .Include(p => p.ProductPresent)
                             .ThenInclude(pr=>pr.Presentation)
                         .Where(p => p.Status);
