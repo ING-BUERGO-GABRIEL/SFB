@@ -81,7 +81,7 @@
             <td class="pr-0">
               <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"
                 :disabled="detail.DisablePresent" item-title="Presentation.Name" item-value="Presentation.Code"
-                placeholder="Pre">
+                placeholder="Pre" @update:model-value="onQtyPresentChange(detail)">
                 <template #selection="{ item }">
                   {{ item.raw.Presentation.Code }}
                 </template>
@@ -91,8 +91,9 @@
               </v-select>
             </td>
             <td class="pr-0">
-              <v-text-field v-model.number="detail.QtyProduct" :readonly="updReadOnly" :rules="qtyRules" type="number"
-                min="0" step="1" variant="filled" placeholder="Cant." />
+              <v-text-field v-model.number="detail.QtyPresent" :readonly="updReadOnly" :rules="qtyRules" type="number"
+                min="0" step="1" variant="filled" placeholder="Cant."
+                @update:model-value="onQtyPresentChange(detail)" />
             </td>
             <td class="text-center px-0">
               <v-btn icon variant="text" :readonly="updReadOnly" color="error" size="small"
@@ -188,19 +189,24 @@ async function onAccept() {
 
   let txn = null
 
+  uiStore.isLoadingBody = true
 
   switch (modeDlg.value) {
     case 'Insert':
       txn = await invTxnServ.create(model.value)
+      uiStore.isLoadingBody = false
       if (!txn) return
       invTxnServ.addItemPage(txn)
       break
     case 'Update':
       txn = await invTxnServ.update(model.value)
+      uiStore.isLoadingBody = false
       if (!txn) return
       invTxnServ.updItemPage(txn)
       break
   }
+
+  uiStore.isLoadingBody = false
 
   _resolve?.(txn)
   _resolve = null
@@ -280,8 +286,8 @@ function onProductPicked(detail, product) {
   detail._ProdName = product?.Name ?? detail._ProdName ?? null
   detail.PresentItems = [{ QtyProduct: 1, Presentation: { Name: product.Presentation.Name, Code: product.Presentation.Code } }]
   detail.PresentCode = product?.PresentCode
-  detail.QtyProduct = 1
   detail.QtyPresent = 1
+  detail.QtyProduct = 1
   if (product?.ProductPresent.length) {
     detail.DisablePresent = false
     detail.PresentItems.push(...product.ProductPresent)
@@ -289,6 +295,16 @@ function onProductPicked(detail, product) {
     detail.DisablePresent = true
   }
 }
+
+function onQtyPresentChange(detail) {
+  console.log("change cant present")
+  const pItem = detail.PresentItems.find(x => x.Presentation.Code === detail.PresentCode)
+  if (pItem) {
+    detail.QtyProduct = (detail.QtyPresent ?? 0) * pItem.QtyProduct
+  }
+  console.log(detail)
+}
+
 
 // IDs ya seleccionados (excluye la fila actual)
 function selectedIds(exceptDetail = null) {

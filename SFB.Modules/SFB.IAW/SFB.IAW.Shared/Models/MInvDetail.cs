@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SFB.IAW.Shared.Models
 {
@@ -21,6 +16,14 @@ namespace SFB.IAW.Shared.Models
         public int NroProduct { get; set; }
 
         public virtual MProduct? Product { get; set; }
+
+        [Required]
+        [MaxLength(3)]
+        public string PresentCode { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal QtyPresent { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18,4)")]

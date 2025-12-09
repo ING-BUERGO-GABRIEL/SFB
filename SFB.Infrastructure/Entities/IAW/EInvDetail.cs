@@ -24,6 +24,14 @@ namespace SFB.Infrastructure.Entities.IAW
         public virtual EProduct? Product { get; set; }
 
         [Required]
+        [MaxLength(3)]
+        public string PresentCode { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18,4)")]
+        public decimal QtyPresent { get; set; }
+
+        [Required]
         [Column(TypeName = "decimal(18,4)")]
         public decimal QtyProduct { get; set; }
 
