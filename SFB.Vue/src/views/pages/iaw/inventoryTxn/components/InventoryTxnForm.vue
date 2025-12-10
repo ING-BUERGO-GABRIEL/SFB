@@ -68,7 +68,8 @@
             <th class="text-left px-0">Producto</th>
             <th class="text-left " style="width: 100px">Present.</th>
             <th class="text-left " style="width: 50px">Cantidad</th>
-            <th class="text-center px-0" style="width: 50px">Acc.</th>
+            <th v-if="updReadOnly" class="text-left " style="width: 100px">Total</th>
+            <th v-if="!updReadOnly" class="text-center px-0" style="width: 50px">Acc.</th>
           </tr>
         </thead>
         <tbody>
@@ -95,7 +96,11 @@
                 min="0" step="1" variant="filled" placeholder="Cant."
                 @update:model-value="onQtyPresentChange(detail)" />
             </td>
-            <td class="text-center px-0">
+            <td v-if="updReadOnly" class="pr-0">
+              <v-text-field v-model.number="detail.QtyProduct" readonly :rules="qtyRules" type="number" variant="filled"
+                placeholder="Total" />
+            </td>
+            <td v-if="!updReadOnly" class="text-center px-0">
               <v-btn icon variant="text" :readonly="updReadOnly" color="error" size="small"
                 :disabled="model.InvDetails.length === 1" @click="removeDetail(idx)">
                 <DeleteOutlined :style="{ fontSize: '15px' }" />
@@ -170,6 +175,7 @@ async function openForm(mode, item = null) {
       titleDlg.value = `Editar transacción`
       const resp = await invTxnServ.getById(item.TxnId)
       if (!resp) return null
+      resp.InvDetails?.forEach(d => { d.DisablePresent = false })
       model.value = resp
       break
     }
@@ -297,12 +303,12 @@ function onProductPicked(detail, product) {
 }
 
 function onQtyPresentChange(detail) {
-  console.log("change cant present")
+
   const pItem = detail.PresentItems.find(x => x.Presentation.Code === detail.PresentCode)
   if (pItem) {
     detail.QtyProduct = (detail.QtyPresent ?? 0) * pItem.QtyProduct
   }
-  console.log(detail)
+
 }
 
 
