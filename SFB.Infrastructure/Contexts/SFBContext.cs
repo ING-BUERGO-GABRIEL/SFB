@@ -29,6 +29,7 @@ namespace SFB.Infrastructure.Contexts
             AMSModelCreating(modelBuilder);
             CMSModelCreating(modelBuilder);
             IAWModelCreating(modelBuilder);
+            PCMModelCreating(modelBuilder);
         }
 
 

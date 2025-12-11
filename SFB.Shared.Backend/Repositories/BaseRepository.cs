@@ -18,10 +18,10 @@ namespace SFB.Shared.Backend.Repositories
             this.Context = context;
         }
 
-        //public BaseRepository(IServiceProvider serviceProvider)
-        //{
-        //    this.Context = serviceProvider.GetRequiredService<TContext>();
-        //}
+        public BaseRepository(IServiceProvider serviceProvider)
+        {
+            this.Context = serviceProvider.GetRequiredService<TContext>();
+        }
 
         protected async Task<PagedListModel<TEntity>> GetPage<TEntity>(IQueryable<TEntity> query, string? filter, int pageSize, int pageNumber, List<string>? orderBy) where TEntity : class
         {

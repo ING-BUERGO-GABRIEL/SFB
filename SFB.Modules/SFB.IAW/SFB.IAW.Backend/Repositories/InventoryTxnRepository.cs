@@ -28,9 +28,9 @@ namespace SFB.IAW.Backend.Repositories
 
             return result;
         }
+
         internal async Task<EInventoryTxn> Create(EInventoryTxn invTxn)
         {
-
             await using var transaction = await Context.Database.BeginTransactionAsync();
             try
             {

@@ -1,6 +1,7 @@
 <template>
-  <card-dialog v-model="showModal" :extraButton="updReadOnly" textExtraButton="Anular Txn" :disabledAccept="updReadOnly"
-    :title="titleDlg" height="100%" width="900" formValidate @accept="onAccept" @cancel="onCancel" @btnExtra="onAnular">
+  <card-dialog v-model="showModal" :extraButton="updReadOnly && model.StatusCode === 'ACT'" textExtraButton="Anular Txn"
+    :disabledAccept="updReadOnly" :title="titleDlg" height="100%" width="900" formValidate @accept="onAccept"
+    @cancel="onCancel" @btnExtra="onAnular">
     <v-row class="pa-4 pb-0" dense>
       <v-col cols="12" sm="4" class="py-0">
         <div class="mb-6">
