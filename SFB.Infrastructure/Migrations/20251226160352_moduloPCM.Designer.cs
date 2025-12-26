@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SFB.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using SFB.Infrastructure.Contexts;
 namespace SFB.Infrastructure.Migrations
 {
     [DbContext(typeof(SFBContext))]
-    partial class SFBContextModelSnapshot : ModelSnapshot
+    [Migration("20251226160352_moduloPCM")]
+    partial class moduloPCM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -529,6 +532,22 @@ namespace SFB.Infrastructure.Migrations
                     b.ToTable("IAW_Warehouse", (string)null);
                 });
 
+            modelBuilder.Entity("SFB.Infrastructure.Entities.PCM.EPurDetail", b =>
+                {
+                    b.Property<int>("DetailId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DetailId"));
+
+                    b.Property<int>("TxnId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("DetailId");
+
+                    b.ToTable("PCM_PurDetail", (string)null);
+                });
+
             modelBuilder.Entity("SFB.Infrastructure.Entities.PCM.EPurchaseDetail", b =>
                 {
                     b.Property<int>("DetailId")
@@ -566,7 +585,7 @@ namespace SFB.Infrastructure.Migrations
 
                     b.HasIndex("PurchaseId");
 
-                    b.ToTable("PCM_PurchaseDetail", (string)null);
+                    b.ToTable("PCM_PurchaseDetail");
                 });
 
             modelBuilder.Entity("SFB.Infrastructure.Entities.PCM.EPurchaseTxn", b =>
@@ -667,7 +686,7 @@ namespace SFB.Infrastructure.Migrations
 
                     b.HasKey("SupplierId");
 
-                    b.ToTable("PCM_Supplier", (string)null);
+                    b.ToTable("ESupplier");
                 });
 
             modelBuilder.Entity("SFB.Infrastructure.Entities.AMS.EUser", b =>

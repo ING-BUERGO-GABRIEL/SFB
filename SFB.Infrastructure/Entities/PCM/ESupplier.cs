@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SFB.Infrastructure.Entities.PCM
 {
+    [Table("PCM_Supplier")]
     public class ESupplier: Auditable
     {
         [Key, Required]

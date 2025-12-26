@@ -7,7 +7,9 @@ namespace SFB.Infrastructure.Contexts
     {
 
         public DbSet<EPurchaseTxn> PCMPurchaseTxn { get; set; }
-        public DbSet<EPurDetail> PCMPurDetail { get; set; }
+        public DbSet<EPurchaseDetail> PCMPurchaseDetail { get; set; }
+
+        public DbSet<ESupplier> PCMSupplier { get; set; }
 
 
         private static void PCMModelCreating(ModelBuilder modelBuilder)
@@ -18,31 +20,23 @@ namespace SFB.Infrastructure.Contexts
                 entity.ToTable("PCM_PurchaseTxn");
                 entity.HasKey(e => e.TxnId);
 
-                //entity.HasMany(e => e.InvDetails)
-                //        .WithOne(d => d.InventoryTxn)
-                //        .HasForeignKey(d => d.TxnId)
-                //        .OnDelete(DeleteBehavior.Cascade);
-
             });
 
-            modelBuilder.Entity<EPurDetail>(entity =>
+            modelBuilder.Entity<EPurchaseDetail>(entity =>
             {
-                entity.ToTable("PCM_PurDetail");
+                entity.ToTable("PCM_PurchaseDetail");
                 entity.HasKey(e => e.DetailId);
 
-                //entity.HasOne(d => d.Product)
-                //      .WithMany(p => p.InvDetails)
-                //      .HasForeignKey(d => d.NroProduct)
-                //      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<ESupplier>(entity =>
+            {
+                entity.ToTable("PCM_Supplier");
+                entity.HasKey(e => e.SupplierId);
+
 
             });
 
-          
-            //indices
-            //modelBuilder.Entity<EInventoryTxn>().HasIndex(e => e.WarehouseOriginId);
-            //modelBuilder.Entity<EInventoryTxn>().HasIndex(e => e.WarehouseDestId);
-            //modelBuilder.Entity<EInvDetail>().HasIndex(d => d.TxnId);
-            //modelBuilder.Entity<EInvDetail>().HasIndex(d => d.NroProduct);
 
         }
     }
