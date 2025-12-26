@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <ProjectReference Include="..\..\SFB.IAW\SFB.IAW.Shared\SFB.IAW.Shared.csproj" />
   </ItemGroup>
 
 </Project>
