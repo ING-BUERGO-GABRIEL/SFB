@@ -15,7 +15,7 @@ namespace SFB.Infrastructure.Entities.PCM
         [Required, MaxLength(70)]
         public string Name { get; set; }
 
-        [MaxLength(300)]
-        public string? Address { get; set; }
+        [Required,MaxLength(300)]
+        public string Address { get; set; }
     }
 }

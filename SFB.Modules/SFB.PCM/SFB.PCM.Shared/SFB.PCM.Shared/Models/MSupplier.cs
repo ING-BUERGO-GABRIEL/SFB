@@ -11,6 +11,6 @@ namespace SFB.PCM.Shared.Models
         public string Name { get; set; }
 
         [MaxLength(300)]
-        public string? Address { get; set; }
+        public string Address { get; set; }
     }
 }

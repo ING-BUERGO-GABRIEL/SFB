@@ -1,5 +1,5 @@
 <template>
-  <card-dialog v-model="showModal" :title="titleDlg" height="350"  formValidate @accept="onAccept" @cancel="onCancel">
+  <card-dialog v-model="showModal" :title="titleDlg" height="350" formValidate @accept="onAccept" @cancel="onCancel">
     <v-row class="pa-4 pb-0">
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
@@ -10,14 +10,13 @@
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
           <v-label>Nombre</v-label>
-          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre"
-             />
+          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre" />
         </div>
       </v-col>
       <v-col cols="12" class="py-0">
         <div class="mb-6">
           <v-label>Dirección</v-label>
-          <v-text-field v-model="model.Address" placeholder="Dirección del proveedor" />
+          <v-text-field v-model="model.Address" :rules="[rRequired]" placeholder="Dirección del proveedor" />
         </div>
       </v-col>
     </v-row>
@@ -26,7 +25,7 @@
 
 <script setup>
 import { ref, inject } from 'vue'
-const { supplierServ } = inject('services')
+const { supplierServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
@@ -81,9 +80,11 @@ async function openForm(mode, item = null) {
 }
 
 async function onAccept() {
+  uiStore.isLoadingBody = true
   switch (modeDlg.value) {
     case 'Insert': {
       const newSupplier = await supplierServ.create(model.value)
+      uiStore.isLoadingBody = false
       if (!newSupplier) return
       model.value = newSupplier
       supplierServ.pageData.Data.unshift(newSupplier)
@@ -92,6 +93,7 @@ async function onAccept() {
     }
     case 'Update': {
       const updSupplier = await supplierServ.update(model.value)
+      uiStore.isLoadingBody = false
       if (!updSupplier) return
       const idx = supplierServ.pageData.Data.findIndex(p => p.SupplierId === updSupplier.SupplierId)
       if (idx !== -1) supplierServ.pageData.Data[idx] = updSupplier
@@ -99,7 +101,7 @@ async function onAccept() {
     }
 
   }
-
+  uiStore.isLoadingBody = false
   _resolve(model.value)
   _resolve = null
   showModal.value = false
