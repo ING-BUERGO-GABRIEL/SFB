@@ -8,6 +8,7 @@ namespace SFB.Infrastructure.Contexts
 
         public DbSet<EPurchaseTxn> PCMPurchaseTxn { get; set; }
         public DbSet<EPurDetail> PCMPurDetail { get; set; }
+        public DbSet<ESupplier> PCMSupplier { get; set; }
 
 
         private static void PCMModelCreating(ModelBuilder modelBuilder)
@@ -35,6 +36,15 @@ namespace SFB.Infrastructure.Contexts
                 //      .HasForeignKey(d => d.NroProduct)
                 //      .OnDelete(DeleteBehavior.Restrict);
 
+            });
+
+            modelBuilder.Entity<ESupplier>(entity =>
+            {
+                entity.ToTable("PCM_Supplier");
+                entity.HasKey(e => e.SupplierId);
+
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(70);
+                entity.Property(e => e.Address).HasMaxLength(300);
             });
 
           
