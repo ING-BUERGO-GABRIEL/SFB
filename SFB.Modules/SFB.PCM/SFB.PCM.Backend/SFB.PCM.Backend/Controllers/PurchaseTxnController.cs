@@ -72,24 +72,6 @@ namespace SFB.PCM.Backend.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] MPurchaseTxn model)
-        {
-            try
-            {
-                var entity = model.Adapt<EPurchaseTxn>();
-                var result = await Repository.Update(entity);
-                return OkResult(result.Adapt<MPurchaseTxn>());
-            }
-            catch (ControllerException ex)
-            {
-                return ControlledException(ex);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
 
         [HttpPost("{txnId:int}")]
         public async Task<IActionResult> Anular(int txnId)

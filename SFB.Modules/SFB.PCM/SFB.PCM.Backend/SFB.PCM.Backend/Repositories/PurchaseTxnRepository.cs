@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SFB.IAW.Backend.Repositories;
 using SFB.IAW.Shared.Sealed;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
@@ -12,6 +13,8 @@ namespace SFB.PCM.Backend.Repositories
 {
     public class PurchaseTxnRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
+        private readonly InventoryTxnRepository _invTxnRepository = new InventoryTxnRepository(context);
+
         protected override List<string> GetFilterableProperties()
         {
             return new List<string> { "Reference", "Supplier.Name" };
@@ -41,10 +44,7 @@ namespace SFB.PCM.Backend.Repositories
 
                 var invTxn = BuildInventoryTxnFromPurchase(purchase);
 
-                await ValidateTxnInit(invTxn.InvDetails, invTxn.Type);
-                await UpdateStockFromTxn(invTxn);
-
-                Context.IAWInventoryTxn.Add(invTxn);
+                await _invTxnRepository.CreateTxn(invTxn);
 
                 await Context.SaveChangesAsync();
                 await transaction.CommitAsync();
@@ -87,68 +87,7 @@ namespace SFB.PCM.Backend.Repositories
             };
         }
 
-        internal async Task<EPurchaseTxn> Update(EPurchaseTxn purchase)
-        {
-            await using var transaction = await Context.Database.BeginTransactionAsync();
-            try
-            {
-                var dbPurchase = await Context.PCMPurchaseTxn
-                    .Include(p => p.Details)
-                    .FirstAsync(p => p.TxnId == purchase.TxnId);
-
-                if (dbPurchase.StatusCode == PurchaseStatus.Anulado.Code)
-                {
-                    throw new ControllerException("No se puede actualizar una compra anulada.");
-                }
-
-                var invTxn = await Context.IAWInventoryTxn
-                    .Include(t => t.InvDetails)
-                    .FirstOrDefaultAsync(t => t.ModOrigin == "PCM" && t.TxnOrigin == purchase.TxnId);
-
-                if (invTxn is null)
-                {
-                    throw new ControllerException("No se encontró la transacción de inventario asociada.");
-                }
-
-                await RevertStockFromTxn(invTxn);
-
-                dbPurchase.SupplierId = purchase.SupplierId;
-                dbPurchase.WarehouseId = purchase.WarehouseId;
-                dbPurchase.CurrencyCode = purchase.CurrencyCode;
-                dbPurchase.Type = purchase.Type;
-                dbPurchase.Reference = purchase.Reference;
-                dbPurchase.StatusCode = purchase.StatusCode;
-                dbPurchase.GrandTotal = purchase.Details?.Sum(d => d.TotalCost) ?? 0m;
-
-                Context.PCMPurchaseDetail.RemoveRange(dbPurchase.Details);
-                dbPurchase.Details = purchase.Details;
-
-                invTxn.Type = MapPurchaseTypeToInv(purchase.Type);
-                invTxn.WarehouseDestId = purchase.WarehouseId;
-                invTxn.StatusCode = purchase.StatusCode;
-
-                Context.IAWInvDetail.RemoveRange(invTxn.InvDetails);
-                invTxn.InvDetails = purchase.Details.Select(d => new EInvDetail
-                {
-                    NroProduct = d.NroProduct,
-                    PresentCode = d.PresentCode,
-                    QtyPresent = d.QtyPresent,
-                    QtyProduct = d.QtyProduct,
-                }).ToList();
-
-                await ValidateTxnInit(invTxn.InvDetails, invTxn.Type);
-                await UpdateStockFromTxn(invTxn);
-
-                await Context.SaveChangesAsync();
-                await transaction.CommitAsync();
-                return dbPurchase;
-            }
-            catch
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
-        }
+      
 
         internal async Task<EPurchaseTxn> Anular(int txnId)
         {
@@ -162,17 +101,9 @@ namespace SFB.PCM.Backend.Repositories
                 purchase.StatusCode = PurchaseStatus.Anulado.Code;
 
                 var invTxn = await Context.IAWInventoryTxn
-                    .Include(t => t.InvDetails)
-                    .FirstOrDefaultAsync(t => t.ModOrigin == "PCM" && t.TxnOrigin == txnId);
+                    .FirstAsync(t => t.ModOrigin == "PCM" && t.TxnOrigin == txnId);
 
-                if (invTxn != null)
-                {
-                    await RevertStockFromTxn(invTxn);
-                    invTxn.StatusCode = InvStatus.Anulado.Code;
-                    Context.IAWInventoryTxn.Update(invTxn);
-                }
-
-                Context.PCMPurchaseTxn.Update(purchase);
+                await _invTxnRepository.AnularTxn(invTxn.TxnId);
 
                 await Context.SaveChangesAsync();
                 await transaction.CommitAsync();
@@ -217,146 +148,9 @@ namespace SFB.PCM.Backend.Repositories
             return invTxn;
         }
 
-        internal async Task ValidateTxnInit(ICollection<EInvDetail> invDetail, string type)
-        {
-            if (invDetail is null || invDetail.Count == 0)
-                return;
 
-            var productIds = invDetail.Select(d => d.NroProduct).Distinct().ToList();
+       
 
-            var initialProductIds = await Context.IAWInvDetail.AsNoTracking()
-                .Where(d => productIds.Contains(d.NroProduct)
-                            && d.InventoryTxn != null
-                            && d.InventoryTxn.Type == InvType.TxnInicial.Code
-                            && d.InventoryTxn.StatusCode == InvStatus.Activo.Code
-                            && !d.InventoryTxn.Delete)
-                .Select(d => d.NroProduct)
-                .Distinct()
-                .ToListAsync();
-
-            if (type == InvType.TxnInicial.Code)
-            {
-                if (initialProductIds.Any())
-                {
-                    var productNames = await Context.IAWProducts
-                        .AsNoTracking()
-                        .Where(p => initialProductIds.Contains(p.NroProduct))
-                        .Select(p => p.Name)
-                        .ToListAsync();
-
-                    throw new ControllerException($"No se puede crear transacción inicial: los productos ya tienen transacción inicial: {string.Join(", ", productNames)}");
-                }
-
-                return;
-            }
-
-            var missing = productIds.Except(initialProductIds).ToList();
-
-            if (missing.Any())
-            {
-                var productNames = await Context.IAWProducts.AsNoTracking()
-                    .Where(p => missing.Contains(p.NroProduct))
-                    .Select(p => p.Name)
-                    .ToListAsync();
-
-                throw new ControllerException($"Falta transacción inicial para los productos: {string.Join(", ", productNames)}");
-            }
-        }
-
-        private async Task UpdateStockFromTxn(EInventoryTxn invTxn)
-        {
-            if (invTxn.InvDetails is null || invTxn.InvDetails.Count == 0)
-                return;
-
-            var detailSums = invTxn.InvDetails
-                .GroupBy(d => d.NroProduct)
-                .ToDictionary(g => g.Key, g => g.Sum(x => x.QtyProduct));
-
-            var productIds = detailSums.Keys.ToList();
-            var destId = invTxn.WarehouseDestId ?? 0;
-
-            switch (invTxn.Type)
-            {
-                case "INI":
-                    if (!invTxn.WarehouseDestId.HasValue)
-                        throw new ControllerException("Almacén destino requerido para transacción inicial.");
-
-                    var newStocks = detailSums.Select(kv => new EStock
-                    {
-                        NroProduct = kv.Key,
-                        WarehouseId = destId,
-                        QtyOnHand = kv.Value,
-                        QtyReserved = 0m,
-                    }).ToList();
-
-                    Context.IAWStocks.AddRange(newStocks);
-                    break;
-                case "ING":
-                    if (!invTxn.WarehouseDestId.HasValue)
-                        throw new ControllerException("Almacén destino requerido para ingreso.");
-
-                    var existing = await Context.IAWStocks
-                        .Where(s => s.WarehouseId == destId && productIds.Contains(s.NroProduct))
-                        .ToDictionaryAsync(s => s.NroProduct);
-
-                    foreach (var kv in detailSums)
-                    {
-                        if (existing.TryGetValue(kv.Key, out var st))
-                        {
-                            st.QtyOnHand += kv.Value;
-                            Context.IAWStocks.Update(st);
-                        }
-                        else
-                        {
-                            var created = new EStock
-                            {
-                                NroProduct = kv.Key,
-                                WarehouseId = destId,
-                                QtyOnHand = kv.Value,
-                                QtyReserved = 0m,
-                            };
-                            Context.IAWStocks.Add(created);
-                        }
-                    }
-                    break;
-                default:
-                    throw new ControllerException("Tipo de transacción de inventario no soportado para compras.");
-            }
-        }
-
-        private async Task RevertStockFromTxn(EInventoryTxn txn)
-        {
-            if (txn.InvDetails is null || txn.InvDetails.Count == 0)
-                return;
-
-            var detailSums = txn.InvDetails
-                .GroupBy(d => d.NroProduct)
-                .ToDictionary(g => g.Key, g => g.Sum(x => x.QtyProduct));
-
-            var productIds = detailSums.Keys.ToList();
-            var destId = txn.WarehouseDestId ?? 0;
-
-            var stocksDest = await Context.IAWStocks
-                .Where(s => s.WarehouseId == destId && productIds.Contains(s.NroProduct))
-                .ToListAsync();
-
-            var missing = productIds.Except(stocksDest.Select(s => s.NroProduct)).ToList();
-            if (missing.Any())
-            {
-                throw new ControllerException("No existe stock en destino para revertir la compra.");
-            }
-
-            foreach (var st in stocksDest)
-            {
-                var qty = detailSums[st.NroProduct];
-                if (st.QtyOnHand < qty)
-                {
-                    throw new ControllerException("Stock insuficiente para revertir la compra.");
-                }
-
-                st.QtyOnHand -= qty;
-                Context.IAWStocks.Update(st);
-            }
-        }
+     
     }
 }

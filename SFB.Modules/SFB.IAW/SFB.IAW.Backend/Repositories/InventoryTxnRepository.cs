@@ -46,7 +46,7 @@ namespace SFB.IAW.Backend.Repositories
             }
         }
 
-        internal  async Task<EInventoryTxn> CreateTxn(EInventoryTxn invTxn)
+        public  async Task<EInventoryTxn> CreateTxn(EInventoryTxn invTxn)
         {
 
             await ValidateTxnInit(invTxn.InvDetails, invTxn.Type);
@@ -147,7 +147,7 @@ namespace SFB.IAW.Backend.Repositories
             }
         }
 
-        internal async Task<EInventoryTxn> AnularTxn(int txnId)
+        public async Task<EInventoryTxn> AnularTxn(int txnId)
         {
             var txn = Context.IAWInventoryTxn
                 .Include(t => t.InvDetails)
