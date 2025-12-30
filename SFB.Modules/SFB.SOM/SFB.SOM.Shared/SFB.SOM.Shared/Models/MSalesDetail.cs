@@ -1,0 +1,34 @@
+using SFB.IAW.Shared.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SFB.SOM.Shared.Models
+{
+    public class MSalesDetail
+    {
+        [Key, Required]
+        public int DetailId { get; set; }
+
+        [Required]
+        public int SalesId { get; set; }
+
+        [Required]
+        public int NroProduct { get; set; }
+        public virtual MProduct? Product { get; set; }
+
+        [Required, MaxLength(3)]
+        public string PresentCode { get; set; } = null!;
+
+        [Required, Column(TypeName = "decimal(18,4)")]
+        public decimal QtyPresent { get; set; }
+
+        [Required, Column(TypeName = "decimal(18,4)")]
+        public decimal QtyProduct { get; set; }
+
+        [Required, Column(TypeName = "decimal(18,6)")]
+        public decimal UnitPrice { get; set; }
+
+        [Required, Column(TypeName = "decimal(18,6)")]
+        public decimal TotalPrice { get; set; }
+    }
+}

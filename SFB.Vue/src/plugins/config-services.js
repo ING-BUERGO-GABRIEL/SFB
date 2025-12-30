@@ -5,6 +5,7 @@ import { presentationService } from '@/services/iaw/presentationService'
 import { inventoryTxnService } from '@/services/iaw/inventoryTxnService'
 import { supplierService } from '@/services/pcm/supplierService'
 import { purchaseService } from '@/services/pcm/purchaseService'
+import { salesTxnService } from '@/services/som/salesTxn'
 import { useUIStore } from '@/stores/ui'
 
 export const configServices = {
@@ -17,6 +18,7 @@ export const configServices = {
         const invTxnServ = inventoryTxnService();
         const supplierServ = supplierService();
         const purchaseServ = purchaseService();
+        const salesServ = salesTxnService();
         const uiStore = useUIStore()
 
         app.provide('services', {
@@ -27,6 +29,7 @@ export const configServices = {
             invTxnServ,
             supplierServ,
             purchaseServ,
+            salesServ,
             uiStore
         });
     },
