@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SFB.AMS\SFB.AMS.Shared\SFB.AMS.Shared.csproj" />
     <ProjectReference Include="..\..\..\SFB.IAW\SFB.IAW.Shared\SFB.IAW.Shared.csproj" />
   </ItemGroup>
 
