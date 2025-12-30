@@ -9,6 +9,7 @@ namespace SFB.Infrastructure.Contexts
         public DbSet<EUserGroup> AMSUserGroup { get; set; }
         public DbSet<EPerson> AMSPerson { get; set; }
         public DbSet<ETypePerson> AMSTypePerson { get; set; }
+        public DbSet<ECustomer> AMSCustomer { get; set; }
 
         private static void AMSModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,6 +50,13 @@ namespace SFB.Infrastructure.Contexts
             {
                 entity.ToTable("AMS_TypePerson");
                 entity.HasKey(e => new { e.NroPerson, e.Type });
+            });
+
+
+            modelBuilder.Entity<ECustomer>(entity =>
+            {
+                entity.ToTable("AMS_Customer");
+                entity.HasKey(e => new { e.NroPerson });
             });
 
         }

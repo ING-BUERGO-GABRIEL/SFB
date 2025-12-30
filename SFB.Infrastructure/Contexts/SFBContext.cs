@@ -30,6 +30,7 @@ namespace SFB.Infrastructure.Contexts
             CMSModelCreating(modelBuilder);
             IAWModelCreating(modelBuilder);
             PCMModelCreating(modelBuilder);
+            SOMModelCreating(modelBuilder);
         }
 
 
