@@ -11,22 +11,19 @@ namespace SFB.Infrastructure.Entities.AMS
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int NroPerson { get; set; }
 
-        [Required]
-        [MaxLength(30)]
-        public string Name { get; set; }
 
-        [MaxLength(30)]
-        public string? FirstLastName { get; set; }
+        [Required, MaxLength(30)]
+        public string FirstName { get; set; } = null!;
 
         [MaxLength(30)] 
-        public string? SecondLastName { get; set; }
+        public string? LastName { get; set; }
 
         [Required]
         public DateTime DateBirth { get; set; }
 
         [Required]
         [MaxLength(200)]
-        public string Address { get; set; }
+        public string Address { get; set; } = null!;
 
 
         [NotMapped]

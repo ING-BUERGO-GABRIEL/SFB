@@ -4,7 +4,8 @@
     <pag-table :headers="headers" :service="salesServ">
       <template #item.Status="{ value }">
         <v-chip variant="text" size="small" class="px-0">
-          <v-avatar size="8" :color="value.Code === 'ACT'? 'success' : value.Code === 'PEN' ? 'warning' : 'error'" variant="flat" class="mr-2" />
+          <v-avatar size="8" :color="value.Code === 'ACT' ? 'success' : value.Code === 'PEN' ? 'warning' : 'error'"
+            variant="flat" class="mr-2" />
           <p class="text-h6 mb-0">{{ value.Name }}</p>
         </v-chip>
       </template>
@@ -32,7 +33,7 @@ const formatCurrency = (amount) => new Intl.NumberFormat('es-BO', { style: 'curr
 const customerName = (item) => {
   const p = item?.Customer?.Person
   if (!p) return ''
-  return `${p.Name} ${p.FirstLastName ?? ''} ${p.SecondLastName ?? ''}`.trim()
+  return `${p.FirstName} ${p.LastName ?? ''}`.trim()
 }
 
 const headers = ref([

@@ -88,55 +88,7 @@ namespace SFB.SOM.Backend.Repositories
                 {"CmbType", new [] { SalesType.Venta }},
             };
         }
-
-        internal async Task<ESalesTxn> Update(ESalesTxn sales)
-        {
-            await using var transaction = await Context.Database.BeginTransactionAsync();
-            try
-            {
-                var current = await Context.AMSSalesTxn
-                    .Include(s => s.Details)
-                    .FirstAsync(s => s.TxnId == sales.TxnId);
-
-                current.CustomerId = sales.CustomerId;
-                current.WarehouseId = sales.WarehouseId;
-                current.Reference = sales.Reference;
-                current.CurrencyCode = sales.CurrencyCode;
-                current.Type = sales.Type;
-                current.StatusCode = sales.StatusCode;
-
-                Context.AMSSalesDetail.RemoveRange(current.Details);
-
-                current.Details = sales.Details.Select(d => new ESalesDetail
-                {
-                    NroProduct = d.NroProduct,
-                    PresentCode = d.PresentCode,
-                    QtyPresent = d.QtyPresent,
-                    QtyProduct = d.QtyProduct,
-                    UnitPrice = d.UnitPrice,
-                    TotalPrice = d.TotalPrice
-                }).ToList();
-
-                current.GrandTotal = current.Details.Sum(d => d.TotalPrice);
-
-                var invTxn = await Context.IAWInventoryTxn
-                    .FirstAsync(t => t.ModOrigin == "SOM" && t.TxnOrigin == current.TxnId);
-
-                await _invTxnRepository.AnularTxn(invTxn.TxnId);
-
-                var newInvTxn = BuildInventoryTxnFromSales(current);
-                await _invTxnRepository.CreateTxn(newInvTxn);
-
-                await Context.SaveChangesAsync();
-                await transaction.CommitAsync();
-                return current;
-            }
-            catch
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
-        }
+       
 
         internal async Task<ESalesTxn> Anular(int txnId)
         {

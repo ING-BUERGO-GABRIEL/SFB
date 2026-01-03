@@ -30,5 +30,16 @@ namespace SFB.SOM.Shared.Models
 
         [Required, Column(TypeName = "decimal(18,6)")]
         public decimal TotalPrice { get; set; }
+
+        public virtual string? _ProdName => Product?.Name;
+
+        public virtual List<dynamic> PresentItems => new List<dynamic>
+        {
+            new
+            {
+                Presentation = new { Code = PresentCode, Name = PresentCode },
+                QtyProduct = QtyPresent > 0 && QtyProduct > 0 ? QtyProduct / QtyPresent : 1,
+            }
+        };
     }
 }

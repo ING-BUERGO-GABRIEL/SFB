@@ -13,7 +13,8 @@
         <div class="mb-6">
           <v-label>Cliente</v-label>
           <v-select v-model="model.CustomerId" :readonly="updReadOnly" :items="metadata.CmbCustomers"
-            :rules="[rRequired]" item-title="customerName" item-value="CustomerId" placeholder="Seleccionar cliente" />
+            :rules="[rRequired]" item-title="Person.FirstName" item-value="CustomerId"
+            placeholder="Seleccionar cliente" />
         </div>
       </v-col>
       <v-col cols="12" sm="4" class="py-0">

@@ -72,24 +72,6 @@ namespace SFB.SOM.Backend.Controllers
             }
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update([FromBody] MSalesTxn model)
-        {
-            try
-            {
-                var entity = model.Adapt<ESalesTxn>();
-                var result = await Repository.Update(entity);
-                return OkResult(result.Adapt<MSalesTxn>());
-            }
-            catch (ControllerException ex)
-            {
-                return ControlledException(ex);
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex);
-            }
-        }
 
         [HttpPost("{txnId:int}")]
         public async Task<IActionResult> Anular(int txnId)

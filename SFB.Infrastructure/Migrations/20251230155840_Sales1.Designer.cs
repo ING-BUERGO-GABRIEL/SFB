@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SFB.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using SFB.Infrastructure.Contexts;
 namespace SFB.Infrastructure.Migrations
 {
     [DbContext(typeof(SFBContext))]
-    partial class SFBContextModelSnapshot : ModelSnapshot
+    [Migration("20251230155840_Sales1")]
+    partial class Sales1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,12 +72,16 @@ namespace SFB.Infrastructure.Migrations
                     b.Property<DateTime>("DateBirth")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("FirstName")
+                    b.Property<string>("FirstLastName")
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("character varying(30)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("SecondLastName")
                         .HasMaxLength(30)
                         .HasColumnType("character varying(30)");
 

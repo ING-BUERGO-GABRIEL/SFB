@@ -13,5 +13,20 @@
         "DebugTarget": "localhost (Chrome)"
       }
     ]
+  },
+  {
+    "Name": "Server + Maui",
+    "Projects": [
+      {
+        "Path": "SFB.Server\\SFB.Server.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      },
+      {
+        "Path": "SFB.Maui\\SFB.Maui.csproj",
+        "Action": "Start",
+        "DebugTarget": "Windows Machine"
+      }
+    ]
   }
 ]
