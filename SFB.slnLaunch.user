@@ -15,17 +15,32 @@
     ]
   },
   {
-    "Name": "Server + Maui",
+    "Name": "Server + Maui Win",
     "Projects": [
       {
         "Path": "SFB.Server\\SFB.Server.csproj",
         "Action": "Start",
-        "DebugTarget": "http"
+        "DebugTarget": "https"
       },
       {
         "Path": "SFB.Maui\\SFB.Maui.csproj",
         "Action": "Start",
         "DebugTarget": "Windows Machine"
+      }
+    ]
+  },
+  {
+    "Name": "Server + Maui Android",
+    "Projects": [
+      {
+        "Path": "SFB.Server\\SFB.Server.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "SFB.Maui\\SFB.Maui.csproj",
+        "Action": "Start",
+        "DebugTarget": "Pixel 5 - API 34 (Android 14.0 - API 34)"
       }
     ]
   }

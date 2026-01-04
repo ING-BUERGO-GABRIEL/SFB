@@ -19,8 +19,6 @@ namespace SFB.Maui
     		builder.Logging.AddDebug();
 #endif
 
-            builder.Services.AddHybridWebView();
-
             return builder.Build();
         }
     }

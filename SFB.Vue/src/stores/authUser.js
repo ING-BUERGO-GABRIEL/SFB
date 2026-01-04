@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { fetchWrapper } from '@/utils/helpers/fetch-wrapper'
-import { hostTool } from '@/utils/hostTool'
+import config from '@/config'
 
-const baseUrl = `${hostTool.getUrlBase()}/users`
+const baseUrl = `${config.apiUrl}/users`
 
 export const useUsersStore = defineStore({
   id: 'Authuser',

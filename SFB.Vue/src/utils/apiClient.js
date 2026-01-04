@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { useAuthStore } from '@/stores/auth';
-import { hostTool } from '@/utils/hostTool';
+import config from '@/config';
 
 const api = axios.create({
-  baseURL: hostTool.getUrlBase(),
+  baseURL: config.apiUrl,
   headers: { 'Content-Type': 'application/json' }
 });
 

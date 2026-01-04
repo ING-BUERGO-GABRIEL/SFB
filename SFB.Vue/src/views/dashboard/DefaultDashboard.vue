@@ -7,13 +7,17 @@ import AnalyticsReport from './components/AnalyticsReport.vue';
 import HelpSupport from './components/HelpSupport.vue';
 import TransactionHistory from './components/TransactionHistory.vue';
 import SalesReport from './components/SalesReport.vue';
+async function permissos() {
+  const ok = await window.HybridWebView?.InvokeDotNet?.('EnsureCameraPermissionAsync')
+  console.log('permiso camara:', ok)
+}
 </script>
 <template>
   <!-- -------------------------------------------------------------------- -->
   <!-- Total widgets -->
   <!-- -------------------------------------------------------------------- -->
   <WidgetFive />
-
+  <v-btn @click="permissos">Holaaa</v-btn>
   <v-row class="mb-0">
     <!-- -------------------------------------------------------------------- -->
     <!-- Unique visitor -->

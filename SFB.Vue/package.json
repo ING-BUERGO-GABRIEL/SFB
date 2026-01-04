@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:web": "vite build --mode web",
+    "build:maui": "vite build --mode maui",
     "preview": "vite preview",
     "lint": "eslint . --fix"
   },

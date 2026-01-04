@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ejl="clr-namespace:HybridWebView;assembly=HybridWebView"
-             Shell.NavBarIsVisible="False"
-    x:Class="SFB.Maui.MainPage">
+             x:Class="SFB.Maui.MainPage"
+             Shell.NavBarIsVisible="False">
 
-
-            <ejl:HybridWebView HybridAssetRoot="wwwroot" MainFile="index.html"
-                            
-                               />
-         
-
+    <HybridWebView x:Name="Hybrid"
+                   HybridRoot="wwwroot"
+                   DefaultFile="index.html" />
 </ContentPage>

@@ -1,5 +1,5 @@
 import { useAuthStore } from '@/stores/auth';
-import { hostTool } from '@/utils/hostTool'
+import config from '@/config'
 
 export const fetchWrapper = {
   get: request('GET'),
@@ -25,7 +25,7 @@ function request(method) {
 function authHeader(url) {
   const { user } = useAuthStore();
   const isLoggedIn = !!user?.token;
-  const isApiUrl = url.startsWith(hostTool.getUrlBase());
+  const isApiUrl = url.startsWith(config.apiUrl);
   if (isLoggedIn && isApiUrl) {
     return { Authorization: `Bearer ${user.token}` };
   } else {
