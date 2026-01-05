@@ -37,36 +37,14 @@ public partial class MainPage : ContentPage
         {
             // PlatformView en Windows es WebView2 (Microsoft.UI.Xaml.Controls.WebView2)
             if (Hybrid.Handler?.PlatformView is WebView2 wv2)
-            {
-           
+            {          
 
                 // CoreWebView2 puede tardar en inicializar
                 wv2.CoreWebView2Initialized += (_, __) =>
                 {
                     wv2.CoreWebView2.OpenDevToolsWindow(); // abre DevTools :contentReference[oaicite:2]{index=2}
-                };
-
-
-                if (wv2.CoreWebView2 is null)
-                {
-#if DEBUG
-                    var options = new CoreWebView2EnvironmentOptions
-                    {
-                        AdditionalBrowserArguments = "--allow-running-insecure-content"
-                    };
-
-              
-                    var env = await CoreWebView2Environment.CreateAsync();
-                 
-                    await wv2.EnsureCoreWebView2Async(env);
-#else
-                    await wv2.EnsureCoreWebView2Async();
-#endif
-                }
-                }
-
-
-            
+                };                
+           }            
         };
 #endif
 
