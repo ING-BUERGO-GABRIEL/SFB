@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { shallowRef } from 'vue';
 
 // icons
@@ -50,16 +50,17 @@ const fivecards = shallowRef([
                 <h6 class="text-h6 text-lightText mb-1">{{ card5.name }}</h6>
                 <h4 class="text-h4 d-flex align-center mb-0">
                   {{ card5.earn }}
-                  <v-chip :color="card5.color" :border="`${card5.color} solid thin opacity-50`" class="ml-2" size="small" label>
+                  <v-chip :color="card5.color" :border="`${card5.color} solid thin opacity-50`" class="ml-2"
+                    size="small" label>
                     <template v-slot:prepend>
                       <component :is="card5.icon" :style="{ fontSize: '12px' }" :class="'mr-1 text-' + card5.color" />
                     </template>
                     {{ card5.percent }}
                   </v-chip>
                 </h4>
-                <span class="text-lightText text-caption pt-5 d-block"
-                  >You made an extra <span :class="'text-' + card5.color">{{ card5.text }}</span> this year</span
-                >
+                <span class="text-lightText text-caption pt-5 d-block">You made an extra <span
+                    :class="'text-' + card5.color">{{
+                    card5.text }}</span> this year</span>
               </div>
             </div>
           </v-card-text>

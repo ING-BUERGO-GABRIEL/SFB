@@ -6,7 +6,7 @@ using Microsoft.Web.WebView2.Core;
 #if ANDROID
 
 using Microsoft.Maui.Handlers;
-
+using Android.Webkit;
 #endif
 
 namespace SFB.Maui;
@@ -16,7 +16,22 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
-        Hybrid.SetInvokeJavaScriptTarget(this);
+
+#if ANDROID
+        Hybrid.HandlerChanged += (_, __) =>
+        {
+            if (Hybrid.Handler?.PlatformView is Android.Webkit.WebView wv)
+            {
+                // Permitir Mixed Content (HTTPS page -> HTTP API)
+                wv.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
+
+                // Opcional (a veces necesario en SPAs)
+                wv.Settings.JavaScriptEnabled = true;
+                wv.Settings.DomStorageEnabled = true;
+            }
+        };
+#endif
+
 #if WINDOWS
         Hybrid.HandlerChanged += (_, __) =>
         {
@@ -52,20 +67,11 @@ public partial class MainPage : ContentPage
 
 #endif
 
-#if ANDROID
-        Hybrid.HandlerChanged += (_, __) =>
-        {
-            // OJO: aquí necesitamos el tipo concreto WebViewHandler
-            if (Hybrid.Handler is WebViewHandler handler &&
-                handler.PlatformView is Android.Webkit.WebView webView)
-            {
-#if DEBUG
-                webView.SetWebViewClient(new SFB.Maui.Platforms.Android.UnsafeMauiWebViewClient(handler));
-#endif
-            }
-        };
-#endif
+    }
 
+    private void RawMessageReceived(object sender, HybridWebView.HybridWebViewRawMessageReceivedEventArgs e)
+    {
+        var message= e.Message;
     }
 
     public async Task<bool> EnsureCameraPermissionAsync()
@@ -76,4 +82,5 @@ public partial class MainPage : ContentPage
 
         return status == PermissionStatus.Granted;
     }
+
 }

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { computed, ref } from 'vue';
 
 const chartOptions1 = computed(() => {
@@ -166,15 +166,8 @@ const items = ref(['Today', 'This month', 'This year']);
       <div class="d-flex justify-space-between">
         <v-card-title class="text-h5">Sales Report</v-card-title>
         <div style="min-width: 160px">
-          <v-autocomplete
-            id="autocomplete-input"
-            model-value="Today"
-            :items="items"
-            color="primary"
-            variant="outlined"
-            hide-details
-            density="compact"
-          ></v-autocomplete>
+          <v-autocomplete id="autocomplete-input" model-value="Today" :items="items" color="primary" variant="outlined"
+            hide-details density="compact"></v-autocomplete>
         </div>
       </div>
     </v-card-item>
@@ -183,13 +176,15 @@ const items = ref(['Today', 'This month', 'This year']);
         <h6 class="text-h6 text-lightText mb-3">Net Profit</h6>
         <h4 class="text-h4 mb-0">$1560</h4>
       </div>
-      <apexchart type="bar" height="360" class="salesReport" :options="chartOptions1" :series="barChart1.series"> </apexchart>
+      <apexchart type="bar" height="360" class="salesReport" :options="chartOptions1" :series="barChart1.series">
+      </apexchart>
     </v-card-text>
   </v-card>
 </template>
 <style lang="scss">
 .salesReport {
   margin-top: -50px;
+
   .apexcharts-legend {
     .apexcharts-legend-series {
       display: flex !important;

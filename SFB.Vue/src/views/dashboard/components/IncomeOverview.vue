@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { computed } from 'vue';
 import { useTheme } from 'vuetify';
 import UiTitleCard from '@/components/shared/UiTitleCard.vue';

@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
   const isMaui = mode === "maui";
   const isWebMode = mode === "web";
   return {
+    base: isMaui ? './' : '/',
     plugins: [
       {
         name: 'inject-maui-script',
@@ -19,7 +20,7 @@ export default defineConfig(({ mode }) => {
               {
                 tag: 'script',
                 attrs: { src: '_hwv/HybridWebView.js' },
-                injectTo: 'head',
+                injectTo: 'head-prepend',
               },
             ]
           }
