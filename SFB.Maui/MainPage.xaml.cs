@@ -33,45 +33,48 @@ public partial class MainPage : ContentPage
 #endif
 
 #if WINDOWS
-        Hybrid.HandlerChanged += (_, __) =>
+        Hybrid.HandlerChanged += async  (_, __) =>
         {
             // PlatformView en Windows es WebView2 (Microsoft.UI.Xaml.Controls.WebView2)
-            if (Hybrid.Handler?.PlatformView is Microsoft.UI.Xaml.Controls.WebView2 wv2)
+            if (Hybrid.Handler?.PlatformView is WebView2 wv2)
             {
+           
+
                 // CoreWebView2 puede tardar en inicializar
                 wv2.CoreWebView2Initialized += (_, __) =>
                 {
                     wv2.CoreWebView2.OpenDevToolsWindow(); // abre DevTools :contentReference[oaicite:2]{index=2}
                 };
-                wv2.CoreWebView2Initialized += (_, __) =>
-            {
-                var core = wv2.CoreWebView2;
 
-#if DEBUG
-                // 1) Aceptar certificado inválido (DEV ONLY)
-                core.ServerCertificateErrorDetected += (s, e) =>
+
+                if (wv2.CoreWebView2 is null)
                 {
-                    e.Action = CoreWebView2ServerCertificateErrorAction.AlwaysAllow;
-                };
+#if DEBUG
+                    var options = new CoreWebView2EnvironmentOptions
+                    {
+                        AdditionalBrowserArguments = "--allow-running-insecure-content"
+                    };
 
-                // 2) Abrir DevTools automáticamente (DEV ONLY)
-                core.OpenDevToolsWindow();
+              
+                    var env = await CoreWebView2Environment.CreateAsync();
+                 
+                    await wv2.EnsureCoreWebView2Async(env);
+#else
+                    await wv2.EnsureCoreWebView2Async();
 #endif
-            };
-            }
+                }
+                }
 
 
-
+            
         };
-
-
 #endif
 
     }
 
     private void RawMessageReceived(object sender, HybridWebView.HybridWebViewRawMessageReceivedEventArgs e)
     {
-        var message= e.Message;
+        var message = e.Message;
     }
 
     public async Task<bool> EnsureCameraPermissionAsync()
