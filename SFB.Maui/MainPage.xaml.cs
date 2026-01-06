@@ -1,12 +1,10 @@
 ﻿#if WINDOWS
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.Web.WebView2.Core;
+using SFB.Maui.Platforms.Windows;
 #endif
 
 #if ANDROID
-
-using Microsoft.Maui.Handlers;
-using Android.Webkit;
+using SFB.Maui.Platforms.Android;
 #endif
 
 namespace SFB.Maui;
@@ -17,37 +15,16 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
 
+        Hybrid.HandlerChanged += async (_, __) =>
+        {
 #if ANDROID
-        Hybrid.HandlerChanged += (_, __) =>
-        {
             if (Hybrid.Handler?.PlatformView is Android.Webkit.WebView wv)
-            {
-                // Permitir Mixed Content (HTTPS page -> HTTP API)
-                wv.Settings.MixedContentMode = MixedContentHandling.AlwaysAllow;
-
-                // Opcional (a veces necesario en SPAs)
-                wv.Settings.JavaScriptEnabled = true;
-                wv.Settings.DomStorageEnabled = true;
-            }
-        };
-#endif
-
-#if WINDOWS
-        Hybrid.HandlerChanged += async  (_, __) =>
-        {
-            // PlatformView en Windows es WebView2 (Microsoft.UI.Xaml.Controls.WebView2)
+                AndroidWebViewHelpers.Configure(wv);
+#elif WINDOWS
             if (Hybrid.Handler?.PlatformView is WebView2 wv2)
-            {          
-
-                // CoreWebView2 puede tardar en inicializar
-                wv2.CoreWebView2Initialized += (_, __) =>
-                {
-                    wv2.CoreWebView2.OpenDevToolsWindow(); // abre DevTools :contentReference[oaicite:2]{index=2}
-                };                
-           }            
-        };
+                await WebView2Helpers.Configure(wv2);
 #endif
-
+        };
     }
 
     private void RawMessageReceived(object sender, HybridWebView.HybridWebViewRawMessageReceivedEventArgs e)

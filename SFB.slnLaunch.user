@@ -15,7 +15,7 @@
     ]
   },
   {
-    "Name": "Server + Maui Win",
+    "Name": "Server + Windows",
     "Projects": [
       {
         "Path": "SFB.Server\\SFB.Server.csproj",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "Name": "Server + Maui Android",
+    "Name": "Server + Android",
     "Projects": [
       {
         "Path": "SFB.Server\\SFB.Server.csproj",
@@ -40,7 +40,7 @@
       {
         "Path": "SFB.Maui\\SFB.Maui.csproj",
         "Action": "Start",
-        "DebugTarget": "Pixel 5 - API 34 (Android 14.0 - API 34)"
+        "DebugTarget": "Pixel 7 - API 35 (1) (Android 15.0 - API 35)"
       }
     ]
   }
