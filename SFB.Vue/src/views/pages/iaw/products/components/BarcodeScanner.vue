@@ -39,6 +39,7 @@ const isCameraReady = ref(false)
 const videoRef = ref(null)
 
 async function openForm() {
+  HybridWebView.SendRawMessageToDotNet("request-camera-permission");
   showModal.value = true
 }
 
@@ -46,6 +47,7 @@ let stream = null
 
 // Arranca la cámara cuando el componente monte
 onMounted(async () => {
+
   try {
     stream = await navigator.mediaDevices.getUserMedia({
       video: { facingMode: 'environment' },
