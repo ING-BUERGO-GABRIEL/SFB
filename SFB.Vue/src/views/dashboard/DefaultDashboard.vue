@@ -9,9 +9,7 @@ import TransactionHistory from './components/TransactionHistory.vue';
 import SalesReport from './components/SalesReport.vue';
 
 
-function permissos() {
-  HybridWebView.SendRawMessageToDotNet("request-camera-permission");
-}
+
 
 
 
@@ -21,7 +19,7 @@ function permissos() {
   <!-- Total widgets -->
   <!-- -------------------------------------------------------------------- -->
   <WidgetFive />
-  <v-btn @click="permissos">Holaaa</v-btn>
+
   <v-row class="mb-0">
     <!-- -------------------------------------------------------------------- -->
     <!-- Unique visitor -->
