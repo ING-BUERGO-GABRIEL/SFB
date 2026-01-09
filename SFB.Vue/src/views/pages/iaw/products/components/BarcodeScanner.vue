@@ -29,25 +29,15 @@
 </template>
 
 <script setup>
-import { ref, inject, computed, onBeforeUnmount, onMounted } from 'vue'
-const { productServ, uiStore } = inject('services')
-const { question } = inject('MsgDialog')
-import { message } from 'ant-design-vue'
+import { ref, onBeforeUnmount, watch, nextTick } from 'vue'
+import config from '@/config'
 
 const showModal = ref(false)
 const isCameraReady = ref(false)
 const videoRef = ref(null)
-
-async function openForm() {
-  HybridWebView.SendRawMessageToDotNet("request-camera-permission");
-  showModal.value = true
-}
-
 let stream = null
 
-// Arranca la cámara cuando el componente monte
-onMounted(async () => {
-
+async function startCamera() {
   try {
     stream = await navigator.mediaDevices.getUserMedia({
       video: { facingMode: 'environment' },
@@ -62,18 +52,154 @@ onMounted(async () => {
       return
     }
   }
-  videoRef.value.srcObject = stream
-  videoRef.value.onloadedmetadata = () => {
-    isCameraReady.value = true
+  if (videoRef.value) {
+    videoRef.value.srcObject = stream
+    videoRef.value.onloadedmetadata = () => {
+      isCameraReady.value = true
+      startScanning()
+    }
+  }
+}
+
+async function startScanning() {
+  if (!('BarcodeDetector' in window)) {
+    console.warn('BarcodeDetector no soportado en este navegador.')
+    return
   }
 
+  const barcodeDetector = new BarcodeDetector({
+    formats: ['qr_code', 'ean_13', 'code_128', 'ean_8', 'upc_a', 'upc_e']
+  })
+
+  const scanLoop = async () => {
+    if (!showModal.value || !isCameraReady.value) return
+
+    try {
+      const barcodes = await barcodeDetector.detect(videoRef.value)
+      if (barcodes.length > 0) {
+        const rawValue = barcodes[0].rawValue
+        console.log('SCANNER RESULT:', rawValue)
+        // Aquí podrías emitir un evento o llamar a una función
+        // emit('scanned', rawValue)
+      }
+    } catch {
+      // Ignorar errores de detección vacía o frames corruptos
+    }
+
+    requestAnimationFrame(scanLoop)
+  }
+
+  scanLoop()
+}
+
+// requestCameraPermissionFromNative: pide permiso a la app nativa y devuelve Promise<boolean>
+function requestCameraPermissionFromNative(timeout = 10000) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const cleanup = () => {
+      try { delete window.__onPermissionResult; } catch { window.__onPermissionResult = null; }
+    };
+
+    const finish = (granted) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      cleanup();
+      resolve(Boolean(granted));
+    };
+
+    // Timeout por si no llega respuesta
+    const timer = setTimeout(() => {
+      console.warn('requestCameraPermissionFromNative: timeout');
+      finish(false);
+    }, timeout);
+
+    // Callback que la app nativa invocará: window.__onPermissionResult(granted)
+    window.__onPermissionResult = function (granted) {
+      console.log('requestCameraPermissionFromNative: callback received', granted);
+      finish(granted);
+    };
+
+    // Intenta enviar el mensaje al WebView nativo; si no está disponible, reintenta unas veces
+    const sendMessage = () => {
+      if (window.HybridWebView && typeof window.HybridWebView.SendRawMessageToDotNet === 'function') {
+        try {
+          window.HybridWebView.SendRawMessageToDotNet('request-camera-permission');
+          console.log('requestCameraPermissionFromNative: message sent');
+        } catch (err) {
+          console.error('requestCameraPermissionFromNative: send error', err);
+          finish(false);
+        }
+        return;
+      }
+
+      // Reintentos cortos si todavía no está cargado
+      let attempts = 0;
+      const maxAttempts = 6;
+      const iv = setInterval(() => {
+        attempts++;
+        if (window.HybridWebView && typeof window.HybridWebView.SendRawMessageToDotNet === 'function') {
+          clearInterval(iv);
+          try {
+            window.HybridWebView.SendRawMessageToDotNet('request-camera-permission');
+            console.log('requestCameraPermissionFromNative: message sent after retry');
+          } catch (err) {
+            console.error('requestCameraPermissionFromNative: send error', err);
+            finish(false);
+          }
+        } else if (attempts >= maxAttempts) {
+          clearInterval(iv);
+          console.warn('requestCameraPermissionFromNative: HybridWebView not available');
+          finish(false);
+        }
+      }, 100);
+    };
+
+    // Pequeña espera para asegurar que la callback esté registrada antes de enviar
+    setTimeout(sendMessage, 30);
+  });
+}
+
+// Uso desde tu función openForm (ejemplo con Vue + showModal.value)
+async function openForm() {
+  if (config.platform === 'maui') {
+    console.log('Abriendo formulario en maui');
+    try {
+      const granted = await requestCameraPermissionFromNative(/* opcional timeout ms */);
+      if (granted) {
+        showModal.value = true;
+      } else {
+        console.warn('Permiso de cámara no concedido por la app nativa.');
+      }
+    } catch (e) {
+      console.error('openForm error:', e);
+      showModal.value = true; // fallback web
+    }
+  } else {
+    showModal.value = true; // web
+  }
+}
+
+function stopCamera() {
+  if (stream) {
+    stream.getTracks().forEach(t => t.stop())
+    stream = null
+  }
+  isCameraReady.value = false
+}
+
+watch(showModal, async (val) => {
+  if (val) {
+    await nextTick()
+    startCamera()
+  } else {
+    stopCamera()
+  }
 })
 
 // Para la cámara al desmontar
 onBeforeUnmount(() => {
-  if (stream) {
-    stream.getTracks().forEach(t => t.stop())
-  }
+  stopCamera()
 })
 
 defineExpose({

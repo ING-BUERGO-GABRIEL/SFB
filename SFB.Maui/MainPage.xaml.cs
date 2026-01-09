@@ -31,62 +31,41 @@ public partial class MainPage : ContentPage
 
     private async void RawMessageReceived(object sender, HybridWebView.HybridWebViewRawMessageReceivedEventArgs e)
     {
-        var message = e.Message;
+        var action = e.Message;
 
-#if ANDROID
-        if (message == "request-camera-permission")
+        try
         {
-            // Ejecutar la lógica en el hilo principal para evitar PermissionException
-            await MainThread.InvokeOnMainThreadAsync(async () =>
+            if (action == "request-camera-permission")
             {
-                var granted = await EnsureCameraPermissionAsync();
-
-                if (!granted)
-                {
-                    var shouldShow = Permissions.ShouldShowRationale<Permissions.Camera>();
-
-                    if (!shouldShow)
-                    {
-                        var open = await DisplayAlert(
-                            "Permiso de cámara",
-                            "La aplicación necesita acceso a la cámara. Habilítalo en los ajustes de la aplicación.",
-                            "Abrir ajustes",
-                            "Cancelar");
-
-                        if (open)
-                        {
-                            AppInfo.ShowSettingsUI();
-                        }
-                    }
-                    else
-                    {
-                        await DisplayAlert(
-                            "Permiso denegado",
-                            "La aplicación requiere permiso para usar la cámara. Por favor acepta el permiso cuando se te solicite.",
-                            "Entendido");
-                    }
-                }
-
-                // Si necesitas notificar a la web, puedes ejecutar JS aquí:
-                // await Hybrid.EvaluateJavaScriptAsync($"window.__onPermissionResult && window.__onPermissionResult({granted.ToString().ToLower()});");
-            });
-        }
+                var granted = false;
+#if ANDROID
+                granted = await EnsureCameraPermissionAsync();
 #endif
+                await Hybrid.EvaluateJavaScriptAsync($"window.__onPermissionResult && window.__onPermissionResult({granted.ToString().ToLower()});");
+            }
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"RawMessageReceived error: {ex}");
+        }
     }
 
     public async Task<bool> EnsureCameraPermissionAsync()
     {
-        // Ejecuta la comprobación/solicitud en el hilo principal y devuelve el resultado
-        var status = await MainThread.InvokeOnMainThreadAsync(async () =>
+        return await MainThread.InvokeOnMainThreadAsync(async () =>
         {
-            var s = await Permissions.CheckStatusAsync<Permissions.Camera>();
-            if (s != PermissionStatus.Granted)
-                s = await Permissions.RequestAsync<Permissions.Camera>();
+            var status = await MainThread.InvokeOnMainThreadAsync(async () =>
+            {
+                var s = await Permissions.CheckStatusAsync<Permissions.Camera>();
+                if (s != PermissionStatus.Granted)
+                    s = await Permissions.RequestAsync<Permissions.Camera>();
 
-            return s;
+                return s;
+            });
+
+            return status == PermissionStatus.Granted;
         });
 
-        return status == PermissionStatus.Granted;
     }
 
 }
