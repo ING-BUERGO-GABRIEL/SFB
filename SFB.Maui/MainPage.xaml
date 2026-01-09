@@ -9,6 +9,7 @@
     <ejl:HybridWebView
         x:Name="Hybrid"
         HybridAssetRoot="wwwroot"
-        MainFile="index.html" RawMessageReceived="RawMessageReceived"/>
+        MainFile="index.html" 
+        RawMessageReceived="RawMessageReceived"/>
 </ContentPage>
 
