@@ -37,11 +37,23 @@ public partial class MainPage : ContentPage
         {
             if (action == "request-camera-permission")
             {
-                var granted = false;
+                // Ensure all WebView interactions happen on the main thread
+                await MainThread.InvokeOnMainThreadAsync(async () =>
+                {
+                    var granted = false;
 #if ANDROID
-                granted = await EnsureCameraPermissionAsync();
+                    granted = await EnsureCameraPermissionAsync();
 #endif
-                await Hybrid.EvaluateJavaScriptAsync($"window.__onPermissionResult && window.__onPermissionResult({granted.ToString().ToLower()});");
+                    var script = $"window.__onPermissionResult && window.__onPermissionResult({granted.ToString().ToLower()});";
+                    try
+                    {
+                        await Hybrid.EvaluateJavaScriptAsync(script);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"EvaluateJavaScriptAsync error: {ex}");
+                    }
+                });
             }
         }
         catch (Exception ex)
@@ -52,19 +64,12 @@ public partial class MainPage : ContentPage
 
     public async Task<bool> EnsureCameraPermissionAsync()
     {
-        return await MainThread.InvokeOnMainThreadAsync(async () =>
-        {
-            var status = await MainThread.InvokeOnMainThreadAsync(async () =>
-            {
-                var s = await Permissions.CheckStatusAsync<Permissions.Camera>();
-                if (s != PermissionStatus.Granted)
-                    s = await Permissions.RequestAsync<Permissions.Camera>();
+        // This method must be called from the main thread.
+        var s = await Permissions.CheckStatusAsync<Permissions.Camera>();
+        if (s != PermissionStatus.Granted)
+            s = await Permissions.RequestAsync<Permissions.Camera>();
 
-                return s;
-            });
-
-            return status == PermissionStatus.Granted;
-        });
+        return s == PermissionStatus.Granted;
 
     }
 

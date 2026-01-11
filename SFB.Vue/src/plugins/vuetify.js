@@ -5,7 +5,7 @@ import * as directives from 'vuetify/directives'
 
 const light = {
   dark: false,
-   icons: {
+  icons: {
     // Forzamos el set de **fuente** MDI
     defaultSet: 'mdi',
   },
@@ -86,11 +86,11 @@ export default createVuetify({
       hideDetails: 'auto',
       rounded: 'lg',
       class: 'mt-2',
-      noDataText:"Sin Datos" 
+      noDataText: "Sin Datos"
     },
     VAutocomplete: {
       hideDetails: 'auto',
-      noDataText:"Sin Datos" 
+      noDataText: "Sin Datos"
     },
     VTooltip: {
       location: 'top'

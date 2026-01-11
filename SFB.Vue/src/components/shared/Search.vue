@@ -1,7 +1,7 @@
 <template>
-  <v-text-field v-model="searchText" :placeholder="placeholder" persistent-placeholder color="primary"
+  <v-text-field v-model="searchText" class="mr-1" :placeholder="placeholder" persistent-placeholder color="primary"
     variant="outlined" hide-details density="compact" clearable @keyup.enter="onSearch" @click:prepend-inner="onSearch"
-    @click:clear="onClear">
+    @click:clear="onClear" style="margin-top: 0px !important;">
     <template v-slot:prepend-inner>
       <SearchOutlined :style="{ fontSize: '16px', color: 'rgb(var(--v-theme-lightText))', cursor: 'pointer' }" />
     </template>
@@ -26,14 +26,13 @@ watch(() => props.modelValue, (val) => {
   if (val !== searchText.value) searchText.value = val
 })
 
-function onSearch () {
+function onSearch() {
   emit('search', searchText.value)
 }
 
-function onClear () {
+function onClear() {
   searchText.value = ''
   emit('update:modelValue', '')
   emit('search', '')
 }
 </script>
-

@@ -1,11 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SFB.IAW.Shared.Sealed;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
-using System.Collections.ObjectModel;
 
 namespace SFB.IAW.Backend.Repositories
 {
@@ -13,16 +11,36 @@ namespace SFB.IAW.Backend.Repositories
     {
         protected override List<string> GetFilterableProperties()
         {
-            return new List<string> { "NroProduct", "Name", "SerialNumber" }; 
+            return new List<string> { "NroProduct", "Name", "SerialNumber" };
         }
-        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize,int pageNumber)
+        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize, int pageNumber)
         {
             var query = Context.IAWProducts
-                        .Include(p=>p.Presentation)
-                        .Include(p => p.ProductPresent)
-                            .ThenInclude(pr=>pr.Presentation)
-                        .Where(p => p.Status);
-            var result = await base.GetPage(query, filter,pageSize, pageNumber,new List<string> { "NroProduct" });
+                               .Where(p => p.Status)
+                               .Select(p => new EProduct
+                               {
+                                   NroProduct = p.NroProduct,
+                                   Name = p.Name,
+                                   IsPurchases = p.IsPurchases,
+                                   IsSales = p.IsSales,
+                                   PresentCode = p.PresentCode,
+                                   Price = p.Price,
+                                   SerialNumber = p.SerialNumber,
+                                   Presentation = p.Presentation,
+                                   Stock = p.Stocks.Sum(s=>s.QtyOnHand),
+                                   ProductPresent = p.ProductPresent
+                                       .Select(pr => new EProductPresent
+                                       {
+                                           PresentCode = pr.PresentCode,
+                                           ProductId = pr.ProductId,
+                                           Price = pr.Price,
+                                           QtyProduct = pr.QtyProduct,
+                                           SerialNumber = pr.SerialNumber,
+                                           Presentation = pr.Presentation
+                                       }).ToList()
+                               });
+
+            var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "NroProduct" });
             return result;
         }
 
@@ -101,7 +119,7 @@ namespace SFB.IAW.Backend.Repositories
                     Context.Entry(entity).State = EntityState.Unchanged;
                     entity.Status = false;
                     await Context.SaveChangesAsync();
-                    return true; 
+                    return true;
                 }
                 throw;
             }

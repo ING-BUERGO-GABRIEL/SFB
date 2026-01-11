@@ -1,9 +1,9 @@
 <template>
-  <v-row class="my-0">
-    <v-col cols="12">
+  <v-row class="my-0" no-gutters>
+    <v-col cols="12" class="pa-0">
       <v-card elevation="0">
         <v-card variant="outlined">
-          <v-card-text>
+          <v-card-text :class="props.classCard">
             <div class="d-flex align-center">
               <slot />
             </div>
@@ -15,10 +15,8 @@
 </template>
 
 <script setup>
-// si luego quieres props, los defines aquí con defineProps()
-// por ahora no necesitas nada más
-</script>
+const props = defineProps({
+  classCard: { type: String, default: '' },
+})
 
-<style scoped>
-/* si quieres estilos extra, añádelos aquí */
-</style>
+</script>

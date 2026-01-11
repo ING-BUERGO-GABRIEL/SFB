@@ -20,7 +20,11 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="product.SerialNumber" placeholder="Codigo de Barras" :disabled="isReadOnly" />
+                <v-text-field v-model="product.SerialNumber" placeholder="Codigo de Barras" :disabled="isReadOnly">
+                  <template #append-inner>
+                    <BarcodeScanner @code-scan="product.SerialNumber = $event" />
+                  </template>
+                </v-text-field>
               </div>
             </v-col>
 
@@ -36,8 +40,8 @@
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
                 <v-label>Presentación</v-label>
-                <v-select v-model="product.PresentCode" :items="cmbPresent" :rules="[rRequired]"
-                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+                <v-select v-model="product.PresentCode" :items="cmbPresent" :rules="[rRequired]" item-title="Name"
+                  item-value="Code" placeholder="Seleccionar presentación" />
               </div>
             </v-col>
 
@@ -63,7 +67,7 @@
         </parent-card>
       </v-col>
       <v-col cols="12" md="6">
-        <title-card title="Presentaciones y precios" class-name="px-0 pb-0 rounded-md">
+        <title-card title="Precios y Present." class-name="px-0 pb-0 rounded-md">
           <template #title-right>
             <v-btn color="primary" variant="tonal" size="small" @click="addProductPresent">
               Agregar presentacion
@@ -71,24 +75,27 @@
           </template>
           <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
             <template #item.PresentCode="{ item }">
-             <v-select v-model="item.PresentCode" :items="cmdProductPresent" 
-                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
+              <v-select v-model="item.PresentCode" :items="cmdProductPresent" item-title="Name" item-value="Code"
+                placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
             </template>
             <template #item.QtyProduct="{ item }">
-              <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1"
-                  min="0" required placeholder="00.00"  />
+              <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1" min="0"
+                required placeholder="00.00" />
             </template>
             <template #item.Price="{ item }">
-              <v-text-field v-model="item.Price" :rules="[rRequired, rNonNegative]" type="number" step="1"
-                  min="0" required placeholder="00.00"  />
+              <v-text-field v-model="item.Price" :rules="[rRequired, rNonNegative]" type="number" step="1" min="0"
+                required placeholder="00.00" />
             </template>
             <template #item.SerialNumber="{ item }">
-              <v-text-field v-model="item.SerialNumber" 
-                    placeholder="Codigo de Barras" />
+              <v-text-field v-model="item.SerialNumber" placeholder="Codigo de Barras">
+                <template #append-inner>
+                  <BarcodeScanner @code-scan="item.SerialNumber = $event" />
+                </template>
+              </v-text-field>
             </template>
             <template #item.Actions="{ item }">
               <v-btn icon variant="text" color="error" size="small" @click="deleteProductPresent(item)">
-                <ui-icon name="DeleteOutlined" size="18"/>
+                <ui-icon name="DeleteOutlined" size="18" />
               </v-btn>
             </template>
           </ui-table>
@@ -101,6 +108,7 @@
 <script setup>
 import { ref, inject, computed } from 'vue'
 const { productServ, uiStore } = inject('services')
+import BarcodeScanner from './BarcodeScanner.vue'
 const { question } = inject('MsgDialog')
 import { message } from 'ant-design-vue'
 
@@ -121,9 +129,9 @@ const isReadOnly = computed(() => modeDlg.value === 'Delete')
 
 const headers = [
   { title: 'PRESENTACION', key: 'PresentCode' },
-  { title: 'CANTIDAD', key: 'QtyProduct',class: 'px-0' },
+  { title: 'CANTIDAD', key: 'QtyProduct', class: 'px-0' },
   { title: 'PRECIO', key: 'Price', class: 'px-0' },
-  { title: 'COD. BARRAS', key: 'SerialNumber' },
+  { title: 'COD.BARRAS', key: 'SerialNumber' },
   { title: 'ACT.', key: 'Actions' },
 ]
 
@@ -175,11 +183,11 @@ const addProductPresent = () => {
 }
 
 const deleteProductPresent = (item) => {
-    const index = product.value.ProductPresent.indexOf(item)
-    if (index === -1) return false
+  const index = product.value.ProductPresent.indexOf(item)
+  if (index === -1) return false
 
-    product.value.ProductPresent.splice(index, 1)
-    return true
+  product.value.ProductPresent.splice(index, 1)
+  return true
 }
 
 let _resolve = null

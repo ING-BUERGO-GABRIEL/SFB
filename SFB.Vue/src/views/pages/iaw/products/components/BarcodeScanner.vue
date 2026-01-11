@@ -1,4 +1,5 @@
 <template>
+  <ui-icon name="ScanOutlined" @click="openScan" />
   <v-dialog v-model="showModal" fullscreen hide-overlay transition="dialog-bottom-transition" class="scanner-dialog">
     <div class="scanner-wrapper">
       <video ref="videoRef" class="scanner-video" autoplay muted playsinline v-show="isCameraReady"></video>
@@ -6,7 +7,7 @@
       <div class="scanner-ui">
         <!-- Close Button -->
         <v-btn icon class="close-btn" @click="showModal = false" color="white" variant="text">
-          <v-icon size="32">mdi-close</v-icon>
+          <ui-icon name="CloseOutlined" size="18" color="white" />
         </v-btn>
 
         <!-- Focus Box -->
@@ -31,7 +32,8 @@
 <script setup>
 import { ref, onBeforeUnmount, watch, nextTick } from 'vue'
 import config from '@/config'
-
+import { message } from 'ant-design-vue'
+const emit = defineEmits(['code-scan'])
 const showModal = ref(false)
 const isCameraReady = ref(false)
 const videoRef = ref(null)
@@ -77,10 +79,8 @@ async function startScanning() {
     try {
       const barcodes = await barcodeDetector.detect(videoRef.value)
       if (barcodes.length > 0) {
-        const rawValue = barcodes[0].rawValue
-        console.log('SCANNER RESULT:', rawValue)
-        // Aquí podrías emitir un evento o llamar a una función
-        // emit('scanned', rawValue)
+        emit('code-scan', barcodes[0].rawValue)
+        showModal.value = false
       }
     } catch {
       // Ignorar errores de detección vacía o frames corruptos
@@ -161,7 +161,7 @@ function requestCameraPermissionFromNative(timeout = 10000) {
 }
 
 // Uso desde tu función openForm (ejemplo con Vue + showModal.value)
-async function openForm() {
+async function openScan() {
   if (config.platform === 'maui') {
     console.log('Abriendo formulario en maui');
     try {
@@ -203,7 +203,7 @@ onBeforeUnmount(() => {
 })
 
 defineExpose({
-  openForm
+  openScan
 })
 </script>
 

@@ -37,8 +37,11 @@ namespace SFB.Infrastructure.Entities.IAW
         [Required]
         public bool Status { get; set; } = true;
 
-        public virtual ICollection<EProductPresent>? ProductPresent { get; set; } = new List<EProductPresent>();
+        [NotMapped]
+        public virtual decimal? Stock { get; set; }
 
-        public virtual ICollection<EInvDetail>? InvDetails { get; set; }
+        public virtual ICollection<EProductPresent>? ProductPresent { get; set; } = new List<EProductPresent>();
+        public virtual ICollection<EInvDetail>? InvDetails { get; set; } = new List<EInvDetail>();
+        public virtual ICollection<EStock>? Stocks { get; set; } = new List<EStock>();
     }
 }
