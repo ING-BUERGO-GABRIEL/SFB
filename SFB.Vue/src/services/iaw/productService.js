@@ -62,9 +62,11 @@ export const productService = defineStore('productService', {
 
         if (apiResult.IsSuccess) {
           this.pageData = apiResult.Data
+          return apiResult.Data
         }
       } catch (error) {
         console.error('Error al obtener módulos:', error);
+        return null
       }
       finally {
         this.loadTable = false

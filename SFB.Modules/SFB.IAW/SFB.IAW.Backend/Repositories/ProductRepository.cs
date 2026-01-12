@@ -13,7 +13,7 @@ namespace SFB.IAW.Backend.Repositories
         {
             return new List<string> { "NroProduct", "Name", "SerialNumber" };
         }
-        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, int pageSize, int pageNumber)
+        internal async Task<PagedListModel<EProduct>> GetPage(string? filter, bool? isSales, int pageSize, int pageNumber)
         {
             var query = Context.IAWProducts
                                .Where(p => p.Status)
@@ -28,6 +28,7 @@ namespace SFB.IAW.Backend.Repositories
                                    SerialNumber = p.SerialNumber,
                                    Presentation = p.Presentation,
                                    Stock = p.Stocks.Sum(s=>s.QtyOnHand),
+                                   Stocks = p.Stocks,
                                    ProductPresent = p.ProductPresent
                                        .Select(pr => new EProductPresent
                                        {
@@ -39,6 +40,9 @@ namespace SFB.IAW.Backend.Repositories
                                            Presentation = pr.Presentation
                                        }).ToList()
                                });
+
+
+            query = query.ConditionalWhere(isSales, c => c.IsSales == isSales.Value);
 
             var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "NroProduct" });
             return result;
