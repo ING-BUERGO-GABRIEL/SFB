@@ -4,7 +4,7 @@
       <!-- Left Column: Product Catalog -->
       <v-col cols="12" md="8" class="pa-0 pr-3 h-100">
         <!-- Header Section -->
-        <header-bar class-card="pa-3">
+        <header-bar class-card="pa-3" class="mb-2">
           <search-field @search="onSearch" />
           <v-divider vertical class="mx-2 my-1"></v-divider>
           <v-menu>
@@ -24,7 +24,7 @@
         </header-bar>
 
         <!-- Product Grid (Static Visual Representation) -->
-        <v-row dense class="mt-1 w-100" style="overflow-y: auto; height: calc(100% - 82px);">
+        <v-row dense class=" w-100" style="overflow-y: auto; height: calc(100% - 82px);">
           <v-col v-for="prod in products" :key="prod.NroProduct" cols="6" sm="4" md="4" lg="3">
             <v-card flat
               class="rounded-lg overflow-hidden border cursor-pointer h-100 position-relative transition-swing elevation-0 hover-card pa-3 d-flex flex-column"
@@ -48,13 +48,13 @@
           </v-col>
 
           <!-- Add Custom Item Card Mock -->
-          <!-- <v-col cols="6" sm="4" md="4" lg="3">
+          <v-col cols="6" sm="4" md="4" lg="3">
             <v-card flat
-              class="rounded-lg border cursor-pointer h-100 d-flex align-center justify-center bg-teal-lighten-4 hover-card"
-              style="min-height: 180px" @click="addDetail">
+              class="rounded-lg border  h-100 d-flex align-center justify-center bg-teal-lighten-4 hover-card"
+              style="min-height: 180px">
               <ui-icon name="PlusOutlined" size="40" color="white" />
             </v-card>
-          </v-col> -->
+          </v-col>
         </v-row>
       </v-col>
 
@@ -120,8 +120,20 @@
                 </div>
 
                 <!-- Unit Price -->
-                <div class="text-caption text-grey">
-                  ${{ detail.UnitPrice }}
+                <div class="d-flex align-center text-caption text-grey">
+                  <div style="width: 95px">
+                    <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"
+                      item-title="Presentation.Name" item-value="Presentation.Code" variant="plain" density="compact"
+                      hide-details @update:model-value="onQtyPresentChange(detail)" style="margin: 0px !important;">
+                      <template #selection="{ item }">
+                        {{ `${item.raw.Presentation.Code}-${item.raw.QtyProduct}` }}
+                      </template>
+                      <template #item="{ props, item }">
+                        <v-list-item v-bind="props" :title="item.raw.Presentation.Name + ' - ' + item.raw.QtyProduct" />
+                      </template>
+                    </v-select>
+                  </div>
+                  {{ formatCurrency(detail.UnitPrice) }}
                 </div>
               </div>
 
@@ -327,7 +339,7 @@ const formatCurrency = (amount) => new Intl.NumberFormat('es-BO', { style: 'curr
 
 const onSearch = async (text) => {
   productServ.pageParams = {
-    pageSize: 7,
+    pageSize: 10,
     pageNumber: 1,
     filter: text,
     isSales: true
@@ -342,4 +354,3 @@ defineExpose({
   openForm
 })
 </script>
-
