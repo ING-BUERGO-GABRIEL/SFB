@@ -1,4 +1,5 @@
 html {
+
   .bg-success,
   .bg-info,
   .bg-warning {
@@ -6,7 +7,7 @@ html {
   }
 }
 
-.v-row + .v-row {
+.v-row+.v-row {
   margin-top: 0px;
 }
 
@@ -15,7 +16,7 @@ html {
   border-color: rgb(var(--v-theme-borderLight));
 }
 
-.v-table > .v-table__wrapper > table > thead > tr > th {
+.v-table>.v-table__wrapper>table>thead>tr>th {
   color: inherit;
 }
 
@@ -25,6 +26,7 @@ html {
 
 .link-hover {
   text-decoration: unset;
+
   &:hover {
     text-decoration: underline;
   }
@@ -71,10 +73,10 @@ header {
 // table css
 .v-table {
   &.v-table--hover {
-    > .v-table__wrapper {
-      > table {
-        > tbody {
-          > tr {
+    >.v-table__wrapper {
+      >table {
+        >tbody {
+          >tr {
             &:hover {
               td {
                 background: rgb(var(--v-theme-gray100));
@@ -90,13 +92,16 @@ header {
 // accordion page css
 .v-expansion-panel {
   border: 1px solid rgb(var(--v-theme-borderLight));
+
   &:not(:first-child) {
     margin-top: -1px;
   }
+
   .v-expansion-panel-text__wrapper {
     border-top: 1px solid rgb(var(--v-theme-borderLight));
     padding: 16px 24px;
   }
+
   &.v-expansion-panel--active {
     .v-expansion-panel-title--active {
       .v-expansion-panel-title__overlay {
@@ -105,11 +110,48 @@ header {
     }
   }
 }
+
 .v-expansion-panel--active {
-  > .v-expansion-panel-title {
+  >.v-expansion-panel-title {
     min-height: unset;
   }
 }
+
 .v-expansion-panel--disabled .v-expansion-panel-title {
   color: rgba(var(--v-theme-on-surface), 0.15);
+}
+
+.field-pa-0 .v-input__control .v-field .v-field__field .v-field__input {
+  padding: 0px !important;
+}
+
+.field-pr-1 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-right: 4px !important;
+}
+
+.field-pr-2 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-right: 8px !important;
+}
+
+
+.field-pl-1 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-left: 4px !important;
+}
+
+.field-pl-2 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-left: 8px !important;
+}
+
+.field-px-1 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+
+.field-px-2 .v-input__control .v-field .v-field__field .v-field__input {
+  padding-right: 8px !important;
+  padding-left: 8px !important;
+}
+
+.field-font-12 .v-input__control .v-field .v-field__field .v-field__input {
+  font-size: 12px !important;
 }

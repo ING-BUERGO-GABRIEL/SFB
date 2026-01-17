@@ -48,7 +48,7 @@
           </v-col>
 
           <!-- Add Custom Item Card Mock -->
-          <v-col cols="6" sm="4" md="4" lg="3">
+          <v-col v-if="products.length" cols="6" sm="4" md="4" lg="3">
             <v-card flat
               class="rounded-lg border  h-100 d-flex align-center justify-center bg-teal-lighten-4 hover-card"
               style="min-height: 180px">
@@ -104,27 +104,23 @@
               <!-- Qty -->
               <div class="mr-3" style="width: 60px">
                 <v-text-field v-model.number="detail.QtyPresent" density="compact" variant="outlined" hide-details
-                  type="number" min="1" class="centered-input w-100 no-pr" style="margin-top: 0px !important;"
-                  @update:model-value="onQtyPresentChange(detail)">
+                  type="number" min="1" class="centered-input w-100 field-pl-2 field-pr-1"
+                  style="margin-top: 0px !important;" @update:model-value="onQtyPresentChange(detail)">
                 </v-text-field>
               </div>
 
               <!-- Info -->
               <div class="flex-grow-1">
                 <!-- Product Selector / Name -->
-                <div v-if="detail._ProdName" class="font-weight-bold text-body-2 mb-1">{{ detail._ProdName }}</div>
-                <div v-else class="mb-1">
-                  <select-page v-model="detail.NroProduct" :service="productServ" :taken-ids="[...selectedIds(detail)]"
-                    :selected-label="detail._ProdName" :rules="[rRequired]" placeholder="Buscar producto..."
-                    @picked="p => onProductPicked(detail, p)" variant="plain" density="compact" hide-details />
-                </div>
+                <div class="font-weight-bold text-body-2">{{ detail._ProdName }}</div>
 
                 <!-- Unit Price -->
                 <div class="d-flex align-center text-caption text-grey">
-                  <div style="width: 95px">
-                    <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"
-                      item-title="Presentation.Name" item-value="Presentation.Code" variant="plain" density="compact"
-                      hide-details @update:model-value="onQtyPresentChange(detail)" style="margin: 0px !important;">
+                  <div style="width: 79px">
+                    <v-select class="field-pa-0 field-font-12" v-model="detail.PresentCode"
+                      :readonly="detail.DisablePresent" :items="detail.PresentItems" item-title="Presentation.Name"
+                      item-value="Presentation.Code" variant="plain" density="compact" hide-details
+                      @update:model-value="onQtyPresentChange(detail)" style="margin: 0px !important;">
                       <template #selection="{ item }">
                         {{ `${item.raw.Presentation.Code}-${item.raw.QtyProduct}` }}
                       </template>
@@ -143,7 +139,7 @@
                   class="mb-1">
                   <ui-icon name="CloseOutlined" size="12" />
                 </v-btn>
-                <div class="font-weight-bold text-body-2">${{ detail.TotalPrice }}</div>
+                <div class="font-weight-bold text-body-2">{{ formatCurrency(detail.TotalPrice) }}</div>
               </div>
             </div>
           </div>
@@ -182,6 +178,8 @@
 
 <script setup>
 import { computed, ref, inject } from 'vue'
+import { message } from 'ant-design-vue'
+
 
 const { salesServ, productServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
@@ -248,11 +246,14 @@ async function loadMetadata() {
   }
 }
 
-function addDetail() {
-  model.value.Details.push(createDetail())
-}
-
 function onCatalogProductClick(prod) {
+  const exists = model.value.Details.some(d => d.NroProduct === prod.NroProduct || d.Product?.NroProduct === prod.NroProduct)
+
+  if (exists) {
+    message.warning('Este producto ya ha sido agregado a la lista.')
+    return
+  }
+
   const detail = createDetail()
   onProductPicked(detail, prod)
   model.value.Details.push(detail)
@@ -274,7 +275,7 @@ function getDefaultModel() {
     CurrencyCode: 'BOB',
     Reference: null,
     GrandTotal: 0,
-    Details: [createDetail()]
+    Details: []
   }
 }
 
@@ -295,10 +296,12 @@ function createDetail() {
 }
 
 function onProductPicked(detail, product) {
+  console.log(product)
   detail._ProdName = product?.Name ?? detail._ProdName ?? null
   detail.Product = product
+  detail.NroProduct = product?.NroProduct ?? null
   detail.UnitPrice = product?.Price ?? 0
-  detail.PresentItems = [{ QtyProduct: 1, Presentation: { Name: product.Presentation.Name, Code: product.Presentation.Code } }]
+  detail.PresentItems = [{ QtyProduct: 1, Presentation: { Name: product.Presentation.Name, Code: product.Presentation.Code }, Price: detail.UnitPrice }]
   detail.PresentCode = product?.PresentCode
   detail.QtyPresent = 1
   detail.QtyProduct = product?.QtyProduct ?? 1
@@ -315,6 +318,7 @@ function onQtyPresentChange(detail) {
   const pItem = detail.PresentItems.find(x => x.Presentation.Code === detail.PresentCode)
   if (pItem) {
     detail.QtyProduct = (detail.QtyPresent ?? 0) * pItem.QtyProduct
+    detail.UnitPrice = pItem.Price
   }
   calcTotals(detail)
 }

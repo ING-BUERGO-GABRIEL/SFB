@@ -6,21 +6,18 @@
           <v-row class="pa-4">
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-label>Codigo</v-label>
-                <v-text-field disabled v-model="product.NroProduct" required placeholder="Codigo" />
+                <v-text-field label="Codigo" base-color="red" disabled v-model="product.NroProduct" required />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-label>Nombre</v-label>
-                <v-text-field v-model="product.Name" :rules="[rRequired]" required placeholder="Nombre"
+                <v-text-field v-model="product.Name" label="Nombre" :rules="[rRequired]" required placeholder="Nombre"
                   :disabled="isReadOnly" />
               </div>
             </v-col>
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-label>Codigo de Barras</v-label>
-                <v-text-field v-model="product.SerialNumber" placeholder="Codigo de Barras" :disabled="isReadOnly">
+                <v-text-field v-model="product.SerialNumber" label="Codigo de Barras" :disabled="isReadOnly">
                   <template #append-inner>
                     <BarcodeScanner @code-scan="product.SerialNumber = $event" />
                   </template>
@@ -31,17 +28,15 @@
             <!-- Campo Precio -->
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-label>Precio</v-label>
-                <v-text-field v-model="product.Price" :rules="[rRequired, rNonNegative]" type="number" step="0.01"
-                  min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
+                <v-text-field v-model="product.Price" label="Precio" :rules="[rRequired, rNonNegative]" type="number"
+                  step="0.01" min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
               </div>
             </v-col>
 
             <v-col cols="12" sm="6" class="py-0">
               <div class="mb-6">
-                <v-label>Presentación</v-label>
-                <v-select v-model="product.PresentCode" :items="cmbPresent" :rules="[rRequired]" item-title="Name"
-                  item-value="Code" placeholder="Seleccionar presentación" />
+                <v-select v-model="product.PresentCode" label="Presentación" :items="cmbPresent" :rules="[rRequired]"
+                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
               </div>
             </v-col>
 

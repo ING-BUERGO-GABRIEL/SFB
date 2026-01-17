@@ -77,7 +77,7 @@ export default createVuetify({
       color: 'primary',
       hideDetails: 'auto',
       rounded: 'lg',
-      class: 'mt-2',
+      //class: 'mt-2',
       density: 'compact'
     },
     VSelect: {

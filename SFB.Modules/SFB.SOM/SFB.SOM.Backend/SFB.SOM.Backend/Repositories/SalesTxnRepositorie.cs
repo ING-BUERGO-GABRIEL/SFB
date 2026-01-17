@@ -22,7 +22,7 @@ namespace SFB.SOM.Backend.Repositories
 
         internal async Task<PagedListModel<ESalesTxn>> GetPage(string? filter, int pageSize, int pageNumber)
         {
-            var query = Context.AMSSalesTxn
+            var query = Context.SMOSalesTxn
                 .Where(s => !s.Delete)
                 .Include(s => s.Customer)
                     .ThenInclude(c => c.Person)
@@ -40,7 +40,7 @@ namespace SFB.SOM.Backend.Repositories
             {
                 sales.GrandTotal = sales.Details?.Sum(d => d.TotalPrice) ?? 0m;
 
-                Context.AMSSalesTxn.Add(sales);
+                Context.SMOSalesTxn.Add(sales);
                 await Context.SaveChangesAsync();
 
                 var invTxn = BuildInventoryTxnFromSales(sales);
@@ -59,7 +59,7 @@ namespace SFB.SOM.Backend.Repositories
 
         internal async Task<ESalesTxn?> GetById(int txnId)
         {
-            return await Context.AMSSalesTxn.AsNoTracking()
+            return await Context.SMOSalesTxn.AsNoTracking()
                 .Include(s => s.Customer)
                     .ThenInclude(c => c.Person)
                 .Include(s => s.Warehouse)
@@ -95,7 +95,7 @@ namespace SFB.SOM.Backend.Repositories
             await using var transaction = await Context.Database.BeginTransactionAsync();
             try
             {
-                var sales = await Context.AMSSalesTxn
+                var sales = await Context.SMOSalesTxn
                     .Include(s => s.Details)
                     .FirstAsync(s => s.TxnId == txnId);
 

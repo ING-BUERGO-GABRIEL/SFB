@@ -5,8 +5,9 @@ namespace SFB.Infrastructure.Contexts
 {
     public partial class SFBContext
     {
-        public DbSet<ESalesTxn> AMSSalesTxn { get; set; }
-        public DbSet<ESalesDetail> AMSSalesDetail { get; set; }
+        public DbSet<ESalesTxn> SMOSalesTxn { get; set; }
+        public DbSet<ESalesDetail> SMOSalesDetail { get; set; }
+        public DbSet<ESalesSettings> SMOSalesSettings { get; set; }
         private static void SOMModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -21,6 +22,18 @@ namespace SFB.Infrastructure.Contexts
                 entity.ToTable("SOM_SalesDetail");
                 entity.HasKey(e => new { e.DetailId });
             });
+
+            modelBuilder.Entity<ESalesSettings>(entity =>
+            {
+                entity.ToTable("SOM_SalesSettings");
+                entity.HasKey(x => new { x.SettingId });
+                entity.HasOne(x => x.Group)
+                    .WithMany(x => x.Settings)
+                    .HasForeignKey(x => new { x.SettingsGroup })
+                    .IsRequired(false)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
 
         }
     }
