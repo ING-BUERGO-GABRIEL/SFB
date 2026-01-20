@@ -14,7 +14,7 @@ namespace SFB.SOM.Backend.Repositories
     public class SalesTxnRepositorie(SFBContext context) : BaseRepository<SFBContext>(context)
     {
         private readonly InventoryTxnRepository _invTxnRepository = new InventoryTxnRepository(context);
-
+        private readonly SalesSettingsRepositorie _salSettsRepository = new SalesSettingsRepositorie(context);
         protected override List<string> GetFilterableProperties()
         {
             return new List<string> { "Reference", "Customer.Person.Name" };
