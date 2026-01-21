@@ -80,8 +80,11 @@ namespace SFB.SOM.Backend.Repositories
                 .AsNoTracking()
                 .ToListAsync();
 
+            var warehouseId = await _salSettsRepository.GetDefaultWarehouseId();
+
             return new Dictionary<string, object>
             {
+                {"WarehouseId", warehouseId},
                 {"CmbCustomers", cmbCustomers},
                 {"CmbWarehouses", cmbWarehouses},
                 {"CmbStatus", SalesStatus.List()},
