@@ -3,33 +3,27 @@
     <v-row class="pa-4 pb-0">
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Código</v-label>
-          <v-text-field disabled v-model="model.CustomerId" required placeholder="Código" />
+          <v-text-field label="Código" disabled v-model="model.CustomerId" required placeholder="Código" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Nombres</v-label>
-          <v-text-field v-model="model.Person.FirstName" :rules="[rRequired]" placeholder="Nombres" />
+          <v-text-field label="Nombres" v-model="model.Person.FirstName" :rules="[rRequired]" placeholder="Nombres" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Apellidos</v-label>
-          <v-text-field v-model="model.Person.LastName" placeholder="Apellidos" />
+          <v-text-field label="Apellidos" v-model="model.Person.LastName" placeholder="Apellidos" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Fecha de nacimiento</v-label>
-          <v-text-field v-model="model.Person.DateBirth" :rules="[rRequired]" type="date"
-            placeholder="Fecha de nacimiento" />
+          <v-date-input label="Fecha de nacimiento" v-model="model.Person.DateBirth" :rules="[rRequired]" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Dirección</v-label>
-          <v-text-field v-model="model.Person.Address" :rules="[rRequired]" placeholder="Dirección" />
+          <v-text-field label="Dirección" v-model="model.Person.Address" :rules="[rRequired]" placeholder="Dirección" />
         </div>
       </v-col>
     </v-row>
