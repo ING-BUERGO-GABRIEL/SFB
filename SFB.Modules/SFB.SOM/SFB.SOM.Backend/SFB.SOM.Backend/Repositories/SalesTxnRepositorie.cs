@@ -4,10 +4,14 @@ using SFB.IAW.Shared.Sealed;
 using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.IAW;
 using SFB.Infrastructure.Entities.SOM;
+using SFB.Infrastructure.Entities.TRM;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
 using SFB.SOM.Shared.Sealed;
+using SFB.TRM.Backend.Repositories;
+using SFB.TRM.Shared.Models;
+using SFB.TRM.Shared.Sealed;
 
 namespace SFB.SOM.Backend.Repositories
 {
@@ -15,6 +19,7 @@ namespace SFB.SOM.Backend.Repositories
     {
         private readonly InventoryTxnRepository _invTxnRepository = new InventoryTxnRepository(context);
         private readonly SalesSettingsRepositorie _salSettsRepository = new SalesSettingsRepositorie(context);
+        private readonly TreasuryTxnRepository _treasuryTxnRepository = new TreasuryTxnRepository(context);
         protected override List<string> GetFilterableProperties()
         {
             return new List<string> { "Reference", "Customer.Person.Name" };
@@ -33,7 +38,7 @@ namespace SFB.SOM.Backend.Repositories
             return result;
         }
 
-        internal async Task<ESalesTxn> Create(ESalesTxn sales)
+        internal async Task<ESalesTxn> Create(ESalesTxn sales, ICollection<MTreasuryDetail>? treasuryDetails)
         {
             await using var transaction = await Context.Database.BeginTransactionAsync();
             try
@@ -45,6 +50,14 @@ namespace SFB.SOM.Backend.Repositories
 
                 var invTxn = BuildInventoryTxnFromSales(sales);
                 await _invTxnRepository.CreateTxn(invTxn);
+
+                if (treasuryDetails is null || treasuryDetails.Count == 0)
+                {
+                    throw new ControllerException("Debe registrar al menos un método de pago para la venta.");
+                }
+
+                var treasuryTxn = BuildTreasuryTxnFromSales(sales, treasuryDetails);
+                await _treasuryTxnRepository.CreateTxn(treasuryTxn);
 
                 await Context.SaveChangesAsync();
                 await transaction.CommitAsync();
@@ -112,6 +125,8 @@ namespace SFB.SOM.Backend.Repositories
 
                 await _invTxnRepository.AnularTxn(invTxn.TxnId);
 
+                await _treasuryTxnRepository.AnularByOrigin("SOM", txnId);
+
                 await Context.SaveChangesAsync();
                 await transaction.CommitAsync();
                 return sales;
@@ -152,6 +167,35 @@ namespace SFB.SOM.Backend.Repositories
             };
 
             return invTxn;
+        }
+
+        private static ETreasuryTxn BuildTreasuryTxnFromSales(ESalesTxn sales, IEnumerable<MTreasuryDetail> treasuryDetails)
+        {
+            var details = treasuryDetails.Select(detail => new ETreasuryDetail
+            {
+                PaymentMethodCode = detail.PaymentMethodCode,
+                Amount = detail.Amount,
+                PaymentRef = detail.PaymentRef
+            }).ToList();
+
+            var totalPayments = details.Sum(d => d.Amount);
+
+            if (totalPayments != sales.GrandTotal)
+            {
+                throw new ControllerException("El total de pagos no coincide con el total de la venta.");
+            }
+
+            return new ETreasuryTxn
+            {
+                ModOrigin = "SOM",
+                TxnOrigin = sales.TxnId,
+                Type = TreasuryType.Ingreso.Code,
+                StatusCode = TreasuryStatus.Pendiente.Code,
+                CurrencyCode = sales.CurrencyCode,
+                GrandTotal = totalPayments,
+                Reference = sales.Reference,
+                Details = details
+            };
         }
     }
 }

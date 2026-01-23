@@ -184,6 +184,7 @@
       </v-col>
     </v-row>
     <customer-form ref="customerForm" />
+    <payment-method ref="paymentForm" />
   </dialog-body>
 </template>
 
@@ -191,6 +192,7 @@
 import { computed, ref, inject } from 'vue'
 import { message } from 'ant-design-vue'
 import CustomerForm from '@/views/pages/ams/customers/components/CustomerForm.vue'
+import PaymentMethod from '@/views/pages/som/sales/components/PaymentMethod.vue'
 
 const { salesServ, productServ, customerServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
@@ -198,6 +200,7 @@ const { question } = inject('MsgDialog')
 const showModal = ref(false)
 const showAdditionalData = ref(false)
 const customerForm = ref(null)
+const paymentForm = ref(null)
 const model = ref({})
 
 const metadata = ref({
@@ -237,7 +240,11 @@ async function openForm() {
 }
 
 async function onAccept() {
+  const paymentDetails = await paymentForm.value.openForm(grandTotal.value)
+  if (!paymentDetails) return
+
   model.value.GrandTotal = grandTotal.value
+  model.value.TreasuryDetails = paymentDetails
   uiStore.isLoadingBody = true
 
   let txn = await salesServ.create(model.value)
@@ -307,7 +314,8 @@ function getDefaultModel() {
     CurrencyCode: 'BOB',
     Reference: null,
     GrandTotal: 0,
-    Details: []
+    Details: [],
+    TreasuryDetails: []
   }
 }
 

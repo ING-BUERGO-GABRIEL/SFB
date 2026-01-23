@@ -17,8 +17,8 @@ namespace SFB.TRM.Shared.Models
         [Required]
         public int TxnId { get; set; }
 
-        [Required, MaxLength(3)]
-        public string PaymentMethodCode { get; set; } = null!; // "EFE","TAR","QR ","TRF"
+        [Required, MaxLength(4)]
+        public string PaymentMethodCode { get; set; } = null!; // "CASH","CRD","QR","TRF"
 
         [Required, Column(TypeName = "decimal(18,4)")]
         public decimal Amount { get; set; }

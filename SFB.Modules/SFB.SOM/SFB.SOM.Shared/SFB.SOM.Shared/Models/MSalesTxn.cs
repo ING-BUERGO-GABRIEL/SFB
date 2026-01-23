@@ -1,6 +1,7 @@
 using SFB.AMS.Shared.Models;
 using SFB.IAW.Shared.Models;
 using SFB.SOM.Shared.Sealed;
+using SFB.TRM.Shared.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -40,5 +41,7 @@ namespace SFB.SOM.Shared.Models
         public string? Reference { get; set; }
 
         public virtual ICollection<MSalesDetail> Details { get; set; } = new List<MSalesDetail>();
+
+        public virtual ICollection<MTreasuryDetail> TreasuryDetails { get; set; } = new List<MTreasuryDetail>();
     }
 }
