@@ -44,7 +44,7 @@ const model = ref({
     NroPerson: 0,
     FirstName: '',
     LastName: '',
-    DateBirth: '',
+    DateBirth: null,
     Address: ''
   }
 })
@@ -65,7 +65,7 @@ async function openForm(mode, item = null) {
           NroPerson: 0,
           FirstName: '',
           LastName: '',
-          DateBirth: '',
+          DateBirth: null,
           Address: ''
         }
       }
@@ -79,7 +79,7 @@ async function openForm(mode, item = null) {
           NroPerson: item?.Person?.NroPerson ?? 0,
           FirstName: item?.Person?.FirstName ?? '',
           LastName: item?.Person?.LastName ?? '',
-          DateBirth: item?.Person?.DateBirth ?? '',
+          DateBirth: item?.Person?.DateBirth ? new Date(item.Person.DateBirth) : null,
           Address: item?.Person?.Address ?? ''
         }
       }

@@ -80,6 +80,14 @@ export default createVuetify({
       //class: 'mt-2',
       density: 'compact'
     },
+    VDateInput: {
+      variant: 'outlined',
+      color: 'primary',
+      hideDetails: 'auto',
+      rounded: 'lg',
+      //class: 'mt-2',
+      density: 'compact'
+    },
     VSelect: {
       variant: 'outlined',
       color: 'primary',

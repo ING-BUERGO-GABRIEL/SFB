@@ -75,9 +75,19 @@
           <!-- Hidden/Compact Fields (Preserving logic) -->
           <v-expand-transition>
             <div v-show="showAdditionalData" class="mb-4">
-              <v-select v-model="model.CustomerId" :items="metadata.CmbCustomers" :rules="[rRequired]"
-                item-title="Person.FirstName" item-value="CustomerId" placeholder="Cliente..." variant="outlined"
-                density="compact" hide-details class="mb-2" />
+              <div class="d-flex gap-2 mb-2">
+                <select-page v-model="model.CustomerId" :service="customerServ" :selected-label="customerLabel"
+                  :rules="[rRequired]" label-key="Person.FirstName" value-key="CustomerId" placeholder="Cliente..."
+                  variant="outlined" density="compact" hide-details menu-icon="">
+                  <template #append-inner>
+                    <ui-icon name="SearchOutlined" size="16" />
+                  </template>
+                </select-page>
+                <v-btn variant="outlined" class="rounded-lg border-grey ml-1 px-0 " width="50" color="grey-darken-1"
+                  @click="onAddCustomer" icon title="Nuevo Cliente">
+                  <ui-icon name="UserAddOutlined" size="18" />
+                </v-btn>
+              </div>
 
               <v-row dense>
                 <v-col cols="12">
@@ -173,20 +183,21 @@
         </v-card>
       </v-col>
     </v-row>
+    <customer-form ref="customerForm" />
   </dialog-body>
 </template>
 
 <script setup>
 import { computed, ref, inject } from 'vue'
 import { message } from 'ant-design-vue'
+import CustomerForm from '@/views/pages/ams/customers/components/CustomerForm.vue'
 
-
-const { salesServ, productServ, uiStore } = inject('services')
+const { salesServ, productServ, customerServ, uiStore } = inject('services')
 const { question } = inject('MsgDialog')
 
 const showModal = ref(false)
 const showAdditionalData = ref(false)
-const titleDlg = ref('')
+const customerForm = ref(null)
 const model = ref({})
 
 const metadata = ref({
@@ -201,14 +212,21 @@ const products = ref([])
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
 
+const customerLabel = computed(() => {
+  if (!model.value.CustomerId) return null
+  const customer = metadata.value.CmbCustomers.find(c => c.CustomerId === model.value.CustomerId) ||
+    customerServ.pageData.Data.find(c => c.CustomerId === model.value.CustomerId)
+  return customer ? customer.Person?.FirstName : 'Cliente'
+})
+
 const grandTotal = computed(() => (model.value.Details ?? []).reduce((acc, d) => acc + Number(d.TotalPrice ?? 0), 0))
 
 let _resolve = null
 
 async function openForm() {
   uiStore.isLoadingBody = true
-  await loadMetadata()
   model.value = getDefaultModel()
+  await loadMetadata()
 
   uiStore.isLoadingBody = false
   showModal.value = true
@@ -239,10 +257,24 @@ function onCancel() {
   showModal.value = false
 }
 
+async function onAddCustomer() {
+  const newCust = await customerForm.value.openForm('Insert')
+  if (newCust) {
+    model.value.CustomerId = newCust.CustomerId
+    // Asegurarse de que esté en la lista para que el label funcione
+    if (!metadata.value.CmbCustomers.some(c => c.CustomerId === newCust.CustomerId)) {
+      metadata.value.CmbCustomers.push(newCust)
+    }
+  }
+}
+
 async function loadMetadata() {
   const meta = await salesServ.getMetadata()
   if (meta) {
     metadata.value = meta
+    model.value.WarehouseId = meta.DefaultWarehouseId
+    model.value.CustomerId = meta.DefaultCustomerId
+    customerServ.pageData.Data = meta.CmbCustomers || []
   }
 }
 

@@ -31,6 +31,7 @@ namespace SFB.Infrastructure.Contexts
             IAWModelCreating(modelBuilder);
             PCMModelCreating(modelBuilder);
             SOMModelCreating(modelBuilder);
+            TRMModelCreating(modelBuilder);
         }
 
 

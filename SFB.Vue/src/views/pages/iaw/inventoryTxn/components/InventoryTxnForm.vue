@@ -78,7 +78,7 @@
             <td class="px-0">
               <select-page v-model="detail.NroProduct" :readonly="updReadOnly" :service="productServ"
                 :taken-ids="[...selectedIds(detail)]" :selected-label="detail._ProdName" :rules="[rRequired]"
-                placeholder="Seleccionar producto" @picked="p => onProductPicked(detail, p)" />
+                label="Seleccionar producto" @picked="p => onProductPicked(detail, p)" />
             </td>
             <td class="pr-0">
               <v-select class="pr-0" v-model="detail.PresentCode" :items="detail.PresentItems"

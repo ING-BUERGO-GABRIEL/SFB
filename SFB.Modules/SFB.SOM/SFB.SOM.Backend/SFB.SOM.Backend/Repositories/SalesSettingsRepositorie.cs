@@ -23,5 +23,22 @@ namespace SFB.SOM.Backend.Repositories
                 return null;
             }
         }
+
+        public async Task<int?> GetDefaultCustomerId()
+        {
+            try
+            {
+                var setting = await base.GetSetting("POSTSAL", "CODCLI");
+
+                if (setting != null && int.TryParse(setting.ValueCode, out int customerId))
+                    return customerId;
+                else
+                    return null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

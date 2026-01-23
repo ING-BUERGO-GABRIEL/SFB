@@ -70,7 +70,11 @@ namespace SFB.SOM.Backend.Repositories
 
         internal async Task<Dictionary<string, object>> GetMetadata()
         {
+            var warehouseId = await _salSettsRepository.GetDefaultWarehouseId();
+            var customerId = await _salSettsRepository.GetDefaultCustomerId();
+
             var cmbCustomers = await Context.AMSCustomer
+                .Where(c=>c.CustomerId == customerId)
                 .Include(c => c.Person)
                 .AsNoTracking()
                 .ToListAsync();
@@ -80,11 +84,10 @@ namespace SFB.SOM.Backend.Repositories
                 .AsNoTracking()
                 .ToListAsync();
 
-            var warehouseId = await _salSettsRepository.GetDefaultWarehouseId();
-
             return new Dictionary<string, object>
             {
-                {"WarehouseId", warehouseId},
+                {"DefaultWarehouseId", warehouseId},
+                {"DefaultCustomerId", customerId},
                 {"CmbCustomers", cmbCustomers},
                 {"CmbWarehouses", cmbWarehouses},
                 {"CmbStatus", SalesStatus.List()},

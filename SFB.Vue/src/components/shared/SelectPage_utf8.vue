@@ -1,10 +1,6 @@
 ﻿<template>
   <v-autocomplete :items="items" :item-title="getLabel" :item-value="getValue" :loading="service.loadTable"
-    :multiple="false" :model-value="modelValue" v-bind="$attrs" @update:search="onSearch" @update:modelValue="onPick">
-    <template v-for="(_, name) in $slots" #[name]="slotData">
-      <slot :name="name" v-bind="slotData || {}" />
-    </template>
-  </v-autocomplete>
+    :multiple="false" :model-value="modelValue" v-bind="$attrs" @update:search="onSearch" @update:modelValue="onPick" />
 </template>
 
 <script setup>
