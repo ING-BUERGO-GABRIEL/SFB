@@ -47,5 +47,7 @@ namespace SFB.Infrastructure.Entities.SOM
         public string? Reference { get; set; }
 
         public virtual ICollection<ESalesDetail> Details { get; set; } = new List<ESalesDetail>();
+
+        public virtual ICollection<EPaymentMethod> PaymentMethods { get; set; } = new List<EPaymentMethod>();
     }
 }

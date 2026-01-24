@@ -321,7 +321,7 @@ function getDefaultModel() {
     Reference: null,
     GrandTotal: 0,
     Details: [],
-    TreasuryDetails: []
+    PaymentMethods: []
   }
 }
 

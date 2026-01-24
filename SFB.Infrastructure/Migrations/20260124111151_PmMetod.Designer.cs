@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SFB.Infrastructure.Contexts;
@@ -11,9 +12,11 @@ using SFB.Infrastructure.Contexts;
 namespace SFB.Infrastructure.Migrations
 {
     [DbContext(typeof(SFBContext))]
-    partial class SFBContextModelSnapshot : ModelSnapshot
+    [Migration("20260124111151_PmMetod")]
+    partial class PmMetod
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -724,7 +727,7 @@ namespace SFB.Infrastructure.Migrations
 
                     b.HasIndex("TxnId");
 
-                    b.ToTable("SOM_PaymentMethod", (string)null);
+                    b.ToTable("SOM_PaymentMethod");
                 });
 
             modelBuilder.Entity("SFB.Infrastructure.Entities.SOM.ESalesDetail", b =>

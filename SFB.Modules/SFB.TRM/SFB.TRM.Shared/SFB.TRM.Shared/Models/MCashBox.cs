@@ -8,7 +8,6 @@ namespace SFB.TRM.Shared.Models
     public class MCashBox
     {
         [Key, Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CashBoxId { get; set; }
 
         [Required, MaxLength(80)]

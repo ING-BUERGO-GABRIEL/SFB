@@ -59,7 +59,7 @@ namespace SFB.SOM.Backend.Controllers
             try
             {
                 var entity = model.Adapt<ESalesTxn>();
-                var result = await Repository.Create(entity, model.TreasuryDetails);
+                var result = await Repository.Create(entity);
                 return OkResult(result.Adapt<MSalesTxn>());
             }
             catch (ControllerException ex)

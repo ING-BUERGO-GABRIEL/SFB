@@ -8,6 +8,8 @@ namespace SFB.Infrastructure.Contexts
         public DbSet<ESalesTxn> SMOSalesTxn { get; set; }
         public DbSet<ESalesDetail> SMOSalesDetail { get; set; }
         public DbSet<ESalesSettings> SMOSalesSettings { get; set; }
+        public DbSet<EPaymentMethod> SMOPaymentMethods { get; set; }
+
         private static void SOMModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -34,7 +36,11 @@ namespace SFB.Infrastructure.Contexts
                     .OnDelete(DeleteBehavior.Restrict);
             });
 
-
+            modelBuilder.Entity<EPaymentMethod>(entity =>
+            {
+                entity.ToTable("SOM_PaymentMethod");
+                entity.HasKey(e => new { e.PaymentId });
+            });
         }
     }
 }

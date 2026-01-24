@@ -6,7 +6,6 @@ namespace SFB.TRM.Shared.Models
     public class MTreasuryTxn
     {
         [Key, Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TxnId { get; set; }
 
         // Referencia a la transacción origen (SalesTxnId, PurchaseTxnId, etc.)

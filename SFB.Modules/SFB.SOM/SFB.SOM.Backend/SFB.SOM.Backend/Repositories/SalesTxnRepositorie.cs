@@ -38,7 +38,7 @@ namespace SFB.SOM.Backend.Repositories
             return result;
         }
 
-        internal async Task<ESalesTxn> Create(ESalesTxn sales, ICollection<MTreasuryDetail>? treasuryDetails)
+        internal async Task<ESalesTxn> Create(ESalesTxn sales)
         {
             await using var transaction = await Context.Database.BeginTransactionAsync();
             try
@@ -56,7 +56,7 @@ namespace SFB.SOM.Backend.Repositories
                     throw new ControllerException("Debe registrar al menos un método de pago para la venta.");
                 }
 
-                var treasuryTxn = BuildTreasuryTxnFromSales(sales, treasuryDetails);
+                var treasuryTxn = BuildTreasuryTxnFromSales(sales);
                 await _treasuryTxnRepository.CreateTxn(treasuryTxn);
 
                 await Context.SaveChangesAsync();
@@ -169,9 +169,16 @@ namespace SFB.SOM.Backend.Repositories
             return invTxn;
         }
 
-        private static ETreasuryTxn BuildTreasuryTxnFromSales(ESalesTxn sales, IEnumerable<MTreasuryDetail> treasuryDetails)
+        private static ETreasuryTxn BuildTreasuryTxnFromSales(ESalesTxn sales)
         {
-            var details = treasuryDetails.Select(detail => new ETreasuryDetail
+
+            var paymentMethods = sales.PaymentMethods;
+
+            if (paymentMethods is null || paymentMethods.Count == 0)            
+                throw new ControllerException("Debe registrar al menos un método de pago para la venta.");           
+
+
+            var details = paymentMethods.Select(detail => new ETreasuryDetail
             {
                 PaymentMethodCode = detail.PaymentMethodCode,
                 Amount = detail.Amount,
@@ -180,16 +187,19 @@ namespace SFB.SOM.Backend.Repositories
 
             var totalPayments = details.Sum(d => d.Amount);
 
-            if (totalPayments != sales.GrandTotal)
-            {
-                throw new ControllerException("El total de pagos no coincide con el total de la venta.");
-            }
+            if (totalPayments != sales.GrandTotal)            
+                throw new ControllerException("El total de pagos no coincide con el total de la venta.");            
+
+
+
+
 
             return new ETreasuryTxn
             {
                 ModOrigin = "SOM",
                 TxnOrigin = sales.TxnId,
                 Type = TreasuryType.Ingreso.Code,
+                TxnDate = DateTime.UtcNow,
                 StatusCode = TreasuryStatus.Pendiente.Code,
                 CurrencyCode = sales.CurrencyCode,
                 GrandTotal = totalPayments,
