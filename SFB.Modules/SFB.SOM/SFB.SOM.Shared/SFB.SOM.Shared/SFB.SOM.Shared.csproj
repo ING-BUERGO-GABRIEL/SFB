@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\SFB.AMS\SFB.AMS.Shared\SFB.AMS.Shared.csproj" />
     <ProjectReference Include="..\..\..\SFB.IAW\SFB.IAW.Shared\SFB.IAW.Shared.csproj" />
+    <ProjectReference Include="..\..\..\SFB.TRM\SFB.TRM.Shared\SFB.TRM.Shared\SFB.TRM.Shared.csproj" />
   </ItemGroup>
 
 </Project>

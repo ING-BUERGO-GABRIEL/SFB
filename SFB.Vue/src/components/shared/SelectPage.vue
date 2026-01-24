@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 
 const props = defineProps({
   modelValue: [Number, String, null],
@@ -85,4 +85,8 @@ function onPick(val) {
   const found = listRaw.value.find(p => getValue(p) === val) || null
   emit('picked', found)
 }
+
+onMounted(() => {
+  props.service.loadTable = false
+})
 </script>

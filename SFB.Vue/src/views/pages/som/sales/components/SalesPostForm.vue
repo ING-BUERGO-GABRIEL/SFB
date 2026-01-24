@@ -113,9 +113,10 @@
               class="d-flex align-start mb-4 animate__animated animate__fadeIn">
               <!-- Qty -->
               <div class="mr-3" style="width: 60px">
-                <v-text-field v-model.number="detail.QtyPresent" density="compact" variant="outlined" hide-details
-                  type="number" min="1" class="centered-input w-100 field-pl-2 field-pr-1"
-                  style="margin-top: 0px !important;" @update:model-value="onQtyPresentChange(detail)">
+                <v-text-field v-model.number="detail.QtyPresent" density="compact" variant="outlined"
+                  hide-details="auto" :rules="[rQtyGreaterThanZero]" type="number" min="1"
+                  class="centered-input w-100 field-pl-2 field-pr-1" style="margin-top: 0px !important;"
+                  @update:model-value="onQtyPresentChange(detail)">
                 </v-text-field>
               </div>
 
@@ -214,6 +215,7 @@ const products = ref([])
 // Removed staticProducts as we are using real data now
 
 const rRequired = v => (v !== null && v !== undefined && v !== '') || 'Campo requerido'
+const rQtyGreaterThanZero = v => v > 0 || 'Cantidad debe ser mayor a 0'
 
 const customerLabel = computed(() => {
   if (!model.value.CustomerId) return null
@@ -240,6 +242,10 @@ async function openForm() {
 }
 
 async function onAccept() {
+  if (!model.value.Details?.length) {
+    message.warning('El carrito debe tener al menos un item.')
+    return
+  }
   const paymentDetails = await paymentForm.value.openForm(grandTotal.value)
   if (!paymentDetails) return
 

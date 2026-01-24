@@ -10,8 +10,8 @@
     <ProjectReference Include="..\..\..\..\SFB.Infrastructure\SFB.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\SFB.CMS\SFB.CMS.Backend\SFB.CMS.Backend.csproj" />
     <ProjectReference Include="..\..\..\SFB.IAW\SFB.IAW.Backend\SFB.IAW.Backend.csproj" />
+    <ProjectReference Include="..\..\..\SFB.TRM\SFB.TRM.Backend\SFB.TRM.Backend\SFB.TRM.Backend.csproj" />
     <ProjectReference Include="..\..\SFB.SOM.Shared\SFB.SOM.Shared\SFB.SOM.Shared.csproj" />
-    <ProjectReference Include="..\..\SFB.TRM\SFB.TRM.Backend\SFB.TRM.Backend\SFB.TRM.Backend.csproj" />
   </ItemGroup>
 
 </Project>
