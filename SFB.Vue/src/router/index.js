@@ -6,6 +6,7 @@ import IawRoutes from './IawRoutes'
 import PcmRoutes from './PcmRoutes'
 import SomRoutes from './SomRoutes'
 import AmsRoutes from './AmsRoutes'
+import TrmRoutes from './TrmRoutes'
 import { useAuthStore } from '@/stores/auth'
 import { useUIStore } from '@/stores/ui'
 
@@ -22,7 +23,8 @@ const router = createRouter({
         IawRoutes,
         PcmRoutes,
         SomRoutes,
-        AmsRoutes
+        AmsRoutes,
+        TrmRoutes
     ]
 })
 
