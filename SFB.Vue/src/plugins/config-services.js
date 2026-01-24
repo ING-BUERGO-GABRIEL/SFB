@@ -7,6 +7,7 @@ import { supplierService } from '@/services/pcm/supplierService'
 import { purchaseService } from '@/services/pcm/purchaseService'
 import { salesTxnService } from '@/services/som/salesTxn'
 import { customerService } from '@/services/ams/customer'
+import { cashBoxService } from '@/services/ams/cashBox'
 import { useUIStore } from '@/stores/ui'
 
 export const configServices = {
@@ -21,6 +22,7 @@ export const configServices = {
         const purchaseServ = purchaseService();
         const salesServ = salesTxnService();
         const customerServ = customerService();
+        const cashBoxServ = cashBoxService();
         const uiStore = useUIStore()
 
         app.provide('services', {
@@ -33,6 +35,7 @@ export const configServices = {
             purchaseServ,
             salesServ,
             customerServ,
+            cashBoxServ,
             uiStore
         });
     },
