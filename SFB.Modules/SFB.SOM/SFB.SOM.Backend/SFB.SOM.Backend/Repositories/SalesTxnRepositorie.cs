@@ -43,25 +43,11 @@ namespace SFB.SOM.Backend.Repositories
             await using var transaction = await Context.Database.BeginTransactionAsync();
             try
             {
-                sales.GrandTotal = sales.Details?.Sum(d => d.TotalPrice) ?? 0m;
-
-                Context.SMOSalesTxn.Add(sales);
-                await Context.SaveChangesAsync();
-
-                var invTxn = BuildInventoryTxnFromSales(sales);
-                await _invTxnRepository.CreateTxn(invTxn);
-
-                if (treasuryDetails is null || treasuryDetails.Count == 0)
-                {
-                    throw new ControllerException("Debe registrar al menos un método de pago para la venta.");
-                }
-
-                var treasuryTxn = BuildTreasuryTxnFromSales(sales);
-                await _treasuryTxnRepository.CreateTxn(treasuryTxn);
+                var salesTxn = await CreateTxn(sales);
 
                 await Context.SaveChangesAsync();
                 await transaction.CommitAsync();
-                return sales;
+                return salesTxn;
             }
             catch
             {
@@ -69,6 +55,44 @@ namespace SFB.SOM.Backend.Repositories
                 throw;
             }
         }
+
+        internal async Task<ESalesTxn> CreateTxn(ESalesTxn sales)
+        {
+            sales.GrandTotal = sales.Details?.Sum(d => d.TotalPrice) ?? 0m;
+
+            // Evitar que EF intente insertar entidades relacionadas que vienen desde el cliente.
+            if (sales.Details != null)
+            {
+                foreach (var d in sales.Details)
+                {
+                    // El cliente envía el Product completo; aseguramos que EF no intente insertarlo.
+                    d.Product = null;
+                }
+            }
+
+            if (sales.PaymentMethods != null)
+            {
+                foreach (var pm in sales.PaymentMethods)
+                {
+                    // Evitar inserción accidental de la navegación inversa
+                    pm.SalesTxn = null;
+                }
+            }
+
+            Context.SMOSalesTxn.Add(sales);
+            await Context.SaveChangesAsync();
+
+            var invTxn = BuildInventoryTxnFromSales(sales);
+            await _invTxnRepository.CreateTxn(invTxn);
+
+            var cashBoxId = await _salSettsRepository.GetDefaultCashBoxId();
+            var treasuryTxn = BuildTreasuryTxnFromSales(sales, cashBoxId.Value);
+            await _treasuryTxnRepository.CreateTxn(treasuryTxn);
+
+            return sales;
+        }
+
+
 
         internal async Task<ESalesTxn?> GetById(int txnId)
         {
@@ -169,7 +193,7 @@ namespace SFB.SOM.Backend.Repositories
             return invTxn;
         }
 
-        private static ETreasuryTxn BuildTreasuryTxnFromSales(ESalesTxn sales)
+        private static ETreasuryTxn BuildTreasuryTxnFromSales(ESalesTxn sales,int cashBoxId)
         {
 
             var paymentMethods = sales.PaymentMethods;
@@ -188,11 +212,7 @@ namespace SFB.SOM.Backend.Repositories
             var totalPayments = details.Sum(d => d.Amount);
 
             if (totalPayments != sales.GrandTotal)            
-                throw new ControllerException("El total de pagos no coincide con el total de la venta.");            
-
-
-
-
+                throw new ControllerException("El total de pagos no coincide con el total de la venta.");       
 
             return new ETreasuryTxn
             {
@@ -200,6 +220,7 @@ namespace SFB.SOM.Backend.Repositories
                 TxnOrigin = sales.TxnId,
                 Type = TreasuryType.Ingreso.Code,
                 TxnDate = DateTime.UtcNow,
+                CashBoxDestId = cashBoxId,
                 StatusCode = TreasuryStatus.Pendiente.Code,
                 CurrencyCode = sales.CurrencyCode,
                 GrandTotal = totalPayments,

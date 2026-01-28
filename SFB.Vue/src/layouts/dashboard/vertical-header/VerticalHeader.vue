@@ -13,41 +13,20 @@ const customizer = useCustomizerStore();
 
 <template>
   <v-app-bar elevation="0" height="60">
-    <v-btn
-      class="hidden-md-and-down text-secondary mr-3"
-      color="darkText"
-      icon
-      rounded="sm"
-      variant="text"
-      @click.stop="customizer.SET_MINI_SIDEBAR(!customizer.mini_sidebar)"
-      size="small"
-    >
+    <v-btn class="hidden-md-and-down text-secondary mr-3" color="darkText" icon rounded="sm" variant="text"
+      @click.stop="customizer.SET_MINI_SIDEBAR(!customizer.mini_sidebar)" size="small">
       <MenuFoldOutlined :style="{ fontSize: '16px' }" />
     </v-btn>
-    <v-btn
-      class="hidden-lg-and-up text-secondary ms-3"
-      color="darkText"
-      icon
-      rounded="sm"
-      variant="text"
-      @click.stop="customizer.SET_SIDEBAR_DRAWER"
-      size="small"
-    >
+    <v-btn class="hidden-lg-and-up text-secondary ms-3" color="darkText" icon rounded="sm" variant="text"
+      @click.stop="customizer.SET_SIDEBAR_DRAWER" size="small">
       <MenuFoldOutlined :style="{ fontSize: '16px' }" />
     </v-btn>
 
     <!-- search mobile -->
     <v-menu :close-on-content-click="false" class="hidden-lg-and-up" offset="10, 0">
       <template v-slot:activator="{ props }">
-        <v-btn
-          class="hidden-lg-and-up text-secondary ml-1"
-          color="lightsecondary"
-          icon
-          rounded="sm"
-          variant="flat"
-          size="small"
-          v-bind="props"
-        >
+        <v-btn class="hidden-lg-and-up text-secondary ml-1" color="lightsecondary" icon rounded="sm" variant="flat"
+          size="small" v-bind="props">
           <SearchOutlined :style="{ fontSize: '17px' }" />
         </v-btn>
       </template>

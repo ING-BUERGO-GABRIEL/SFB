@@ -1,102 +1,104 @@
 <template>
   <dialog-body v-model="showModal" :title="titleDlg" formValidate @accept="onAccept" @cancel="onCancel">
-    <v-row class="mb-0" justify="center">
-      <v-col cols="12" md="6">
-        <parent-card :showHeader="true" title="Datos de Producto">
-          <v-row class="pa-4">
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-text-field label="Codigo" base-color="red" disabled v-model="product.NroProduct" required />
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-text-field v-model="product.Name" label="Nombre" :rules="[rRequired]" required placeholder="Nombre"
-                  :disabled="isReadOnly" />
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-text-field v-model="product.SerialNumber" label="Codigo de Barras" :disabled="isReadOnly">
-                  <template #append-inner>
-                    <BarcodeScanner @code-scan="product.SerialNumber = $event" />
-                  </template>
-                </v-text-field>
-              </div>
-            </v-col>
+    <template #body>
+      <v-row class="mb-0" justify="center">
+        <v-col cols="12" md="6">
+          <parent-card :showHeader="true" title="Datos de Producto">
+            <v-row class="pa-4">
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-text-field label="Codigo" base-color="red" disabled v-model="product.NroProduct" required />
+                </div>
+              </v-col>
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-text-field v-model="product.Name" label="Nombre" :rules="[rRequired]" required placeholder="Nombre"
+                    :disabled="isReadOnly" />
+                </div>
+              </v-col>
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-text-field v-model="product.SerialNumber" label="Codigo de Barras" :disabled="isReadOnly">
+                    <template #append-inner>
+                      <BarcodeScanner @code-scan="product.SerialNumber = $event" />
+                    </template>
+                  </v-text-field>
+                </div>
+              </v-col>
 
-            <!-- Campo Precio -->
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-text-field v-model="product.Price" label="Precio" :rules="[rRequired, rNonNegative]" type="number"
-                  step="0.01" min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
-              </div>
-            </v-col>
+              <!-- Campo Precio -->
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-text-field v-model="product.Price" label="Precio" :rules="[rRequired, rNonNegative]" type="number"
+                    step="0.01" min="0" required placeholder="Ej: 15.50" :disabled="isReadOnly" />
+                </div>
+              </v-col>
 
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-select v-model="product.PresentCode" label="Presentación" :items="cmbPresent" :rules="[rRequired]"
-                  item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
-              </div>
-            </v-col>
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-select v-model="product.PresentCode" label="Presentación" :items="cmbPresent" :rules="[rRequired]"
+                    item-title="Name" item-value="Code" placeholder="Seleccionar presentación" />
+                </div>
+              </v-col>
 
-            <v-col cols="12" sm="4" class="py-0">
-              <div class="mb-6">
-              </div>
-            </v-col>
+              <v-col cols="12" sm="4" class="py-0">
+                <div class="mb-6">
+                </div>
+              </v-col>
 
-            <!-- Checkboxes Positivo / Negativo -->
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-checkbox v-model="product.IsPurchases" label="Habilitado para Compras" color="primary" class="mt-2"
-                  :disabled="isReadOnly"></v-checkbox>
-              </div>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0">
-              <div class="mb-6">
-                <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary" class="mt-2"
-                  :disabled="isReadOnly"></v-checkbox>
-              </div>
-            </v-col>
-          </v-row>
-        </parent-card>
-      </v-col>
-      <v-col cols="12" md="6">
-        <title-card title="Precios y Present." class-name="px-0 pb-0 rounded-md">
-          <template #title-right>
-            <v-btn color="primary" variant="tonal" size="small" @click="addProductPresent">
-              Agregar presentacion
-            </v-btn>
-          </template>
-          <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
-            <template #item.PresentCode="{ item }">
-              <v-select v-model="item.PresentCode" :items="cmdProductPresent" item-title="Name" item-value="Code"
-                placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
-            </template>
-            <template #item.QtyProduct="{ item }">
-              <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1" min="0"
-                required placeholder="00.00" />
-            </template>
-            <template #item.Price="{ item }">
-              <v-text-field v-model="item.Price" :rules="[rRequired, rNonNegative]" type="number" step="1" min="0"
-                required placeholder="00.00" />
-            </template>
-            <template #item.SerialNumber="{ item }">
-              <v-text-field v-model="item.SerialNumber" placeholder="Codigo de Barras">
-                <template #append-inner>
-                  <BarcodeScanner @code-scan="item.SerialNumber = $event" />
-                </template>
-              </v-text-field>
-            </template>
-            <template #item.Actions="{ item }">
-              <v-btn icon variant="text" color="error" size="small" @click="deleteProductPresent(item)">
-                <ui-icon name="DeleteOutlined" size="18" />
+              <!-- Checkboxes Positivo / Negativo -->
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-checkbox v-model="product.IsPurchases" label="Habilitado para Compras" color="primary" class="mt-2"
+                    :disabled="isReadOnly"></v-checkbox>
+                </div>
+              </v-col>
+              <v-col cols="12" sm="6" class="py-0">
+                <div class="mb-6">
+                  <v-checkbox v-model="product.IsSales" label="Habilitado para Ventas" color="primary" class="mt-2"
+                    :disabled="isReadOnly"></v-checkbox>
+                </div>
+              </v-col>
+            </v-row>
+          </parent-card>
+        </v-col>
+        <v-col cols="12" md="6">
+          <title-card title="Precios y Present." class-name="px-0 pb-0 rounded-md">
+            <template #title-right>
+              <v-btn color="primary" variant="tonal" size="small" @click="addProductPresent">
+                Agregar presentacion
               </v-btn>
             </template>
-          </ui-table>
-        </title-card>
-      </v-col>
-    </v-row>
+            <ui-table :headers="headers" :items="product.ProductPresent" itemKey="NroProduct">
+              <template #item.PresentCode="{ item }">
+                <v-select v-model="item.PresentCode" :items="cmdProductPresent" item-title="Name" item-value="Code"
+                  placeholder="Seleccionar presentación" :rules="[rRequired, rUniquePresent]" />
+              </template>
+              <template #item.QtyProduct="{ item }">
+                <v-text-field v-model="item.QtyProduct" :rules="[rRequired, rNonNegative]" type="number" step="1"
+                  min="0" required placeholder="00.00" />
+              </template>
+              <template #item.Price="{ item }">
+                <v-text-field v-model="item.Price" :rules="[rRequired, rNonNegative]" type="number" step="1" min="0"
+                  required placeholder="00.00" />
+              </template>
+              <template #item.SerialNumber="{ item }">
+                <v-text-field v-model="item.SerialNumber" placeholder="Codigo de Barras">
+                  <template #append-inner>
+                    <BarcodeScanner @code-scan="item.SerialNumber = $event" />
+                  </template>
+                </v-text-field>
+              </template>
+              <template #item.Actions="{ item }">
+                <v-btn icon variant="text" color="error" size="small" @click="deleteProductPresent(item)">
+                  <ui-icon name="DeleteOutlined" size="18" />
+                </v-btn>
+              </template>
+            </ui-table>
+          </title-card>
+        </v-col>
+      </v-row>
+    </template>
   </dialog-body>
 </template>
 

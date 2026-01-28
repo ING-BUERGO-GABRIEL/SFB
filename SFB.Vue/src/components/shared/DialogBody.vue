@@ -13,7 +13,7 @@
         <!-- Body -->
         <v-card-text class="modal-body" :class="classBody">
           <v-form ref="formRef" class="h-100">
-            <slot></slot>
+            <slot name="body" :onAccept="onAcceptClick"></slot>
           </v-form>
         </v-card-text>
         <!-- footer -->

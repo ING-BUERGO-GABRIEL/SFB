@@ -40,5 +40,22 @@ namespace SFB.SOM.Backend.Repositories
                 return null;
             }
         }
+
+        public async Task<int?> GetDefaultCashBoxId()
+        {
+            try
+            {
+                var setting = await base.GetSetting("POSTSAL", "CODCAJ");
+
+                if (setting != null && int.TryParse(setting.ValueCode, out int cashBoxId))
+                    return cashBoxId;
+                else
+                    return null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

@@ -3,38 +3,35 @@
     <v-row class="pa-4 pb-0">
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Codigo</v-label>
-          <v-text-field disabled v-model="model.CashBoxId" required placeholder="Codigo" />
+          <v-text-field label="Codigo" disabled v-model="model.CashBoxId" required placeholder="Codigo" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Nombre</v-label>
-          <v-text-field v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre" />
+          <v-text-field label="Nombre" v-model="model.Name" :rules="[rRequired]" required placeholder="Nombre" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Tipo</v-label>
-          <v-select v-model="model.Type" :items="typeOptions" :rules="[rRequired]" required placeholder="Tipo" />
+          <v-select label="Tipo" v-model="model.Type" :items="typeOptions" :rules="[rRequired]" required
+            placeholder="Tipo" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Moneda</v-label>
-          <v-text-field v-model="model.CurrencyCode" :rules="[rRequired]" required placeholder="Moneda" />
+          <v-text-field label="Moneda" v-model="model.CurrencyCode" :rules="[rRequired]" required
+            placeholder="Moneda" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Saldo actual</v-label>
-          <v-text-field v-model.number="model.CurrentBalance" type="number" min="0" placeholder="0.00" />
+          <v-text-field label="Saldo actual" v-model.number="model.CurrentBalance" type="number" min="0"
+            placeholder="0.00" />
         </div>
       </v-col>
       <v-col cols="12" sm="6" class="py-0">
         <div class="mb-6">
-          <v-label>Activa</v-label>
-          <v-switch v-model="model.Active" color="primary" />
+          <v-switch label="Activa" v-model="model.Active" color="primary" />
         </div>
       </v-col>
     </v-row>

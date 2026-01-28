@@ -17,11 +17,11 @@
             </v-col>
             <v-col cols="12" sm="4">
               <v-text-field v-model.number="detail.Amount" label="Monto" type="number" min="0" density="compact"
-                variant="outlined" hide-details class="mt-2" />
+                variant="outlined" hide-details />
             </v-col>
             <v-col cols="12" sm="3">
-              <v-text-field v-model="detail.PaymentRef" class="mt-2" label="Referencia" density="compact"
-                variant="outlined" hide-details />
+              <v-text-field v-model="detail.PaymentRef" label="Referencia" density="compact" variant="outlined"
+                hide-details />
             </v-col>
             <v-col cols="12" sm="1" class="d-flex justify-end align-center">
               <v-btn icon variant="text" color="grey-darken-1" @click="removePayment(idx)"
