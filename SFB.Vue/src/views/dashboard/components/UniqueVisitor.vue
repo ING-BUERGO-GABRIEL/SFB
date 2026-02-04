@@ -133,7 +133,7 @@ const tab = ref(1);
   <v-card class="title-card" variant="text">
     <v-card-item class="pb-2 px-0 pt-0">
       <div class="d-flex justify-space-between">
-        <v-card-title class="text-h5">Unique Visitoor 2</v-card-title>
+        <v-card-title class="text-h5">Unique Victor</v-card-title>
         <div class="d-flex flex-wrap">
           <v-tabs v-model="tab" color="primary" class="tabBtn" density="compact" hide-slider>
             <v-tab value="one" class="mr-1" variant="outlined" rounded="md"> Month </v-tab>

@@ -6,15 +6,6 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
-	<!--<Target Name="BuildVue" BeforeTargets="Build">-->
-  <Target Name="BuildVue" BeforeTargets="Publish">
-    <Message Importance="high" Text="🏗️ Compilando frontend Vue (mode=web)..." />
-    <Exec WorkingDirectory="..\SFB.vue" Command="npm install" />
-    <Exec WorkingDirectory="..\SFB.vue" Command="npm run build -- --mode web" ContinueOnError="false" />
-
-    <Message Importance="high" Text="⏳ Verificando que index.html exista en wwwroot..." />
-    <Exec Command="powershell -Command &quot;while (!(Test-Path '$(MSBuildProjectDirectory)\wwwroot\index.html')) { Start-Sleep -Milliseconds 200 }&quot;" />
-  </Target>
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.12">
 	    <PrivateAssets>all</PrivateAssets>
