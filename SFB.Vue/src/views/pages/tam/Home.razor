@@ -1,0 +1,343 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@using Microsoft.FluentUI.AspNetCore.Components
+@using SGD.Shared.Helpers
+@using SGD.Shared.Models
+@using SGD.TAM.Shared.Models
+@using SGD.TAM.Shared.Sealed
+
+@inject IToastService ToastService
+
+<style>
+    .card-questionari {
+        border-radius: 10px;
+        background-color: #ffffff;
+        padding: 20px;
+        width: 100%;
+        box-shadow: var(--elevation-shadow-card-rest);
+    }
+
+    .fluent-data-grid.grid {
+        width: max-content !important;
+        min-width: 100%;
+    }
+
+    .fluent-data-grid-row {
+        height: auto !important;
+    }
+
+        .fluent-data-grid-row td,
+        .fluent-data-grid-row th {
+            height: auto !important;
+            white-space: normal;
+            word-break: break-word;
+            padding: 8px; /* Opcional: mejora la lectura */
+        }
+
+</style>
+<FluentBodyContent Style="background-color:#f2ece9">
+    <FluentStack Orientation="Orientation.Vertical" Style="max-width:600px; margin:auto; padding:20px;">
+        <FluentCard Style="padding:0px">
+            <img src="img/Questionnaire.jpg" style="width:100%" />
+        </FluentCard>
+        @if (!FormComplete)
+        {
+            <FluentCard>
+                <h2 style="margin-bottom: 1rem;">Propuestas Transformadoras hacia la Calidad Educativa</h2>
+                <FluentDivider />
+                <FluentLabel>El siguiente formulario es para solicitar los datos necesarios para crear el documento de PROPUESTAS TRANSFORMADORAS para el examen de ascenso 2025.</FluentLabel>
+                <FluentDivider />
+                <FluentLabel Color="Color.Error">* Indica que la pregunta es obligatoria</FluentLabel>
+            </FluentCard>
+
+            <!-- EditForm para encapsular la validación -->
+            <FluentEditForm Model="@FormData" OnValidSubmit="SubmitForm" style="width:100%">
+                <Microsoft.AspNetCore.Components.Forms.DataAnnotationsValidator />
+                <FluentValidationSummary />
+                <FluentStack Width="100%" Style="padding:0px" Orientation="Orientation.Vertical">
+                    <FluentCard>
+                        <!-- Campo: Título de la propuesta -->
+                        <FluentTextField @bind-Value="FormData.ProposalTitle"
+                                         Required="true"
+                                         Placeholder="Titulo"
+                                         Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Título de su propuesta (Si no tiene título, escriba “Sin título” y elaboraremos uno en función de su contexto.)</FluentLabel>
+                            </LabelTemplate>
+                        </FluentTextField>
+                        <FluentValidationMessage For="@(() => FormData.ProposalTitle)" />
+                    </FluentCard>
+                    <div class="card-questionari">
+                        <!-- Campo: Año de Escolaridad (Curso) -->
+                        <FluentSelect TOption="Scope"
+                                      Immediate="true"
+                                      @bind-Value="@FormData.CodScope"
+                                      Items="@Scope.List()"
+                                      OptionText="@(i => i.Description)"
+                                      OptionValue="@(i => i.Code?.ToString())"
+                                      Placeholder="Seleccione"
+                                      Required="true"
+                                      Width="100%"
+                                      Style="margin-bottom:1rem;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Ambito</FluentLabel>
+                            </LabelTemplate>
+                        </FluentSelect>
+                        <FluentValidationMessage For="@(() => FormData.CodScope)" />
+                    </div>
+                    <div class="card-questionari">
+                        <!-- Campo: Año de Escolaridad (Curso) -->
+                        <FluentSelect TOption="Modality"
+                                      Immediate="true"
+                                      @bind-Value="@(FormData.CodModality)"
+                                      Items="@Modality.List()"
+                                      OptionText="@(i => i.Description)"
+                                      OptionValue="@(i => i.Code?.ToString())"
+                                      Placeholder="Seleccione"
+                                      Required="true"
+                                      SelectedOptionChanged="OnChangedModality"
+                                      Width="100%"
+                                      Style="margin-bottom:1rem;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Modalidad de Atencion</FluentLabel>
+                            </LabelTemplate>
+                        </FluentSelect>
+                        <FluentValidationMessage For="@(() => FormData.CodModality)" />
+                    </div>
+                    <FluentCard>
+                        <FluentLabel Weight="FontWeight.Bold">Seleccioine Nivel </FluentLabel>
+                        <FluentValidationMessage For="@(() => FormData.CodArea)" />
+                        <FluentBodyContent Style="overflow-x:auto;">
+                            <FluentDataGrid Style="max-height:200px" Class="hide-ordering" Items="@Area.List().Where(a => a.CodModality == FormData.CodModality).AsQueryable()">
+                                <ChildContent>
+                                    <SelectColumn TGridItem="Area"
+                                                  SelectMode="DataGridSelectMode.Single"
+                                                  SelectFromEntireRow="true"
+                                                  SelectedItemsChanged="OnSelectionChanged" />
+                                    @* <PropertyColumn Title="Nro" Property="@(c => c.Code)" /> *@
+                                    <TemplateColumn Title="Nivel">
+                                        <ChildContent Context="item">
+                                            <FluentLabel>@item.Description</FluentLabel>
+                                        </ChildContent>
+                                    </TemplateColumn>
+                                </ChildContent>
+                                <EmptyContent>Seleccione Modalidad de Atencion</EmptyContent>
+                            </FluentDataGrid>
+                        </FluentBodyContent>
+                    </FluentCard>
+                    @if (FormData.CodModality != "ADM")
+                    {
+                        <FluentCard>
+                            <FluentRadioGroup Name="numbers" @bind-Value=@FormData.CodSchoolYear Required="true">
+                                <LabelTemplate>
+                                    <FluentLabel Weight="FontWeight.Bold">Año de Escolaridad</FluentLabel>
+                                </LabelTemplate>
+                                <ChildContent>
+                                    @foreach (var item in ShowSchoolYear)
+                                    {
+                                        <FluentRadio Value="@item.Code">@item.Description</FluentRadio>
+                                    }
+                                </ChildContent>
+                            </FluentRadioGroup>
+                            <FluentValidationMessage For="@(() => FormData.CodSchoolYear)" />
+                        </FluentCard>
+                    }
+                    <FluentCard>
+                        <!-- Campo: Año de Escolaridad (Curso) -->
+                        <FluentTextField @bind-Value="FormData.Subject"
+                                         Required="true"
+                                         Placeholder="Escriba"
+                                         Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">@(FormData.CodModality != "ADM" ? "Area o Materia:" : "Especifique su cargo:")</FluentLabel>
+                            </LabelTemplate>
+                        </FluentTextField>
+                        <FluentValidationMessage For="@(() => FormData.Subject)" />
+                    </FluentCard>
+
+                    <FluentCard>
+                        <!-- Campo: Número de Teléfono -->
+                        <FluentNumberField TValue="int?" @bind-Value="FormData.PhoneNumber"
+                                           Required="true"
+                                           Placeholder="Numero Tel."
+                                           Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Número de Teléfono (para el envío del documento)</FluentLabel>
+                            </LabelTemplate>
+                        </FluentNumberField>
+                        <FluentValidationMessage For="@(() => FormData.PhoneNumber)" />
+                    </FluentCard>
+                    <FluentCard>
+                        <!-- Campo: Título de la propuesta -->
+                        <FluentTextField @bind-Value="FormData.NameTeache"
+                                         Required="true"
+                                         Placeholder="Nombre"
+                                         Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Nombre del Docente para quien se Relizar la Propuesta :</FluentLabel>
+                            </LabelTemplate>
+                        </FluentTextField>
+                        <FluentValidationMessage For="@(() => FormData.NameTeache)" />
+                    </FluentCard>
+                    <FluentCard>
+                        <!-- Campo: Título de la propuesta -->
+                        <FluentTextField @bind-Value="FormData.NameSchool"
+                                         Required="true"
+                                         Placeholder="Nombre"
+                                         Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Nombre de la unidad educativa:</FluentLabel>
+                            </LabelTemplate>
+                        </FluentTextField>
+                        <FluentValidationMessage For="@(() => FormData.NameSchool)" />
+                    </FluentCard>
+                    <div class="card-questionari">
+                        <!-- Campo: Año de Escolaridad (Curso) -->
+                        <FluentSelect TOption="Department"
+                                      Immediate="true"
+                                      @bind-Value="@FormData.CodDepartment"
+                                      Items="@Department.List()"
+                                      OptionText="@(i => i.Description)"
+                                      OptionValue="@(i => i.Code)"
+                                      Placeholder="Seleccione Departamento"
+                                      Required="true"
+                                      Width="100%"
+                                      Style="margin-bottom:1rem;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Departamento:</FluentLabel>
+                            </LabelTemplate>
+                        </FluentSelect>
+                        <FluentValidationMessage For="@(() => FormData.CodDepartment)" />
+                    </div>
+                    <FluentCard>
+                        <!-- Campo: Título de la propuesta -->
+                        <FluentTextField @bind-Value="FormData.Locality"
+                                         Required="true"
+                                         Placeholder="Distrito o Localidad"
+                                         Style="margin-bottom:1rem; width:100%;">
+                            <LabelTemplate>
+                                <FluentLabel Weight="FontWeight.Bold">Distrito o Localidad :</FluentLabel>
+                            </LabelTemplate>
+                        </FluentTextField>
+                        <FluentValidationMessage For="@(() => FormData.Locality)" />
+                    </FluentCard>
+                    <div style="margin-top:1.5rem;">
+                        <FluentButton Loading="@LoadingButtom" Appearance="Appearance.Accent" Type="ButtonType.Submit">
+                            Enviar
+                        </FluentButton>
+                    </div>
+                </FluentStack>
+            </FluentEditForm>
+        }
+        else
+        {
+            <FluentCard>
+                <h2 style="margin-bottom: 1rem;">Propuestas Transformadoras hacia la Calidad Educativa</h2>
+                <FluentDivider />
+                <FluentLabel>¡Muchas gracias por completar el formulario! El proceso de realización del documento se iniciara después del primer Pago.</FluentLabel>
+            </FluentCard>
+        }
+    </FluentStack>
+</FluentBodyContent>
+
+@code {
+
+    private MFormTeacher FormData = new();
+
+    private bool LoadingButtom = false;
+    private bool FormComplete = false;
+
+    public IEnumerable<Area> SelectedItems { get; set; } = new List<Area>();
+    private IEnumerable<SchoolYear> ShowSchoolYear = new List<SchoolYear>();
+    private IEnumerable<Specialty> ShowSpecialtys = new List<Specialty>();
+
+    protected RestApiClient ApiClient = default!;
+
+    private void OnChangedModality(Modality? modality)
+    {
+        FormData.CodArea = null;
+        FormData.CodSchoolYear = null;
+        //FormData.CodSpecialty = null;
+        ShowSchoolYear = new List<SchoolYear>();
+        ShowSpecialtys = new List<Specialty>();
+    }
+
+    private void OnSelectionChanged(IEnumerable<Area> items)
+    {
+        var selected = items.FirstOrDefault();
+        FormData.CodArea = selected?.Code ?? null;
+        FormData.CodSchoolYear = null;
+        ShowSpecialtys = new List<Specialty>();
+        ShowSchoolYear = new List<SchoolYear>();
+        if (selected != null)
+        {
+            switch (selected.CodModality)
+            {
+                case string c when c == "ALT" || c == "ESP":
+                    ShowSchoolYear = SchoolYear.List();
+                    break;
+                case "REC":
+                    switch (selected.Code)
+                    {
+                        case int c when c > 0 && c <= 4:
+                            ShowSchoolYear = SchoolYear.List().Where(s => s.Code == 1 || s.Code == 2);
+                            break;
+                        case int c when c > 4 && c <= 31:
+                            ShowSchoolYear = SchoolYear.List();
+                            break;
+                        default:
+                            ShowSchoolYear = new List<SchoolYear>();
+                            break;
+                    }
+                    break;
+                case "ADM":
+                    FormData.CodSchoolYear = 1;
+                    break;
+            }
+            ShowSpecialtys = Specialty.List().Where(s => s.CodLevel == selected.CodSpecialty);
+        }
+
+    }
+
+    private async Task SubmitForm()
+    {
+        LoadingButtom = true;
+        await PostFormTeacher(FormData);
+        LoadingButtom = false;
+    }
+    protected override void OnInitialized()
+    {
+        InitializeApiClient();
+        base.OnInitialized();
+    }
+
+
+    public void InitializeApiClient()
+    {
+        ApiClient = new RestApiClient("https://teacheradm-001-site1.anytempurl.com/", true);
+    }
+
+    public async Task PostFormTeacher(MFormTeacher formTeacher)
+    {
+        try
+        {
+            var route = $"api/TAM/FormTeacher/Create";
+
+            var apiResult = await ApiClient.PostAsync<ApiResult<MFormTeacher>>(route, formTeacher);
+            if (apiResult.IsSuccess)
+            {
+                ToastService.ShowSuccess("Formulario enviado con exito");
+                FormComplete = true;
+            }
+            else
+            {
+                ToastService.ShowWarning(apiResult.Message);
+            }
+        }
+        catch (Exception ex)
+        {
+            ToastService.ShowError($"Error De registro de Formulario: {ex.Message}");
+        }
+    }
+}
+
