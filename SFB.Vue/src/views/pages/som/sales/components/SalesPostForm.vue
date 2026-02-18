@@ -403,21 +403,21 @@ function onQtyPresentChange(detail) {
   calcTotals(detail)
 }
 
-function onCostChange(detail) {
-  calcTotals(detail)
-}
+// function onCostChange(detail) {
+//   calcTotals(detail)
+// }
 
 function calcTotals(detail) {
   detail.TotalPrice = Number(detail.UnitPrice ?? 0) * Number(detail.QtyPresent ?? 0)
 }
 
-function selectedIds(exceptDetail = null) {
-  return new Set(
-    (model.value.Details ?? [])
-      .filter(d => d !== exceptDetail && d?.NroProduct != null)
-      .map(d => d.NroProduct)
-  )
-}
+// function selectedIds(exceptDetail = null) {
+//   return new Set(
+//     (model.value.Details ?? [])
+//       .filter(d => d !== exceptDetail && d?.NroProduct != null)
+//       .map(d => d.NroProduct)
+//   )
+// }
 
 const formatCurrency = (amount) => new Intl.NumberFormat('es-BO', { style: 'currency', currency: 'BOB' }).format(amount ?? 0)
 
