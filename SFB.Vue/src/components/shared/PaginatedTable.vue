@@ -49,7 +49,7 @@ const onItemsPerPage = async (newSize) => {
 
 onMounted(async () => {
   // eslint-disable-next-line vue/no-mutating-props
-  props.service.pageParams = { ...defaultParams, ...props.params }
+  props.service.pageParams = { ...defaultParams, ...props.initParams }
   await props.service.loadPage()
 })
 </script>
