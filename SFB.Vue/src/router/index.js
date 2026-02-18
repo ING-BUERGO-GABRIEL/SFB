@@ -7,6 +7,7 @@ import PcmRoutes from './PcmRoutes'
 import SomRoutes from './SomRoutes'
 import AmsRoutes from './AmsRoutes'
 import TrmRoutes from './TrmRoutes'
+import TamRoutes from './TamRoutes'
 import { useAuthStore } from '@/stores/auth'
 import { useUIStore } from '@/stores/ui'
 
@@ -24,11 +25,12 @@ const router = createRouter({
         PcmRoutes,
         SomRoutes,
         AmsRoutes,
-        TrmRoutes
+        TrmRoutes,
+        TamRoutes
     ]
 })
 
-// Middleware de autenticaci�n
+// Middleware de autenticacin
 router.beforeEach((to, from, next) => {
     const publicPages = ['/']
     const auth = useAuthStore()

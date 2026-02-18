@@ -26,11 +26,6 @@ export default {
       component: () => import('@/views/authentication/auth/RegisterPage.vue')
     },
     {
-      name: 'AscentExamForm',
-      path: '/tam/ascent-exam-form',
-      component: () => import('@/views/pages/tam/AscentExamForm.vue')
-    },
-    {
       name: 'Error 404',
       path: '/error',
       component: () => import('@/views/pages/maintenance/error/Error404Page.vue')

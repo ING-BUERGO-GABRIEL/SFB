@@ -1,5 +1,5 @@
 ﻿
-namespace SGD.TAM.Shared.Sealed
+namespace SFB.TAM.Shared.Sealed
 {
     public sealed class Area
     {

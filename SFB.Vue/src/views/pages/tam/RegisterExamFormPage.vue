@@ -150,8 +150,9 @@
 </template>
 
 <script setup>
-import { ref, computed, reactive } from 'vue'
+import { ref, computed, reactive, inject } from 'vue'
 import questionnaireImg from '@/assets/images/backgrounds/Questionnaire.jpg'
+const { examFormServ } = inject('services')
 
 const valid = ref(false)
 const loadingButton = ref(false)
@@ -299,12 +300,11 @@ async function submitForm() {
     if (!valid.value) return
     loadingButton.value = true
 
-    // Simulate API call
-    setTimeout(() => {
-        console.log("Submitting", formData)
-        loadingButton.value = false
+    const result = await examFormServ.create(formData)
+    if (result) {
         formComplete.value = true
-    }, 1500)
+    }
+    loadingButton.value = false
 }
 
 </script>
