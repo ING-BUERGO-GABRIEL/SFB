@@ -5,12 +5,17 @@ using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Models;
 using SFB.Shared.Backend.Repositories;
 using SFB.TAM.Shared.Models;
+using SFB.TAM.Shared.Sealed;
 
 namespace SFB.TAM.Backend.Repositories
 {
     public class FormTeacherRepository(SFBContext context) : BaseRepository<SFBContext>(context)
     {
 
+        protected override List<string> GetFilterableProperties()
+        {
+            return new List<string> { "NroForm", "PhoneNumber", "NameTeache" };
+        }
         internal async Task<EFormTeacher> Create(EFormTeacher formTeacher)
         {
             Context.TAMFormTeachers.Add(formTeacher);
@@ -62,5 +67,8 @@ namespace SFB.TAM.Backend.Repositories
             await Context.SaveChangesAsync();
             return formTeacher;
         }
+
+        internal IEnumerable<FormStatus> GetStatus() => FormStatus.List();
+        
     }
 }

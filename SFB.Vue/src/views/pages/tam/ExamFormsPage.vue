@@ -1,6 +1,9 @@
 <template>
     <header-bar>
         <search-field style="max-width:300px; width:100%" @search="onSearch" />
+        <v-select v-model="codStatus" label="Estado" style="max-width:200px; width:100%" :items="cmbStatus"
+            item-title="Description" item-value="Code" placeholder="Seleccionar estado" class="ml-2"
+            @update:model-value="onSearch" />
         <v-spacer />
     </header-bar>
     <v-row class="mb-0">
@@ -19,9 +22,11 @@
 </template>
 
 <script setup>
-import { inject, ref } from 'vue'
-
+import { inject, onMounted, ref } from 'vue'
 const { examFormServ } = inject('services')
+
+const codStatus = ref("PEN")
+const cmbStatus = ref([])
 
 const headers = ref([
     { title: 'Nro.', key: 'NroForm' },
@@ -39,6 +44,10 @@ const onSearch = async (filtro) => {
     examFormServ.pageParams.filter = filtro
     await examFormServ.loadPage()
 }
+
+onMounted(async () => {
+    cmbStatus.value = await examFormServ.getStatus()
+})
 
 </script>
 

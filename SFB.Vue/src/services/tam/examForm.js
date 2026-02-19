@@ -97,6 +97,15 @@ export const examFormService = defineStore('examFormService', {
     updItemPage(item) {
       const idx = this.pageData.Data.findIndex(p => p.TxnId === item.TxnId)
       if (idx !== -1) this.pageData.Data[idx] = item
+    },
+    async getStatus() {
+      try {
+        const { Data } = await apiClient.get(Route('GetStatus'))
+        return Data ?? []
+      } catch (error) {
+        console.error('Error al obtener metadata:', error)
+        return []
+      }
     }
   }
 })

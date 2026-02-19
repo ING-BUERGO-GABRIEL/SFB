@@ -126,5 +126,20 @@ namespace SFB.TAM.Backend.Controllers
                 return InternalServerError(ex);
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetStatus()
+        {
+            try
+            {
+                
+                var result = Repository.GetStatus();
+                return OkResult(result);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
     }
 }
