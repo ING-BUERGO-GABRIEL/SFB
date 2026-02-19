@@ -12,7 +12,9 @@ namespace SFB.Server.Shared
                 Assembly.Load("SFB.CMS.Backend"),
                 Assembly.Load("SFB.PCM.Backend"),
                 Assembly.Load("SFB.SOM.Backend"),
-                Assembly.Load("SFB.TRM.Backend")
+                Assembly.Load("SFB.TRM.Backend"),
+                Assembly.Load("SFB.TAM.Backend"),
+
             };
         }
 

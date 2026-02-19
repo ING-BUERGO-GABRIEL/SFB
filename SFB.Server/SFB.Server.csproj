@@ -18,6 +18,7 @@
 	  <ProjectReference Include="..\SFB.Modules\SFB.IAW\SFB.IAW.Backend\SFB.IAW.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Modules\SFB.PCM\SFB.PCM.Backend\SFB.PCM.Backend\SFB.PCM.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Modules\SFB.SOM\SFB.SOM.Backend\SFB.SOM.Backend\SFB.SOM.Backend.csproj" />
+	  <ProjectReference Include="..\SFB.Modules\SFB.TAM\SFB.TAM.Backend\SFB.TAM.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Modules\SFB.TRM\SFB.TRM.Backend\SFB.TRM.Backend\SFB.TRM.Backend.csproj" />
 	  <ProjectReference Include="..\SFB.Shared.Backend\SFB.Shared.Backend.csproj" />
 	</ItemGroup>

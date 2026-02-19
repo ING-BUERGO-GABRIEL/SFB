@@ -40,7 +40,7 @@ namespace SFB.TAM.Backend.Repositories
                // .Include(c => c.Person)
                 .AsQueryable();
 
-            var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "CustomerId" });
+            var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "NroForm:desc" });
 
             return result;
         }

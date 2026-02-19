@@ -37,7 +37,7 @@ namespace SFB.TAM.Backend.Controllers
         {
             try
             {
-                var result = await Repository.GetPage(filter, pageSize, PageNumber);
+                 var result = await Repository.GetPage(filter, pageSize, PageNumber);
 
                 return OkResult(result);
             }
