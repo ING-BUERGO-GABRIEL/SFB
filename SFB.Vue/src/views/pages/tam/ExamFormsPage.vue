@@ -3,7 +3,7 @@
         <search-field style="max-width:300px; width:100%" @search="onSearch" />
         <v-select v-model="codStatus" label="Estado" style="max-width:200px; width:100%" :items="cmbStatus"
             item-title="Description" item-value="Code" placeholder="Seleccionar estado" class="ml-2"
-            @update:model-value="onSearch" />
+            @update:model-value="onStatusChange" />
         <v-spacer />
     </header-bar>
     <v-row class="mb-0">
@@ -11,31 +11,38 @@
             <title-card title="Formularios de Examen" class-name="px-0 pb-0 rounded-md">
                 <pag-table :headers="headers" :service="examFormServ" :init-params="{ codStatus: 'PEN' }">
                     <template #item.actions="{ item }">
-                        <v-btn icon variant="text" color="primary" @click="emit('edit', item)">
-                            <ui-icon name="UnorderedListOutlined" size="20" />
+                        <v-btn v-if="item.CodStatus == 'PEN' || item.CodStatus == 'DES'" icon variant="text"
+                            color="primary" @click="onClickEdit(item)">
+                            <ui-icon name="FormOutlined" size="20" />
+                        </v-btn>
+                        <v-btn v-if="item.CodStatus != 'DES'" icon variant="text" color="error"
+                            @click="() => onClickDelete(item)">
+                            <ui-icon name="DeleteOutlined" size="20" />
                         </v-btn>
                     </template>
                 </pag-table>
             </title-card>
         </v-col>
     </v-row>
+    <ExamForm ref="examFormRef" />
 </template>
 
 <script setup>
 import { inject, onMounted, ref } from 'vue'
+import ExamForm from './forms/ExamForm.vue'
 const { examFormServ } = inject('services')
+const { question } = inject('MsgDialog')
 
 const codStatus = ref("PEN")
 const cmbStatus = ref([])
+const examFormRef = ref(null)
 
 const headers = ref([
-    { title: 'Nro.', key: 'NroForm' },
+    { title: 'Nro. Form', key: 'NroForm' },
     { title: 'Telefono', key: 'PhoneNumber' },
     { title: 'Docente', key: 'NameTeache' },
-    { title: 'Departamento', key: 'NameDepartment' },
-    { title: 'Area', key: 'NameScope' },
-    { title: 'Modalidad', key: 'NameModality' },
-    { title: 'Curso', key: 'NameSchoolYear' },
+    { title: 'Tipo Examen', key: 'NameScope' },
+    //{ title: 'Estado', key: 'NameStatus' },
     { title: 'Acc.', key: 'actions', sortable: false, align: 'center' }
 ])
 
@@ -44,6 +51,32 @@ const onSearch = async (filtro) => {
     examFormServ.pageParams.filter = filtro
     await examFormServ.loadPage()
 }
+
+const onStatusChange = async (codStatus) => {
+    examFormServ.pageParams.pageNumber = 1
+    examFormServ.pageParams.codStatus = codStatus
+    await examFormServ.loadPage()
+}
+
+const onClickDelete = async (item) => {
+    const confirmed = await question(
+        'Eliminar Formulario',
+        `Desea descartar el Formulario`
+    )
+
+    if (!confirmed) return null
+
+    await examFormServ.patchUpdate(item.NroForm, { codStatus: 'DES' })
+    await examFormServ.loadPage()
+}
+
+const onClickEdit = async (item) => {
+    const result = await examFormRef.value.openForm('Process', item)
+    if (result) {
+        await examFormServ.loadPage()
+    }
+}
+
 
 onMounted(async () => {
     cmbStatus.value = await examFormServ.getStatus()

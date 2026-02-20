@@ -106,6 +106,22 @@ export const examFormService = defineStore('examFormService', {
         console.error('Error al obtener metadata:', error)
         return []
       }
+    },
+    async patchUpdate(nroForm, patchParams = {}) {
+      try {
+        const route = Route(`Update/${nroForm}`)
+        const apiResult = await apiClient.patch(route, patchParams)
+
+        if (apiResult.IsSuccess) {
+          message.success('Formulario actualizado con éxito.')
+          return apiResult.Data
+        }
+
+        message.warning(apiResult.Message)
+      } catch (error) {
+        console.error('Error al obtener metadata:', error)
+        return null
+      }
     }
   }
 })

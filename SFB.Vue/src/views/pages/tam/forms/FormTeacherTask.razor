@@ -1,0 +1,161 @@
+@inject IPersonService PersonService
+@inject ITeacherTaskService TeacherTaskService
+
+<DialogBuilder @ref="dialogBuilder" Width="500px" Height="320px" Title="Registrar Trabajo">
+    <FluentEditForm Model="TeacherTask" OnValidSubmit="Submit">
+        <DataAnnotationsValidator />
+        <FluentGrid Spacing="1" AdaptiveRendering="true" Justify="JustifyContent.Center">
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentTextField Label="Docente" Style="width:100%" @bind-Value="FormTeacher.NameTeache" ReadOnly="true" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentNumberField Label="Telefono" Style="width:100%" TValue="int?" @bind-Value="FormTeacher.PhoneNumber" ReadOnly="true" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentNumberField Required Label="Precio Total" Style="width:100%" TValue="decimal" @bind-Value="TeacherTask.PriceTotal" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentNumberField Label="Monto Cobrado" Style="width:100%" TValue="decimal" @bind-Value="TeacherTask.AmountPaid" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentTextField Label="Nombre de Contacto" Placeholder="X001..." Required="true" Style="width:100%" @bind-Value="TeacherTask.NameContact" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentSelect Label="Responsable de Devolucion" Placeholder="Seleccione" Width="100%" TOption="MPerson" @bind-Value="TeacherTask.NroPersonReturnString"
+                              Immediate="true" Required="RequiredList" Items="@PersonReturnList" OptionText="@(i => i.Name)"
+                              OptionValue="@(i => i.NroPerson.ToString())" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentSelect Label="Responsable Actual" Placeholder="Ninguno" Width="100%" TOption="MPerson" @bind-Value="TeacherTask.NroPersonAssignedString"
+                              Immediate="true" Items="@PersonAsignetList" OptionText="@(i => i.Name)"
+                              OptionValue="@(i => i.NroPerson.ToString())" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentSelect Label="Estado de la Tarea" Placeholder="Estado" Width="100%" TOption="FTaskStatus" @bind-Value="TeacherTask.CodStatus"
+                              Immediate="true" Required="RequiredList" Items="@FTaskStatus.List()" OptionText="@(i => i.Description)"
+                              OptionValue="@(i => i.Code)" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentDatePicker Label="Fecha de Registro" ReadOnly Style="width:100%" @bind-Value="Todaly" />
+            </FluentGridItem>
+            <FluentGridItem xs="6" sm="3" lg="3">
+                <FluentDatePicker Label="Fecha de Entrega" Required Style="width:100%" @bind-Value="TeacherTask.DeliveryDate" />
+            </FluentGridItem>
+            <FluentGridItem xs="6" sm="3" lg="3">
+                <FluentTimePicker Label="Hora" Required Style="width:100%" @bind-Value="TeacherTask.DeliveryDate" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="6" lg="6">
+                <FluentTextField Label="Url de Documento" Placeholder="https://" Required="true" Style="width:100%" @bind-Value="TeacherTask.UrlDocument" />
+            </FluentGridItem>
+            <FluentGridItem xs="12" sm="12" lg="12" Justify="JustifyContent.FlexEnd">
+                <FluentButton Type="ButtonType.Submit" Appearance="Appearance.Accent" Style="margin-left:auto">@(Edit ? "Editar" : "Crear") Trabajo</FluentButton>
+            </FluentGridItem>
+        </FluentGrid>
+    </FluentEditForm>
+    <Overlay Visible="Loading" />
+</DialogBuilder>
+@code {
+
+    DialogBuilder dialogBuilder = default!;
+    MTeacherTask TeacherTask = new();
+    MFormTeacher FormTeacher = new();
+    List<MPerson> PersonAsignetList = new();
+    List<MPerson> PersonReturnList = new();
+
+    bool Edit = false;
+    bool RequiredList = false;
+
+    private DateTime? Todaly = DateTime.Now;
+    private bool Loading = false;
+
+    private TaskCompletionSource<MFormTeacher?>? _TaskCompletion;
+    private TaskCompletionSource<MTeacherTask?>? _TaskCompletion2;
+
+    private async Task SaveTaskAsync()
+    {
+        Loading = true;
+        var result = await TeacherTaskService.Create(TeacherTask);
+        if (result != null)
+        {
+            _TaskCompletion?.SetResult(result.FormTeacher);
+            dialogBuilder.Close();
+        }
+        Loading = false;
+    }
+
+    private async Task Submit()
+    {
+        if (Edit)
+            await SaveEditTaskAsync();
+        else
+            await SaveTaskAsync();
+
+    }
+
+    private async Task SaveEditTaskAsync()
+    {
+        Loading = true;
+        var teacherTask = TeacherTask.Adapt<MTeacherTask>();
+        teacherTask.FormTeacher = null;
+        var result = await TeacherTaskService.Update(teacherTask);
+        if (result != null)
+        {
+            _TaskCompletion2?.SetResult(result);
+            dialogBuilder.Close();
+        }
+        Loading = false;
+    }
+
+    public async Task<MFormTeacher?> ShowCreateByFormTeacher(MFormTeacher formTeacher)
+    {
+        Edit = false;
+        RequiredList = true;
+        FormTeacher = formTeacher;
+        TeacherTask = new();
+        TeacherTask.DeliveryDate = DateTime.Now.AddDays(3);
+
+        TeacherTask.NroFromTeacher = FormTeacher.NroForm;
+
+        var personList = await PersonService.GetPersonList();
+        PersonReturnList = personList;
+        var personNingun = new MPerson { Name = "Ninguno" };
+        var newPersonList = personList.Adapt<List<MPerson>>();
+        newPersonList.Add(personNingun);
+        PersonAsignetList = newPersonList;
+        dialogBuilder.Show();
+
+        _TaskCompletion = new TaskCompletionSource<MFormTeacher?>();
+
+        return await _TaskCompletion.Task;
+    }
+
+
+    public async Task<MTeacherTask?> ShowEdit(MTeacherTask teacherTask)
+    {
+        Edit = true;
+        Loading = true;
+        RequiredList = false;
+        dialogBuilder.Show();
+        await SetMappedFields(teacherTask);
+        _TaskCompletion2 = new TaskCompletionSource<MTeacherTask?>();
+        Loading = false;
+        StateHasChanged();
+
+        return await _TaskCompletion2.Task;
+    }
+
+    private async Task SetMappedFields(MTeacherTask source)
+    {
+        var personList = await PersonService.GetPersonList();
+        PersonReturnList = personList;
+        var personNingun = new MPerson { Name = "Ninguno", NroPerson = 0 };
+        var newPersonList = personList.Adapt<List<MPerson>>();
+        newPersonList.Add(personNingun);
+        PersonAsignetList = newPersonList;
+        TeacherTask = source.Adapt<MTeacherTask>();
+
+        TeacherTask.CodStatus = source.CodStatus;
+        FormTeacher = source.FormTeacher;
+    }
+
+}

@@ -33,11 +33,12 @@ namespace SFB.TAM.Backend.Controllers
         public async Task<IActionResult> GetPage(
             [FromQuery] int pageSize,
             [FromQuery] int PageNumber,
-            [FromQuery] string? filter = null)
+            [FromQuery] string? filter = null,
+            [FromQuery] string? codStatus = null)
         {
             try
             {
-                 var result = await Repository.GetPage(filter, pageSize, PageNumber);
+                 var result = await Repository.GetPage(filter,codStatus, pageSize, PageNumber);
 
                 return OkResult(result);
             }

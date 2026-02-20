@@ -39,11 +39,10 @@ namespace SFB.TAM.Backend.Repositories
             return await result.AsNoTracking().OrderByDescending(f=>f.NroForm).ToListAsync();
         }
 
-        internal async Task<PagedListModel<EFormTeacher>> GetPage(string? filter, int pageSize, int pageNumber)
+        internal async Task<PagedListModel<EFormTeacher>> GetPage(string? filter,string codStatus, int pageSize, int pageNumber)
         {
-            var query = Context.TAMFormTeachers
-               // .Include(c => c.Person)
-                .AsQueryable();
+            var query = Context.TAMFormTeachers.AsQueryable();
+            query = query.ConditionalWhere(codStatus, c => c.CodStatus == codStatus);
 
             var result = await base.GetPage(query, filter, pageSize, pageNumber, new List<string> { "NroForm:desc" });
 

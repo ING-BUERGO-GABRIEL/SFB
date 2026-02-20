@@ -44,6 +44,7 @@ export const apiClient = {
   get: url => api.get(url),
   post: (url, body) => api.post(url, body),
   put: (url, body) => api.put(url, body),
+  patch: (url, params, body) => api.patch(url + queryString(params), body),
   delete: url => api.delete(url),
   queryString: params => queryString(params)
 };
