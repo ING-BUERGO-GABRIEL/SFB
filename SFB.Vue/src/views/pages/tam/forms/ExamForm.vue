@@ -101,7 +101,7 @@
 <script setup>
 import { ref, inject, computed } from 'vue'
 
-const { examFormServ, uiStore } = inject('services')
+const { examFormServ, uiStore, amsPersonServ } = inject('services')
 import { message } from 'ant-design-vue'
 
 const showModal = ref(false)
@@ -183,24 +183,20 @@ async function openForm(mode, item = null) {
 
 async function loadMetadata() {
     // Assuming getMetadata returns an object with Persons and Statuses
-    const meta = await examFormServ.getMetadata()
-    if (meta) {
-        personReturnList.value = meta.Persons || []
+    //const meta = await examFormServ.getMetadata()
 
-        const listWithNone = JSON.parse(JSON.stringify(meta.Persons || []))
-        listWithNone.push({ NroPerson: 0, Name: 'Ninguno' })
-        personAsignetList.value = listWithNone
+    personReturnList.value = await amsPersonServ.getPersonList()
 
-        // If statuses are not in metadata, use getStatus
-        if (meta.Statuses) {
-            statusList.value = meta.Statuses
-        } else {
-            statusList.value = await examFormServ.getStatus()
-        }
-    } else {
-        // Fallback if metadata fails
-        statusList.value = await examFormServ.getStatus()
-    }
+    // const listWithNone = JSON.parse(JSON.stringify(meta.Persons || []))
+    // listWithNone.push({ NroPerson: 0, Name: 'Ninguno' })
+    // personAsignetList.value = listWithNone
+
+    // // If statuses are not in metadata, use getStatus
+    // if (meta.Statuses) {
+    //     statusList.value = meta.Statuses
+    // } else {
+    //     statusList.value = await examFormServ.getStatus()
+    // }
 }
 
 async function onAccept() {

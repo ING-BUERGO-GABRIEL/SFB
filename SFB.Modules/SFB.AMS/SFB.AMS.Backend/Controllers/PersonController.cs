@@ -5,7 +5,6 @@ using SFB.AMS.Shared.Models;
 using SFB.Infrastructure.Contexts;
 using SFB.Shared.Backend.Controller;
 
-
 namespace SFB.AMS.Backend.Controllers
 {
     [Route("api/AMS/[controller]/[action]")]

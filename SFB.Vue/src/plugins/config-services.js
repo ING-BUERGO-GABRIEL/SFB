@@ -9,6 +9,7 @@ import { salesTxnService } from '@/services/som/salesTxn'
 import { customerService } from '@/services/ams/customer'
 import { cashBoxService } from '@/services/ams/cashBox'
 import { examFormService } from '@/services/tam/examForm'
+import { AmsPersonService } from '@/services/amsPersonService'
 import { useUIStore } from '@/stores/ui'
 
 export const configServices = {
@@ -26,6 +27,7 @@ export const configServices = {
         const cashBoxServ = cashBoxService();
         const uiStore = useUIStore()
         const examFormServ = examFormService()
+        const amsPersonServ = new AmsPersonService()
 
         app.provide('services', {
             moduleServ,
@@ -39,7 +41,8 @@ export const configServices = {
             customerServ,
             cashBoxServ,
             uiStore,
-            examFormServ
+            examFormServ,
+            amsPersonServ
         });
     },
 };
