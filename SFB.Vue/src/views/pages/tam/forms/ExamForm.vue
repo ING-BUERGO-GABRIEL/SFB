@@ -46,16 +46,15 @@
                         <v-row class="pa-4">
                             <v-col cols="12" sm="6" class="py-0">
                                 <div class="mb-6">
-                                    <v-select v-model="teacherTask.NroPersonReturnString"
-                                        label="Responsable de Devolucion" :items="personReturnList" :rules="[rRequired]"
-                                        item-title="Name" item-value="NroPerson" required placeholder="Seleccione"
-                                        density="compact" />
+                                    <v-select v-model="teacherTask.NroPersonReturn" label="Responsable de Devolucion"
+                                        :items="personReturnList" :rules="[rRequired]" item-title="FirstName"
+                                        item-value="NroPerson" required placeholder="Seleccione" density="compact" />
                                 </div>
                             </v-col>
                             <v-col cols="12" sm="6" class="py-0">
                                 <div class="mb-6">
-                                    <v-select v-model="teacherTask.NroPersonAssignedString" label="Responsable Actual"
-                                        :items="personAsignetList" item-title="Name" item-value="NroPerson"
+                                    <v-select v-model="teacherTask.NroPersonAssigned" label="Responsable Actual"
+                                        :items="personAsignetList" item-title="FirstName" item-value="NroPerson"
                                         placeholder="Ninguno" density="compact" />
                                 </div>
                             </v-col>
@@ -100,9 +99,12 @@
 
 <script setup>
 import { ref, inject, computed } from 'vue'
-
-const { examFormServ, uiStore, amsPersonServ } = inject('services')
+import { useAuthStore } from '@/stores/auth';
 import { message } from 'ant-design-vue'
+
+const { examFormServ, uiStore, amsPersonServ, tamTeacherTaskServ } = inject('services')
+
+const authStore = useAuthStore();
 
 const showModal = ref(false)
 const modeDlg = ref('')
@@ -131,8 +133,8 @@ const teacherTaskDefault = () => {
         PriceTotal: 0,
         AmountPaid: 0,
         NameContact: '',
-        NroPersonReturnString: null,
-        NroPersonAssignedString: null,
+        NroPersonReturn: Number(authStore?.user?.NroPerson),
+        NroPersonAssigned: 0,
         CodStatus: 'PEN',
         DeliveryDate: null,
         UrlDocument: ''
@@ -156,8 +158,8 @@ async function openForm(mode, item = null) {
         // Set default delivery date (3 days later as in Razor)
         const future = new Date()
         future.setDate(future.getDate() + 3)
-        deliveryDate.value = future.toISOString().split('T')[0]
-        deliveryTime.value = future.toTimeString().split(' ')[0].substring(0, 5)
+        deliveryDate.value = future.getFullYear() + '-' + String(future.getMonth() + 1).padStart(2, '0') + '-' + String(future.getDate()).padStart(2, '0')
+        deliveryTime.value = String(future.getHours()).padStart(2, '0') + ':' + String(future.getMinutes()).padStart(2, '0')
 
         showModal.value = true
     } else if (mode === 'Update') {
@@ -167,8 +169,8 @@ async function openForm(mode, item = null) {
 
         if (teacherTask.value.DeliveryDate) {
             const d = new Date(teacherTask.value.DeliveryDate)
-            deliveryDate.value = d.toISOString().split('T')[0]
-            deliveryTime.value = d.toTimeString().split(' ')[0].substring(0, 5)
+            deliveryDate.value = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0')
+            deliveryTime.value = String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0')
         }
 
         showModal.value = true
@@ -182,37 +184,24 @@ async function openForm(mode, item = null) {
 }
 
 async function loadMetadata() {
-    // Assuming getMetadata returns an object with Persons and Statuses
-    //const meta = await examFormServ.getMetadata()
-
-    personReturnList.value = await amsPersonServ.getPersonList()
-
-    // const listWithNone = JSON.parse(JSON.stringify(meta.Persons || []))
-    // listWithNone.push({ NroPerson: 0, Name: 'Ninguno' })
-    // personAsignetList.value = listWithNone
-
-    // // If statuses are not in metadata, use getStatus
-    // if (meta.Statuses) {
-    //     statusList.value = meta.Statuses
-    // } else {
-    //     statusList.value = await examFormServ.getStatus()
-    // }
+    const personList = await amsPersonServ.getPersonList('ADC')
+    personReturnList.value = personList.filter(p => p.NroPerson != 0)
+    personAsignetList.value = personList
+    statusList.value = await tamTeacherTaskServ.getStatus()
 }
 
 async function onAccept() {
-    // Combine date and time
-    const combinedDateTime = `${deliveryDate.value}T${deliveryTime.value}:00`
-    teacherTask.value.DeliveryDate = combinedDateTime
+    // Combine date and time and convert to UTC for PostgreSQL compatibility
+    const localDateTime = new Date(`${deliveryDate.value}T${deliveryTime.value}:00`);
+    teacherTask.value.DeliveryDate = localDateTime.toISOString();
 
     uiStore.isLoadingBody = true
     try {
         let result = null
         if (modeDlg.value === 'Process') {
-            // In blazor it calls TeacherTaskService.Create
-            // We'll use examFormServ for now, assuming it has the method or the backend route matches
-            result = await examFormServ.create(teacherTask.value)
+            result = await tamTeacherTaskServ.create(teacherTask.value)
         } else if (modeDlg.value === 'Update') {
-            result = await examFormServ.update(teacherTask.value)
+            result = await tamTeacherTaskServ.update(teacherTask.value)
         }
 
         if (result) {

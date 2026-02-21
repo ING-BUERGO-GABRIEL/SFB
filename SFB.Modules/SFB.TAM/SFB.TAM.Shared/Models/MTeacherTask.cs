@@ -40,25 +40,6 @@ namespace SFB.TAM.Shared.Models
         [Required]
         public int NroPersonReturn { get; set; }
         public int? NroPersonAssigned { get; set; }
-        public string? NroPersonReturnString
-        {
-            get => NroPersonReturn.ToString() ?? null;
-            set
-            {
-                if (int.TryParse(value, out var result))
-                    NroPersonReturn = result;
-            }
-        }
-
-        public string? NroPersonAssignedString
-        {
-            get => NroPersonAssigned.ToString() ?? null;
-            set
-            {
-                if (int.TryParse(value, out var result))
-                    NroPersonAssigned = result == 0 ? null : result;
-            }
-        }
 
         [NotMapped]
         public virtual MFormTeacher? FormTeacher { get; set; }

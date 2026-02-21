@@ -11,11 +11,11 @@ namespace SFB.AMS.Backend.Controllers
     public class PersonController(IServiceProvider services) : BaseController<SFBContext, PersonRepository>(services)
     {
         [HttpGet]
-        public async Task<IActionResult> GetPersons()
+        public async Task<IActionResult> GetPersons([FromQuery] string? type = null)
         {
             try
             {
-                var personList = await Repository.GetPersons();
+                var personList = await Repository.GetPersons(type);
                 var result = personList.Adapt<List<MPerson>>();
                 return OkResult(result);
             }

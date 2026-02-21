@@ -3,6 +3,7 @@ using SFB.Infrastructure.Contexts;
 using SFB.Infrastructure.Entities.TAM;
 using SFB.Shared.Backend.Helpers;
 using SFB.Shared.Backend.Repositories;
+using SFB.TAM.Shared.Sealed;
 
 namespace SFB.TAM.Backend.Repositories
 {
@@ -10,7 +11,6 @@ namespace SFB.TAM.Backend.Repositories
     {
         internal async Task<ETeacherTask> Create(ETeacherTask teacherTask)
         {
-            //teacherTask.DeliveryDate = teacherTask.DeliveryDate.Date + DateTime.Now.TimeOfDay;
             Context.TAMTeacherTasks.Add(teacherTask);
             var formTeacher = await Context.TAMFormTeachers.FirstAsync(f => f.NroForm == teacherTask.NroFromTeacher);
             formTeacher.CodStatus = "UTI";
@@ -72,6 +72,7 @@ namespace SFB.TAM.Backend.Repositories
             return teacherTask;
         }
 
+        internal IEnumerable<FTaskStatus> GetStatus() => FTaskStatus.List();
     }
 
 }

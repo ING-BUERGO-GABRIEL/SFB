@@ -41,7 +41,7 @@ const queryString = (params) => {
 };
 
 export const apiClient = {
-  get: url => api.get(url),
+  get: (url, params) => api.get(url + queryString(params)),
   post: (url, body) => api.post(url, body),
   put: (url, body) => api.put(url, body),
   patch: (url, params, body) => api.patch(url + queryString(params), body),

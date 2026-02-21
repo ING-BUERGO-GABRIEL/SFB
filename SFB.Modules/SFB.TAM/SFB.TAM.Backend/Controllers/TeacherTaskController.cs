@@ -18,11 +18,6 @@ namespace SFB.TAM.Backend.Controllers
             try
             {
                 var eTeacherTask = formTeacher.Adapt<ETeacherTask>();
-
-                var user = User.FindFirst("NameUser")?.Value;
-                eTeacherTask.UserReg = user;
-                eTeacherTask.DateReg = DateTime.Now;
-
                 var result = await Repository.Create(eTeacherTask);
                 return OkResult(result);
             }
@@ -110,6 +105,20 @@ namespace SFB.TAM.Backend.Controllers
             catch (ControllerException ex)
             {
                 return ControlledException(ex);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetStatus()
+        {
+            try
+            {
+                var result = Repository.GetStatus();
+                return OkResult(result);
             }
             catch (Exception ex)
             {
